@@ -1,0 +1,907 @@
+Compliance Name:,ISO 27001,Description,ISO 27001 - Information Security Standard,,,,
+Standard,Control Set,Associated Standard,Control Number,Controls,Checklists,Type,Control Options
+A.1,Information security Management and Governance,,,,,,
+A.1.1,Roles and Responsibilities of information security,A.1,,,,,
+A.1.1.1,Board of Directors ,A.1.1,1,The board of directors should accept the responsibility of information security and present commitment towards it.,,YesOrNo,
+,,,2,"The entity's board of directors is assigned the responsibility of
+overseeing a properly managed and implemented information security program/management system and reviewing risk assessment reports.",,YesOrNo,
+A.1.1.2,Director General / CEO,A.1.1,1,Accepting and endorsing the overall responsibility of information security,,YesOrNo,
+,,,2,Enforcing organization wide information security management system,,YesOrNo,
+,,,3,Enforcing information security policies implementation across the entity,,YesOrNo,
+,,,4,"Overseeing and monitoring division’s compliance to information security
+management system and information security policies.",,YesOrNo,
+,,,5,Enforcing accountability towards information security,,YesOrNo,
+A.1.1.3,Information Security Steering Committee:,A.1.1,1,"Supervise and ensure the implementation of an Information Security
+Management System and its controls across the Entity.",,YesOrNo,
+,,,2,"Conduct periodical reviews on the implementation of Information Security
+Regulation and any information security controls and objectives.",,YesOrNo,
+,,,3,"Review and approve periodically the information security policies and
+procedures for implementation within the entity.",,YesOrNo,
+,,,4,Promote Information Security culture within Entity.,,YesOrNo,
+,,,5,"Ensure that relevant information security methodologies are part of all
+business processes and any new initiatives or projects across all the entity
+departments or functions.",,YesOrNo,
+,,,6,"Follow up and review both internal and external audits results for
+effectiveness of Information Security Regulation implementation and
+ensure necessary and timely corrective actions are taken.",,YesOrNo,
+,,,7,"Review and approve the information security risk assessment methodology
+and risk assessment related results that is used across the entity.",,YesOrNo,
+,,,8,"Ensure that adequate resources are provided to implement, support and
+operate the information security management system.",,,
+,,,9,"Make recommendations for both corrective and preventive actions based
+on the risk assessment approach.",,multi_choice_checkboxes,"Yes, the committee provide adequate resources"
+,,,10,Review the Information Security Incidents and their responses.,,multi_choice_checkboxes,"No, the present resources are inadequate"
+,,,11,Ensure that recommendations approved by the committee are implemented.,,,
+,,,12,"Ensure that Information Security requirements are integrated as part of
+contractual requirements in their respective project management activities.",,multi_choice_checkboxes,"Yes, the committee makes suggestions based on CAPA"
+,,,,,,multi_choice_checkboxes,"No, the committee doesnot take actions based on CAPA"
+,,,,,,multi_choice_checkboxes,The committee doesnot take the risk assessment actions which are necessary 
+,,,10,Does the IS Committee review the Information Security Incidents and their responses?,,YesOrNo,
+,,,11,Does the IS Committee ensure that recommendations approved by the committee are implemented?,,Descriptive,The IS committee create a governance structure to implement the suggestions
+,,,12,Does the IS Committee ensure that Information Security requirements are integrated as part of contractual requirements in their respective project management activities?,,YesOrNo,
+A.1.1.4,Senior Management,A.1.1,1,"Ensure that each employee understands his/her information securityrelated
+responsibilities after reading the information security policy and
+acknowledges through a formal sign-off that he/she understands and
+intends to comply with those requirements.",,YesOrNo,
+,,,2,"Determine the criticality and business risk of their information systems
+and information assets.",,Descriptive,The senior management takes the input from risk assessment & asset based risk reports to take necessary steps
+,,,3,Periodically assess information assets and their associated risks.,,,
+,,,4,Communicate the risk assessment results to relevant stakeholders.,,multi_choice_checkboxes,"Yes, quarterly"
+,,,5,"Determine and review the privileges related to their information assets
+and information systems on a periodic basis.",,multi_choice_checkboxes,On a yearly basis
+,,,6,"Implement information security policies and procedures to cost-effectively
+reduce risk to acceptable levels.",,multi_choice_checkboxes,"No, the senior management doesnot perform any assessment"
+,, ,7,"Periodically, ensure conducting technical security testing on the information
+systems.",,YesOrNo,
+,,,8,"Ensure reporting of any evidence of information security compromise or
+any suspicious activity that could potentially expose, corrupt or destroy
+entity’s information.",,YesOrNo,
+,,,9,Respond to information security incidents.,,YesOrNo,
+,,,10,"Ensure that information security requirements are incorporated on
+respective department’s project activities/contracts.",,,
+A.1.1.5,Information Security position,A.1.1,1,"Plan, implement and maintain an information security program/
+management system that is integrated with the whole entity’s processes.",,YesOrNo,
+,,,2,"Coordinate with the senior management on the identification, development,
+secure handling and management of entity wide information assets.",,YesOrNo,
+,,,3,"Plan, develop and maintain an organization wide information security risk
+assessment methodology in coordination with the higher management in
+the entity.",,YesOrNo,
+,,,4,"Ensure that appropriate operational controls are selected and implemented
+according to the results of the risk assessment.",,YesOrNo,
+,,,5,"Develop the required policies, and procedures, based on results of the risk
+assessment.",,YesOrNo,
+,,,6,"Ensure organization wide compliance to the information security
+program/management system and report ISR implementation status to
+the information security steering committee.",,YesOrNo,
+,,,7,"Assist and support senior management with their information security
+responsibilities.",,YesOrNo,
+,,,8,"Plan and conduct periodic information security awareness, education and
+training for entity’s staff and applicable external parties.",,YesOrNo,
+A.1.1.6,X,A.1.1,1,"Senior management assigns the coordination of information security
+activities to certain employees acting as Information security champions/
+representatives/coordinators across all divisions.",,,
+,,,2,"The entity assigns all employees responsible for adhering to the
+information security policies/processes/program and for reporting any
+security breaches or incidents to their direct management.",,,
+A.1.2,Information Security Policy,A.1,,,,,
+A.1.2.1,Information Security Policy Document,A.1.2,1,"Develops, distributes and maintains an entity-wide information
+security policy outlining the basic principles of protecting all the information
+assets of the entity, and make all employees within the entity and relevant
+external parties aware of the potential security threats and associated
+business risks.",,YesOrNo,
+,,,2,"Ensure the Information security policy is approved by top
+management, published and communicated to employees and relevant external parties?",,YesOrNo,
+A.1.2.2,"Information Security Policy Alignment with the Entity
+Strategy",A.1.2,1,"Aligns the information security policy with the entity overall strategy
+to facilitate the implementation of the entity's goals and objectives, and to support its business model without setting any obstacles in implementing them?",,YesOrNo,
+A.1.2.3,Review of Information Security Policy,A.1.2.4,1,"Sets a clear responsibility for a regular review of the information
+security policy to be conducted at least once a year, and/or along with any changes that the entity might undergo?",,YesOrNo,
+,,,2,"Reports any update or review of the information security policy to
+the Information Security Steering Committee and sets the declaration of changes to the entity's CEO/Director General?",,YesOrNo,
+A.1.3,Technical and operational policies,A.1,1,"Develops, distributes and maintains a set of technical/operational
+information security policies that covers the required security protection
+measures and controls based on the results of the risk assessment and depicts
+the overall responsibility of all stakeholders in safeguarding the respective
+business process related information assets.",,YesOrNo,
+,,,2,"Supplements the entity's technical/operational policies, as necessary,
+with a set of procedures and guidelines that cover the implementation details
+of the policies in accordance with the risk assessment results.",,YesOrNo,
+A.1.4,Information Security Awareness and Training,A.1,1,"Designs, develops, and implements an information security awareness
+program throughout the year (that is categorized based on job roles, divisions
+or as the entity specifies) which is composed of targeted information security
+awareness creation activities in line with entity’s information security related
+policies.",,YesOrNo,
+,,,2,"Provides basic information security training and awareness to all
+personnel within the entity, to be delivered by skilled / competent resources,
+as part of initial training for new users, when required by information systems
+changes, and in an entity specified periodic intakes.",,YesOrNo,
+,,,3,"Provides periodic and adequate information security trainings, to be
+delivered by skilled / competent resources for the employees taking part in
+operating the information security program/management system within their
+respective business areas.",,YesOrNo,
+,,,4,"Designs and maintains the information security awareness materials
+that educates users on information security policies and covers entity’s
+business operations’ security risk and focus on reducing possible business
+risks.",,YesOrNo,
+,,,5,"Conduct periodic security awareness surveys to measure the security
+training effectiveness and the awareness level of all entity’s personnel
+and applicable external parties, in order to point out common mistakes or
+misunderstandings in information security concepts, and to improve the
+overall awareness program.",,YesOrNo,
+,,,6,"Documents information security training and awareness attendance
+records for all personnel.",,YesOrNo,
+A.1.5,Confidentiality Agreements,A.1,1,"Develops, and regularly reviews a non-disclosure or confidentiality
+agreement which is signed by all employees and external parties, that
+addresses in legally enforceable terms, the need for protecting the Government
+information from being leaked internally or externally, and emphasizing the
+«need to know» concept.",,YesOrNo,
+,,,2,"Educates personnel and makes them aware of the confidentiality of
+government information and how information leakage, written or spoken, can
+impact the entity.",,YesOrNo,
+A.1.6,Relations and Sustainability of Information Security,A.1,1,"Maintains appropriate contacts with relevant authorities within the
+field of information security;",,YesOrNo,
+,,,2,"Identifies key contacts of certain security and judicial authorities to
+be contacted in the cases of information security incidents, breaches, etc.",,YesOrNo,
+,,,3,"Maintains interactions and/or memberships with information
+security interest groups, forums and associations, in order to keep up-to-date
+information in the field of information security.",,YesOrNo,
+A.1.7,Securing External Parties’ Relations,A.1,1,"Determines and assesses governance and information security risks
+related to its relations with external parties, such as customers, external party
+services providers, business consultants, temporary employments, etc. This
+also includes outsourcing and cloud services providers.",,YesOrNo,
+,,,2,"Selects and applies the appropriate information security controls
+and measures to control the identified risks.",,Descriptive,The risk owner / assessor selects the appropriate controls
+,,,3,"Develops and implements the required agreements to secure relations
+with the external parties, including integrity, availability and confidentiality.",,Descriptive,It implements the necessary agreements with third party based on CIA 
+A.2,Information and Information Assets Management,,,,,,
+A.2.1,Information Assets Management,A.2,1,"Develops, distributes and maintains an entity wide information
+asset management policy and procedure or framework for the identification,
+management and protection of information assets in line with applicable laws
+and regulations.",,YesOrNo,
+,,,2,"Identifies, documents, and maintains a register of all critical
+information assets for the entire entity, including the information and data
+assets and the related information processing facilities and components, such
+as software assets, people assets, physical assets, etc. and consider other details such as, information classification, physical location, license details,
+business value, and any other necessary information that may be required to
+avoid risks and recover from disasters.",,,
+,,,3,"Reviews & maintains the information asset register on a regular
+basis.",,multi_choice_checkboxes,The organization has a asset management in place to maintain a register of all the assets
+A.2.2,Information Assets Ownership/Custodianship,A.2,1,"Establishes and implements information ownership policy, where
+information assets are identified with an owner and a custodian. Business
+processes, services, applications, information systems, or set of data are
+examples of assets that ownership and custodianship should be allocated to.",,YesOrNo,
+,,,2,"Assigns the information assets owner the responsibility of ensuring
+that proper classifications of information are carried out based on the
+sensitivity of information.",,YesOrNo,
+,,,3,"Assigns the information assets owner the responsibility of defining
+the proper access control to the information and ensuring periodic review of
+access in accordance with assigned classification level and the entity’s access
+control policy.",,YesOrNo,
+,,,4,"Assigns the custodians the responsibility of maintaining the day to
+day operational tasks related to the information assets, while considering the
+higher authority of the assets by the owners.",,YesOrNo,
+A.2.3,Information Assets Classification,A.2,1,"Defines and implements an information classification scheme/
+process to be used within the entity based on information assets criticality,
+value, legal and protection requirements, etc. in line with applicable laws and
+regulations",,YesOrNo,
+,,,2,"Develops, distributes and maintains information classification policy
+and related procedures in line with applicable laws and regulations",,YesOrNo,
+A.2.4,Information Assets Labelling and Handling,A.2,1,"Defines and implements adequate labelling and handling controls for
+the information assets (electronic and physical); according to the requirements
+of each classification level, considering the handling requirements, storage
+procedures, distribution limitations, etc., for each information asset.",,YesOrNo,
+,,,2,"Develops, distributes and maintains procedure for the information
+assets labelling and handling requirements",,YesOrNo,
+A.2.5,Disposals of Information and Assets,A.2,1,"Identifies and implements the required safety and security measures
+prior to the disposal of information or information assets based on their value,
+criticality and sensitivity",,YesOrNo,
+,,,2,"Develops, distributes and maintains clear procedure for the process
+of disposal of information and information assets, as part of the labelling &
+handling procedure.",,YesOrNo,
+A.2.6,Information Assets Responsibility,A.2,1,"Develops, distributes and maintains an acceptable use policy
+governing the acceptable use of information and assets including usage of
+personal devices in entity’s environment.",,YesOrNo,
+A.3,Information Security Risk Management,,,,,,
+A.3.1,Risk Assessment Methodology & Planning,A.3,1,"Develops a risk assessment methodology that aligns with the
+requirements of the entity’s information security program/management
+system.",,YesOrNo,
+,,,2,"Determines a periodic plan for conducting the risk assessment
+across the entity.",,Descriptive,"Yes, the risk assessment is conducted on a yearly basis"
+,,,3,"Identifies the criteria of acceptable risks as part of the risk assessment
+methodology.",,Descriptive,The risk assessment helps to identify the critical business risks
+,,,4,"Identifies the scope of the risk assessments involving key
+stakeholders, around their business processes & respective information
+assets that will be included in the assessment.",,YesOrNo,
+,,,5,"Identifies threats and vulnerabilities in line with risk assessment
+methodology.",,YesOrNo,
+,,,6,"Plans and implements a periodic awareness of the risk assessment
+program across the entity.",,YesOrNo,
+A.3.2,Risk Assessment,A.3,1,"Conducts & maintains a detailed risk assessment in accordance with
+the approved risk assessment methodology.",,YesOrNo,
+,,,2,"Analyses risks and prioritizes them based on the criticality, in order
+to set treatment plans and controls.",,Descriptive,Analyzes the risk based on some criticality factors like Residual risk etc
+,,,3,"Determines and identifies the acceptable risks in accordance with
+the risk assessment methodology.",,YesOrNo,
+,,,4,"Documents the risk assessment results and approves it officially by
+the Information Security Steering Committee or higher management.",,YesOrNo,
+A.3.3,Risk Treatment and Mitigation,A.3,1,"Selects the proper risk treatment plans (mitigate, avoid, transfer,
+etc.) for the identified risks.",,Descriptive,Based on the risk assessment & acceptable criteria 
+,,,2,"Determines and selects the appropriate security operational
+controls (under operational domains within this document) for mitigating
+the identified risks.",,YesOrNo,
+,,,3,"Signs off and authorizes officially the implementation of the risk
+mitigations controls.",,YesOrNo,
+,,,4,"Performs and implements the mitigation controls for the risks
+identified.",,Descriptive,The risk mitigation is done after the risk assessment output
+,,,5,"Reviews and monitors the implemented risk mitigation controls for
+effectiveness.",,YesOrNo,
+A.4,Incident and Problem Management,,,,,,
+A.4.1,Incident Management Planning,A.4,1,"Develops, distributes and maintains a formal policy and procedure
+for the management of information security incidents.",,YesOrNo,
+,,,2,"Establishes a capability (Incident Response Team) for the information
+security incidents response and handling across the entity.",,YesOrNo,
+,,,3,"Provides periodic awareness and training sessions to Incident
+Response Team on incident handling process in order to exercise & execute
+effective handling of information security incidents.",,YesOrNo,
+A.4.2,Information Security Incident Reporting & Escalation,A.4,1,"Assigns responsibility to all employees or any users dealing with the
+entity’s information, through any means, for reporting promptly any observed
+or suspected information security incidents or weaknesses in systems or
+services, to the responsible entity’s team.",,YesOrNo,
+,,,2,"Implements an escalation process for reporting information security
+incidents identified as high severity for the entity and identifies and engages
+external authorities for further investigation if needed for such incidents.",,YesOrNo,
+A.4.3,Evidence Gathering,A.4,1,"Implement a process to gather and retain evidences related to any
+information security incidents.",,YesOrNo,
+A.4.4,Information Security Incidents Knowledge Base,A.4,1,"Develops a knowledge base from all information security incidents
+which includes details of previous incidents, their types, cost, and any other
+relevant information.",,YesOrNo,
+A.5,Access Control,,,,,,
+A.5.1,Access Control Management Policy/Procedure,A.5,1,"Develops, distributes and maintains an access control policy that
+addresses all security requirements for the implementation of an effective
+access control within the entity.",,YesOrNo,
+,,,2,"Develops, distributes and maintains an access control procedure
+that provides implementation details for access control, based on role-bases
+access control.",,YesOrNo,
+,,,3,"Maintains a secure repository of all information systems access
+controls.",,YesOrNo,
+A.5.2,Logical Access Control,A.5,,,,,
+A.5.2.1,Users Access Control,A.5.2,1,"Defines and implements a process for users registration, deregistration,
+and users access privileges modification, disabling or removal,
+etc.",,YesOrNo,
+,,,2,"Provides each user with a unique identifier (user ID) for their
+individual business use only.",,YesOrNo,
+,,,3,Implements a unified users ID standard across the entity.,,YesOrNo,
+,,,4,"Implements a proper authentication technique for the validation of
+claimed identities of users regarding access being onsite and remote.",,YesOrNo,
+,,,5,"Develops, distributes and maintains appropriate authentication
+policy (ies) (e.g. a password management policy that clearly addresses the
+password allocation process, users' responsibilities on passwords use and the
+recommended password structure, etc.).",,YesOrNo,
+,,,6,"Maintains records of all users' access privileges, and monitors them
+on a continuous basis.",,YesOrNo,
+,,,7,"Limits the number of special/high privileged user IDs to those
+individuals who absolutely must have such privileges for authorized business
+purposes.",,YesOrNo,
+,,,8,"Implements proper security and independent monitoring controls
+over the usage of special or high privileged IDs.",,YesOrNo,
+,,,9,"Implements proper process for guest and temporary user IDs
+request and employs automated user IDs termination.",,YesOrNo,
+,,,10,"Allocates access privileges on a restricted basis while employing
+least privilege concept and separation of duties.",,YesOrNo,
+,,,11,"Employs a process for review and re-authorization of user access
+rights on a periodic basis, as defined by the entity.",,YesOrNo,
+A.5.2.2,Network Access Control,A.5.2,1,"Develops, distributes and maintains a policy for network access
+control, which covers details about accessible networks and networks services,
+authorization process for granting network access, etc.",,YesOrNo,
+,,,2,"Defines a process for authorizing, activating and terminating any
+network connections in the entity.",,YesOrNo,
+,,,3,"Implements a proper network access control tool/method for network
+equipment/devices connectivity detection, identification and authentication.",,YesOrNo,
+,,,4,"Implements proper authentication tool for remote access
+connections",,YesOrNo,
+,,,5,"Manages and controls access to configuration ports on network
+equipment / devices.",,YesOrNo,
+,,,6,"Implements proper segregation controls on the different types of
+networks (internal, external, wireless, IP telephony, etc.)",,YesOrNo,
+,,,7,"Implements proper security and operational controls for any network
+connections beyond the entity’s direct control?",,YesOrNo,
+A.5.2.3,Operating System Access Control,A.5.2,1,"Manages and controls access to operating systems through secure
+log-on process.",,YesOrNo,
+,,,2,"Assigns each user with a unique user ID and apply the proper
+authentication method for identity verification.",,YesOrNo,
+,,,3,"Limits the use of generic user IDs to only exceptional and business
+justified circumstances, and implements the proper accountability technique
+for such use.",,YesOrNo,
+,,,4,"Implements an entity wide authentication mechanism to enforce
+various authentication controls.",,YesOrNo,
+,,,5,"Implements session time-out controls to prevent unauthorized
+access.",,YesOrNo,
+,,,6,Implements lock-out policy.,,YesOrNo,
+,,,7,"Restricts connection times for critical information systems and
+applications.",,YesOrNo,
+,,,8,Records and continuously reviews logs of administrators system IDs.,,YesOrNo,
+A.5.2.4,Applications Access Control,A.5.2,1,"Provides access to applications based on job responsibilities and
+business justifications, in alignment with the entity access control policy/
+procedure.",,YesOrNo,
+,,,2,"Implements proper physical or logical isolation controls for highly
+critical information systems and application environments.",,YesOrNo,
+A.5.2.5,Remote Access Security,A.5.2,1,"Develops, distributes and maintains a policy addressing remote
+access to the entity's resources.",,YesOrNo,
+,,,2,Enforces formal authorization prior to remote access connections.,,YesOrNo,
+,,,3,"Ensures that adequate security controls are implemented on the
+VPN client machines, such as authentication, encryption, antivirus software,
+personal firewalls, session timeout, content filtering etc.",,YesOrNo,
+,,,4,"Provides remote access users with access to the services, which the
+users are specifically authorized to use.",,YesOrNo,
+,,,5,"Monitors and periodically reviews the remote access connections
+logs.",,,
+A.5.2.6,Mobile Computing,A.5.2,1,"Develops, distributes and maintains a formal policy governing the
+appropriate use of mobile computing and communication facilities.",,YesOrNo,
+,,,2,"Implements appropriate security controls to protect against the
+risks of mobile computing and communication facilities’ usage, such ",,YesOrNo,
+,,,3,"Develops, distributes and maintains a policy and procedure for the
+handling and usage of personally owned devices (Bring your own Device
+(BYOD)) that are not owned by the entity, addressing entity’s security
+requirements on handling lost or stolen portable computing devices, storage
+of entity data on these devices, connectivity to entity network and systems
+etc.",,YesOrNo,
+A.5.2.7,Wireless Access Management,A.5.2,1,"Develops, distributes and maintains a formal policy on the wireless
+network usage.",,YesOrNo,
+,,,2,"Authorizes formally the wireless access to the network prior to any
+connection.",,YesOrNo,
+,,,3,"Implements the proper authentication controls for the wireless
+access.",,YesOrNo,
+,,,4,"Enforces proper security controls for wireless connections to the
+entity's network and establishes usage restrictions and implementation
+guidance for such use.",,YesOrNo,
+,,,5,"Provides wireless connection users with access to services that they
+have been specifically authorized to use.",,YesOrNo,
+,,,6,"Monitors continuously the unauthorized wireless access to the
+network.",,YesOrNo,
+A.5.3,Physical Access Control,A.5,,,,,
+A.5.3.1,Physical Access Policy and Procedure,A.5.3,1,"Develops, distributes and maintains a formal documented physical
+access policy that addresses the entity's requirements for implementing
+physical access controls on offices, rooms and other areas.",,YesOrNo,
+,,,2,"Supplements, as necessary, the physical access policy with a detailed
+procedure on how to implement the protection controls and provides users
+with complete specification on physical security safeguards.",,YesOrNo,
+,,,3,"Enforces formal authorization prior to physical access to any facilities
+with information processing resources.",,YesOrNo,
+A.5.3.2,Physical Security Controls,A.5.3,1,"Enforces appropriate physical access control perimeters for all
+physical access points to the entity.",,YesOrNo,
+,,,2,"Verifies and ensures that only authorized employees are provided
+access to protected areas.",,YesOrNo,
+,,,3,"Controls entry to the data center, or any facility containing
+information systems using physical access control devices.",,YesOrNo,
+,,,4,"Controls and monitors physical access to the information processing
+facilities areas or any other public areas.",,YesOrNo,
+,,,5,"Safeguards and enforces adequate protection controls on physical
+access devices.",,YesOrNo,
+,,,6,Keeps inventory of all physical access devices owned by the entity.,,YesOrNo,
+,,,7,Reviews logs of physical access on a regular basis.,,YesOrNo,
+,,,8,"Deploys mechanism to monitor the movement of employees & nonemployees
+within the entity.",,YesOrNo,
+A.5.3.3,Public and External Party Access Control,A.5.3,1,"Enforces formal authorization prior to logical or physical access
+required by external party through deploying a «need to know» criteria",,YesOrNo,
+,,,2,"Monitors and logs logical or physical access provided to public or
+external party.",,YesOrNo,
+,,,3,"Controls physical access to any areas that includes information
+systems and other areas such as delivery, loading, or any other points
+where unauthorized personnel may enter by authenticating visitors before
+authorizing access.",,YesOrNo,
+,,,4,"Authorizes, monitors, and controls entering and exiting the data
+centre facilities or any other public areas and maintains such records.",,YesOrNo,
+,,,5,"Sets physical access protection and control mechanisms on all
+external parties or outsourced individuals and hold them liable for any
+violation or compromising the entity's information security policy.",,YesOrNo,
+A.5.3.4,Information and Documents Access Control,A.5.3,1,"Places adequate security controls on accessing and handling all soft
+/ hard documents / information in alignment with its criticality.",,YesOrNo,
+,,,2,"Determines and assigns the needed access rights for the protected
+documents/information.",,YesOrNo,
+,,,3,"Sets a clear policy on controlling documents, along with defining
+a clear retention period for archiving, and supplementing it with procedures
+and guidelines for implementation and usage.",,YesOrNo,
+,,,4,"Employs a procedure for the disposal of documents, with
+requirements of authorization and responsibilities.",,YesOrNo,
+A.5.3.5,Access Control Audit and Review,A.5.3,1,"Implements audit trails in information processing systems, as
+necessary.",,,
+,,,2,"Logs, maintains and periodically reviews logical and physical access
+control lists.",,,
+A.6,"Operation, Systems and Communications Management",,,,,,
+A.6.1,Operations Management,A.6,,,,,
+A.6.1.1,Technology and operations Capacity Management,A.6.1,1,"Ensures advanced planning and preparation for availability of
+adequate capacity and resources for the information processing systems and
+their technology components, and in line with applicable regulations.",,YesOrNo,
+,,,2,"Conducts an annual projection review of capacity requirements
+and resources for the information processing systems and their technology
+components, integrating business requirements.",,YesOrNo,
+A.6.1.2,Documentation of Operational Procedures,A.6.1,1,"Develops and maintains a complete set of operating procedures
+documentations of all information processing systems detailing inputs,
+outputs and dependencies.",,YesOrNo,
+,,,2,"Documents and maintains up to date baseline configurations
+manuals of all information processing systems including an inventory of
+constituent system components.",,YesOrNo,
+,,,3,"Places adequate security protection controls on the documentation
+of operational procedures of all critical information processing systems,
+through defining a clear distribution list and permitted users and ensures
+their availability to authorized users whenever required.",,YesOrNo,
+A.6.1.3,Change Management,A.6.1,1,"Develops, distributes and maintains a formal documented change
+management policy that defines the overall change management process
+employed by the entity, outlining roles and responsibilities of different
+business owners.",,YesOrNo,
+,,,2,"Supplements, as necessary, the change management policy with
+a detailed procedure to facilitate the implementation of the change and
+configuration management process and provide guidelines for all users.",,YesOrNo,
+,,,3,"Implements a change management process that must include the
+following details, as a minimum:
+A. Description of required change.
+B. Testing and implementation plans for the change.
+C. Risk assessment of the change impact.
+D. Official authorization of the change and the communication process for
+all stakeholders.
+E. Rollback process for recovery of unsuccessful changes.",,,
+A.6.1.4,Segregation of Duties,A.6.1,1,"Segregates duties and responsibilities as necessary through
+distributing the tasks for a specific business process / area among multiple
+users, in a manner to reduce errors, fraud and unauthorized modification or
+misuse of the entity’s assets.",,YesOrNo,
+A.6.1.5,Separation of Operational Facilities,A.6.1,1,"Segregates where necessary development, testing and production
+processing facilities to mitigate the risk impacting the production systems
+from unauthorized intentional or unintentional access or change.",,YesOrNo,
+,,,2,"Allocates secured computing environment for the sensitive and
+critical information systems facilities.",,YesOrNo,
+A.6.1.6,Information Systems Deployment,A.6.1,1,"Develops, distributes and maintains a formal policy and procedure
+for the acquisition, deployment and upgrade of information systems,
+addressing the entity’s requirements for ensuring proper security controls
+implementation and in line with entity’s baseline configuration requirements,
+prior to acceptance or deployment.",,,
+,,,2,"Defines and implements proper acceptance criteria for new
+information systems implementation and upgrades, and enforcing formal
+certification and accreditation process outlining security requirements.",,,
+,,,3,"Carries out suitable security testing of the information systems
+during development and prior to acceptance and deployment, and ensures
+periodic testing.",,,
+A.6.1.7,Virtualization Techniques,A.6.1,1,"Employs virtualization techniques, as necessary and whenever
+applicable, along with deployment of the proper security controls, which can
+help, when properly implemented, in reducing the likelihood of successful
+security attacks.",,,
+A.6.2,External Party Services Management,A.6,1,"Develops, and maintains a formal agreement with the external party
+service providers that addresses compliance with the entity information
+security requirements.",,,
+,,,2,"Places adequate measures to assure that security controls, services
+definitions and delivery levels agreed upon in the external party contractual
+agreements are implemented and followed by the external party.",,,
+,,,3,"Monitors, reviews and audits the services and all related deliverables
+provided by external party in a regular basis.",,,
+,,,4,"Places adequate measures to manage and assess risks related to
+changes of the external party services. Examples of changes may include",,,
+A.6.3,Protection against malicious and mobile code,A.6,1,"Develops, distributes and maintains a formal policy covering the
+requirements for prevention, detection and recovery controls against malicious
+codes.",,,
+,,,2,"Conduct regular awareness across the entity on the importance of
+protecting the entity infrastructure from malicious code attacks.",,,
+,,,3,"Implements a proper entity wide system/software for the malicious
+code scanning, detection and repairing.",,,
+,,,4,"Keeps an up to date malicious code protection mechanisms which
+are continuously updated.",,,
+,,,5,"Performs periodic scans of all information systems and real time
+scans of files from external sources as the files are downloaded, opened, or
+executed, as defined by the implemented policies.",,,
+,,,6,"Automates the antivirus software configurations, updates and
+operations among all users and employees.",,,
+,,,7,"Establishes and maintains appropriate informative communication
+channels to obtain latest details of new malicious code.",,,
+,,,8,"Develops and implements proper continuity plans/procedures for
+recovery from malicious code attacks.",,,
+,,,9,Defines the acceptable and unacceptable mobile code technologies.,,,
+,,,10,"Establishes formal usage restrictions and implementation guides for
+the acceptable mobile code technologies.",,,
+,,,11,"Enforces formal authorization, monitoring and control over the use
+of mobile code technologies.",,,
+A.6.4,Network Security,A.6,1,"Implements formal process for its network services to govern the
+interconnections between its network, critical owned business information
+systems and other networks and information systems outside its formal
+boundaries, outlining the roles and responsibilities of securing the connections
+and all other requisite issues such as duration of connection, ports, users'
+access, etc.",,,
+,,,2,"Develops and implements network service agreements and
+ensures that all required security controls, service levels, and management
+requirements are included in such agreements.",,,
+,,,3,"Enables clock synchronization on all networking devices with agreed
+reference such as Universal Coordinated Time (UTC) to facilitate forensic
+analysis, and continuously monitor its accuracy.",,,
+,,,4,"Monitors the information system connections continuously and
+always verifies enforcement of security requirements.",,,
+,,,5,Implements secure network routing controls.,,,
+,,,6,"Implements adequate protection level for the confidentiality,
+integrity and availability of transmitted information and, prevent unauthorized
+access to information or data in transit (whether within entity or to external
+network).",,,
+,,,7,"Terminates network connections associated with communication
+sessions as per the entity defined time period of inactivity.",,,
+,,,8,"Implement measures to ensure adequate/high level of network
+availability.",,,
+,,,9,"Configures the network traffic devices on a need basis, as the
+general rule of thumb is ‹deny-all› otherwise justify, with maintaining logs of
+all changes as per the entity's change management policy.",,,
+,,,10,"Develops and maintains full documentation of the network devices,
+connections, and IP configuration while ensuring highest security protection
+and controls on the documents.",,,
+,,,11,"Applies appropriate logging and monitoring procedures to enable
+recording of network security activities.",,,
+A.6.5,Information Exchange Management,A.6,1,"Develops, distributes and maintains formal policy and procedures
+governing the exchange of information internally in the entity, or externally
+with outside entities, in all types of communication channels, based on the
+criticality of information and in line with relevant laws and regulations.",,,
+,,,2,"Develops and maintains formal information exchange agreements
+that cover the protection and non-disclosure requirements for the exchange of
+any government related information between the entity and any external party.",,,
+,,,3,"Applies adequate security controls on top of the process of
+exchanging information, specifically for transmitted physical media containing
+information such as labelling, liability, etc.",,,
+A.6.6,Electronic messaging / Emails,A.6,1,"Develops, distributes and maintains a formal electronic
+communication policy that governs the use of all electronic messaging/email
+tools provided to the users, outlining the risks associated with it.",,,
+,,,2,"Implements mechanisms to ensure confidentiality, integrity and
+appropriate availability of electronic messaging/emails.",,,
+,,,3,"Deploys a process of stamping a mandatory disclaimer for electronic
+messaging/emails.",,,
+,,,4,"Deploys an archival and retention policy for electronic messaging/
+emails.",,,
+,,,5,"Deploys advanced authentication mechanisms for access to
+electronic messaging/emails from non-trusted networks and public networks.",,,
+,,,6,"Deploys non-repudiation supporting advanced encryption
+mechanisms (e.g. digital signatures) while exchanging critical and sensitive
+government information.",,,
+A.6.7,Online Transactions and Public Information Management,A.6,,,,,
+A.6.7.1,Online Transactions Controls,A.6.7,1,"Implements adequate confidentiality, integrity and availability
+controls over any online transactional information/services, in order to
+protect it from frauds, unauthorized modification or disclosure, etc.",,,
+,,,2,"Develops and implements the required agreements with any involved
+party in managing the online transactions services, and ensures the inclusion
+of trading terms, details of authorization, liabilities, etc.",,,
+A.6.7.2,Public Information,A.6.7,1,"Protects the integrity of public information that is available on
+publicly accessible channels or systems such as internet websites, associated
+written media etc., using information security controls such as appropriate
+authentication and access controls, depending on the nature of the business
+requirements and applicable legal obligations.",,,
+,,,2,"Ensures compliance of information published by employees on
+behalf of the government entity with applicable laws, rules and regulations
+and approves the publication by an authorized management body within
+Dubai Government Entity.",,,
+A.6.8,Media Handling Management,A.6,1,"Implements adequate security and protection procedures for any
+type of media containing information, in terms of handling, storage, disposal,
+etc.",,,
+A.6.9,Monitoring and Logs Management,A.6,1,"Enables audits logs for all information processing systems/
+applications, and periodically reviews such logs and ensures applying adequate
+retention measures over them.",,,
+,,,2,"Sets adequate monitoring requirements for all information systems/
+applications based on criticality of the systems.",,,
+,,,3,"Logs system administrators and operators activities and ensures
+reviewing them periodically, by an independent unit.",,,
+,,,4,"Enables faults logging on all system levels including network,
+applications, servers and databases among others.",,,
+,,,5,"Deploys adequate logs analysis mechanism and places appropriate
+actions on faults.",,,
+,,,6,"Secures, where appropriate, logging systems and log files against
+unauthorized changes including alterations, deletions, and renaming of log
+file contents, dates and time stamps.",,,
+,,,7,"Sets an appropriate life time for maintaining the logging information,
+as per the business needs and criticality of information.",,,
+,,,8,"Enables clock synchronization over all information processing
+systems / applications with accurate time source.",,,
+A.7,Business Continuity Management,,,,,,
+A.7.1,Business Impact Analysis,A.7,1,"Develops and periodically conducts a business impact analysis for
+all critical business processes and information systems in order to define and
+determine the impact of potential operational failures.",,,
+,,,2,"Sets and accounts the responsibility of the Business Impact Analysis
+to the senior management, with involvement from all related divisions.",,multi_choice_checkboxes,The organization conducts a BIA using the business continuity management
+A.7.2,Business Continuity Plan,A.7,1,"Organizes and accounts responsible a committee of senior
+management and business owners for the business continuity plan, with
+defined and clear responsibilities.",,YesOrNo,
+,,,2,"Develops, maintains and periodically tests and reassesses a business
+continuity plan that covers the following:
+A. The plan should be based on the Business Impact Analysis and Risk
+Assessment.
+B. The plan should address requirements for resilience, alternative processing
+and recovery capability of all critical business and IT services.
+C. The plan should cover usage guidelines, roles and responsibilities,
+procedures, communication processes, and the testing approach.",,YesOrNo,
+,,,3,"Designs a business continuity process in a manner to reduce the
+impact of a major disruption on key business functions and processes.",,,
+A.7.3,Disaster Recovery ,A.7,1,"Identifies the most critical business systems and applications in
+accordance with the risk assessment conducted by the entity.",,YesOrNo,
+,,,2,"Deploys a proper recovery plan for the identified critical business
+systems, as the entity's operations specify.",,YesOrNo,
+,,,3,"Determines the type of recovery scheme that is applicable for its
+requirement.",,YesOrNo,
+,,,4,Exercises and periodically tests the decided recovery plan.,,YesOrNo,
+,,,5,"Implements disaster recovery sites in case their business systems
+result in a major loss for the whole government, through using an effective
+approach based on feasibility studies.",,YesOrNo,
+A.7.4,Backup and Storage Strategies,A.7,,,,,
+A.7.4.1,Backup and storage policy and procedure,A.7.4,1,"Develops, distributes and maintains a formal documented backup,
+storage and retention policy that includes:
+A. Users' responsibilities.
+B. Requirements for backup and recovery systems.
+C. Backup protection controls.
+D. Legal and business requirements (e.g. recovery point objective, recovery
+time objective, etc.).",,,
+,,,2,"Supplements, as necessary, the backup policy with a detailed
+procedure for backup and storage specifications and implements them.",,,
+A.7.4.2,Media Library and Resources Protection,A.7.4,1,"Develops, distributes and maintains a formal documented policy and
+procedure on media library protection.",,,
+,,,2,"Restricts and continuously monitors access to media libraries and
+storage resources.",,,
+,,,3,"Marks clearly all media and storage resources, indicating distribution
+lists, handling controls, and the application asset's security classification as
+per the assets classification policy.",,,
+,,,4,"Allocates proper locations, with adequate security and environmental
+measures and controls for the storage of the backup media, whether onsite/
+offsite, as the entity specifies.",,,
+,,,5,"Sets security agreements and proper security protection controls in
+case an external party is involved in handling the media library for the entity.",,,
+,,,6,"Protects and controls all physical media while being in a transit
+process.",,,
+,,,7,"Encrypts backups and archives where technically feasible and
+appropriate.",,,
+,,,8,"Maintains accountability for media in transit outside the entity
+control areas and restricts to authorized personnel.",,,
+,,,9,Wipes and sanitizes all backup media prior to disposal or reuse.,,,
+A.7.4.3,Backup Testing Restoration,A.7.4,1,"Plans and executes a periodic testing and restoration process of all
+backup and storage media.",,,
+A.7.5,Business Continuity Plan (BCP) Test and Review,A.7,1,"Maintains, exercises and tests in a periodic manner the Business
+Continuity Plan, Business Impact Analysis, Backup and Restoration, and
+Disaster Recovery Plan.",,,
+A.8,"Information System Acquisition, Development and Management",,,,,,
+A.8.1,"Information Systems Acquisition, Development and
+Management",A.8,,,,,
+A.8.1.1,"Information Systems Acquisition, Development and
+Management Policy and Procedure",A.8.1,1,"Develops, distributes and maintains a formal documented policy
+and procedures for addressing the entity’s requirements for ensuring the
+security on any in house developed or external party applications regarding
+the Acquisition, Development and Management of information systems,
+including mobile applications.",,,
+A.8.1.2,Application Development,A.8.2,1,"Does the  Application or Software Development Life Cycle
+(SDLC) methodology incorporates adequate security controls at all phases of the software development life cycle, while considering the defined security requirements (e.g. functional, technical, assurance etc.) at each software development stage?",,YesOrNo,
+,,,2,"Does it maintains a formal procedure for secure
+deployment, distribution, provisioning and decommissioning of portable computing device applications, application interfaces (APIs) (including third party components), through regular updates / checks to ensure adequate level of security?.",,YesOrNo,
+A.8.2,"Information Systems Security Requirements and
+Specifications",A.8,1,"Defines and documents information security requirements in
+all business cases, requests for proposals and work requests, related to
+acquisitioned or in house developed information systems, in order to ensure
+integrating adequate security controls and minimize any cost related to
+security, and sufficient resources are allocated to implement these controls.",,,
+,,,2,"Develops and approves the information systems design documents
+addressing the security requirements covering all the relevant platforms (e.g.
+operating systems, browsers, portable computing devices, etc.)",,,
+,,,3,"Develops the secure coding standards for information systems
+software / mobile application / web application development.",,,
+,,,4,"Designs the security architecture for the development & deployment
+of information systems including network security, transmission security etc.",,,
+,,,5,"Implements adequate configuration management process during
+information systems design, development, implementation and operation.",,,
+A.8.3,Secure and Correct Processing of Information Systems,A.8,1,"Conducts proper testing to validate integrity of data input controls
+on information systems/applications.",,,
+,,,2,"Identifies integrity requirements for processed messages
+and information in the information systems/applications and ensures
+implementing adequate controls to protect it.",,,
+,,,3,"Integrates validation checks into information systems/applications
+processing to detect any loss of integrity in processed information.",,,
+,,,4,"Conducts proper testing to validate integrity of data output from
+information systems/applications.",,,
+A.8.4,"Securing Information Systems Files, Source Codes and
+Data",A.8,1,"Implements restrictive information system procedures on the
+installation and maintenance of software in the operational information
+systems environments.",,,
+,,,2,Implements proper protection controls on the use of testing data.,,,
+,,,3,"Implements proper access control procedures on information
+systems/application source codes.",,,
+A.8.5,Managing Changes in Software Development,A.8.5,1,"Implements proper change management controls on the software
+development processes, whether performed in-house or outsourced.",,,
+,,,2,"Implements proper controls to limit the risk of changes to software
+packages.",,,
+,,,3,"Implements proper controls to prevent information leakage in all
+information system/application environments.",,,
+,,,4,"Implements proper security controls on outsourced software/
+application development covering all stages of the project including source
+code management, application maintenance etc.",,,
+A.8.6,Security Testing,A.8,1,"Performs technical security reviews and vulnerability tests in order
+to periodically assess technical infrastructure and information systems/
+applications security against latest threats and vulnerabilities.",,,
+,,,2,"Conducts periodic code reviews on all information systems/
+applications developed in house or by an external party.",,,
+A.8.7,Deployment of Information Systems / Applications,A.8,1,"Deploys the information systems/ applications into production
+environment after successful completion of testing & fixing of defects
+identified.",,,
+,,,2,"Implements security sign off process to confirm the proper
+implementation of security controls on all information systems/applications
+prior to deployment.",,,
+A.8.8,Cryptography Controls,A.8,1,"Develops, distributes and maintains a policy on the use of
+cryptography and key management wherever applicable (e.g. during
+development and maintenance of information systems/applications etc.).",,,
+,,,2,"Implements proper cryptography and key management mechanisms
+as required by the entity.",,,
+,,,3,"Implements proper protection and security controls on all
+cryptographic keys used by the entity.",,,
+A.9,Environemntal & Physical Security,,,,,,
+A.9.1,Environmental / Physical Threats Protection Policy and Procedure,A.9,1,"Develops, distributes, and maintains a formal, documented
+environmental threats protection policy that addresses the entity's
+requirements for placing environmental protection controls.",,YesOrNo,
+,,,2,"Supplements the environmental threats protection policy with
+a formal documented procedure to facilitate the implementation of the
+environmental threats protection policy.",,YesOrNo,
+A.9.2,Protection from Environmental Threats,A.9,1,"Implements adequate protection controls against environmental
+threats, such as fire, floods, earthquakes, etc.",,YesOrNo,
+,,,2,"Controls humidity and temperature level on information processing
+facilities, and continuously monitors it.",,YesOrNo,
+,,,3,Implements proper fire suppression and detection systems.,,YesOrNo,
+,,,4,"Implements proper control for monitoring water leakage at the
+physical information processing facilities.",,YesOrNo,
+A.9.3,Secure Working Areas,A.9,1,"Implements adequate physical security mechanisms on offices, data
+centres, and other working areas, based on criticality of such areas.",,YesOrNo,
+,,,2,"Provides employees with proper guidelines and awareness on the
+implemented protection controls in the working areas.",,YesOrNo,
+,,,3,"Develops, distributes and maintains a clear desk and clear screen
+policy that addresses users' responsibilities on securing desks, working areas,
+and electronic user devices (e.g. PCs, printers, etc.).",,YesOrNo,
+,,,4,Implements proper security controls over delivery and loading areas.,,YesOrNo,
+A.9.4,Securing Equipment,A.9,1,"Places information systems related equipment in secure and
+protected locations.",,,
+,,,2,"Protects power equipment and cabling of information processing
+facilities from damages",,,
+,,,3,"Implements UPS (uninterruptable power supply) systems to avoid
+power failures where deemed necessary.",,,
+,,,4,"Implements proper maintenance procedures on all information
+processing facilities.",,,
+,,,5,"Implements proper protection controls over equipment and
+information processing facilities residing offsite, including its movement,
+storage and handling.",,,
+,,,6,"implements adequate security controls on the disposal or re-use of
+any equipment or information processing facility.",,,
+A.9.5,Periodic Testing,A.9,1,"Conducts proper testing and assessment periodically over all
+implemented environmental and physical protection controls.",,,
+A.10,Roles and Responsibilities of HR,,,,,,
+A.10.1,Prior to Employment Security Controls,A.10,1,"Defines security roles and responsibilities of employees, contractors
+and outsourced employees in alignment with the entity high level information
+security policy.",,YesOrNo,
+,,,2,"Documents security roles and responsibilities in the job descriptions
+and objectives of all employees, contractors and outsourced employees.",,YesOrNo,
+,,,3,"Conducts proper screening and background verification for all
+employment candidates according to the applicable laws and policies of Dubai
+Government.",,YesOrNo,
+,,,4,"Ensures that all employment contracts define security obligations
+of employees, contractors and outsourced employees, and that approved
+candidates read and agree such obligations.",,YesOrNo,
+,,,5,"Incorporates Information Security Awareness as part of induction
+programs of newly hired employees, contractors and outsourced employees.",,YesOrNo,
+A.10.2,During Employment Security Controls,A.10,1,"Accounts the senior management responsible for enforcing
+compliance of their employees, contractors and outsourced employees to the
+entity information security policies and procedures.",,YesOrNo,
+,,,2,"Sets a clear and defined disciplinary action for employees, contractors
+and outsourced employees who may breach information security policies and
+procedures.",,YesOrNo,
+,,,3,"Ensures that all employees, contractors and outsourced employees
+are provided with information security awareness programs on a regular basis.",,YesOrNo,
+A.10.3,Termination/Change of Employment Security controls,A.10,1,"Implements proper security controls on the process of terminating
+or changing employment.",,YesOrNo,
+,,,2,"Communicates termination responsibilities to the terminated
+employee in relation to confidentiality agreements and employment contracts.",,YesOrNo,
+,,,3,"Implements a process for returning all entity's assets upon
+termination of employment.",,YesOrNo,
+,,,4,"Implements a process for revoking or changing access rights and
+privileges upon termination or change of employment.",,YesOrNo,
+A.11,Compliance and Audit,,,,,,
+A.11.1,"Compliance with Federal and Local Government Legal
+Requirements",A.11,1, Federal Law No. 1 of Year 2006 on Electronic Commerce and Transactions,,YesOrNo,
+,,,2, Federal Decree-Law No. 5 of 2012 on Combating Cybercrimes,,YesOrNo,
+,,,3, Transactions and electronic commerce Law No. 2 issued in Year 2002 by Dubai Government,,YesOrNo,
+,,,4, The Executive Council of Dubai Government Resolution Number (13) issued in Year 2012 for Information Security Regulation,,YesOrNo,
+,,,5,Does it comply with The Government of Dubai Human Resources Management Law No. of 2006 and its amendment?,,YesOrNo,
+,,,6,Dubai Electronic Security Center Law No.11 of 2014,,YesOrNo,
+,,,7,Any other laws pertaining to information securit,,YesOrNo,
+A.11.2,Compliance Controls,A.11,1,"Identifies the laws or regulations that are applicable to the entity’s
+scope of services.",,YesOrNo,
+,,,2,"Develops, distributes and maintains a formal Intellectual Property
+Rights (IPR) policy that defines the legal obligations pertaining to the use of information assets",,YesOrNo,
+,,,3,Ensures compliance with Intellectual Property Rights,,YesOrNo,
+,,,4,"Prohibits employees from manipulating, making or distributing
+unauthorized copies of copyrighted/licensed materials, software or
+applications.",,YesOrNo,
+,,,5,"Implements proper protection controls for the storage, retention
+and disposal of entity’s information assets and records.",,YesOrNo,
+A.11.3,"Protection of Private Information of Individuals and
+Corporates",A.11,1,"Develops, distributes and maintains a privacy policy that addresses
+the legal requirements for the prevention of misuse of personal information of the entity's customers, for any reason.",,YesOrNo,
+,,,2,"Develops, distributes and maintains a formal procedure detailing
+the protection measures required for the processing of private data and
+information.",,YesOrNo,
+,,,3,"Conducts continuous awareness sessions on the requirements of
+protecting private data and information for the responsible personnel.",,YesOrNo,
+,,,4,"Restricts, minimizes and monitors access to personal and private
+data, and applies proper controls on the process of collecting, processing and transmission of personal data, which should be on «a need-to-know» basis.",,YesOrNo,
+,,,5,"Sets proper accountability procedures in the event of any private
+information and personal data leakage.",,,
+A.11.4,"Compliance with Information Security Policies and
+Standards",A.11,1,"Conducts periodic reviews to verify compliance of the implemented
+information security policies and procedures.",,YesOrNo,
+,,,2,"Conducts periodic technical reviews on information systems to
+verify compliance with the security controls/standard",,YesOrNo,
+A.11.5,"Audit of Information Security Regulation
+Implementation",A.11,1,"Conducts periodic reviews to verify compliance of the implemented
+information security policies and procedures.",,YesOrNo,
+,,,2,"Conducts periodic technical reviews on information systems to
+verify compliance with the security controls/standard",,YesOrNo,
+A.12,Information Security Assurance and Performance Assessment,,,,,,
+A.12.1,Information Security Key Performance Indicators,A.12,1,"In support of the government entity strategic and operational planning
+processes to secure the entity's mission.",,YesOrNo,
+,,,2,"Integrated into the annual reporting of effectiveness of the government
+entity's information security controls.",,YesOrNo,
+,,,3,"Defined to assist in monitoring compliance with the Information Security
+Regulation.",,YesOrNo,
+,,,4,"Reviewed regularly and used to support policy, resources allocation, budget
+decisions, and as an assessment of information security program posture
+and operational risks.",,YesOrNo,
+,,,5,"Used to address issues and deficiencies and take corrective actions such as
+revising policies and procedures, or provide information security trainings
+for employees.",,YesOrNo,
+,,,6,"Built from inputs of a variety of entity's stakeholders, such as IT operations,
+incident response team, human resources, physical security team, or others
+using different data sources, such as risk assessments, penetration testing,
+and continuous monitoring.",,YesOrNo,
+,,,7,"Yielding quantifiable information for comparison purposes, while using formulas for analysis, and tracking changes using the same point of reference. Percentage, average or absolute numbers can be used, depending on the activity being measureA?",,YesOrNo,
+,,,8,Measured over consistent and repeatable information security processes.,,YesOrNo,
+,,,9,"Integrates information security measurements and Key Performance
+Indicators (KPIs) in entity’s business processes and assigns business process
+owners the responsibility of achieving such measures.",,,
+,,,10,"Approves the entity’s information security measurements and Key
+Performance Indicators (KPIs) by the higher management of the entity.",,,
+,,,11,"Conducts periodic reviews on the results of information security
+measurements in order to ensure continual improvement of information
+security program within the entity.",,,
+,,,12,"Records actions and events that could have an impact on the
+effectiveness or performance of the Information Security Regulation.",,,
+A.12.2,Information Security Dashboard,A.12,1,"Implements, as necessary, an integrated dashboard (or incorporates
+into an existing entity Performance Measurement tool) for combining all
+measured information security KPIs to be reviewed and monitored in a periodic manner, by the senior management and the responsible stakeholders, in order to ease the decision making process, and facilitate the overall planning for the information security program/management system",,YesOrNo,
+A.13,Cloud Secuirty,,,,,,
+A.13.1,Cloud Security Policy / Procedure,A.13,1,"Develops, distributes and maintains a formal cloud security policy
+that addresses the entity’s requirements for overall cloud management
+process and outlines roles and responsibilities of relevant stakeholders.",,YesOrNo,
+,,,2,"Develops, distributes and maintains a cloud security procedure that
+provides implementation details for establishing and managing secured cloud
+service environment.",,YesOrNo,
+,,,3,"Conducts periodic reviews of cloud security policy and procedure or
+if significant changes occur to ensure their continuing suitability, adequacy,
+and effectiveness.",,YesOrNo,
+A.13.2,Cloud Security Principles,A.13,,,,YesOrNo,
+A.13.2.1,Data Location,A.13.2,1,"Prevents handling and storing classified data with a Cloud Service
+Provider (CSP), outside the legal jurisdiction or geographical boundaries of
+the United Arab Emirates, including for CSP’s Backup or Disaster Recovery
+purposes.",,YesOrNo,
+A.13.2.2,Data Classification and Handling,A.13.2,1,"Defines and communicates required security controls to Cloud
+Service Provider (CSP) for handling of data in accordance to the applicable
+laws & regulations",,,
+A.13.2.3,Architecture and Deployment Model,A.13.2,1,"Ensures adequate cloud security controls are implemented by Cloud
+Service Provider (CSP) as per architecture and deployment model approved
+by the entity.",,multi_choice_checkboxes,Information security risks and mitigation
+A.13.2.4,Service Agreements,A.13.2,1,"Ensures through a formal agreement that the Cloud Service Provider
+(CSP) has no ownership rights on the stored data regardless of the format or
+storage medium.",,multi_choice_checkboxes,Data protection and storage
+,,,2,"Develops and maintains a formal agreement with Cloud Service
+Provider (CSP) addressing the following information security requirements
+as a minimum A. Information security risks and mitigation
+B. Data protection and storage
+C. Information security incidents handling
+D. Change, Recovery and Restoration",,multi_choice_checkboxes,Information security incidents handling
+,,,,,,multi_choice_checkboxes,"Change, Recovery and Restoration"
+A.13.2.5,Data Portability and Continuity,A.13.2,1,"Ensures that Cloud Service Provider (CSP) has the adequate
+measures and processes to support data portability whenever the entity
+decides to moving its data.",,,
+,,,2,"Ensures proper cloud security controls are implemented by Cloud
+Service Provider (CSP), addressing entity’s requirements for periodic testing
+of the continuity and disaster recovery plans and communicating the results
+to entity.",,multi_choice_checkboxes,"Yes, the organization have a backup CSP to migrate the data"
+,,,,,,multi_choice_checkboxes,The present CSP is scalable for migration of data?
+A.13.2.6,Compliance and monitoring,A.13.2,1,"Conducts periodic reviews or audits to verify Cloud Service Provider’s
+(CSPs) compliance with the applicable security policies and contractual
+requirements.",,Descriptive,The organization has implemented proper cloud security controls as per the regulatory standards

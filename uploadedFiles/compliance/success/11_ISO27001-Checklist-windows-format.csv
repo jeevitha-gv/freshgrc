@@ -1,0 +1,24 @@
+Table 1,,,,,,
+Compliance Name:,ISO 27000 - Security Compliance,Description,"ISO/IEC 27001:2013 is an information security standard that was published in September 2013[1] It supersedes ISO/IEC 27001:2005 and is published by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) under the joint ISO and IEC subcommittee, ISO/IEC JTC 1/SC 27.[2] It is a specification for an information security management system (ISMS). Organizations that meet the standard may be certified compliant by an independent and accredited certification body on successful completion of a formal compliance audit.",,,
+Standard,Control Set,Associated Standard,Control Number,Controls,Type,Control Options
+A.5,Information Security Policies,,,,,
+A.5.1,Management direction for information security,A.5,,,,
+A.5.1.1,Policies for information security,A.5.1,1,Do Security policies exist?,YesOrNo,
+,,,2,Are all policies approved by management?,YesOrNo,
+,,,3,Are policies properly communicated to employees?,YesOrNo,
+A.5.1.2,Review of the policies for information security,A.5.1,1,Are security policies subject to review?,YesOrNo,
+,,,2,Are the reviews conducted at regular intervals?,YesOrNo,
+,,,3,Are reviews conducted when circumstances change?,YesOrNo,
+A.6,Organisation of information security,,,,,
+A.6.1,Internal Organisation,A.6,,,,
+A.6.1.1,Information security roles and responsibilities,A.6.1,1,Choose from below for which responsibilities are clearly identified?,multi_choice_checkboxes,protection of individual assets
+,,,,,multi_choice_checkboxes,carrying out specific security processes
+,,,2,Choose from below for which responsibilities are clearly defined?,multi_choice_checkboxes,protection of individual assets
+,,,,,multi_choice_checkboxes,carrying out specific security processes
+,,,3,Choose from below for which responsibilities are clearly communicated to the relevant parties?,multi_choice_checkboxes,protection of individual assets
+,,,,,multi_choice_checkboxes,carrying out specific security processes
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

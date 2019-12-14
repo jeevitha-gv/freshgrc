@@ -1,0 +1,3 @@
+,,,,,,                Risk Scoring,,,,,,,,,,,,,,          Quantitaive Analyis,,,
+Subject,Scenario,Affected Assets,Risk Source,Affected Teams,Technology,Likelihood,Impact,Frequency of occurence without control,Months,Worst Case Description,Worst Case Finacial Exposure,Risk Categories,Other Risks,Typical Case Description,Frequency of occurence without control,Frequency of occurence with control,Typical case likelihood,Typical Case Financial Exposure,Exposure Factor,Asset Value,Anualized Rate Of Ocurance (ARO),Risk Assesment,Additonal Notes
+Testing Risk,Regulation Risk,Affected Assets,People,Operational Team,Anti-Virus,Unlikely,Moderate,1,2,2,2,Compliance Risk,New Risk,New Risk,1,0,High,1k$,2,2,2,New Risk,New Risk
