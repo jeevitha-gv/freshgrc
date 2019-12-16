@@ -29,7 +29,7 @@ class ethics
 
 	public function getAllemployeeList()
 	{
-		$sql="SELECT `id`,`name`,`department`,`PolicyId`,`status` FROM `ethics` where `status`='Clarification Required'";
+		$sql="SELECT `id`,`name`,`department`,`PolicyId`,`status`,`date`,`main_heading` FROM `ethics` where `status`='Clarification Required'";
 		 $dbOps = new DBOperations();
         return $dbOps->fetchData($sql); 
 	}
@@ -165,13 +165,13 @@ public function approverAccepted($employeedata)
 
 public function getalllistforreview()
 {
-	$sql="SELECT `id`,`name`,`department`,`PolicyId`,`status` FROM `ethics` where (`status`='Clarified' OR `status`='Initiated') ";
+	$sql="SELECT `id`,`name`,`department`,`PolicyId`,`status`,`date`,`main_heading`  FROM `ethics` where (`status`='Clarified' OR `status`='Initiated') ";
 		 $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);	
 }
 public function getalllistforapprover()
 {
-	$sql="SELECT `id`,`name`,`department`,`PolicyId`,`status` FROM `ethics` where `status`='Reviewed'";
+	$sql="SELECT `id`,`name`,`department`,`PolicyId`,`status`,`date`,`main_heading` FROM `ethics` where `status`='Approved'";
 		 $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);	
 }

@@ -36,6 +36,11 @@ class PolicyManager {
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
     }
+      public function getAllPolicydata($userId, $userRole){
+        $sql = 'SELECT p.id as PolicyId, p.title as title, pt.name as policy_type,p.effective_from as start_date, p.status as status, u.last_name as policyName,pp.name as policyprocedure from policy p, user u, policy_types pt, policy_procedure pp where p.approver = u.id AND p.policy_type=pt.id AND p.policy_procedure=pp.id AND (p.status="to be approved" OR p.status="published" OR p.status="returned" OR p.status="rejected")ORDER BY p.id desc';     
+        $dbOps = new DBOperations();
+        return $dbOps->fetchData($sql);        
+    }
 
 public function getAllPolicysForPolicyReviewer1($userId){
         $sql = 'SELECT p.id as policyId, p.title as title, pt.name as policy_type, p.status as status, u.last_name as policyName,pp.name as policyprocedure from policy p, user u, policy_types pt, policy_procedure pp where p.reviewer = u.id AND p.policy_type=pt.id AND p.policy_procedure=pp.id AND (p.status="to be reviewed" OR p.status="reviewed" )ORDER BY p.id desc';     

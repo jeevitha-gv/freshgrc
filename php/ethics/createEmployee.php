@@ -24,9 +24,9 @@ function getDataFromRequest(){
     $employeedata = new stdClass();
     $employeedata->name = $_POST['name'];
     $employeedata->employeeID = $_POST['employeeID'];
-    $employeedata->department = implode(",",$_POST['department']);
+    $employeedata->department = $_POST['department'];
     $employeedata->PolicyId = $_POST['PolicyId'];
-    $employeedata->location =implode(",",$_POST['location']);
+    $employeedata->location =$_POST['location'];
     $employeedata->date = $_POST['date'];
     $employeedata->Reason = $_POST['Reason'];
      $employeedata->main_heading = $_POST['main_heading'];

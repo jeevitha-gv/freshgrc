@@ -74,6 +74,12 @@
 							</a>
 						<?php } ?>
 
+                       	<?php if($_SESSION['user_role']=='employee' || $_SESSION['user_role']=='ethics_reviewer'|| $_SESSION['user_role']=='ethics_approver') {?>
+							<a href="view/ethics/ethics_dashboard.php">
+								<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+							</a>
+						<?php } ?>
+
 						</div>
 					</div>
 
@@ -122,6 +128,49 @@
 								</li>
 							</ul>
 
+						<?php } ?>
+								<?php 
+							if($_SESSION['user_role']=='employee') { ?>
+
+							<ul class="kt-menu__nav ">
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Ethics</span></a></li>
+								
+								<li class="kt-menu__item " aria-haspopup="true"><a href="view/ethics/employeelist.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Policy</span></a>
+								</li>
+
+								<li class="kt-menu__item " aria-haspopup="true"><a href="view/ethics/employeeReportlist.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Exception</span></a></li>
+
+						
+						
+							</ul>
+						<?php } ?>
+						<?php 
+							if($_SESSION['user_role']=='ethics_reviewer') { ?>
+
+							<ul class="kt-menu__nav ">
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Ethics</span></a></li>
+								
+						
+								<li class="kt-menu__item " aria-haspopup="true"><a href="view/ethics/reviewlist.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Exception</span></a></li>
+
+
+						
+							</ul>
+						<?php } ?>
+							<?php 
+							if($_SESSION['user_role']=='ethics_approver') { ?>
+
+							<ul class="kt-menu__nav ">
+								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Ethics</span></a></li>
+								
+						
+								<li class="kt-menu__item " aria-haspopup="true"><a href="view/ethics/approverList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Exception</span></a></li>
+								<li class="kt-menu__item " aria-haspopup="true"><a href="view/ethics/EthicsReport.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Report</span></a></li>
+						
+
+						
+						
+							</ul>
 						<?php } ?>
 						<?php 
 							if($_SESSION['user_role']=='risk_owner') { ?>
