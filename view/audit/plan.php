@@ -89,7 +89,7 @@ CREATE PLAN
 </div>        
 </div>
 
-<div class="kt-portlet__body" style="overflow-x:scroll;">
+<div class="kt-portlet__body" >
  <div class="form-group row ">
                     <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
                     <input type="hidden" class="form-control" id="auditId">
