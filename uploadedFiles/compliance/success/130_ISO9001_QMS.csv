@@ -1,0 +1,40 @@
+Compliance Name:,ISO 9001:2015 Quality Management System,Description,Quality Management System Checklist ,,,
+Standard,Control Set,Associated Standard,Control Number,Controls,Type,Control Options
+A.5,Context of the organization ,,,,,
+A.5.1,Understanding the organization and its context ,A.5,,,,
+A.5.1.1,Policies for QMS,A.5.1,1,"Has the organization identified all external and
+internal issues relevant to its purpose and
+direction?",YesOrNo,
+,,,2,"What is the process for monitoring and review of
+the external and internal issues? 
+",YesOrNo,
+A.5.2,Understanding the needs and expectations of interested parties ,A.5,,,,
+A.5.1.2,Policies for QMS,A.5.1,1,"Has the organization identified all relevant
+interested party requirements that are relevant to
+the quality management system? How is the
+information monitored? ",YesOrNo,
+A.5.3,Determining the scope of the Quality Management System,A.5,,,,
+A.5.3.1,Policies for QMS,A.5.3,1,"Is the scope of the quality management system,
+including products and services provided and
+justification for any exclusion, defined?",YesOrNo,
+,,,2,"Is the scope of the quality management system
+maintained as documented information? ",YesOrNo,
+A.5.3.2,"Are the following considered when determining
+the scope? ",A.5.3,1,External and Internal Issues,YesOrNo,
+,,,2,"Requirements of relevant interested
+parties",YesOrNo,
+,,,3,The products and services provided,YesOrNo,
+,,,4,"Is there assurance that all requirements of the
+standard that can be applied, have been applied
+by the organization and those determined nonapplicable
+do not affect the organization’s ability
+or responsibility to ensure conformity?",YesOrNo,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+	<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>id</th>
+				<th>name</th>
+					<th>lname</th>
+						<th>id</th>
+							<th>id</th>
+								<th>id</th>
+									<th>id</th>
+			
+		</tr>
+	</thead>
+		<tbody>
+			<tr class="sa">
+				<td>7</td>
+				<td>p</td>
+				<td>k</td>	
+				<td>2</td>
+				<td>i</td>
+				<td>9804565</td>
+				<td>sdfs</td>
+			</tr>
+				<tr>
+				<td>7</td>
+				<td>p</td>
+				<td>k</td>	
+				<td>2</td>
+				<td>i</td>
+				<td>9804565</td>
+				<td>sdfs</td>
+			</tr>
+		</tbody>
+
+</body>
+</html>
+<script>
+	$(document).ready(function(){
+		$('tr').click(function(){
+		
+		$(this).addClass('sa');
+		$(this).removeClass('sa');
+		$('.sa').css('background-color','green');
+		$('.sa').css('background-color','white');
+		});
+	
+	});
+
+</script>
