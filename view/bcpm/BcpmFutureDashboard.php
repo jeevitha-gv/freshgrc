@@ -47,7 +47,8 @@ $complianceWiseStatusGraph=false;
     <link href="metronic/theme/assets/layouts/layout4/css/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="metronic/theme/assets/layouts/layout4/css/themes/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="metronic/theme/assets/layouts/layout4/css/custom.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/lib/font-awesome/font-awesome.min.css">      
+    <link rel="stylesheet" href="assets/css/lib/font-awesome/font-awesome.min.css">  
+    <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />    
 
     <style>
     .jqstooltip { 

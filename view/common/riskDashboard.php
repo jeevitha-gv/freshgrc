@@ -40,6 +40,7 @@ $manager=new dashboard();
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
 <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+<link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 
   </head>
 
