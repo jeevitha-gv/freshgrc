@@ -7,8 +7,9 @@
 
 
 
-    <label class="col-lg-3 col-form-label">Technology: </label>        
-<div class="col-lg-9">
+   
+     <label class="col-lg-3 col-form-label">Technology: </label>        
+        <div class="col-lg-9"> 
  <select id="technology" name="technologyDropDown"  class="form-control select2" multiple="" >
              <option></option>    
     <?php foreach($allTechnology as $technology){ ?>
