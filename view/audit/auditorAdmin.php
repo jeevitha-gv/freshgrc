@@ -15,7 +15,7 @@ require_once __DIR__.'/../header.php';
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Metronic | Buttons Examples</title>
+        <title>freshgrc</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -80,7 +80,7 @@ require_once __DIR__.'/../header.php';
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
    <?php 
     include '../siteHeader.php';
