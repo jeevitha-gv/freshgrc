@@ -69,7 +69,7 @@ $companyId=$id[0]['id'];
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />               
 <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+<link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 <link href="metronic/theme/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
  <style type="text/css">
