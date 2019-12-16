@@ -140,7 +140,7 @@ function createEmployee() {
     var modalDetails = createEmployeeDetails();
     if(modalDetails.name==""||modalDetails.employeeID=="--Select Employeeid--"||modalDetails.department==""||modalDetails.PolicyId==""||modalDetails.location==""||modalDetails.date==""||modalDetails.Reason=="--Select Reason--"||modalDetails.main_heading==""||modalDetails.subheading==""){
 
-        swal({ 
+        Swal.fire({ 
            title:  'Please all the form fields',
            type: 'warning',
            confirmButtonColor: '#3085d6',
@@ -155,7 +155,7 @@ function createEmployee() {
             url: "/freshgrc/php/ethics/createEmployee.php",
             data: modalDetails
         }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Created",
               text: "Your Plan Has Been Created",
               type: "success",
@@ -189,7 +189,7 @@ function acceptByreviewer()
             url: "/freshgrc/php/ethics/reviewEmployee.php",
             data: modalDetails
             }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Accepted",
               text: "Your Plan Has Been Accepted",
               type: "success",
@@ -220,7 +220,7 @@ function RejectByReviewer()
             url: "/freshgrc/php/ethics/reviewEmployee.php",
             data: modalDetails
             }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Rejected",
               text: "Your Plan Has Been Rejected",
               type: "success",
@@ -252,7 +252,7 @@ function needClarification()
             url: "/freshgrc/php/ethics/reviewEmployee.php",
             data: modalDetails
             }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Clarified",
               text: "Your Plan Has Been Clarified",
               type: "success",
@@ -282,7 +282,7 @@ function acceptByApprover()
             url: "/freshgrc/php/ethics/approverFinal.php",
             data: modaldetails
             }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Accepted",
               text: "Your Plan Has Been Accepted",
               type: "success",
@@ -314,7 +314,7 @@ function RejectByApprover()
             url: "/freshgrc/php/ethics/approverFinal.php",
             data: modaldetails
              }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Rejected",
               text: "Your Plan Has Been Rejected",
               type: "success",
@@ -346,7 +346,7 @@ function fileUpload(){
       contentType: false, // important
       data: myFormData,
       success: function (data) {
-         swal({
+         Swal.fire({
               title: "File has been uploaded",
               text: "Your Plan Has Been Created",
               type: "success",
@@ -399,7 +399,7 @@ debugger
             url: "/freshgrc/php/ethics/createEmployee.php",
             data: modalDetails
         }).done(function (data) {
-           swal({
+           Swal.fire({
               title: "Plan Updated",
               text: "Your Plan Has Been Updated",
               type: "success",
