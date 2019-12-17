@@ -98,7 +98,7 @@ require_once __DIR__.'/../../php/disaster/disasterManager.php';
   
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-           
+    
         <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 </head>
 <?php 
@@ -108,8 +108,6 @@ require_once __DIR__.'/../../php/disaster/disasterManager.php';
 <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
     <!-- begin:: Page -->
-
-
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
@@ -396,8 +394,9 @@ DISASTER RECOVERY REPORT
     </div>
 </div>
 <?php 
-       
+        $currentMenu = 'auditorAdmin';
         include '../audit/sidemenu.php';
+         $userRole = $_SESSION['user_role'];
 
     ?>
 <!-- begin::Global Config(global config for global JS sciprts) -->

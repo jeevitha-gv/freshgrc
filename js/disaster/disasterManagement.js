@@ -167,13 +167,21 @@ function getModalDetailsFromModal() {
 function manageModal4(){ 
 debugger 
 var   modalDetails= getModalDetailsFromModal();
-    
+if (modalDetails.scope == "") {
+    Swal.fire({
+        type: 'warning',
+        title: 'Please fill all form fileds',
+        confirmButtonText: 'Ok',
+        confirmButtonColor: '#3085d6',
+    });
+}
+ else {
   $.ajax({
         type: "POST",
         url: "/freshgrc/php/disaster/manageDisaster.php",
         data: modalDetails
     }).done(function (data) {
-         swal({ 
+         Swal.fire({ 
            title:  'Plan Created!',
            confirmButtonColor: '#3085d6',
            confirmButtonText:'ok',
@@ -182,6 +190,7 @@ var   modalDetails= getModalDetailsFromModal();
  window.location="/freshgrc/view/disaster/disasterlist.php";
 
     });
+  }
 }
 
 function performDMActions() {

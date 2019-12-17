@@ -53,7 +53,7 @@
 							</a>
 						<?php } ?>
 						<?php if($_SESSION['user_role']=='disaster_owner'||$_SESSION['user_role']=='disaster_tester'||$_SESSION['user_role']=='disaster_trainer') {?>
-							<a href="view/compliance/complianceDashboardAdmin.php">
+							<a href="view/disaster/disasterDashboard.php">
 								<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
 							</a>
 						<?php } ?>
@@ -311,10 +311,7 @@
 						<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterPlan.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Plan</span></a>
 						</li>
 
-						<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterReportlist.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Report</span></a></li>
-
 						<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterlist.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> List</span></a></li>
-
 
 						</ul>
 						<?php } ?>
@@ -327,8 +324,6 @@
 
 						<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterTestList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Stratergy</span></a>
 						</li>
-
-						<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterReportlist.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Report</span></a></li>
 
 						</ul>
 						<?php } ?>
