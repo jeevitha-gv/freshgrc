@@ -61,7 +61,7 @@
         <!--begin::Layout Skins(used by all pages) -->
                 <!--end::Layout Skins -->
 
-        <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+<link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
     </head>
     <!-- end::Head -->
     <?php 
