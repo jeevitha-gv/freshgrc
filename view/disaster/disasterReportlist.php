@@ -60,7 +60,8 @@
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />                    
 <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+
+<link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 </head>
 <?php 
         include '../siteHeader.php';
@@ -94,7 +95,7 @@ DISASTER RECOVERY
 </div>
 
 </div>
-            <div class="kt-portlet__body">
+            <div class="kt-portlet__body" style="overflow-x: scroll;">
             <!-- <div class="col-sm-12"> -->
                 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                     <thead>

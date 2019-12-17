@@ -98,12 +98,13 @@ require_once __DIR__.'/../../php/disaster/disasterManager.php';
   
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+    
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 </head>
-
 <?php 
         include '../siteHeader.php';
-?>
+        ?>
+
 <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
     <!-- begin:: Page -->
@@ -130,7 +131,7 @@ DISASTER RECOVERY REPORT
 </div>
 
 </div>
-                         <div class="panel-body">
+                         <div class="panel-body" style="overflow-x: scroll;">
                                  <table class="table table-striped list-table table-bordered" id="kt_table_1">
                                   <tr >
                                       <th colspan="6">Summary & Scope</th>
