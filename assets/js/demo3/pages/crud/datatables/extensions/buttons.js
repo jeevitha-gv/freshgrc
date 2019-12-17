@@ -62,6 +62,9 @@ var KTDatatablesExtensionButtons = function() {
 							Recorded: {'title': 'Recorded', 'class': 'kt-badge--danger'},
 							Resolved: {'title': 'Resolved', 'class': ' kt-badge--success'},
 							Assigned: {'title': 'Assigned', 'class': ' kt-badge--warning'},
+							training: {'title': 'Training', 'class': ' kt-badge--primary'},
+							tested: {'title': 'Tested', 'class': ' kt-badge--success'},
+							trained: {'title': 'Trained', 'class': ' kt-badge--warning'},
 						};
 						if (typeof status[data] === 'undefined') {
 							return data;
