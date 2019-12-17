@@ -60,25 +60,31 @@ class DisasterManager {
         return $dbOps->cudData($sql, 'ssi', $paramArray);        
     }
 
-     private function getAllDisastersForDisasterOwner(){
-        $sql = 'SELECT id,scope,contracted_name,status FROM disaster_plan ORDER BY id DESC';     
+     public function getAllDisastersForDisasterOwner($userId){
+        $sql = 'SELECT id,scope,contracted_name,purpose,company_name,covered_system_name,status,company_id FROM disaster_plan ORDER BY id DESC';     
         $dbOps = new DBOperations();
+        $paramArray[] = array();
+        $paramArray[] = $userId;
         return $dbOps->fetchData($sql);        
     }    
     
-    private function getAllDisastersForDisasterTrainer(){
-        $sql = 'SELECT id,scope,contracted_name,status FROM disaster_plan WHERE status="tested" order by id desc';
+    public function getAllDisastersForDisasterTrainer($userId){
+        $sql = 'SELECT id,scope,contracted_name,purpose,company_name,covered_system_name,status FROM disaster_plan WHERE status="tested" order by id desc';
         $dbOps = new DBOperations();
+        $paramArray[] = array();
+        $paramArray[] = $userId;
         return $dbOps->fetchData($sql);        
     }
     
-    private function getAllDisastersForDisasterTester(){
-        $sql = 'SELECT id,scope,contracted_name,status FROM disaster_plan WHERE status="create" order by id desc';
+    public function getAllDisastersForDisasterTester($userId){
+        $sql = 'SELECT id,scope,contracted_name,purpose,company_name,covered_system_name,status FROM disaster_plan WHERE status="create" order by id desc';
         $dbOps = new DBOperations();
+        $paramArray[] = array();
+        $paramArray[] = $userId;
         return $dbOps->fetchData($sql);        
     }    
     public function getAllDisasterReport($userId){
-        $sql = 'SELECT id,scope,contracted_name,status FROM disaster_plan WHERE status="training"order by id desc';
+        $sql = 'SELECT id,scope,contracted_name,purpose,company_name,covered_system_name,status FROM disaster_plan WHERE status="training"order by id desc';
         $paramArray = array();
         $paramArray[] = $userId;        
         $dbOps = new DBOperations();

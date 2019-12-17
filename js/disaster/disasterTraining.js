@@ -1,8 +1,15 @@
-$(document).ready(function() { $.fn.dataTable.ext.errMode = 'none'; });
 
     $(document).ready(function() {
 
-    
+    $(".datepickerClass").each(function() {
+        $(this).datepicker({
+            dateFormat: "yy-mm-dd",
+            minDate: 0,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "2017:2099"  
+        });
+    }); 
     
     $('#modaldetails').on('click', 'tr', function(){
         if ($(this).hasClass('selected')){
@@ -146,7 +153,7 @@ var   modalDetails= getTrainingDetailsFromModal();
         url: "/freshgrc/php/disaster/manageDisaster.php",
         data: modalDetails
     }).done(function (data) {
-         swal({ 
+         Swal.fire({ 
            title:  'Training completed!',
            confirmButtonColor: '#3085d6',
            confirmButtonText:'ok',

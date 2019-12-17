@@ -154,7 +154,7 @@ var   modalDetails= getModalDetailsFromModal();
         url: "/freshgrc/php/disaster/manageDisaster.php",
         data: modalDetails
     }).done(function (data) {
-         swal({ 
+         Swal.fire({ 
            title:  'Test Completed !',
            confirmButtonColor: '#3085d6',
            confirmButtonText:'ok',

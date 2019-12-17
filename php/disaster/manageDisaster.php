@@ -49,7 +49,7 @@ function getDataFromRequest(){
     $riskData->external_phone = htmlentities($_POST['external_phone'], ENT_QUOTES);
     $riskData->external_email = htmlentities($_POST['external_email'], ENT_QUOTES);
     $riskData->external_system = htmlentities($_POST['external_system'], ENT_QUOTES); 
-    $riskData->external_role_description = htmlentities($_POST['external_role_description'] ENT_QUOTES);
+    $riskData->external_role_description = htmlentities($_POST['external_role_description'], ENT_QUOTES);
     $riskData->system_category = $_POST['system_category'];
     $riskData->system_resource_type = htmlentities($_POST['system_resource_type'], ENT_QUOTES);
     $riskData->system_resource_name = htmlentities($_POST['system_resource_name'], ENT_QUOTES);
