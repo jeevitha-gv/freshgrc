@@ -14,7 +14,7 @@ $companyId=$_SESSION['company'];
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Fresh GRC Admin</title>
+        <title>Freshgrc</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -59,40 +59,24 @@ $companyId=$_SESSION['company'];
 <link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />                    
+<link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+    </head>
+   <?php 
+        include '../siteHeader.php';
+       
 
-     
-    <script src="js/audit/auditCreateManagement.js"></script>
-  <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
-    <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
-    <!-- <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>  -->
-      
-    <!-- <script type="text/javascript" src="assets/DataTables/DataTables-1.10.12/js/jquery.dataTables.min.js"></script> -->
-        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/dataTables.buttons.min.js"></script> 
-           <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.flash.min.js"></script> 
-        <script type="text/javascript" src="../../assets/DataTables/pdfmake.min.js"></script>
-        <script type="text/javascript" src="../../assets/DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
-        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.html5.min.js"></script>
-        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
-        <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>  
-  
-                    
-   <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-           
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
-</head>
-<?php
- include '../siteHeader.php';
- ?>
+    ?>
+    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"  >
 
-<body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
-
+       
     <!-- begin:: Page -->
-
 
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -13%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
@@ -101,118 +85,102 @@ $companyId=$_SESSION['company'];
 
 
 <div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
+<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;"> 
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
-<h3 class="kt-portlet__head-title" style="color: white;">
-BCPM Maintainence
+<h3 class="kt-portlet__head-title" style="color:white;">
+BCPM Review
 </h3>
 </div>
 
 </div>
-<div class="panel-body" style="overflow-x: scroll;">
-                         <div class="row">
-                <div class="col-md-12">
-                   <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
+ <div class="panel-body">
+        <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <!-- <h3 class="page-header"></h3> -->
+            <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
                     <input type="hidden" class="form-control" id="bcpmId" value="<?php echo $bcpmId ?>">
-                     <input type="hidden" class="form-control" id="action" value="maintainancedone">
-                <div class="form-group">
-              <label>Team Guidance</label>
-              <input type="text" class="form-control" id="team_guidance">
+                    <input type="hidden" class="form-control" id="action" value="exercised">
+          <div class="form-group">
+          <label for="usr" style="font-size: 15px;">Number of exercises Conducted every year:</label>
+          <input type="number" class="form-control" id="number_exercise" >
+        </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <!-- <h3 class="page-header"></h3> -->
+          <div class="form-group">
+          <label for="usr"  style="font-size: 15px;">Exercise Type</label>
+           <select class="form-control" id="exercise_type">
+            <option></option>
+            <option>Discussion based </option>
+            <option>Table top</option>
+            <option>Command post</option>
+            <option>Live</option>
+             <option>Test</option>
+          </select>
+          <!-- <input type="text" class="form-control" id="exercise_type" > -->
+        </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <!-- <h3 class="page-header"></h3> -->
+          <div class="form-group">
+          <label for="usr"  style="font-size: 15px;">Purpose</label>
+          <input type="text" class="form-control" id="purpose" >
+        </div>
+        </div>
+        </div>
+        <div class="row" style="margin-top: 4px;">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <!-- <h3 class="page-header"></h3> -->
+          <div class="form-group">
+          <label for="usr"  style="font-size: 15px;">Participants</label>
+          <input type="text" class="form-control" id="participants" >
+        </div>
+        </div>
+          <div class="col-md-4 col-sm-4 col-lg-4">
+            <div class="form-group">
+            <label for="usr"  style="font-size: 15px;">Dates:</label>
+          <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 98% !important;">
+                        <input type="text" id="dates" class="form-control datepickerClass  notranslate" name="from" class="">
+                        </div>
+                      </div>
             </div>
-            </div>
-            <div class="col-md-6">
-            <h5 class="page-header">Pre-Disaster Responsibility</h5>
-             <div class="col-md-6">
-                <div class="form-group">
-              <label>Number</label>
-              <input type="number" class="form-control" id="pre_number" >
-            </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-4 col-sm-4 col-lg-4">
               <div class="form-group">
-              <label>Team Responsibility</label>
-              <textarea class="form-control" rows="1" id="pre_team" style="text-transform: capitalize;"></textarea>
+          <label for="usr"  style="font-size: 15px;">Revision Date Approver:</label>
+ <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 98% !important;">
+                        <input type="text" id="revision_date_approver" class="form-control datepickerClass  notranslate" name="from" class="">
+                        </div>
+        </div>
             </div>
             </div>
-            </div>
-             <div class="col-md-6">
-             <h5 class="page-header">Post-Disaster Responsibility</h5>
-              <div class="col-md-6">
-                <div class="form-group">
-              <label>Number</label>
-              <input type="number" class="form-control" id="post_number" >
-            </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-              <label>Team Responsibility</label>
-              <textarea class="form-control" rows="1" id="post_team" style="text-transform: capitalize;"></textarea>
-            </div>
-            </div>
-            </div>
-            <div class="col-md-12">
-              <h5 class="page-header">Awarness and Training</h5>
-                <div class="col-md-2">
-                  <div class="form-group">
-                  <label>Awarness Activity</label>
-                  <input type="text" class="form-control" id="awareness_activity" style="text-transform: capitalize;">
-                </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="form-group">
-                  <h6>Frequency</h6>
-                  <input type="number" class="form-control" id="frequency">
-                  <span>Note:* Number field is required</span>
-                </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="form-group">
-                  <label>Responsible Office</label>
-                  <input type="text" class="form-control" id="responsable_office" style="text-transform: capitalize;">
-                </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                  <label>Required Materials</label>
-                  <input type="text" class="form-control" id="required_materials" style="text-transform: capitalize;">
-                </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                  <label>Comments</label>
-                  <input type="text" class="form-control" id="comments" style="text-transform: capitalize;" >
-                </div>
-                </div>
-            </div>  
-              </div>
-               <div class="kt-footer">
-              <button class="btn btn-primary" type="submit" onclick="manageModal3()" style="float: right;">submit</button>
+      </div>
+            <div class="kt-footer">
+              <button class="btn btn-primary" type="submit" onclick="manageModal4()" style="float: right;">submit</button>
               <!-- <a ui-sref="home.bcpmexercise"><button class="btn btn-primary" type="submit">submit</button></a> -->
             </div>
-          </div>
-         </div>
+              </div>
+             
+                               </div>
+                      </div>
+                  </div>
+              </div>
         </div>
-       </div>
-      </div>
-     </div>
     </div>
 </div>
 <?php 
-       
-        $currentMenu = 'auditorAdmin';
-        include '../audit/sidemenu.php';
-         $userRole = $_SESSION['user_role'];
+                include '../audit/sidemenu.php';
 
     ?>
-<!-- begin::Global Config(global config for global JS sciprts) -->
+
+        <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
         <!-- end::Global Config -->
-  <script src="js/bcpm/bcpmPlanManagement.js"></script>
+
     <!--begin:: Global Mandatory Vendors -->
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
@@ -281,74 +249,36 @@ BCPM Maintainence
 <script src="./assets/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
+    <script src="js/bcpm/bcpmPlanManagement.js"></script>
+ 
 <!--end:: Global Optional Vendors -->
 
 <!--begin::Global Theme Bundle(used by all pages) -->
           
-      <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
-<!--end::Global Theme Bundle -->
+      <script src="assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
+      <script src="assets/toggleButton/bootstrap-toggle.min.js"></script>
+      <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>  
+      <!-- <script src="js/audit/auditPlanManagement.js"></script> -->
 
-                    <!--begin::Page Vendors(used by this page) -->
-                            <script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-                        <!--end::Page Vendors -->
-         
-                    <!--begin::Page Scripts(used by this page) -->
-                            <script src="./assets/js/demo3/pages/crud/datatables/extensions/buttons.js" type="text/javascript"></script>
-                        <!--end::Page Scripts -->
-    </body>
-    
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+            </body>
+    <!-- end::Body -->
 </html>
+
+<script type="text/javascript">
+    function logout(){
+                debugger
+                 $.ajax({
+                        dataType: "json",
+                        type: "POST",
+                        url: "/freshgrc/logout.php"
+                         });
+                 window.location="/freshgrc/logout.php";
+            }
+</script>
 <script type="text/javascript">
      $(function() {
         $(".datepickerClass").datepicker();
         $('.ui-datepicker').addClass('notranslate');
     });
-
-       vm.downloadpdf = function(){    
-    dmreportService.createreport($stateParams.id).then(function(response){
-         var a = document.createElement("a");
-         document.body.appendChild(a);
-         var file = new Blob([response.data], {type: 'application/pdf'});
-         var fileURL = URL.createObjectURL(file);
-         a.href = fileURL;
-         a.download = "dm_report.pdf";
-         a.click();        
-      });
-   } ; 
-   vm.downloadzip = function(){
-      dmreportService.createreport($stateParams.id).then(function(response){
-         var zip = new JSZip();
-         zip.file("dm_report.pdf", response.data);
-          zip.generateAsync({
-              type: "base64"
-          }).then(function(content) {        
-            window.location.href = "data:application/zip;base64," + content;
-          });        
-      });
-   };
-
-
-   $path = BASE_URL."/pdf/"; 
-$filename= $path.basename($_GET['download_file']);
-
-header("Cache-Control: public");
-header("Content-Description: File Transfer");
-header('Content-disposition: attachment filename='.basename($filename)); 
-header("Content-Type: application/pdf");
-header("Content-Transfer-Encoding: binary");
-header('Content-Length: '. filesize($filename));
-readfile($filename);
-exit;
-</script>
-  <script type="text/javascript">
-$('#cmd').click(function() {
-var element = document.getElementById('element-to-print');
-html2pdf(element, {
-  margin:       0,
-  filename:     'DisasterReport.pdf',
-  image:        { type: 'jpeg', quality: 0.98 },
-  html2canvas:  { dpi: 192, letterRendering: true },
-  jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
-});
-});
-</script>  
+  </script>
