@@ -99,9 +99,11 @@ require_once __DIR__.'/../../php/disaster/disasterManager.php';
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 </head>
-
+<?php 
+        include '../siteHeader.php';
+        ?>
 
 <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
@@ -111,7 +113,7 @@ require_once __DIR__.'/../../php/disaster/disasterManager.php';
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
@@ -131,7 +133,7 @@ DISASTER RECOVERY REPORT
 </div>
 
 </div>
-                         <div class="panel-body">
+                         <div class="panel-body" style="overflow-x: scroll;">
                                  <table class="table table-striped list-table table-bordered" id="kt_table_1">
                                   <tr >
                                       <th colspan="6">Summary & Scope</th>
@@ -394,8 +396,10 @@ DISASTER RECOVERY REPORT
     </div>
 </div>
 <?php 
-        include '../siteHeader.php';
-        ?>
+       
+        include '../audit/sidemenu.php';
+
+    ?>
 <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
