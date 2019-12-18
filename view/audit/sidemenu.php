@@ -344,22 +344,27 @@
 
 							<?php if($_SESSION['user_role']=='policy_owner'){?>
 								<ul class="kt-menu__nav">
-						<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/policy/policyPlan.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Plan</span></a>
+						<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/policy/policyDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Policy</span></a>
 						</li>
 
-						<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">List</span></a>
+						<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyPlan.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Plan</span></a>
 						</li>
 
-						<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyExpired.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Expired Policies</span></a></li>
+						<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">List</span></a></li>
+
+						<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyExpired.php" class="kt-menu__link text-center"><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Expired Policies</span></a></li>
 
 						</ul>
 								<?php } ?>
 								<?php if($_SESSION['user_role']=='policy_reviewer' || $_SESSION['user_role']=='policy_approver'){?>
 								<ul class="kt-menu__nav">
-						<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">List</span></a>
-						</li>
+									<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/policy/policyDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Policy</span></a>
+									</li>
 
-						</ul>
+									<li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">List</span></a>
+									</li>
+
+								</ul>
 								<?php } ?>
 								
 
@@ -460,60 +465,60 @@
 			<?php } ?>
 
 						<?php 
-if($_SESSION['user_role']=='incident_analyst') { ?>
+							if($_SESSION['user_role']=='incident_analyst') { ?>
 
-<ul class="kt-menu__nav ">
-<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
+							<ul class="kt-menu__nav ">
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/plan.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Plan</span></a>
-</li>
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/plan.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Plan</span></a>
+							</li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incident_list.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">List</span></a>
-</li>
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incident_list.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">List</span></a>
+							</li>
 
-</ul>
-<?php } ?>
-   
-                             
-
-
-
-<?php 
-if($_SESSION['user_role']=='incident_resolver') { ?>
-
-<ul class="kt-menu__nav ">
-<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
-
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentResolverList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Resolver</span></a>
-</li>
+							</ul>
+							<?php } ?>
+							   
+							                             
 
 
 
-</ul>
-<?php } ?>
+							<?php 
+							if($_SESSION['user_role']=='incident_resolver') { ?>
 
-<?php if($_SESSION['user_role']=='incident_reviewer') { ?>
+							<ul class="kt-menu__nav ">
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
 
-<ul class="kt-menu__nav ">
-<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentResolverList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Resolver</span></a>
+							</li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentReviewerList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Closure</span></a>
-</li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentReportList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Report</span></a>
-</li>
 
-</ul>
-<?php } ?>
-<?php if($_SESSION['user_role']=='incident_manager') { ?>
+							</ul>
+							<?php } ?>
 
-<ul class="kt-menu__nav ">
-<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
+							<?php if($_SESSION['user_role']=='incident_reviewer') { ?>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Diagnosis</span></a>
-</li>
-</ul>
-<?php } ?>
+							<ul class="kt-menu__nav ">
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
+
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentReviewerList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Closure</span></a>
+							</li>
+
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentReportList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Report</span></a>
+							</li>
+
+							</ul>
+							<?php } ?>
+							<?php if($_SESSION['user_role']=='incident_manager') { ?>
+
+							<ul class="kt-menu__nav ">
+							<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Incident</span></a></li>
+
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Diagnosis</span></a>
+							</li>
+							</ul>
+							<?php } ?>
 
 
 								<?php if($_SESSION['user_role']=='demo'){?>

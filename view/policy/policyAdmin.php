@@ -143,7 +143,14 @@ Policy
           <td><?php echo $data['policyprocedure']; ?></td>
           <td><?php echo $data['status']; ?></td>
           <?php if($_SESSION['user_role'] == "policy_owner"){?>
-          <td><button class="btn btn-primary" onclick="viewReport();">Report</button>&nbsp;<button class="btn btn-primary" onclick="sendtoreviewer();">Review</button></td>
+          <td><button class="btn btn-primary" onclick="viewReport();">Report</button>&nbsp;
+            <?php if($data['status']=="identified") {?>
+            <button class="btn btn-primary" onclick="sendtoreviewer();">Review</button>
+          <?php }?>
+          <?php if($data['status'] == "published" || $data['status'] == "to be approved" || $data['status'] == "to be reviewed" || $data['status'] == "reviewed" || $data['status'] == "Returned" || $data['status'] == "published" || $data['status'] == "expired") {?>
+            <button class="btn btn-primary" disabled>Review</button>
+          <?php }?>
+          </td>
         <?php }?>
         <?php if($_SESSION['user_role'] == "policy_reviewer") {?>
 
@@ -155,7 +162,12 @@ Policy
             &nbsp;<button class="btn btn-danger" onclick="viewReport();">Report</button>&nbsp;<button class="btn btn-success" onclick="sendtoapprover();">Approve</button></td>
         <?php }?>
         <?php if($_SESSION['user_role']== "policy_approver"){?>
-          <td><button class="btn btn-success"><a href="/freshgrc/view/policy/policyApprove.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Approve</a></button>&nbsp;<button class="btn btn-primary" onclick="viewReport();">Report</button></td>
+          <td>
+            <?php if($data['status'] == "published") {?>
+              <button class="btn btn-success" disabled>Approve</button>
+            <?php }?>
+            <?php if($data['status'] == "to be approved" || $data['status'] == "Returned") {?>
+            <button class="btn btn-success"><a href="/freshgrc/view/policy/policyApprove.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Approve</a></button> <?php }?>&nbsp;<button class="btn btn-primary" onclick="viewReport();">Report</button></td>
         <?php }?>
           <?php if($_SESSION['user_role'] == "demo"){?>
           <td><button class="btn btn-primary" onclick="sendtoreviewer();">Review</button>&nbsp;<button class="btn btn-success" onclick="sendtoapprover();">Approve</button>&nbsp;<button class="btn btn-primary" onclick="viewReport();">Report</button></td>
