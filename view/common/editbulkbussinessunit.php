@@ -591,7 +591,6 @@ require_once '../../php/common/dashboard.php';
   
 <?php
 include '../audit/sidemenu.php';
-include '../siteHeader.php';
  ?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
