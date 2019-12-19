@@ -1,27 +1,13 @@
-<?php 
-require_once __DIR__.'/../header.php';
-// require_once __DIR__.'/../../php/audit/auditClauseManager.php';
-// require_once __DIR__.'/../../php/compliance/complianceManager.php';
-// require_once __DIR__.'/../../php/audit/auditManager.php';
-session_start();
-$companyId=$_SESSION['company'];
-$user_id=$_SESSION['user_id'];
-$user_name=$_SESSION['user_name'];
-$user_role=$_SESSION['user_role'];
-// $companyname=$_SESSION['companyname'];
-// echo $companyId;
-// echo $user_id;
-// echo $user_name;
-// echo $user_role;
-// echo $companyname;
-?>
+
 <!DOCTYPE html>
-<html>
+
+<html lang="en" >
+    <!-- begin::Head -->
     <head>
 <base href="/freshgrc/">
         <meta charset="utf-8"/>
 
-        <title>FreshGRC</title>
+        <title>Metronic | Dashboard</title>
         <meta name="description" content="Latest updates and statistic charts">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -71,145 +57,150 @@ $user_role=$_SESSION['user_role'];
    
 
     </head>
-<style type="text/css">
-  #progressbar
-  {
-    width:100%;
-  
-  }
-#bar
-{
-background-color: #32ACB5;
-color: white;
-font-size:12px;
+  <!--  <style type="text/css">
+    .goog-logo-link, .goog-logo-link:link, .goog-logo-link:visited, .goog-logo-link:hover, .goog-logo-link:active{
+        visibility: hidden;
+    }
+    .goog-te-gadget{
+            margin-top: 20px;
+    }
+    #demo1{
+        cursor:pointer;
+    }
+    .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+body {
+    top: 0px !important; 
+    }
+  
+.form-popup {
+  display: none;
+  position: fixed;
+  
 }
- 
-</style>
-<?php include '../siteHeaderforsetupguide.php' ?>
-<body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #EEEEEE;">
-<!-- <div class="conatiner">
-<nav class="navbar navbar-dark bg-white" >
+a
+{
+  color: white;
+}
+</style> -->
 
-<h4>Getting started with FreshGRC</h4>
+    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"  >
+    
 
-</nav>
-</div> -->
-<div class="container" style="background-color:white;width: 50%; margin-top: 100px;">
-<h4>Welcome back, <strong><?php echo $user_name; ?></strong></h4>
-<p>You're doing great. Keep going!</p><br /><br />
-<img src="sunny.svg" class="rounded float-right" width="100" height="100" alt="" style="margin-top: -50px;">
-<div class="progress" id="progressbar">
-  <div id="bar">10%
-  </div>
+<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed " >
+<div class="kt-header-mobile__logo">
+<img alt="Logo" src="./assets/media/logos/fixnix-sm.png"/>
 </div>
-</div><br>
+<div class="kt-header-mobile__toolbar">
+<button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
+
+<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
+</div>
+</div>
+<!-- end:: Header Mobile -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+<!-- begin:: Aside -->
+<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
 
 
-<div class="container" style="background-color: white;width: 50%;">
-	<P><strong>Learn about freshGRC</strong></P><hr>
+<!-- begin:: Header -->
+<div class="kt-grid kt-grid--hor kt-grid--root">
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page" style="position: fixed;">
+      <!-- begin:: Aside -->
+<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
+<div class="kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
+   <div class="kt-aside__brand kt-grid__item" id="kt_aside_brand" style="background-color: #FFFFFF">
+      <div class="kt-aside__brand-logo">
+              <a href="view/common/overview.php"><img alt="Logo" src="./assets/media/logos/fixnix.png" width="100px" height="100px"/></a>
+    </div>
+  </div>
+</div>
+      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+        <!-- begin:: Header -->
+        
+<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " >
+      <!-- begin: Header Menu -->
 
-<div class="form-group row">
-<div class="col-sm-10">
-<p><strong>View the slideshow to see what FreshGRC is all about.</strong></p>
-
-</div>
-<div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal1">View slideshow</a>
-</div>
-</div><hr>
-<div class="form-group row">
-<div class="col-sm-10">
-<p><strong>Getting started with the Marketing FreshGRC
-</strong></p>
-
-</div>
-<div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal2">watch video</a>
-</div>
-</div><hr>
-<div class="form-group row">
-<div class="col-sm-10">
-<p><strong>Read our FAQ
-</strong></p>
-<P>Read our FAQ
-All the important stuff including what's free vs paid, how we secure your data, and which other tools FreshGRC works with.</P>
-</div>
-<div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal2">Read FAQ</a>
-</div>
-</div><hr>
-</div>
-<br>
-<div class="container" style="background-color: white;width: 50%;">
-<div class="form-group row">
-<div class="col-sm-10">
-<p><strong>Explore FreshGRC</strong>
-</p>
+<button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+<div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
+  
 </div>
 
-</div>
-</div>
-<div class="container" style="background-color: white;width: 50%;">
-<div class="form-group row">
-<div class="col-sm-10">
-<p>Create your first contact</p>
-</div>
-<div class="col-sm-2">
-<a href="http://freshgrc.com/freshgrc/signup.php">create conatct</a>
-</div>
-</div>
-</div>
-<div class="container" style="background-color: white;width:50%;">
-<h4>Read our FAQ</h4>
-<div class="form-group row">
-<div class="col-sm-10">
-<pre>All the important stuff including what's free vs paid,how we secure your data, and which other tools FixNix works with.</pre>
-</div>
-</div>
-<div class="form-group row">
-<div class="col-sm-12">
-<!-- <button type="button" class="btn btn-success" style="float: right;">Read</button> -->
-</div>
-</div>
- <div class="row" style="float: right;">
-                  <div class="modal-footer">
-                  <button type="button" value="1" class="btn btn-info" onclick="allocatemodules()" name="submit" data-dismiss="modal" style="font-size: 18px;" id="demo">Submit</button>
-                  </div>
-              </div>
-</div>
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second();">okay</button>
-      </div>
-    </div>
-  </div>
+<!-- end: Header Menu --> <!-- begin:: Header Topbar -->
+<div class="kt-header__topbar">
+ <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
+
+
+   <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
+  
+
+           <a class="kt-header__topbar-icon" title="BusinessUnit" href="view/common/overview.php"><i class="flaticon2-user"></i>
+           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+   
+         <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="AddUser">
+           <i class="flaticon-feed"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+            <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project&Task">
+           <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
+           <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+           <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
+           <i class="flaticon-chat"></i>
+           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+      
+           <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="SetUp Guide">
+           <i class="flaticon-globe"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+       <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+
+
+   </div>
+ </div>
+
+<?php } ?>
+   <div class="kt-header__topbar-item dropdown">
+       <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
+           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>
+       </div>
+       <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+           <form>
+
+           </form>
+       </div>
+   </div>
+
+<!-- <div id="google_translate_element"></div> -->
+<div class="kt-header__topbar-item kt-header__topbar-item--langs">
+   <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
+     <span class="kt-header__topbar-icon" title="logout" onclick="logout();">
+ <img src="./assets/media/icons/logout.svg" alt="" />
+</span>
+   </div>
 </div>
 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second();">okay</button>
-      </div>
-    </div>
-  </div>
 </div>
+
+<!-- end:: Header Topbar -->
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+    function logout(){
+                debugger
+                 $.ajax({
+                        dataType: "json",
+                        type: "POST",
+                        url: "/freshgrc/logout.php"
+                         });
+                 window.location="/freshgrc/logout.php";
+            }
+</script>
 
         <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
@@ -297,77 +288,5 @@ All the important stuff including what's free vs paid, how we secure your data, 
                             <script src="./assets/js/demo3/pages/dashboard.js" type="text/javascript"></script>
                         <!--end::Page Scripts -->
             </body>
- <script src="js/policy/ModuleManagement.js"></script>
-
+    <!-- end::Body -->
 </html>
-<!-- <script type="text/javascript">
-$(document).ready(function()
-{
-  $("#start").click(function()
-  {
-    $("#bar").progressbar({
-        value:20
-  });
-});
-});
-    
- 
-</script> -->
-             
-             <script type="text/javascript">
-               function start()
-               {
-                var name=document.getElementById('email').value;
-                var pass=document.getElementById('company').value;
-                var first=document.getElementById('bar');
-                var width=20;
-                if(email=='' || pass=='')
-                {
-                  alert("please fill all the form fields");
-                }
-                else if (width>=100) {
-                  clearInterval(id);
-
-                }
-                else
-                {
-                  width++;
-                  first.style.width=width+'%';
-                  first.innerHTML=width+9 +'%';
-
-                }
-           }
-           function second()
-           {
-            var second=document.getElementById('bar');
-            var width=30;
-            if(width>=100)
-            {
-              clearInterval(id);
-            }
-            else
-            {
-              width++;
-              second.style.width=width+'%';
-              second.innerHTML=width+19 +'%';
-
-            }
-          }
-           function create()
-          {
-        
-            var create = document.getElementById('bar');
-            var width=50;
-           if(width>=100)
-            {
-              clearInterval(id);
-            }
-            else
-              {
-              width++;
-              create.style.width=width + '%';
-              create.innerHTML=width+49 +'%';
-             
-        }
-      }
-        </script>
