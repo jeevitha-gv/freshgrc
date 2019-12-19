@@ -69,16 +69,18 @@ ob_start();
  <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
 <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script><script src="js/audit/auditCreateManagement.js"></script>
 <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
- <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+ <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
    
-
+ <?php 
+   include '../siteHeader.php';
+?>
     <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
-    <div class="kt-grid kt-grid--hor kt-grid--root" style="margin-top: -100px;"> 
+<div class="kt-grid kt-grid--hor kt-grid--root" > 
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
@@ -87,19 +89,19 @@ ob_start();
 
 
 <div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg">
+<div class="kt-portlet__head kt-portlet__head--lg"style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
-<h3 class="kt-portlet__head-title">
+<h3 class="kt-portlet__head-title" style="color: white;">
 <?php echo $auditTitle ?>
 </h3>
 </div>
 
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable">
                                         <thead>
@@ -154,32 +156,23 @@ ob_start();
                             <!-- END EXAMPLE TABLE PORTLET-->
                         </div>
 
-	    <div class="col-md-12">
-                           <div class="kt-grid kt-grid--hor kt-grid--root" style="margin-left:-150px;margin-top: -100px;"> 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-
-<!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
 
 <div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg">
+<div class="kt-portlet__head kt-portlet__head--lg"style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
-<h3 class="kt-portlet__head-title">
+<h3 class="kt-portlet__head-title" style="color: white;">
 <?php echo $auditTitle ?>
 </h3>
 </div>
 
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                                        <thead>
@@ -222,7 +215,12 @@ $sql = "SELECT bi.user as Author, bm.action_item as Action_Item,bm.owner as Owne
                  </div>
              </div>
          </div>
-         </body>
+  </body>
+         <?php
+
+        include '../audit/sidemenu.php';
+        ?>
+
          </html>
          <script>
          	 $('#cmd').click(function() {
