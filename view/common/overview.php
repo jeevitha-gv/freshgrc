@@ -106,7 +106,10 @@ $companyId=$id[0]['id'];
  <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
  <!-- <script src="js/superAdmin/userManagement.js"></script> -->
     </head>
-  <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;margin-top:14%;">
+    <?php
+    include '../siteHeader.php';
+    ?>
+  <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
 
        
 <!-- end:: Header Mobile -->
@@ -131,7 +134,7 @@ $companyId=$id[0]['id'];
 </div>
 </div>
 </div>
-      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-16%;">
+      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
@@ -144,10 +147,10 @@ $companyId=$id[0]['id'];
     <!--End:: App Aside Mobile Toggle-->
 
     <!--Begin:: App Aside-->
-    <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside">
+    <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside" >
         <!--begin:: Widgets/Applications/User/Profile4-->
 <div class="kt-portlet kt-portlet--height-fluid-">
-    <div class="kt-portlet__body" style="overflow-x:scroll;">
+    <div class="kt-portlet__body" >
         <!--begin::Widget -->
         <div class="kt-widget kt-widget--user-profile-4">
             <div class="kt-widget__head">
@@ -212,7 +215,7 @@ $companyId=$id[0]['id'];
   <div class="kt-portlet__body kt-portlet__body--fluid kt-portlet__body--fit">
     <div class="kt-widget4 kt-widget4--sticky">
       <div class="kt-widget4__items kt-widget4__items--bottom kt-portlet__space-x kt-margin-b-20">
-       <div class="portlet-body">                                               
+       <div class="portlet-body" style="overflow-x:scroll;">                                               
                       <div class="tab-content">
                         <div class="tab-pane active" id="tab_1_1">
                           <div class="scroller kt-scroll" data-scroll="true" data-height="260" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
@@ -324,7 +327,7 @@ Business Unit
 
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable --> 
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
@@ -368,7 +371,7 @@ Business Unit
 
 <?php
 include '../audit/sidemenu.php';
-include '../siteHeader.php';
+
  ?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>

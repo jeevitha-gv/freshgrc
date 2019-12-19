@@ -220,7 +220,7 @@
 
 						<?php 
 							if($_SESSION['user_role']=='super_admin') { ?>
-                              <div class="kt-header__topbar">
+                              
 							<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="550" data-mobile-height="200"> 
 							<ul class="kt-menu__nav ">
 								
@@ -246,7 +246,7 @@
 								</li>
 							</ul>
 								</div>
-				</div>
+			
 						<?php } ?>
 				
 						<?php if($_SESSION['user_role']=="board_user"){?>
