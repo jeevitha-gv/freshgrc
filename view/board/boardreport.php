@@ -12,7 +12,7 @@ ob_start();
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Meeting</title>
+        <title>freshgrc</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -160,7 +160,7 @@ Meeting List
 </body>
 
 <?php
-include '../siteHeader.php';
+
 include '../audit/sidemenu.php';
  ?>
 

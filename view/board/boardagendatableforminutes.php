@@ -68,7 +68,7 @@ ob_start();
  <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
 <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script><script src="js/audit/auditCreateManagement.js"></script>
 <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
- <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+ <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
    <?php
    include '../siteHeader.php';
@@ -103,7 +103,7 @@ Meeting List
 
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>

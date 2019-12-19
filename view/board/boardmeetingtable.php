@@ -12,7 +12,7 @@ ob_start();
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Meeting</title>
+        <title>freshgrc</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -112,7 +112,7 @@ Meeting List
 
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
@@ -169,7 +169,7 @@ Meeting List
 
 
 <?php
-include '../siteHeader.php';
+
 include '../audit/sidemenu.php';
  ?>
 
