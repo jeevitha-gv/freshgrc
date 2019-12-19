@@ -153,13 +153,16 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
        <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-13%;">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-<!--Begin::Dashboard 3-->
-<!--Begin::Row-->
+  <div class="row">
+  <div class="col-md-12">   
+              <a href="view/audit/auditConfigurableDashboard.php"  style="float: right;"><button type="button" class="btn btn-success">Dashboard Configuration</button></a>        
+            </div> 
+          </div><br>
 <div class="row">
 <div class="col-md-6">
                                     <!--begin:: Widgets/Activity-->
