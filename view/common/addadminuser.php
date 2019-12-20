@@ -161,34 +161,13 @@ a
        
     
 
-<!-- end:: Header Mobile -->
-<div class="kt-grid kt-grid--hor kt-grid--root">
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-<!-- begin:: Aside -->
-<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
 
-
-<!-- begin:: Header -->
-<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " >
-<!-- begin: Header Menu -->
-
-<div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
-<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab "  >
-
-</div>
-</div>
-<!-- end: Header Menu -->   <!-- begin:: Header Topbar -->
-
-<!-- end:: Header Topbar -->
-</div>
-</div>
-</div>
 	
 
 
 	<div class="kt-grid kt-grid--hor kt-grid--root">
 		<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-			<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+			<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
 				
 				<div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
 											<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
@@ -266,7 +245,7 @@ a
  
 
     <div class="kt-portlet">
-         <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 80%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
+         <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 70%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
         <div class="kt-portlet__body kt-portlet__body--fit">
             <div class="kt-grid">
                 <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">

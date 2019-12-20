@@ -67,7 +67,7 @@ $user_role=$_SESSION['user_role'];
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
    
 
     </head>
@@ -85,7 +85,9 @@ font-size:12px;
 }
  
 </style>
-<?php include '../siteHeaderforsetupguide.php' ?>
+<?php
+    include '../siteHeader.php';
+    ?>
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #EEEEEE;">
 <!-- <div class="conatiner">
 <nav class="navbar navbar-dark bg-white" >
@@ -94,7 +96,7 @@ font-size:12px;
 
 </nav>
 </div> -->
-<div class="container" style="background-color:white;width: 50%; margin-top: 100px;">
+<div class="container" style="background-color:white;width: 50%; ">
 <h4>Welcome back, <strong><?php echo $user_name; ?></strong></h4>
 <p>You're doing great. Keep going!</p><br /><br />
 <img src="sunny.svg" class="rounded float-right" width="100" height="100" alt="" style="margin-top: -50px;">
@@ -106,7 +108,7 @@ font-size:12px;
 
 
 <div class="container" style="background-color: white;width: 50%;">
-	<P><strong>Learn about freshGRC</strong></P><hr>
+  <P><strong>Learn about freshGRC</strong></P><hr>
 
 <div class="form-group row">
 <div class="col-sm-10">
@@ -159,7 +161,7 @@ All the important stuff including what's free vs paid, how we secure your data, 
 </div>
 </div>
 </div>
-<div class="container" style="background-color: white;width:50%;">
+<div class="container" style="background-color: white;width: 50%;">
 <h4>Read our FAQ</h4>
 <div class="form-group row">
 <div class="col-sm-10">
@@ -210,8 +212,11 @@ All the important stuff including what's free vs paid, how we secure your data, 
     </div>
   </div>
 </div>
+<?php
+include '../audit/sidemenu.php';
 
-        <script>
+ ?>
+ <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
         <!-- end::Global Config -->

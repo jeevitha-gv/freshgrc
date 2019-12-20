@@ -113,7 +113,7 @@ $companyId=$id[0]['id'];
 
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
      <body>
       <?php 
@@ -124,115 +124,20 @@ $companyId=$id[0]['id'];
     <?php if($_SESSION['user_role'] == 'super_admin') {?>      
     <?php }?>
   </body>
+  <?php
+  include '../siteHeader.php';
+  ?>
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
 
        
     
-<div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed " >
-<div class="kt-header-mobile__logo">
-<a href="demo3/index.html">
-<img alt="Logo" src="./assets/media/logos/logo-2-sm.png"/>
-</a>
-</div>
-<div class="kt-header-mobile__toolbar">
-<button class="kt-header-mobile__toolbar-toggler kt-header-mobile__toolbar-toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
 
-<button class="kt-header-mobile__toolbar-toggler" id="kt_header_mobile_toggler"><span></span></button>
-<button class="kt-header-mobile__toolbar-topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
-</div>
-</div>
-<!-- end:: Header Mobile -->
-<div class="kt-grid kt-grid--hor kt-grid--root">
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-<!-- begin:: Aside -->
-<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
-
-
-<!-- begin:: Header -->
-<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " >
-<!-- begin: Header Menu -->
-
-<div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
-<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab "  >
-
-</div>
-</div>
-<!-- end: Header Menu -->   <!-- begin:: Header Topbar -->
-<div class="kt-header__topbar">
-
-   <div class="kt-header__topbar-item dropdown">
-      
-
-             <a href="view/common/overview.php" style="margin-top: 15px;"><span class="kt-header__topbar-icon" title="BusinessUnit"><i class="flaticon2-user"></i></span>
-           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-   
-         <a href="view/common/addadminuser.php" style="margin-top: 15px;">
-           <span class="kt-header__topbar-icon" title="AddUser"><i class="flaticon-feed"></i></span>
-           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-            <a href="view/common/project.php" style="margin-top: 15px;">
-           <span class="kt-header__topbar-icon" title="Project&Task"><i class="kt-menu__link-icon flaticon2-analytics-2"></i></span>
-           <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-           <a href="view/common/timeline.php" style="margin-top: 15px;">
-           <span class="kt-header__topbar-icon" title="Timeline"><i class="flaticon-chat"></i></span>
-           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-       <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
-           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
-           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>
-       </div>
-       <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
-
-       </div>
-   </div>
-<!-- <i class="flaticon2-user"> -->
-
-<div class="kt-header__topbar-item kt-header__topbar-item--langs">
-   <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-       <span class="kt-header__topbar-icon">
-<img class="" src="./assets/media/flags/012-uk.svg" alt="" />
-</span>
-   </div>
-   <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-       <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-    <li class="kt-nav__item kt-nav__item--active">
-        <a href="#" class="kt-nav__link">
-            <span class="kt-nav__link-icon"><img src="./assets/media/flags/020-flag.svg" alt="" /></span>
-            <span class="kt-nav__link-text">English</span>
-        </a>
-    </li>
-    <li class="kt-nav__item">
-        <a href="#" class="kt-nav__link">
-            <span class="kt-nav__link-icon"><img src="./assets/media/flags/016-spain.svg" alt="" /></span>
-            <span class="kt-nav__link-text">Spanish</span>
-        </a>
-    </li>
-    <li class="kt-nav__item">
-        <a href="#" class="kt-nav__link">
-            <span class="kt-nav__link-icon"><img src="./assets/media/flags/017-germany.svg" alt="" /></span>
-            <span class="kt-nav__link-text">German</span>
-        </a>
-    </li>
-</ul>     
- </div>
-</div>
-<div class="kt-header__topbar-item kt-header__topbar-item--langs">
-   <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-     <span class="kt-header__topbar-icon" title="logout" onclick="logout();" >
- <img src="./assets/media/icons/logout.svg" alt="" />
-</span>
-   </div>
-</div>
-
-</div>
-<!-- end:: Header Topbar -->
-</div>
-</div>
-</div>
   
 
 
   <div class="kt-grid kt-grid--hor kt-grid--root">
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
         
         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
                       <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
@@ -310,7 +215,7 @@ $companyId=$id[0]['id'];
  
 
     <div class="kt-portlet">
-         <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 80%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
+         <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 70%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
         <div class="kt-portlet__body kt-portlet__body--fit">
             <div class="kt-grid">
                 <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
