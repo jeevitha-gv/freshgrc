@@ -85,7 +85,7 @@ $allUsers = $manager->getAllUsersForTicket();
 
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
     <body>
       <?php 
@@ -96,7 +96,9 @@ $allUsers = $manager->getAllUsersForTicket();
     <?php if($_SESSION['user_role'] == 'super_admin') {?>      
     <?php }?>
   </body>
-  
+  <?php
+  include '../siteHeader.php';
+  ?>
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
 
        
@@ -128,10 +130,10 @@ $allUsers = $manager->getAllUsersForTicket();
 
   <div class="kt-grid kt-grid--hor kt-grid--root">
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
         
         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
-                      <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+         <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
               
 <!-- begin:: Content -->
   <div class="kt-container  kt-grid__item kt-grid__item--fluid">
@@ -200,7 +202,7 @@ $allUsers = $manager->getAllUsersForTicket();
 
     <div class="kt-portlet">
         
-        <div class="kt-portlet__body kt-portlet__body--fit">
+        <div class="kt-portlet__body kt-portlet__body--fit" style="overflow-x: scroll;">
             <div class="kt-grid">
                 <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
                    
@@ -550,7 +552,7 @@ $allUsers = $manager->getAllUsersForTicket();
   
 <?php
 include '../audit/sidemenu.php';
-include '../siteHeader.php';
+
  ?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>

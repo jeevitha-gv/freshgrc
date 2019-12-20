@@ -40,7 +40,7 @@
 <link href="assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
- <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+ <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
  <script type="text/javascript" src="js/compliance/importLibrary.js"></script>
     </head>
     <?php 
@@ -74,7 +74,7 @@ LIBRARY
 </div>
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
  <div class="form-group row ">
                 
                     
@@ -176,7 +176,7 @@ Bulk
      </div>
    </div>
  </div>
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 
 
           <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">

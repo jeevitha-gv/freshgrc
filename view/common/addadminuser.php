@@ -153,6 +153,9 @@ a
     <?php if($_SESSION['user_role'] == 'super_admin') {?>      
     <?php }?>
   </body>
+  <?php
+  include '../siteHeader.php';
+  ?>
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
 
        
@@ -598,7 +601,7 @@ USER MANAGEMENT
 
 </div>
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
@@ -647,7 +650,7 @@ USER MANAGEMENT
 </div>
 <?php
 include '../audit/sidemenu.php';
-include '../siteHeader.php';
+
  ?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
