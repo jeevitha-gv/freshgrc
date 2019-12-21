@@ -98,7 +98,7 @@ font-size:12px;
 </div> -->
 <div class="container" style="background-color:white;width: 50%; ">
 <h4>Welcome back, <strong><?php echo $user_name; ?></strong></h4>
-<p>You're doing great. Keep going!</p><br /><br />
+<p>You're doing great.  Keep going!</p><br /><br />
 <img src="sunny.svg" class="rounded float-right" width="100" height="100" alt="" style="margin-top: -50px;">
 <div class="progress" id="progressbar">
   <div id="bar">10%
