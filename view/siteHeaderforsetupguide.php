@@ -107,12 +107,12 @@ a
 
 <!-- begin:: Header -->
 <div class="kt-grid kt-grid--hor kt-grid--root">
-    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page" style="position: fixed;">
+    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
       <!-- begin:: Aside -->
 <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
-<div class="kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
-   <div class="kt-aside__brand kt-grid__item" id="kt_aside_brand" style="background-color: #FFFFFF">
-      <div class="kt-aside__brand-logo">
+<div class="kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside" style="position: fixed;">
+   <div class="kt-aside__brand kt-grid__item" id="kt_aside_brand" style="background-color: #FFFFFF;">
+      <div class="kt-aside__brand-logo" >
               <a href="view/common/overview.php"><img alt="Logo" src="./assets/media/logos/fixnix.png" width="100px" height="100px"/></a>
     </div>
   </div>
