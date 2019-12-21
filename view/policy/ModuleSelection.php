@@ -67,7 +67,7 @@ $user_role=$_SESSION['user_role'];
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
    
 
     </head>
@@ -96,7 +96,7 @@ font-size:12px;
 </div> -->
 <div class="container" style="background-color:white;width: 50%; margin-top: 100px;">
 <h4>Welcome back, <strong><?php echo $user_name; ?></strong></h4>
-<p>You're doing great. Keep going!</p><br /><br />
+<p>You're doing great.  Keep going!</p><br /><br />
 <img src="sunny.svg" class="rounded float-right" width="100" height="100" alt="" style="margin-top: -50px;">
 <div class="progress" id="progressbar">
   <div id="bar">10%
