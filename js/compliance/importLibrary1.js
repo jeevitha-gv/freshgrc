@@ -17,14 +17,14 @@ function importCsv() {
     }).done(function (data) {
            Swal.fire({
               title: "Plan Created",
-              text: "Your Plan Has Been Created",
+              text: "",
               type: "success",
               closeOnConfirm: false,
               showLoaderOnConfirm: true
             }, function () {
               setTimeout(function () {
                 window.location="view/policy/Regulatoryengine.php";
-              }, 2000);
+              }, 100);
             });
 
  

@@ -56,13 +56,21 @@
 
         <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
     </head>
-  <body>
-    <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    <?php
+include '../siteHeader.php';
+?>
+   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+    <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content" >
+ <div class="kt-grid kt-grid--hor kt-grid--root">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-9%;">
+
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+<!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-<div class="row">
-<div class="col-md-8" style="margin-left: 300px;margin-top: 100px;">
-<!--begin::Portlet-->
+
 <div class="kt-portlet">
 <div class="kt-portlet__head">
 <div class="kt-portlet__head-label">
@@ -98,10 +106,10 @@ LIBRARY
                               <thead>
                                 <tr>
                                   <td>
-                                   <b>File
+                                   <b>File</b>
                                   </td>
                                   <td>
-                                    <b>Action
+                                    <b>Action</b>
                                   </td>
                                 </tr>
                               </thead>
@@ -145,10 +153,15 @@ LIBRARY
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
     
       <?php 
 
-include '../siteHeader.php';
 include '../audit/sidemenu.php';
  $userRole = $_SESSION['user_role'];
  ?>
