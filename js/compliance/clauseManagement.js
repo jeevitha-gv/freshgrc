@@ -296,6 +296,10 @@ function getControls(){
     });
 }
 
+
+
+
+
 function deletecompliancename() {
     
     var modalDetails = {
@@ -319,7 +323,7 @@ function deletecompliancename() {
               Swal.fire("Checklist Deleted!", "Your Checklist Has Got Deleted.", "success");
               setTimeout(function () {
                 window.location="/freshgrc/view/policy/Regulatoryengine.php";
-              }, 1000);
+              });
             });
 
  

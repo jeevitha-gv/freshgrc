@@ -16,7 +16,7 @@ function importCsv() {
         data: myFormData,
     }).done(function (data) {
            Swal.fire({
-              title: "Plan Created",
+              title: "CheckList Uploaded Successfully",
               text: "",
               type: "success",
               closeOnConfirm: false,
