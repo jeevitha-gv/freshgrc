@@ -360,12 +360,12 @@ $companyId=$id[0]['id'];
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-Project&Task
+Project & Task
 </h3>
 </div>
  <div>
-  <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Adduser</a></button>
-   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkinvite.php" style="color:white;">Bulkinvie</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Add User</a></button>
+   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkinvite.php" style="color:white;">Bulk Invite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
 </div>
 </div>

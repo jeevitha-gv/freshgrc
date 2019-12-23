@@ -572,8 +572,8 @@ USER MANAGEMENT
 
 </div>
 <div>
-  <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Adduser</a></button>
-   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkinvite.php" style="color:white;">Bulkinvite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Add User</a></button>
+   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkinvite.php" style="color:white;">Bulk Invite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
 </div>
 

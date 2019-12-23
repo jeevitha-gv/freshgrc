@@ -126,12 +126,12 @@ a
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
   
 
-           <a class="kt-header__topbar-icon" title="BusinessUnit" href="view/common/overview.php"><i class="flaticon2-user"></i>
+           <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon2-user"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
    
-         <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="AddUser">
+         <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="Add User">
            <i class="flaticon-feed"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-            <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project&Task">
+            <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project & Task">
            <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
            <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
            <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
@@ -149,7 +149,7 @@ a
 <?php } ?>
    <div class="kt-header__topbar-item dropdown">
        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
-           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
+           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol" title="Notifications"></i></span>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>
        </div>
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
