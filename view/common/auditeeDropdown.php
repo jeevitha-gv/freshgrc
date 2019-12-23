@@ -3,7 +3,7 @@
 
     $userManager = new UserManager();
     // 7 is auditee role
-    $allAuditors = $userManager->getAllUsersByRole(7,$_SESSION['companyId']);
+    $allAuditors = $userManager->getAllUsersByRole(8,$_SESSION['companyId']);
 ?>
      
 

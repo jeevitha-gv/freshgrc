@@ -22,7 +22,7 @@ class UserManager {
     }
     
     public function getAllUsersByRole($roleId){
-        $sql = 'SELECT u.id as userId, u.last_name as lastName, u.first_name as firstName, u.middle_name as middleName, u.email as userEmail from user u, user_role ur where u.id = ur.user_id and ur.role_id=?';
+        $sql = 'SELECT u.id as userId, u.last_name as lastName, u.first_name as firstName, u.middle_name as middleName, u.email as userEmail from user u where u.id =?';
         $dbOps = new DBOperations();
         $paramArray = array($roleId);
         return $dbOps->fetchData($sql, 'i', $paramArray);        
