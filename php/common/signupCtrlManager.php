@@ -1,10 +1,14 @@
 <?php
 require_once __DIR__.'/signupManager.php';
+require_once __DIR__.'/sendMailtoRegisteredUserandCompany.php';
 function manage(){
     $signupData=new stdClass();
     $manager = new SignupManager();
+    $managers = new SendMailtoRegisteredUserandCompany();
     $signupData = getDataFromRequest();            
     $lastId = $manager->saveCompany($signupData);
+    $managers->sendMailtoCompany($signupData);
+    $managers->sendMailtoUser($signupData);
     $signupData->company = $lastId;
     $userId = $manager->saveUser($signupData); 
     $signupData->user = $userId;
@@ -16,8 +20,13 @@ function getDataFromRequest(){
     $signupData->name = $_POST['name'];
     $signupData->email = $_POST['email'];
     $password =$_POST['password'];
-  $link = mysqli_connect("localhost", "root", "password", "freshgrc");
+  $link = mysqli_connect("localhost", "root", "Admin1234#@", "freshgrc");
 
+
+   /* $options = [
+    'salt' => $email."12345678910111213",
+        ];*/
+         
  $email = mysqli_real_escape_string($link, $signupData->email);
  $password = mysqli_real_escape_string($link, $password);
  $options = [
