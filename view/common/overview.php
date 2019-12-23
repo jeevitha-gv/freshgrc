@@ -197,7 +197,7 @@ $companyId=$id[0]['id'];
        <div class="portlet-body" style="overflow-x:scroll;">                                               
                       <div class="tab-content">
                         <div class="tab-pane active" id="tab_1_1">
-                          <div class="scroller kt-scroll" data-scroll="true" data-height="260" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
+                          <div class="scroller kt-scroll" data-scroll="true" data-height="245" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
                             <ul class="feeds">
                               <?php foreach($feeds as $feed){ ?>
                                 <li>

@@ -258,14 +258,12 @@ require_once '../../php/common/dashboard.php';
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Location</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                      <select class="form-control" id="location" style="border: 1px solid #b2abab;">
-                      <label>Location</label>
-                      <option>chennai</option>
-                      <option>trichy</option>
-                      <option>madurai</option>
-                      <option>selam</option>
-                      <option>myloapore</option>
-                      <option>selam</option>
-                    </select> 
+                                                          <option>San Francisco</option>
+                                                          <option>Washington, D.C.</option>
+                                                          <option>Seattle</option>
+                                                          <option>Boston</option>
+                                                          <option>New York</option>
+                                                        </select> 
                     
                                                     </div>
                                                 </div>
@@ -318,14 +316,14 @@ require_once '../../php/common/dashboard.php';
                                                        <input type="text" class="form-control" id="team" style="border: 1px solid #b2abab;" value="<?php echo $data['team'];?>">
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
+<!--                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Department</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                    
                                              <input type="text" class="form-control" id="department" style="border: 1px solid #b2abab;" value="<?php echo $data['department'];?>">
                                                     </div>
                                                 </div>
-                                                
+                                                 -->
                                                 
                                             </div>
                                         </div>
