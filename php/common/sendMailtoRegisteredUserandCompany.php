@@ -42,7 +42,7 @@ $userName = $signupData->name;
 $emailid=$signupData->email;
 $company = $signupData->company;
 $subject = "Greetings From FixNix";
-$bodyContent = nl2br("Hi $userName\n\nThanks for signing up! \n Lots of software companies claim they can do anything and everything. We are not one of them. FIXNIX is not a jack of all trades. We have mastered one thing: GRC. \nWithin five minutes, I can assess if FIXNIX is the best fit for the problem you have, saving you lots of time on evaluation. \n I shall call you in the next 30 minutes to schedule a demo or would you prefer to do this over email?\nclick here to activate <a href='https://freshgrcv6.com/freshgrcv6/login.php'>https://freshgrcv6.com/freshgrcv6/login.php</a> \n\n Regards \n Shan ");
+$bodyContent = nl2br("Hi $userName\n\nThanks for signing up! \n Lots of software companies claim they can do anything and everything. We are not one of them. FIXNIX is not a jack of all trades. We have mastered one thing: GRC. \nWithin five minutes, I can assess if FIXNIX is the best fit for the problem you have, saving you lots of time on evaluation. \n I shall call you in the next 30 minutes to schedule a demo or would you prefer to do this over email?\nclick here to activate <a href='https://freshgrc.com/freshgrc/login.php'>https://freshgrc.com/freshgrc/login.php</a> \n\n Regards \n Shan ");
 $email = new \SendGrid\Mail\Mail(); 
 $email->setFrom("shan@fixnix.co", "Chief Nixer");
 $email->setSubject($subject);
