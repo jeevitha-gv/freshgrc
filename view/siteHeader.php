@@ -138,7 +138,7 @@ a
            <i class="flaticon-chat"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
       
-           <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="SetUp Guide">
+           <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="Setup Guide">
            <i class="flaticon-globe"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
 
@@ -148,8 +148,8 @@ a
 
 <?php } ?>
    <div class="kt-header__topbar-item dropdown">
-       <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
-           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol" title="Notifications"></i></span>
+       <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true" title="Notification">
+           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>
        </div>
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
@@ -162,7 +162,7 @@ a
 <!-- <div id="google_translate_element"></div> -->
 <div class="kt-header__topbar-item kt-header__topbar-item--langs">
    <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-     <span class="kt-header__topbar-icon" title="logout" onclick="logout();">
+     <span class="kt-header__topbar-icon" title="Logout" onclick="logout();">
  <img src="./assets/media/icons/logout.svg" alt="" />
 </span>
    </div>
