@@ -161,7 +161,7 @@
       
     <div class="col-md-4 col-sm-4">
       <ul>
-        <li><a href="tel:+1(647)-825-2925" class="">+1(647)-825-2925</a></li>
+        <li><a href="tel:+1(647)-825-2925" class="">+1 925 395 3684</a></li>
         <li><a href="https://www.fixnix.co/" target="_blank">Our Product Stack</a></li>
        
 
