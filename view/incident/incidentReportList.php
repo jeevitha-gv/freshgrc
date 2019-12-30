@@ -154,6 +154,8 @@ Incident List
 </div>
 </div>
 </div>
+</div>
+</body>
 <?php 
         
         include '../audit/sidemenu.php';
