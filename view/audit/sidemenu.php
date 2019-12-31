@@ -120,7 +120,7 @@
 						
 							</ul>
 						<?php } ?>
-						<?php if($_SESSION['user_role']=='auditees1'){?>
+						<?php if($_SESSION['user_role']=='auditee1'){?>
 							<ul class="kt-menu__nav ">
 								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Audit</span></a></li>
 								
@@ -522,7 +522,7 @@
 
 
 								<?php if($_SESSION['user_role']=='demo'){?>
-									 <div class="kt-header__topbar">
+				
 							<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="700" data-mobile-height="200"> 
 							<ul class="kt-menu__nav">
 								<li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Audit</span></a></li>
@@ -639,7 +639,7 @@
 
 					</ul>
 	                </div>
-					</div>
+				
 						
 						
 						<?php } ?>
