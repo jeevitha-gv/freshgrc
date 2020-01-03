@@ -126,6 +126,9 @@ $companyId=$id[0]['id'];
 CREATE PLAN
 </h3>
 </div>
+<div class="clearfix" style="float: right;">   
+              <a href="view/risk/riskCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>        
+            </div> 
 </div>
 
 <div class="kt-portlet__body" style="overflow-x: scroll;">
@@ -141,9 +144,9 @@ CREATE PLAN
                         </div>
                       </div>
                   <form id="form1">
-                  <div class="form-group row">
-                    <label class="col-lg-1 col-form-label">Subject: </label>
-                    <div class="col-lg-11">
+                  <div class="form-group row" style="margin-left:4%;">
+                    <label class="col-xs-1 col-form-label">Subject: </label>
+                    <div class="col-xs-11">
                   <input type="text" class="form-control" id="riskSubject">
                 </div>
                </div>

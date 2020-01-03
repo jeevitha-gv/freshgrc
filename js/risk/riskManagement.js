@@ -659,7 +659,7 @@ function importRiskCsv(){
         contentType: false, // important
         data: myFormData,
        success: function (data) {
-            swal({
+            Swal.fire({
               title: "Plan Created",
               text: "Your Plan Has Been Created",
               type: "success",
