@@ -6,7 +6,7 @@
     $allAuditors = $userManager->getAllUsersByRole(8,$_SESSION['companyId']);
 ?>
      
-
+<label>Auditee</label>
 
            <select id="auditee" class="form-control">
                <option>...select...</option>                                                                             

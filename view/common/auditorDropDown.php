@@ -6,7 +6,7 @@
     $allAuditors = $userManager->getAllUsersByRole(7,$_SESSION['company']);
     
 ?>
-
+<label>Auditor</label>
 <div class="form-group">  
  <div class="input-group select2-bootstrap-prepend">
             
