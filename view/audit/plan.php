@@ -90,76 +90,70 @@ CREATE PLAN
 </div>
 
 <div class="kt-portlet__body" >
- <div class="form-group row ">
+ <div class="form-group row " style="margin-left:4%;">
                     <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
                     <input type="hidden" class="form-control" id="auditId">
                     <input type="hidden" class="form-control" id="action" value="create">
                     
-                 <div class="row">
+                 <div class="row" >
                   <div class="col-md-12">
                     <input type="hidden" value="<?php echo $companyId?>" id="company">
                   </div>
                 </div>
-   <div class="col-md-12">            
+   <div class="col-md-12" >            
 <label>Title</label>
 <input type="text" class="form-control" name="title" id="auditTitle">
 </div>
 </div>
-<div class="form-group row">
+<div class="form-group row"  style="margin-left:4%;">
   <div class="col-md-12">
 <label for="exampleInputPassword1">Description</label>
-<textarea class="form-control" id="auditDesc" name="description"></textarea>
+<textarea class="form-control" rows="1" id="auditDesc" name="description"></textarea>
 </div>
 </div>
-<div class="form-group row">
-  <div class="col-md-8">
+<div class="form-group row"style="margin-left:4%;">
+  <div class="col-md-6">
 <label>Date</label>
 <div class="input-daterange input-group">
-<input type="text" class="form-control datepickerClass" autocomplete="off" id="start_date">
+<input type="text" class="form-control datepickerClass" autocomplete="off" id="start_date" placeholder="start_date">
 <div class="input-group-append">
 <span class="input-group-text"><i class="la la-ellipsis-h"></i></span>
 </div>
-<input type="text" class="form-control datepickerClass"autocomplete="off" id="end_date">
+<input type="text" class="form-control datepickerClass"autocomplete="off" id="end_date" placeholder="end_date">
 </div>
-</div>&nbsp;&nbsp;&nbsp;
-<div class="col-md-2">
+</div>
+<div class="col-md-5">
+<label for="exampleSelect3">Department</label>
+<?php include'../common/departmentDropDown.php'; ?>
+</div>
+<div class="col-md-1">
   <label>Audit Type</label>
   <div class="">
     <?php include '../common/auditTypeDropdown.php';?>
   </div>
 </div>
 </div>
-<div class="form-group row">
-  <div class="col-md-12">
-<label for="exampleSelect1">Compliance</label>
-  <?php include'../compliance/complianceDropDown.php'; ?>
+<div class="form-group row" style="margin-left:4%;">
+
+        <div class="col-md-6">
+        <?php include '../compliance/complianceDropDown.php';?>
+        </div>
+<div class="col-md-6">
+        <label>Location</label>
+          <?php include '../common/locationDropDown.php';?>
+        </div> 
 </div>
+
+<div class="form-group row" style="margin-left:4%;">
+
+        <div class="col-md-6">
+        <?php include '../common/auditorDropDown.php';?>
+        </div>
+<div class="col-md-6">
+          <?php include '../common/auditeeDropdown.php';?>
+        </div> 
 </div>
-<div class="form-group row">
-  <div class="col-md-12">
-<label for="exampleSelect2">Location</label>
-<?php include'../common/locationDropDown.php'; ?>
-</div>
-</div>
-<div class="form-group row">
-  <div class="col-md-12">
-<label for="exampleSelect3">Department</label>
-<?php include'../common/departmentDropDown.php'; ?>
-</div>
-</div>
-<div class="form-group row">
-  <div class="col-md-12">
-<label for="exampleSelect4">Auditor</label>
-<?php include'../common/auditorDropDown.php'; ?>
-</div>
-</div>
-<div class="form-group row">
-<div class="col-md-12">
-<label for="exampleSelect5">Auditee</label>
-<?php include'../common/auditeeDropdown.php'; ?>
-</div>
-</div>
-<div class="form-group row">
+<div class="form-group row" style="margin-left:4%;">
  
 <label class="col-3 col-form-label">Frequency:</label>
 <div class="col-9">
