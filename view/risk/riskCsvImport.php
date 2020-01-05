@@ -54,6 +54,7 @@ $companyId=$_SESSION['company'];
 <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
 
+<script src="js/risk/riskManagement.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link href="./assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
@@ -203,10 +204,8 @@ include "../audit/sidemenu.php";
  ?>
  
  <script>
-
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
-        <script src="js/risk/riskManagement.js"></script>
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
 
