@@ -90,7 +90,7 @@ CREATE PLAN
 </div>
 
 <div class="kt-portlet__body" >
- <div class="form-group row " style="margin-left:4%;">
+ <div class="form-group row " >
                     <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
                     <input type="hidden" class="form-control" id="auditId">
                     <input type="hidden" class="form-control" id="action" value="create">
@@ -105,13 +105,13 @@ CREATE PLAN
 <input type="text" class="form-control" name="title" id="auditTitle">
 </div>
 </div>
-<div class="form-group row"  style="margin-left:4%;">
+<div class="form-group row"  >
   <div class="col-md-12">
 <label for="exampleInputPassword1">Description</label>
 <textarea class="form-control" rows="1" id="auditDesc" name="description"></textarea>
 </div>
 </div>
-<div class="form-group row"style="margin-left:4%;">
+<div class="form-group row">
   <div class="col-md-6">
 <label>Date</label>
 <div class="input-daterange input-group">
@@ -128,13 +128,10 @@ CREATE PLAN
 </div>
 <div class="col-md-1">
   <label>Audit Type</label>
-  <div class="">
     <?php include '../common/auditTypeDropdown.php';?>
-  </div>
 </div>
 </div>
-<div class="form-group row" style="margin-left:4%;">
-
+<div class="form-group row" >
         <div class="col-md-6">
         <?php include '../compliance/complianceDropDown.php';?>
         </div>
@@ -143,25 +140,21 @@ CREATE PLAN
           <?php include '../common/locationDropDown.php';?>
         </div> 
 </div>
-
-<div class="form-group row" style="margin-left:4%;">
-
-        <div class="col-md-6">
-        <?php include '../common/auditorDropDown.php';?>
+<div class="form-group row" >
+        <div class="col-md-6" style="margin-top: -2%;">
+        <?php include'../common/auditorDropDown.php';?>
         </div>
-<div class="col-md-6">
-          <?php include '../common/auditeeDropdown.php';?>
-        </div> 
+<div class="col-md-6" style="margin-top: -2%;">
+          <?php include'../common/auditeeDropdown.php';?>
+ </div> 
 </div>
-<div class="form-group row" style="margin-left:4%;">
- 
+<div class="form-group row" >
 <label class="col-3 col-form-label">Frequency:</label>
 <div class="col-9">
 <?php include'../common/auditFreqDropDown.php'; ?>
 </div>
 </div>
 </div>
-
 <div class="kt-portlet__foot" style="float: right;">
 <div class="kt-form__actions">
   <button type="button" id="manageButton" onclick="manageModal()" data-dismiss="modal" class="btn btn-primary" style="background-color:#4285f4;float:right;">Plan</button>
@@ -176,6 +169,7 @@ CREATE PLAN
  </div>
  </div>  
 </div>
+</body>
 <?php 
 include "sidemenu.php";
  ?>
