@@ -3,6 +3,10 @@ require_once __DIR__.'/../../php/company/companyManager.php';
 $manager=new CompanyManager();
 $id=$manager->getCompanyIdForUser($_SESSION['user_id']);
 $companyId=$id[0]['id'];
+    require_once __DIR__.'/../../php/risk/riskManager.php';
+    $riskManager = new RiskManager();
+    // 4 is auditor role
+    $allLocation = $riskManager->getAllLocation();
 ?>
 <!DOCTYPE html>
 <html lang="en" >
@@ -195,10 +199,25 @@ CREATE PLAN
   </div>
   <div class="form-group row">
     <div class="col-md-6">
+      <?php if($_SESSION['user_role'] == 'risk_owner') {?>
       <div class="form-group">
         <label for="exampleSelect1" class="col-lg-3 col-form-label">Location: </label>
         <?php include '../common/locationDropDown.php';?>
       </div>
+    <?php }?>
+    <?php if($_SESSION['user_role'] == 'demo') {?>
+       <div class="form-group">
+        <label for="exampleSelect1" class="col-lg-3 col-form-label">Location: </label>
+      <div class="col-lg-9">
+     <select  id="location" name="locationDropDown" class="form-control">
+              <option>...select...</option>    
+         <?php foreach($allLocation as $location){ ?>
+    <option value="<?php echo $location['id'] ?>"><?php echo $location['name']; ?></option>
+        <?php } ?>
+      </select> 
+     </div>
+   </div>
+    <?php }?>
     </div>
     <div class="col-md-6">
       <div class="form-group">
@@ -247,6 +266,13 @@ CREATE PLAN
         </div>
        </div>
      </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-6">
+      <div class="form-group">
+         <a href="view/risk/riskCsvImport.php" class="btn btn-danger">Import</a> 
+      </div>
+    </div>
   </div>
   <div class="form-group row">
     <div class="col-md-3"></div>

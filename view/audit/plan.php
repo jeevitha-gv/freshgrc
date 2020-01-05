@@ -4,6 +4,10 @@ require_once __DIR__.'/../../php/audit/auditClauseManager.php';
 require_once __DIR__.'/../../php/compliance/complianceManager.php';
 require_once __DIR__.'/../../php/audit/auditManager.php';
 require '../../php/user/userManager.php';
+ require_once __DIR__.'/../../php/risk/riskManager.php';
+    $riskManager = new RiskManager();
+    // 4 is auditor role
+    $allLocation = $riskManager->getAllLocation();
 $companyId=$_SESSION['company'];
 ?>
 <!DOCTYPE html>
@@ -90,7 +94,7 @@ CREATE PLAN
 </div>
 
 <div class="kt-portlet__body" >
- <div class="form-group row " style="margin-left:4%;">
+ <div class="form-group row " >
                     <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
                     <input type="hidden" class="form-control" id="auditId">
                     <input type="hidden" class="form-control" id="action" value="create">
@@ -105,13 +109,13 @@ CREATE PLAN
 <input type="text" class="form-control" name="title" id="auditTitle">
 </div>
 </div>
-<div class="form-group row"  style="margin-left:4%;">
+<div class="form-group row"  >
   <div class="col-md-12">
 <label for="exampleInputPassword1">Description</label>
 <textarea class="form-control" rows="1" id="auditDesc" name="description"></textarea>
 </div>
 </div>
-<div class="form-group row"style="margin-left:4%;">
+<div class="form-group row">
   <div class="col-md-6">
 <label>Date</label>
 <div class="input-daterange input-group">
@@ -133,18 +137,31 @@ CREATE PLAN
   </div>
 </div>
 </div>
-<div class="form-group row" style="margin-left:4%;">
+<div class="form-group row" >
 
         <div class="col-md-6">
         <?php include '../compliance/complianceDropDown.php';?>
         </div>
-<div class="col-md-6">
+        <div class="col-md-6">
+        <?php if($_SESSION['user_role'] == 'auditor') {?>
         <label>Location</label>
           <?php include '../common/locationDropDown.php';?>
-        </div> 
+      <?php }?>
+        <?php if($_SESSION['user_role'] == "demo") { ?>
+          <label>Location</label>
+<select  id="location" name="locationDropDown" class="form-control">
+              <option>...select...</option>    
+
+    <?php foreach($allLocation as $location){ ?>
+    <option value="<?php echo $location['id'] ?>"><?php echo $location['name']; ?></option>
+    <?php } ?>
+</select>
+
+      <?php }?>
+    </div>
 </div>
 
-<div class="form-group row" style="margin-left:4%;">
+<div class="form-group row" >
 
         <div class="col-md-6">
         <?php include '../common/auditorDropDown.php';?>
@@ -153,7 +170,7 @@ CREATE PLAN
           <?php include '../common/auditeeDropdown.php';?>
         </div> 
 </div>
-<div class="form-group row" style="margin-left:4%;">
+<div class="form-group row" >
  
 <label class="col-3 col-form-label">Frequency:</label>
 <div class="col-9">
