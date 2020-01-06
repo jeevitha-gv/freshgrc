@@ -116,23 +116,23 @@ New Policy
                           <input type="hidden" class="form-control" id="action">
                           <input type="hidden" value="<?php echo $companyId?>" id="company">                      
                   <!-- </div> -->          
-<div class="col-md-3">            
+<div class="col-md-6">            
 <label>Title</label>
 <input type="text" class="form-control" name="title" id="title">
 </div>
 
-<div class="col-md-2">            
+<div class="col-md-6">            
 <div class="form-group"> 
 <label>Organization</label>                                                  
 <?php include '../policy/policyOraganizationTypeDropDown.php';?>             
 </div> 
 </div>
 
-<div class="col-md-2">            
+<div class="col-md-6">            
 <label>Policy Type</label>
 <?php include '../common/policyTypeDropDown.php';?>
 </div> 
-<div class="col-md-2"> 
+<div class="col-md-4"> 
   <label>SubPolicy</label>
 <div class="form-group" id="subPolicydropdown">   
 <?php include 'policysubpolicy.php';?> 
@@ -203,7 +203,7 @@ New Policy
                   <div class="panel panel-default">
                     <div class="panel-heading"><b>Date</b></div>
                     <div class="panel-body">
-                      <div class="col-md-3">                        
+                      <div class="col-md-6">                        
                         <div class="form-group" >
                           <label class="control-label">Policy Creation Date:</label>
                           <div class="input-daterange input-group" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="">
@@ -213,7 +213,7 @@ New Policy
                         </div>                       
                       </div> 
 
-                      <div class="col-md-3">                        
+                      <div class="col-md-6">                        
                         <div class="form-group" >
                           <label class="control-label" >Expiry Date:</label>
                           <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="">
@@ -224,7 +224,7 @@ New Policy
                       </div> 
 
                       
-                      <div class="col-md-3">                        
+                      <div class="col-md-6">                        
                         <div class="form-group" >
                           <label class="control-label" >Expected Publish Date:</label>
                           <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="">
@@ -235,7 +235,7 @@ New Policy
                     </div>
 
 
-  <div class="col-md-3">                        
+  <div class="col-md-6">                        
 <div class="form-group" >
                           <label class="control-label" >Review Within Date:</label>
                           <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="">
