@@ -73,18 +73,18 @@ include '../siteHeader.php';
 
 <div class="kt-portlet">
 <div class="kt-portlet__head">
-<div class="kt-portlet__head-label">
-<h3 class="kt-portlet__head-title">
+<div class="kt-portlet__head-label"style="margin-left: 45%; text-align: center;">
+<h2 class="kt-portlet__head-title" >
 LIBRARY
  <ul class="nav nav-tabs">
                         <li>
-                          <a href="#tab_1_1" data-toggle="tab">Download</a>
+                          <a href="#tab_1_1" data-toggle="tab"><img src="download.png" title="Download" width="35" height="35"></span></a>
                         </li>&nbsp;&nbsp;&nbsp;&nbsp;
                         <li>
-                          <a href="#tab_1_2" data-toggle="tab">Template</a>
+                          <a href="#tab_1_2" data-toggle="tab"><img src="template.png" title="Template" width="35" height="35"></a>
                         </li>                                                                          
                       </ul>
-</h3>
+</h2>
 
 </div>
 </div>
@@ -117,7 +117,7 @@ LIBRARY
                                 <?php for($i=0;$i<count($uploadedFiles);$i++){ ?>
                                 <tr>
                                   <td><?php echo $uploadedFiles[$i]['imported_file_name'] ?></td>
-                                  <td><a href="/freshgrc/uploadedFiles/compliance/success/<?php echo $uploadedFiles[$i]['id'].$delim.$uploadedFiles[$i]['imported_file_name']?>" download>Download</a></td>
+                                  <td><a href="/freshgrc/uploadedFiles/compliance/success/<?php echo $uploadedFiles[$i]['id'].$delim.$uploadedFiles[$i]['imported_file_name']?>" download><img src="download.jpg" title="Download" width="35" height="35"></a></td>
                                 </tr>
                                 <?php } ?>
                               </tbody>
@@ -125,14 +125,14 @@ LIBRARY
                           </form>
                         </div>                            
                         <div class="tab-pane active" id="tab_1_2">                          
-                           <form action="#" role="form" style="margin:5px;">
+                           <form action="#" role="form" style="margin:5px;margin-left: 40%;">
                             <div class="form-group">
                               <div class="fileinput fileinput-new" data-provides="fileinput">
-                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px; ">
                                 <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
                                 <div> 
-                                <label for="complianceCsv" aria-hidden="true">
+                                <label for="complianceCsv" aria-hidden="true"style="margin-left: 30%;">
                                 <i class="btn btn-danger btn-block fa fa-file-excel-o">  Import Library</i>
                                 <input type="file" style="display:none" onchange= "importCsv()" id="complianceCsv"/>
                                 </label>                                 
@@ -140,7 +140,7 @@ LIBRARY
                               </div>
                                
                               
-                              <div class="clearfix margin-top-10">
+                              <div class="clearfix margin-top-10" style="margin-left: 30%;">
                                 <span class="label label-danger">NOTE! </span>
                                 <span>Please Click the excel image to download template and please upload the filled library in csv format</span>
                               </div>
@@ -172,7 +172,7 @@ include '../audit/sidemenu.php';
         <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
-        <script type="text/javascript" src="js/compliance/importLibrary1.js"></script>
+        <script type="text/javascript" src="js/compliance/importLibrary.js"></script>
     <script src="assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
 <script src="assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
