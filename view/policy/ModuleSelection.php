@@ -22,6 +22,8 @@ $user_role=$_SESSION['user_role'];
         <meta charset="utf-8"/>
 
         <title>FreshGRC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <meta name="description" content="Latest updates and statistic charts">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -96,9 +98,9 @@ font-size:12px;
 
 </nav>
 </div> -->
-<div class="container" style="background-color:white;width: 50%; ">
+<div class="container" style="background-color:white;width: 75%; ">
 <h4>Welcome back, <strong><?php echo $user_name; ?></strong></h4>
-<p>You're doing great.  Keep going!</p><br /><br />
+<p style="color: #141f1f;">You're doing great.  Keep going!</p><br /><br />
 <img src="sunny.svg" class="rounded float-right" width="100" height="100" alt="" style="margin-top: -50px;">
 <div class="progress" id="progressbar">
   <div id="bar">10%
@@ -107,65 +109,65 @@ font-size:12px;
 </div><br>
 
 
-<div class="container" style="background-color: white;width: 50%;">
-  <P><strong>Learn about freshGRC</strong></P><hr>
+<div class="container" style="background-color: white;width: 75%;">
+  <h5><strong>Learn about freshGRC</strong></h5><hr>
 
 <div class="form-group row">
 <div class="col-sm-10">
-<p><strong>View the slideshow to see what FreshGRC is all about.</strong></p>
+<p style="color: #141f1f;">View the slideshow to see what FreshGRC is all about.</p>
 
 </div>
 <div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal1">View slideshow</a>
+<a href="#" data-toggle="modal" data-target="#myModal1"><img src="Slideshow.png" title="View slideshow" width="40" height="40"></a>
 </div>
 </div><hr>
 <div class="form-group row">
 <div class="col-sm-10">
-<p><strong>Getting started with the Marketing FreshGRC
-</strong></p>
+<p style="color: #141f1f;">Getting started with the Marketing FreshGRC
+</p>
 
 </div>
 <div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal2">watch video</a>
+<a href="#" data-toggle="modal" data-target="#myModal2"><img src="video.jpg" title="watch video" width="40" height="40"></a>
 </div>
 </div><hr>
 <div class="form-group row">
 <div class="col-sm-10">
-<p><strong>Read our FAQ
-</strong></p>
-<P>Read our FAQ
+<h5><strong>Read our FAQ
+</strong></h5>
+<P style="color: #141f1f;">Read our FAQ
 All the important stuff including what's free vs paid, how we secure your data, and which other tools FreshGRC works with.</P>
 </div>
 <div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal2">Read FAQ</a>
+<a href="#" data-toggle="modal" data-target="#myModal2"><img src="FAQ.png" title="Read FAQ" width="40" height="40"> </a>
 </div>
 </div><hr>
 </div>
 <br>
-<div class="container" style="background-color: white;width: 50%;">
+<div class="container" style="background-color: white;width: 75%;">
 <div class="form-group row">
 <div class="col-sm-10">
-<p><strong>Explore FreshGRC</strong>
-</p>
+<h5><strong>Explore FreshGRC</strong>
+</h5>
 </div>
 
 </div>
 </div>
-<div class="container" style="background-color: white;width: 50%;">
+<div class="container" style="background-color: white;width: 75%;">
 <div class="form-group row">
 <div class="col-sm-10">
-<p>Create your first contact</p>
+<p style="color: #141f1f;">Create your first contact</p>
 </div>
 <div class="col-sm-2">
-<a href="http://freshgrc.com/freshgrc/signup.php">create conatct</a>
+<a href="http://freshgrc.com/freshgrc/signup.php"><img src="contact.png" title="create conatct" width="40" height="40"></a>
 </div>
 </div>
 </div>
-<div class="container" style="background-color: white;width: 50%;">
+<div class="container" style="background-color: white;width: 75%;">
 <h4>Read our FAQ</h4>
 <div class="form-group row">
 <div class="col-sm-10">
-<pre>All the important stuff including what's free vs paid,how we secure your data, and which other tools FixNix works with.</pre>
+<p style="color: #141f1f;">All the important stuff including what's free vs paid,how we secure your data, and which other tools FixNix works with.</p>
 </div>
 </div>
 <div class="form-group row">
@@ -173,9 +175,9 @@ All the important stuff including what's free vs paid, how we secure your data, 
 <!-- <button type="button" class="btn btn-success" style="float: right;">Read</button> -->
 </div>
 </div>
- <div class="row" style="float: right;">
+ <div class="row" style="float: right;margin-top: -10%">
                   <div class="modal-footer">
-                  <button type="button" value="1" class="btn btn-info" onclick="allocatemodules()" name="submit" data-dismiss="modal" style="font-size: 18px;" id="demo">Submit</button>
+                  <button type="button" value="1" class="w3-btn w3-white w3-border w3-border-red w3-round-large" onclick="allocatemodules()" name="submit" data-dismiss="modal" style="font-size: 18px;" id="demo">Submit</button>
                   </div>
               </div>
 </div>
