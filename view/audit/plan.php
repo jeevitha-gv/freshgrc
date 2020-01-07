@@ -4,6 +4,10 @@ require_once __DIR__.'/../../php/audit/auditClauseManager.php';
 require_once __DIR__.'/../../php/compliance/complianceManager.php';
 require_once __DIR__.'/../../php/audit/auditManager.php';
 require '../../php/user/userManager.php';
+ require_once __DIR__.'/../../php/risk/riskManager.php';
+    $riskManager = new RiskManager();
+    // 4 is auditor role
+    $allLocation = $riskManager->getAllLocation();
 $companyId=$_SESSION['company'];
 ?>
 <!DOCTYPE html>
@@ -132,23 +136,40 @@ CREATE PLAN
 </div>
 </div>
 <div class="form-group row" >
+
         <div class="col-md-6">
         <?php include '../compliance/complianceDropDown.php';?>
         </div>
-<div class="col-md-6">
+        <div class="col-md-6">
+        <?php if($_SESSION['user_role'] == 'auditor') {?>
         <label>Location</label>
           <?php include '../common/locationDropDown.php';?>
-        </div> 
+      <?php }?>
+        <?php if($_SESSION['user_role'] == "demo") { ?>
+          <label>Location</label>
+<select  id="location" name="locationDropDown" class="form-control">
+              <option>...select...</option>    
+
+    <?php foreach($allLocation as $location){ ?>
+    <option value="<?php echo $location['id'] ?>"><?php echo $location['name']; ?></option>
+    <?php } ?>
+</select>
+
+      <?php }?>
+    </div>
 </div>
+
 <div class="form-group row" >
-        <div class="col-md-6" style="margin-top: -2%;">
-        <?php include'../common/auditorDropDown.php';?>
+
+        <div class="col-md-6">
+        <?php include '../common/auditorDropDown.php';?>
         </div>
 <div class="col-md-6" style="margin-top: -2%;">
           <?php include'../common/auditeeDropdown.php';?>
  </div> 
 </div>
 <div class="form-group row" >
+
 <label class="col-3 col-form-label">Frequency:</label>
 <div class="col-9">
 <?php include'../common/auditFreqDropDown.php'; ?>
