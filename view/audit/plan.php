@@ -132,9 +132,7 @@ CREATE PLAN
 </div>
 <div class="col-md-1">
   <label>Audit Type</label>
-  <div class="">
     <?php include '../common/auditTypeDropdown.php';?>
-  </div>
 </div>
 </div>
 <div class="form-group row" >
@@ -166,19 +164,18 @@ CREATE PLAN
         <div class="col-md-6">
         <?php include '../common/auditorDropDown.php';?>
         </div>
-<div class="col-md-6">
-          <?php include '../common/auditeeDropdown.php';?>
-        </div> 
+<div class="col-md-6" style="margin-top: -2%;">
+          <?php include'../common/auditeeDropdown.php';?>
+ </div> 
 </div>
 <div class="form-group row" >
- 
+
 <label class="col-3 col-form-label">Frequency:</label>
 <div class="col-9">
 <?php include'../common/auditFreqDropDown.php'; ?>
 </div>
 </div>
 </div>
-
 <div class="kt-portlet__foot" style="float: right;">
 <div class="kt-form__actions">
   <button type="button" id="manageButton" onclick="manageModal()" data-dismiss="modal" class="btn btn-primary" style="background-color:#4285f4;float:right;">Plan</button>
@@ -193,6 +190,7 @@ CREATE PLAN
  </div>
  </div>  
 </div>
+</body>
 <?php 
 include "sidemenu.php";
  ?>

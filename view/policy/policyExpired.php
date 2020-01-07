@@ -1,4 +1,3 @@
-
 <?php 
   require_once __DIR__.'/../header.php';
   require_once __DIR__.'/../../php/policy/policyManager.php';
@@ -9,14 +8,14 @@
 <!DOCTYPE html>
 
 <html lang="en" >
- <head><!--begin::Base Path (base relative path for assets of this page) -->
-
+<head><!--begin::Base Path (base relative path for assets of this page) -->
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
         <title>Freshgrc</title>
-        <meta name="description" content="Buttons examples">
+        <meta name="description" content="Base form control examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
         <!--begin::Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        <!--end::Fonts -->
@@ -60,10 +59,10 @@
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
 
-<!--     <script src="js/audit/auditCreateManagement.js"></script>
- -->  <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
+     
+    <script src="js/audit/auditCreateManagement.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
     <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
-
     <!-- <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>  -->
       
     <!-- <script type="text/javascript" src="assets/DataTables/DataTables-1.10.12/js/jquery.dataTables.min.js"></script> -->
@@ -75,10 +74,12 @@
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
         <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>  
   
+    <script src="js/audit/auditCreateManagement.js"></script>
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
         <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+    </head>
  <?php 
  include '../siteHeader.php';
 ?>
@@ -135,7 +136,8 @@
                             <td><?php echo $data['start_date']; ?></td>
                             <td><?php echo $data['policyprocedure']; ?></td>
                             <td><?php echo $data['status']; ?></td>
-                            <td><button class="btn btn-primary" onclick="deletePolicy();">Delete</button>&nbsp; <button class="btn btn-primary"><a href="/freshgrc/view/policy/policyEdit.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Update</a></button>&nbsp; 
+                            <td><button class="btn btn-primary" onclick="deletePolicy();">Delete</button>&nbsp;
+                             <button class="btn btn-primary"><a href="/freshgrc/view/policy/policyEdit.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Update</a></button>&nbsp; 
                             <button class="btn btn-primary" id="extendButton">Extend<span class="date-picker input-daterange" style="position:absolute;" id="hiddenDate" data-date="10/11/2012" data-date-format="yyyy/mm/dd"><form><input type="text" id="hiddenText" style="visibility:hidden;" class="form-control datepickerClass notranslate" name="to"></form></span></button></td>
                           </tr>
                         <?php } ?>
@@ -257,4 +259,48 @@ include '../audit/sidemenu.php';
         $(".datepickerClass").datepicker();
         $('.ui-datepicker').addClass('notranslate');
     });
+</script>
+<script type="text/javascript">
+  function deletePolicy() 
+  {
+    $('#kt_table_1 tbody').on( 'click', 'button', function () {
+    var data = table.row( $(this).parents('tr') ).data();
+    var action = "delete";
+    var publishDetails = {
+        'policyId': data[0],
+        'action': action,
+    }
+    $.ajax({
+        type: "POST",
+        url: "/freshgrc/php/policy/managePolicy.php",
+        data: publishDetails        
+    }).done(function(data){
+        Swal.fire({ 
+            title:  'Policy Deleted',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText:'ok',
+            type: "error",
+                  });
+            $('.swal2-confirm').click(function(){
+            location.reload();
+          });  
+    });
+ });
+}
+
+ function deletePolicyId(policy_id)
+{
+    var action = "delete";
+    var publishDetails = {
+        'policyId': policy_id,
+        'action': action,
+    }
+    $.ajax({
+        type: "POST",
+        url: "/freshgrc/php/policy/managePolicy.php",
+        data: publishDetails        
+    }).done(function(data){        
+    });
+}
+ 
 </script>

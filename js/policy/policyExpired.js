@@ -1,9 +1,9 @@
-$(document).ready(function () {     
+$(document).ready(function () {    
 
     var userCredentials = {
         'userId' : loggedInUser,
         'userRole' : loggedInUserRole
-    }   
+    }  
 
     $.ajax({
         dataType: "json",
@@ -11,7 +11,7 @@ $(document).ready(function () {
         url: "/newtheme/php/policy/policylistExpired.php",
         data: userCredentials,
         success: success
-    }); 
+    });
 
     $("#hiddenText").each(function() {
         $(this).datepicker({
@@ -32,9 +32,9 @@ $(document).ready(function () {
                 $.ajax({
                    type: "POST",
                    url: "/newtheme/php/policy/managePolicy.php",
-                   data: extendDetails 
+                   data: extendDetails
                 }).done(function(data){
-                    Swal.fire({ 
+                    Swal.fire({
                         title:  'Policy Extended',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText:'ok',
@@ -54,7 +54,7 @@ $(document).ready(function () {
         $(".datepickerClass").datepicker();
         $('.ui-datepicker').addClass('notranslate');
     });
-    
+   
     $('#extendButton').click(function() {
         $('#hiddenDate').datepicker("show");
     });
@@ -93,7 +93,7 @@ function tableInit() {
             url: "/newtheme/php/policy/managePolicy.php",
             data: policyData,
             success: viewPolicyData
-        }); 
+        });
     } );
 }
 function success(data) {
@@ -150,7 +150,7 @@ function showPolicyApprove() {
     }    
 }
 function policyClasification(id) {
-    
+   
        $('#policy_classification').val(id);
 }
 
@@ -158,28 +158,28 @@ function policyprocedure(id){
     $('#policy_procedure').val(id);
 }
 function policyAudience(id) {
-       $('#audience').val(id);         
+       $('#audience').val(id);        
 }
  
 
 function securityClasification(){
-    
+   
     if( $('#securityClassification').prop('checked'))
     {
         $('#security_classification').val("1");
-      
+     
     }
     else{
       $('#security_classification').val("2");  
     }
 
-    
+   
 }
 
-function getModalDetailsFromPlan() { 
+function getModalDetailsFromPlan() {
     debugger
-    
-var action = "create"; 
+   
+var action = "create";
     var modalDetails = {
         'loggedInUser': $('#loggedInUser').val(),
         'title': $('#title').val(),
@@ -201,7 +201,7 @@ var action = "create";
         'policy_procedure': $('#policy_procedure').val(),
         'organization_type_id': $('#organization_type_id').val(),
         'subPolicy':$('#subPolicy').val(),
-        'action':action,       
+        'action':action,      
 
     }
     return modalDetails;
@@ -280,7 +280,7 @@ function expirydaterror(){
 function savePolicyPlan() {
 
     if(!validate()){
-        Swal.fire({ 
+        Swal.fire({
             title:  'Please fill all the fields',
             type: 'warning',
             confirmButtonColor: '#3085d6',
@@ -290,7 +290,7 @@ function savePolicyPlan() {
     }
 
     if(!expirydaterror()){
-        Swal.fire({ 
+        Swal.fire({
             title:  'Expiry,Review,Expected Date should be ahead of Policy Creation',
             type: 'warning',
             confirmButtonColor: '#3085d6',
@@ -310,23 +310,23 @@ function savePolicyPlan() {
 }
 
  function savePolicyControl(data){
- var controls1 = []; 
+ var controls1 = [];
  var controls2 = [];
- var controls3 = []; 
+ var controls3 = [];
  var controls=[];
-        
+       
         $('.mainheading').each(function (index) {
-                                        
-            controls1.push($(this).val());     
+                                       
+            controls1.push($(this).val());    
         });
         $('.subheading').each(function (index)
         {
-            
+           
             controls2.push($(this).val());
         }) ;
          $('.description').each(function (index)
         {
-            
+           
             controls3.push($(this).val());
         });
          var i;
@@ -344,15 +344,15 @@ var controls4=controls;
  var controlDetails = {
     'policy_id': data,
     'controls': controls4,
-    'action': 'create', 
- } 
+    'action': 'create',
+ }
 
 $.ajax({
     type: "POST",
     url: "/newtheme/php/policy/managePolicy.php",
     data: controlDetails,
     success: function(data){
-        Swal.fire({ 
+        Swal.fire({
             title:  'Successfully Updated',
             type: "success",
             timer: 1000,
@@ -360,13 +360,13 @@ $.ajax({
         });
         setTimeout(function(){window.location = "/newtheme/view/policy/policyAdmin.php"},1000);        
     }
-}); 
+});
    
-    
+   
 
  }
 
- function savePublish(PolicyId){     
+ function savePublish(PolicyId){    
     var action = "publish";
     var publishDetails = {
         'policy_id': PolicyId,
@@ -388,8 +388,8 @@ $.ajax({
     var userCredentials = {
         'userId' : loggedInUser,
         'userRole' : loggedInUserRole
-    } 
-    
+    }
+   
    $.ajax({
         dataType: "json",
         type: "POST",
@@ -410,7 +410,7 @@ $.ajax({
         data: modalDetails,
         success:function(data){
             $('#subPolicydropdown').html(data);
-        
+       
         }
     });
          
@@ -428,8 +428,8 @@ $.ajax({
        url: "/newtheme/php/policy/policyMailCtrlManager.php",
         data: mailDetails,
         success: function(data){
-            
-        }       
+           
+        }      
     });
 
  }
@@ -460,32 +460,32 @@ $.ajax({
     $('#policyDetailsModal').modal('show');
  }
 
- function deletePolicy() 
-  {
-    $('#kt_table_1 tbody').on( 'click', 'button', function () {
-    var data = table.row( $(this).parents('tr') ).data();
+ function deletePolicy() {
+    table = $('#modaldetails').DataTable()
+    var selectedData = table.rows('.selected').data();
     var action = "delete";
     var publishDetails = {
-        'policyId': data[0],
+        'policyId': selectedData[0][0],
         'action': action,
     }
     $.ajax({
         type: "POST",
-        url: "/newtheme/php/policy/managePolicy.php",
+        url: "/freshgrc/php/policy/managePolicy.php",
         data: publishDetails        
     }).done(function(data){
-        Swal.fire({ 
+        swal({
             title:  'Policy Deleted',
             confirmButtonColor: '#3085d6',
             confirmButtonText:'ok',
             type: "error",
-                  });
-            $('.swal2-confirm').click(function(){
-            location.reload();
-          });  
+                  }, function () {
+                          setTimeout(function () {
+                              window.location = "/freshgrc/view/policy/policyExpired.php";
+                        });
+         
+             });  
     });
- });
-}
+ }
 
  function deletePolicyId(policy_id)
 {
@@ -496,7 +496,7 @@ $.ajax({
     }
     $.ajax({
         type: "POST",
-        url: "/newtheme/php/policy/managePolicy.php",
+        url: "/freshgrc/php/policy/managePolicy.php",
         data: publishDetails        
     }).done(function(data){        
     });
@@ -504,5 +504,5 @@ $.ajax({
  function goToEditPage(){
     table = $('#modaldetails').DataTable()
     var selectedData = table.rows('.selected').data();
-    window.location =  "/newtheme/view/policy/policyEdit.php?PolicyId=" + selectedData[0][0];
+    window.location =  "/freshgrc/view/policy/policyEdit.php?PolicyId=" + selectedData[0][0];
  }
