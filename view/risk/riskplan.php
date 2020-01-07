@@ -131,7 +131,7 @@ CREATE PLAN
 </h3>
 </div>
 <div class="clearfix" style="float: right;">   
-              <a href="view/risk/riskCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>        
+              <!-- <a href="view/risk/riskCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>   -->      
             </div> 
 </div>
 
@@ -269,9 +269,94 @@ CREATE PLAN
   </div>
   <div class="form-group row">
     <div class="col-md-6">
-      <div class="form-group">
-         <a href="view/risk/riskCsvImport.php" class="btn btn-danger">Import</a> 
-      </div>
+    <div class="" >
+  <a class="btn btn-danger" data-toggle="collapse" data-target="#demo" style="font-size: 16px;margin-left: 170px;">Import</a><br><br>
+  <div id="demo" class="collapse">
+    <div class="kt-portlet">
+
+ <div class="panel-body">
+  <div class="kt-container">
+ <!--    <div class="col-md-6">
+  <input type="file" name="file">
+</div> -->
+
+        <label for="risktransaction" aria-hidden="true">
+                                <i class="flaticon2-plus">Choosefile</i>
+                      <input type="file" style="display:none" onchange="importtransaction()" id="risktransaction"/>
+
+                </label>
+
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+      <div class="" >
+  <a class="flaticon2-arrow" data-toggle="collapse" data-target="#demo1" style="font-size: 16px;margin-left: 170px;">View Transaction Summary</a><br><br>
+  <div id="demo1" class="collapse">
+    <div class="kt-portlet">
+
+
+<div class="kt-portlet">
+<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
+<div class="kt-portlet__head-label">
+<span class="kt-portlet__head-icon">
+<i class="kt-font-brand flaticon2-line-chart"></i>
+</span>
+<h3 class="kt-portlet__head-title" style="color: white;">
+My Risk
+</h3>
+</div>
+
+</div>
+
+<div class="kt-portlet__body"style="overflow-x:scroll;">
+<!--begin: Datatable -->
+<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+<thead>
+  <tr>
+  <th>Risk ID</th>
+  <th>Created Date</th>
+  <th>Title</th>
+  <th>status</th>
+  <th>Risk Name</th>
+  <th>Team</th>
+  <th>Risk Status</th>
+  <th>Company</th>
+ 
+  </tr>
+</thead>
+
+<tbody>
+<?php foreach ($allData as $data) { ?>
+                    <tr>
+                    <td style="display: none;"><?php echo $data['riskId'];?></td>
+                    <td><?php echo $data['date'];?></td>
+                    <td><?php echo $data['subject'];?></td>
+                    <td><?php echo $data['status'];?></td>
+                    <td><?php echo $data['riskName'];?></td>
+                    <td><?php echo $data['team']; ?></td>
+                    <td><?php echo $data['status'];?></td>
+                     <td><?php echo $data['company_id'];?></td>
+
+                   
+                   
+                    </tr>
+                  <?php } ?>
+</tbody>
+
+
+</table>
+<!--end: Datatable -->
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+
     </div>
   </div>
   <div class="form-group row">
