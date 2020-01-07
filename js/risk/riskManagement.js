@@ -675,6 +675,35 @@ function importRiskCsv(){
         //error: function () {}
     });  
 }
+function importtransaction(){
+
+    $('#risktransaction').click();
+    var myFormData = new FormData();
+    myFormData.append('risktransaction', risktransaction.files[0]);
+    
+    $.ajax({
+        url: "/freshgrc/php/risk/importtransactionrisk.php",
+        type: "POST",
+        processData: false, // important
+        contentType: false, // important
+        data: myFormData,
+       success: function (data) {
+            Swal.fire({
+              title: "Plan Created",
+              text: "Your Plan Has Been Created",
+              type: "success",
+              closeOnConfirm: false,
+              showLoaderOnConfirm: true
+            }, function () {
+              setTimeout(function () {
+                 window.location="/freshgrc/view/risk/riskPlan.php";
+              }, 2000);
+            });
+            
+        },
+        //error: function () {}
+    });  
+}
 function editRiskPlan(isUpdate) {
     $('#myModal').modal('show');
     if (isUpdate) {
