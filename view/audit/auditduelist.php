@@ -1,14 +1,13 @@
 <?php
  require_once __DIR__.'/../header.php';
   require_once __DIR__.'/../../php/audit/auditManager.php';
-   
-$manager = new AuditManager();
-    $userId = $_POST['userId'];   
+   $manager = new AuditManager();
+    $userId = $_POST['userId'];
     $userRole = $_POST['userRole'];
-    $allAudits = $manager->getAllAuditsForPublish($userId, $userRole);
-?>
+    $allAudits = $manager->getAllAuditsForCreate($userId, $userRole);
 
-<!DOCTYPE html>
+?>
+<!DOCTYPE html>   
 
 <html lang="en" >
     <!-- begin::Head -->
@@ -16,12 +15,12 @@ $manager = new AuditManager();
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>freshGrc</title>
+        <title>Freshgrc</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!--begin::Fonts -->
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        <!--end::Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        <!--end::Fonts -->
 
                     <!--begin::Page Vendors Styles(used by this page) -->
                             <link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
@@ -61,11 +60,13 @@ $manager = new AuditManager();
 <link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
-<script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
+
+     
+    <script src="js/audit/auditCreateManagement.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/DataTables/datatables.min.css" />
+    <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
     <!-- <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>  -->
-        <script src="js/audit/auditprepareManagement.js"></script>
-  
+      
     <!-- <script type="text/javascript" src="assets/DataTables/DataTables-1.10.12/js/jquery.dataTables.min.js"></script> -->
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/dataTables.buttons.min.js"></script> 
            <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.flash.min.js"></script> 
@@ -75,25 +76,25 @@ $manager = new AuditManager();
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
         <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>  
   
+    <script src="js/audit/auditCreateManagement.js"></script>
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
-        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+        <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
     </head>
-<?php 
-  include '../siteHeader.php';
-  ?>
-  <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"  >
+   <?php 
+    include '../siteHeader.php';
+   ?>
+    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
        
     <!-- begin:: Page -->
 
 
-
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-23%;">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-13%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
@@ -102,7 +103,7 @@ $manager = new AuditManager();
 
 
 <div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;"> 
+<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
 <i class="kt-font-brand flaticon2-line-chart"></i>
@@ -114,72 +115,23 @@ My Audits
 
 </div>
 
-<div class="kt-portlet__body" style="overflow-x:scroll;">
-
-
-<tbody>
-            <?php if($_SESSION['user_role'] == 'auditor') {?>
-               <!--  <div class="col-xs-2" id="create1">
-                    <button class="btn btn-warning btn-block" style="background-color: #aa66ce" 
-                    onclick="window.location.href='/freshgrc/view/audit/auditPlanCreate.php'"><i class="fa fa-user"></i> Create Audit</button>
-                </div>
-                <div class="col-xs-2" id="publishAudit">
-                    <button class="btn btn-warning btn-block " style="background-color: #aa66ce" 
-                    onclick="publishAuditList()"><i class="fa fa-user"></i>Published Audits</button>
-                </div> -->
-            <?php }?>
-            
-               <!--  <div class="col-xs-2" id="kickOffbtn">
-                    <button class="btn btn btn-block" onclick="performAuditActions()" style="background: #42a8ff;"><i class="fa fa-file"></i>
-                    Kick off</button>
-                </div> -->
-                <!-- <div class="col-xs-2" id="CheckForAuditorbtn">
-                    <button class="btn  btn-block" onclick="performAuditActions()" style="background: #42a8ff;"><i class="fa fa-file"></i>
-                    Review </button>
-                </div> -->
-              <?php if($_SESSION['user_role'] == 'auditor') {?>
-                
-                <!-- <div class="col-xs-2" id="auditeeDoPending">
-                    <button class="btn  btn-block" onclick="performAuditActions()" style="background: #42a8ff;"><i class="fa fa-file"></i>
-                     Response Pending</button>
-                </div> -->
-              <!--   <div class="col-xs-2" id="btnForApproved">
-                    <button class="btn  btn-block" onclick="performAuditActions()" style="background: #42a8ff;"><i class="fa fa-file"></i>
-                     Publish Audit</button>
-                </div> -->
-            <?php }?>
-            <?php if($_SESSION['user_role'] == 'auditee') {?>
-               <!--  <div class="col-xs-2" id="auditeeResponse" >
-                    <button class="btn  btn-block" onclick="performAuditActions()" style="background: #42a8ff;"><i class="fa fa-file"></i>
-                    Respond</button>
-                </div>
-                <div class="col-xs-2" id="btnForAct" >
-                    <button class="btn  btn-block" onclick="performAuditActions()" style="background: #42a8ff;"><i class="fa fa-file"></i>
-                    Follow Up</button>
-                </div> -->
-            <?php }?>
-               <!--  <div class="clearfix" id="reportButton">
-                    <button class="btn btn-primary" onclick="viewReport()" style="margin-left: 20px;margin-top: -8px;"><i class="fa fa-file"></i> Report</button>
-                </div> -->
-         
-            <br/>
-            <br/>
-
+<div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
   <tr>
   <th>Audit ID</th>
-  <th>Created Date</th>
+  <th>Date</th>
   <th>Title</th>
   <th>Compliance Name</th>
   <th>Audit Type</th>
-  <th>Company</th>
+  <th>company</th>
   <th>Audit Status</th>
  <th>Action</th>
   </tr>
 </thead>
-                                    <tbody>
+
+<tbody>
 <?php foreach ($allAudits as $data) { ?>
                     <tr>
                     <td style="display: none;"><?php echo $data['auditId'];?></td>
@@ -189,23 +141,23 @@ My Audits
                     <td><?php echo $data['type'];?></td>
                     <td><?php echo $data['companyName'];?></td>
                     <td><?php echo $data['status'];?></td>
-                    <td><button class="btn btn-success"><a href="/freshgrc/view/audit/auditReprt.php?auditId=<?php echo $data['auditId']; ?>" style="color: white;">published</a></button></td>
-                   
+                    <td><button class="btn btn-success" ><a href="/freshgrc/view/audit/auditDoPage.php?auditId=1944<?php echo $data['auditId']; ?>" style="color: white;">created</a></button></td>
+                    
                     </tr>
                   <?php } ?>
 </tbody>
-</table>
-                                </div>
-                            </div>
-                       
-                            </div>
-                            <!-- END SAMPLE TABLE PORTLET-->
-                        </div>
-                    </div>
-                    <!-- END PAGE BASE CONTENT -->
-                </div>    
 
-<div>
+
+</table>
+<!--end: Datatable -->
+</div>
+</div>
+
+<!-- end:: Content -->  </div>  
+
+</div>
+</div>
+</div>
 </div>
 
 <?php
@@ -219,7 +171,6 @@ include 'sidemenu.php';
         <!-- end::Global Config -->
 
     <!--begin:: Global Mandatory Vendors -->
-   <script type="text/javascript"></script>
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -300,6 +251,7 @@ include 'sidemenu.php';
          
                     <!--begin::Page Scripts(used by this page) -->
                             <script src="./assets/js/demo3/pages/crud/datatables/extensions/buttons.js" type="text/javascript"></script>
+                        <!--end::Page Scripts -->
             </body>
     <!-- end::Body -->
 </html>
