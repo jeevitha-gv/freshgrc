@@ -198,12 +198,13 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                                         <rect id="Rectangle-Copy-2" fill="#000000" opacity="0.3" transform="translate(17.825568, 11.945519) rotate(-19.000000) translate(-17.825568, -11.945519) " x="16.3255682" y="2.94551858" width="3" height="18" rx="1"></rect>
                                                                     </g>
                                                                 </svg> </span>
+                                                                <a href="view/audit/auditlist.php">
                                                             <span class="kt-widget17__subtitle">
                                                                 NO OF AUDIT
                                                             </span>
                                                             <span class="kt-widget17__desc">
                                                              <?php echo $noOfAudits[0]['count'] ?>
-                                                            </span>
+                                                            </span></a>
                                                         </div>
                                                         <div class="kt-widget17__item">
                                                             <span class="kt-widget17__icon">
@@ -214,12 +215,13 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                                         <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" id="Path" fill="#000000" opacity="0.3"></path>
                                                                     </g>
                                                                 </svg> </span>
+                                                                <a href="view/audit/auditPublished.php">
                                                             <span class="kt-widget17__subtitle">
                                                                 PUBLISHED
                                                             </span>
                                                             <span class="kt-widget17__desc">
                                                               <?php echo $noOfAuditsPublished[0]['count'] ?>
-                                                            </span>
+                                                            </span></a>
                                                         </div>
                                                     </div>
                                                     <div class="kt-widget17__items">
@@ -232,10 +234,13 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                                         <path d="M9.80428954,10.9142091 L9,12 L11.2222222,12 L11.2222222,16 L15.6666667,10 L15.4615385,10 L20.2072547,6.57253826 C20.4311176,6.4108595 20.7436609,6.46126971 20.9053396,6.68513259 C20.9668779,6.77033951 21,6.87277228 21,6.97787787 L21,17 C21,18.1045695 20.1045695,19 19,19 L5,19 C3.8954305,19 3,18.1045695 3,17 L3,6.97787787 C3,6.70173549 3.22385763,6.47787787 3.5,6.47787787 C3.60510559,6.47787787 3.70753836,6.51099993 3.79274528,6.57253826 L9.80428954,10.9142091 Z" id="Combined-Shape" fill="#000000"></path>
                                                                     </g>
                                                                 </svg> </span>
+                                                                <a href="view/audit/auditduelist.php">
                                                             <span class="kt-widget17__subtitle">
                                                                 DUE
                                                             </span>
                                                             <span class="kt-widget17__desc">
+                                                            </span>
+                                                          </a>
                                                                 <div class="number">   
                     <?php if($_SESSION['user_role']=='auditor'){ ?>                 
                       <span data-counter="counterup" data-value="<?php echo $noOfAuditsDue[0]['count']?>"><?php echo $noOfAuditsDue[0]['count']?></span>
@@ -255,10 +260,12 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                                         <path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" id="Rectangle-102-Copy" fill="#000000"></path>
                                                                     </g>
                                                                 </svg> </span>
+                                                                <a href="view/audit/auditdelayedlist.php">
                                                             <span class="kt-widget17__subtitle">
                                                                 DELAYED
                                                             </span>
                                                             <span class="kt-widget17__desc">
+                                                            </span></a>
                                                               <div class="number"> 
                       <?php if($_SESSION['user_role']=='auditor'){ ?>  
                       <span data-counter="counterup" data-value="<?php echo $noOfAuditsDelayed[0]['count'] ?>"><?php echo $noOfAuditsDelayed[0]['count'] ?></span>
