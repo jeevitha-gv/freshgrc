@@ -183,7 +183,7 @@
 
 								<li class="kt-menu__item " aria-haspopup="true"><a href="view/risk/riskAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">List</span></a></li>
 
-								<!-- <li class="kt-menu__item " aria-haspopup="true"><a href="view/risk/incidentList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Incident as Risk</span></a></li> -->
+								<li class="kt-menu__item " aria-haspopup="true"><a href="view/risk/incidentList.php" class="kt-menu__link text-center"><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Incident as Risk</span></a></li>
 						
 						
 							</ul>

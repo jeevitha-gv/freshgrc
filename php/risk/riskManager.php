@@ -673,8 +673,8 @@ $sql = "INSERT INTO risks(status, subject,scenario_id,company_id,incident_id,reg
     }
     public function getAllCreatedIncidents(){
         $sql='SELECT i.id, CONCAT(UCASE(LEFT(i.Title, 1)), LCASE(SUBSTRING(i.Title, 2))) as Title,i.Type,
-         i.source,i.created_date,i.status FROM `incident_file` i WHERE
-         i.status!="closed" ORDER BY i.id DESC;';
+         i.source,i.created_date,c.name as category,i.status, i.summary FROM `incident_file` i, category c WHERE
+         i.status!="closed" and c.id = i.Category ORDER BY i.id DESC';
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);
     }
