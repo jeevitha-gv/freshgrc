@@ -1,8 +1,10 @@
 <?php
 require_once __DIR__.'/auditManager.php';
+require_once __DIR__.'/auditMailManager.php';
 
 function manage(){
     $manager = new AuditManager();
+    $mailManager=new auditMailManager();
     switch ($_POST['action']){
         case 'create' :
              $auditData = getDataFromRequest();
@@ -70,6 +72,7 @@ function manage(){
             $auditData->loggedInUser = $_POST['loggedInUser'];
             $auditData->subject="Auditee has  responded  to assigned checklists";
             $auditClauseData->content="Audit is in Review stage";
+            $mailManager->sendResponseRemainderMail($auditData);
             $manager->saveStatus($auditData);
             break;            
         default:
