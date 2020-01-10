@@ -189,7 +189,7 @@ My Audits
                     <td><?php echo $data['type'];?></td>
                     <td><?php echo $data['companyName'];?></td>
                     <td><?php echo $data['status'];?></td>
-                    <td><button class="btn btn-success"><a href="/freshgrc/view/audit/auditReprt.php?auditId=<?php echo $data['auditId']; ?>" style="color: white;">published</a></button></td>
+                    <td><button class="btn btn-success"><a href="/freshgrc/view/audit/auditReprt.php?auditId=<?php echo $data['auditId']; ?>" style="color: white;">Report</a></button></td>
                    
                     </tr>
                   <?php } ?>
