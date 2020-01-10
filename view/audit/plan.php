@@ -161,7 +161,7 @@ CREATE PLAN
 
 <div class="form-group row" >
 
-        <div class="col-md-6">
+        <div class="col-md-6" style="margin-top: -2%;">
         <?php include '../common/auditorDropDown.php';?>
         </div>
 <div class="col-md-6" style="margin-top: -2%;">
