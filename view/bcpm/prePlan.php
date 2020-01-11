@@ -94,8 +94,15 @@ CREATE PLAN
 </h3>
 </div>
 </div>
-          <div class="kt-portlet__body">
-          <form id="form1">
+         <div class="page-content-wrapper" >
+      <!-- BEGIN CONTENT BODY -->
+      <div class="page-content" >
+        <div class="portlet box green">
+          
+           <div class="portlet-body">
+          <div class="row">
+            <div class="col-md-12">
+              <form id="form1" style="margin: 2%">
                 <div class="form-group">
                   <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>">
                   <input type="hidden" class="form-control" id="bcpmId">
@@ -107,68 +114,70 @@ CREATE PLAN
                   </div>
                 </div>
                 <div class="row">
+                  
                   <div class="col-md-4" >
-                   <div class="form-group" >
+                    <div class="form-group" >
                       <label class="control-label" >Date:</label>
                       <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 100% !important;">
-                        <input type="text" id="date" class="form-control datepickerClass  notranslate" name="from" class="" autocomplete="off">
+                        <input type="text"autocomplete="off" id="date" class="form-control datepickerClass  notranslate" name="from" class="">
                       </div>
                     </div>
+                  </div>
                  
                 </div>
+
               <div class="row">
                 <div class="col-xs-12 col-md-12 col-lg-12 form-group">
-                  <div class="panel panel-default">
+                  <div class="panel panel-default" style="margin-top: 20px;">
                      <div class="panel-heading"><b>Distribution List:</b></div>
                     <div class="panel-body">
                       <div class="col-md-4" >
                         <div class="form-group " >
                             <label for="auditTitle">Version No:</label>
-                            <input  type="text" class="form-control" id="version_no" required autocomplete="off">
-                          </div>        
+                            <input  type="text" class="form-control" id="version_no" required>
+                          </div>         
                       </div>
                       <div class="col-md-4" >
                        <div class="form-group">
                             <?php include '../common/bcpmimplementby.php';?>
-                          </div>        
+                          </div>         
                       </div>                    
                       <div class="col-md-4" >
                         <div class="form-group" >
                           <label class="control-label" >Review Date:</label>
                           <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 100% !important;">
-                          <input type="text" id="review_date" class="form-control datepickerClass  notranslate" autocomplete="off" name="from" class="">
+                          <input type="text"autocomplete="off" id="review_date" class="form-control datepickerClass  notranslate" name="from" class="">
                         </div>
                           </div>        
                       </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="margin-top: 10px;">
                       <div class="form-group">
                         <?php include '../common/bcpmapprovedby.php';?>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="margin-top: 10px;">
                       <div class="form-group">
                         <label class="control-label" >Approval Date:</label>
-                        <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd"  style="width: 100% !important;">
-                        <input type="text" id="approved_date" class="form-control datepickerClass  notranslate" name="from" class="" autocomplete="off">
+                        <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 100% !important;">
+                        <input type="text"autocomplete="off" id="approved_date" class="form-control datepickerClass  notranslate" name="from" class="">
                        </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="margin-top: 10px;">
                       <div class="form-group">
                       <label for="auditTitle" >Reason for Update:</label>
-                      <input  type="text" class="form-control" id="reason_for_update" required autocomplete="off">
+                      <input  type="text" class="form-control" id="reason_for_update" required>
                       </div>          
                     </div>
-                    </div>        
+                    </div>         
                   </div>
                 </div>
-              </div>
-              <div class="kt-container">
+              </div> 
                  <div class="row">
                    <div class="col-md-6" >
                     <div class="form-group " >
                       <label for="auditTitle" >Confidentiality Statement:</label>
-                      <input  type="text" class="form-control" id="confidentiality_statement" required autocomplete="off">
+                      <input  type="text" class="form-control" id="confidentiality_statement" required>
                     </div>          
                   </div>
                     <div class="col-md-6">
@@ -177,32 +186,31 @@ CREATE PLAN
                     </div>
                    </div>
                  </div>
-               </div>
                 <div class="row">
-                 <div class="col-xs-12 col-md-12 col-lg-12 form-group">
+                 <div class="col-xs-12 col-md-12 col-lg-12 form-group" style="margin-top: 20px;">
                   <div class="panel panel-default">
                    <div class="panel-heading"><b>Update List:</b></div>
                   <div class="panel-body">
                     <div class="col-md-4" >
                     <div class="form-group " >
                       <label for="auditTitle" >Name:</label>
-                      <input  type="text" class="form-control" id="update_name" required autocomplete="off">
+                      <input  type="text" class="form-control" id="update_name" required>
                     </div>          
                   </div>
 <!--                     <div class="col-md-4" >
                     <div class="form-group " >
                       <label for="auditTitle" >Phone:</label>
-                   
+                    
 
                        <input type="number" class="form-control form-control" >  -->
                         <!-- <script>
                           function contactno(){
                         var contact=/^\d{10}$/;
                         if (document.getElementById("update_phone").value.match(contact)) {
-                           
-                        }
+                            
+                        } 
                         else
-                             swal({
+                             swal({ 
                                title:  'Phone number should be 10 digits',
                                confirmButtonColor: '#3085d6',
                                confirmButtonText:'ok',
@@ -212,31 +220,32 @@ CREATE PLAN
                       </script> -->
 <!--                     </div>          
                   </div> -->
-                   
+                    
                      <div class="col-md-4" >
                     <div class="form-group " >
                       <label for="auditTitle" >Office Location:</label>
-                      <input  type="text" class="form-control" id="update_office_location" required autocomplete="off">
+                      <input  type="text" class="form-control" id="update_office_location" required>
                     </div>          
                   </div>
-                     <div class="col-md-4">
+                     <div class="col-md-4" style="margin-top: 10px;">
                       <div class="form-group">
-                     
+                      
                         <label class="control-label" >Date Issue:</label>
                         <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 100% !important;">
-                        <input type="text" id="update_date_issue" class="form-control datepickerClass  notranslate" name="from" class="" autocomplete="off">
+                        <input type="text"autocomplete="off" id="update_date_issue" class="form-control datepickerClass  notranslate" name="from" class="">
+                      
                       </div>
                      </div>
                     </div>
-                     <div class="col-md-4">
+                     <div class="col-md-4" style="margin-top: 10px;">
                       <div class="form-group">
                         <label >Date Update:</label>
-                         <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 100% !important;">
-                        <input type="text" id="update_date_update" class="form-control datepickerClass  notranslate" name="from" class="" autocomplete="off">
+                        <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 100% !important;">
+                        <input type="text"autocomplete="off" id="update_date_update" class="form-control datepickerClass  notranslate" name="from" class="">
                         </div>
                      </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="margin-top: 10px;" >
                       <div class="form-group">
                         <?php include '../common/bcpmupdatename.php';?>
                       </div>
@@ -245,19 +254,18 @@ CREATE PLAN
                </div>
                </div>
                </div>
-             </div>
-               </form>
-              <div class="modal-footer">
-                <button type="button" id="manageButton" onclick="manageModal();" data-dismiss="modal" class="btn btn-primary" style="float: right;">plan</button>
-              </div>
-             
+              </form>
+              <div class="modal-footer" style="border-top: 1px solid #eef1f5;">
+                <button type="button" id="manageButton" onclick="manageModal()" data-dismiss="modal" class="btn btn-primary" style="background-color:#4285f4;margin-right: 10px;">plan</button>
+              
+              </div>  
+            </div>
           </div>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>  
-        </div>
+      </div>
+
+    </div>
+  </div>  
         </body>  
 <?php
         include '../audit/sidemenu.php';
