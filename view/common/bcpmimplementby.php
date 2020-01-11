@@ -15,7 +15,8 @@
         <div class="input-group select2-bootstrap-prepend">
             
             <select id="implemented_by1" class="form-control">
-              <option></option>                                                                              
+              <option></option>
+              <option>implemented</option>                                                                              
               <?php foreach($allAuditors as $auditor){ ?>
                <option value="<?php echo $auditor['userId'] ?>"><?php echo $auditor['lastName'] ?></option>
                <?php } ?>                                    
