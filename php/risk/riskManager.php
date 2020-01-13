@@ -57,7 +57,7 @@ r.company_id from risks r, user u where r.owner = u.id order by r.id DESC';
         return $riskRecords;
     }    
     private function getnoofRisksForRiskOwner(){
-        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id from risks r WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") ORDER BY riskId DESC';
+        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id, rs.name, t.name as tech, s.name as source  from risks r, risk_scenario rs, technology t, source s WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ORDER BY riskId DESC';
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
     }
