@@ -268,7 +268,7 @@ CREATE PLAN
      </div>
   </div>
   <div class="form-group row">
-    <div class="col-md-6">
+<!--     <div class="col-md-6">
     <div class="" >
   <a class="btn btn-danger" data-toggle="collapse" data-target="#demo" style="font-size: 16px;margin-left: 170px;">Import</a><br><br>
   <div id="demo" class="collapse">
@@ -276,9 +276,9 @@ CREATE PLAN
 
  <div class="panel-body">
   <div class="kt-container">
- <!--    <div class="col-md-6">
+    <div class="col-md-6">
   <input type="file" name="file">
-</div> -->
+</div>
 
         <label for="risktransaction" aria-hidden="true">
                                 <i class="flaticon2-plus">Choosefile</i>
@@ -291,8 +291,8 @@ CREATE PLAN
 </div>
 </div>
 </div>
-</div>
-<div class="col-md-6">
+</div> -->
+<!-- <div class="col-md-6">
       <div class="" >
   <a class="flaticon2-arrow" data-toggle="collapse" data-target="#demo1" style="font-size: 16px;margin-left: 170px;">View Transaction Summary</a><br><br>
   <div id="demo1" class="collapse">
@@ -313,7 +313,6 @@ My Risk
 </div>
 
 <div class="kt-portlet__body"style="overflow-x:scroll;">
-<!--begin: Datatable -->
 <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
   <tr>
@@ -349,13 +348,12 @@ My Risk
 
 
 </table>
-<!--end: Datatable -->
 </div>
 </div>
 </div>
 </div>
 </div>
-  </div>
+  </div> -->
 
     </div>
   </div>
