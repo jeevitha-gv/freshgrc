@@ -164,19 +164,17 @@ function manageModal() {
               type: "success",
               closeOnConfirm: false,
               showLoaderOnConfirm: true
-            }, function () {
-              setTimeout(function () {
-                window.location="/freshgrc/view/audit/auditPlanCreate.php";
-              }, 2000);
+            });
+                window.location="/freshgrc/view/audit/auditCreateAdmin.php";
             });
 
  
-    });
+    }
     
 
 }
-}
-}
+} 
+
 
 function performAuditActions() {
     var selectedData = table.rows('.selected').data();
