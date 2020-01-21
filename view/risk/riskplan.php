@@ -131,7 +131,7 @@ CREATE PLAN
 </h3>
 </div>
 <div class="clearfix" style="float: right;">   
-              <!-- <a href="view/risk/riskCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>   -->      
+              <a href="view/risk/riskCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>        
             </div> 
 </div>
 
