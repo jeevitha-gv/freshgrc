@@ -390,6 +390,7 @@ function saveRiskReview(riskId) {
     var ReviewDetails = getModalDetailsFromReview(riskId);
     if(ReviewDetails.review=="--Select Review--"||ReviewDetails.next_step=="--Select Next Step--"||ReviewDetails.comments==" "){
         Swal.fire({ 
+           type: 'warning',
            title:  'Please Fill all the form fields',
            confirmButtonColor: '#3085d6',
            confirmButtonText:'ok'
@@ -401,8 +402,14 @@ function saveRiskReview(riskId) {
         type: "POST",
         url: "/freshgrc/php/risk/manageRiskReview.php",
         data: ReviewDetails        
-    }).done(function () {
-        window.location = "/freshgrc/view/risk/riskmitigatedlist.php";
+    }).done(function (data) {
+        Swal.fire({
+              title: "Reviewed Successfully",
+              type: "success",
+              closeOnConfirm: false,
+              showLoaderOnConfirm: true
+            });
+        window.location = "/freshgrc/view/risk/riskreviewedlist.php";
     });    
 }
 }
