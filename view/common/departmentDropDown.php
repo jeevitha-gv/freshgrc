@@ -4,7 +4,7 @@ $manager = new CompnayDepartmentManager();
 $allDepartments=$manager->getAllCompaniesDepartment();
 
 ?>
-      
+      <label>department</label>
  <div class="input-group">
   <select id="department" class="form-control">
       <option>...select...</option>          
