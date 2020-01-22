@@ -90,7 +90,10 @@ $companyId=$_SESSION['company'];
 <h3 class="kt-portlet__head-title" style="color: white;">
 CREATE PLAN
 </h3>
-</div>        
+</div> 
+<div class="clearfix" style="float: right;">   
+              <a href="view/audit/auditCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>        
+            </div>        
 </div>
 
 <div class="kt-portlet__body" >

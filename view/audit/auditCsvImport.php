@@ -85,7 +85,7 @@ $companyId=$_SESSION['company'];
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-IMPORT RISK FOR THE BELOW
+Import Audits For the below
 </h3>
 </div>
 </div>
