@@ -1352,7 +1352,22 @@ public function getganttchartdatarisk(){
         $dbOps = new DBOperations();    
         return $dbOps->fetchData($sql);        
      }
-
+     public function noOfAsset(){
+        $sql='SELECT count(*) as count FROM asset ';
+        return $this->fetchDataFromDB($sql);
+    }
+public function noOfAssetPublished(){
+        $sql='SELECT count(*) as count FROM asset a where a.status="identified"';
+        return $this->fetchDataFromDB($sql);
+    }
+    public function noOfAssetReviewed(){
+        $sql='SELECT count(*) as count FROM asset a where a.status="reviewed"';
+        return $this->fetchDataFromDB($sql);
+    }
+    public function noOfAssetAssessed(){
+        $sql='SELECT count(*) as count FROM asset a where a.status="assessed"';
+        return $this->fetchDataFromDB($sql);
+    }
     public function getganttchartdatapolicy(){
         $sql='SELECT `id`, `title`, `created_date`, `updated_date`,monthname(created_date) AS startmonth,monthname(updated_date) AS endmonth,year(created_date) AS startyear,year(updated_date) AS endyear FROM `policy` GROUP BY `title`,`startmonth` ORDER BY `created_date`';
         $dbOps=new DBOperations();
