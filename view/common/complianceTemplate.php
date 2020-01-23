@@ -116,7 +116,7 @@ LIBRARY
                                 <div> 
                                 <label for="complianceCsv" aria-hidden="true">
                                 <i class="btn btn-danger btn-block fa fa-file-excel-o">  Import Library</i>
-                                <input type="file" style="display:none" onchange= "importCsv()" id="complianceCsv"/>
+                                <input type="file" accept=".csv" style="display:none" onchange= "importCsv()" id="complianceCsv"/>
                                 </label>                                 
                                 </div>
                               </div>
