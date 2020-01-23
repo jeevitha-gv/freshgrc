@@ -56,13 +56,13 @@ r.company_id from risks r, user u where r.owner = u.id order by r.id DESC';
         }
         return $riskRecords;
     }    
-    private function getnoofRisksForRiskOwner(){
+    public function getnoofRisksForRiskOwner(){
         $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id, rs.name, t.name as tech, s.name as source  from risks r, risk_scenario rs, technology t, source s WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ORDER BY riskId DESC';
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
     }
-    private function getnoofRisksForRiskMitigator(){
-        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id from risks r WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") ORDER BY riskId DESC';     
+    public function getnoofRisksForRiskMitigator(){
+         $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id, rs.name, t.name as tech, s.name as source  from risks r, risk_scenario rs, technology t, source s WHERE ( r.status="Create" ) AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ORDER BY riskId DESC';    
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);      
     }  
@@ -502,7 +502,7 @@ $sql = "INSERT INTO risks(status, subject,scenario_id,company_id,incident_id,reg
     //     $dbOps = new DBOperations();
     //     return $dbOps->fetchData($sql);        
     // }
-    private function getAllCreatedRisksForMitigator(){
+    public function getAllCreatedRisksForMitigator(){
         $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject, r.status as status,r.company_id as company,r.created_date,r.team as team,u.last_name as riskName from risks r,user u where r.mitigator = u.id AND r.status="create" order by r.id DESC';     
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
@@ -528,7 +528,7 @@ $sql = "INSERT INTO risks(status, subject,scenario_id,company_id,incident_id,reg
         }
         return $riskRecords;
     } 
-    private function getAllMitigatedRisksForRiskOwner(){
+    public function getAllMitigatedRisksForRiskOwner(){
         $sql = 'SELECT r.id, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date,r.status,rs.calculated_risk FROM risks r,risk_scoring rs WHERE r.status="Mitigated" and r.id=rs.risk_id';     
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
@@ -539,9 +539,10 @@ $sql = "INSERT INTO risks(status, subject,scenario_id,company_id,incident_id,reg
         return $dbOps->fetchData($sql);        
     }
      public function getAllMitigatedRisksForRiskReviewer(){
-        $sql = 'SELECT r.id as riskId,r.subject,r.created_date as date,r.status as status, u.last_name as riskName,r.company_id,p.name from risks r, user u,mitigations m,planning_strategy p where r.reviewer = u.id AND r.status="Mitigated" AND m.risk_id=r.id and m.planning_strategy=p.id order by r.id desc';     
+        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id, rs.name, t.name as tech, s.name as source  from risks r, risk_scenario rs, technology t, source s WHERE (r.status="Mitigated") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ORDER BY riskId DESC';
         $dbOps = new DBOperations();
-        return $dbOps->fetchData($sql);        
+        return $dbOps->fetchData($sql);
+
     } 
 
     public function getAllMitigatedRisksdashboard($userId, $userRole){
@@ -588,13 +589,13 @@ $sql = "INSERT INTO risks(status, subject,scenario_id,company_id,incident_id,reg
         }
         return $riskRecords;
     } 
-    private function getAllReviewedRisksForRiskOwner(){
-        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject, r.status as status,r.company_id as company,r.created_date as date, u.last_name as riskName,r.risk_assessment as assessment from risks r, user u where r.reviewer = u.id AND r.status="Reviewed" ORDER BY `riskId` DESC ';     
+    public function getAllReviewedRisksForRiskOwner(){
+        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id, rs.name, t.name as tech, s.name as source  from risks r, risk_scenario rs, technology t, source s WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ORDER BY riskId DESC';     
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
     }
-    private function getAllReviewedRisksForMitigator(){
-        $sql = 'SELECT r.id, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date,r.status,rs.calculated_risk FROM risks r,risk_scoring rs WHERE r.status="Reviewed" and r.id=rs.risk_id';     
+    public function getAllReviewedRisksForMitigator(){
+        $sql = 'SELECT r.id as riskId, CONCAT(UCASE(LEFT(r.subject, 1)), LCASE(SUBSTRING(r.subject, 2))) as subject,r.created_date as date, r.status as status,r.company_id, rs.name, t.name as tech, s.name as source  from risks r, risk_scenario rs, technology t, source s WHERE (r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ORDER BY riskId DESC';
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
     }
