@@ -18,11 +18,27 @@ class PolicyManager {
                 $policyRecords = $this->getAllPolicysForPolicyOwner();
                 break;
         }
+
         return $policyRecords;
     }  
 
       private function getAllPolicysForPolicyOwner(){
         $sql = 'SELECT p.id as policyId, p.title as title, pt.name as policy_type, u.last_name as policyName,p.effective_from as start_date,pp.name as policyprocedure, p.status as status,p.effective_till from policy p, user u, policy_types pt, policy_procedure pp where p.owner = u.id AND p.policy_type=pt.id AND p.policy_procedure=pp.id ORDER BY p.id desc';     
+        $dbOps = new DBOperations();
+        return $dbOps->fetchData($sql);        
+    }
+    public function getAllPolicysIdentified(){
+        $sql = 'SELECT p.id as policyId, p.title as title, p.status as status, pt.name as policy_type, u.last_name as policyName,p.effective_from as start_date,pp.name as policyprocedure, p.status as status,p.effective_till from policy p, user u, policy_types pt, policy_procedure pp where p.owner = u.id AND p.policy_type=pt.id AND p.policy_procedure=pp.id AND p.status="identified"ORDER BY p.id desc';     
+        $dbOps = new DBOperations();
+        return $dbOps->fetchData($sql);        
+    }
+    public function getAllPolicyPublished(){
+        $sql = 'SELECT p.id as policyId, p.title as title, p.status as status, pt.name as policy_type, u.last_name as policyName,p.effective_from as start_date,pp.name as policyprocedure, p.status as status,p.effective_till from policy p, user u, policy_types pt, policy_procedure pp where p.owner = u.id AND p.policy_type=pt.id AND p.policy_procedure=pp.id AND p.status="published"ORDER BY p.id desc';     
+        $dbOps = new DBOperations();
+        return $dbOps->fetchData($sql);        
+    }
+    public function getAllPolicyExpired1(){
+        $sql = 'SELECT p.id as policyId, p.title as title, p.status as status, pt.name as policy_type, u.last_name as policyName,p.effective_from as start_date,pp.name as policyprocedure, p.status as status,p.effective_till from policy p, user u, policy_types pt, policy_procedure pp where p.owner = u.id AND p.policy_type=pt.id AND p.policy_procedure=pp.id AND p.status="expired"ORDER BY p.id desc';     
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql);        
     }
