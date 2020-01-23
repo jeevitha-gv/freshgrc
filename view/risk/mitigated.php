@@ -4,7 +4,7 @@ require_once __DIR__.'/../../php/risk/riskManager.php';
    $manager = new RiskManager();
     $userId = $_POST['userId'];
     $userRole = $_POST['userRole'];   
-    $allData = $manager->getAllReviewedRisksForRiskOwner();
+    $allData = $manager->getAllMitigatedRisksForRiskReviewer();
 ?>
 <!DOCTYPE html>
 

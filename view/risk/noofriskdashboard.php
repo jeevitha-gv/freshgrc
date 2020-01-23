@@ -4,7 +4,7 @@ require_once __DIR__.'/../../php/risk/riskManager.php';
    $manager = new RiskManager();
     $userId = $_POST['userId'];
     $userRole = $_POST['userRole'];   
-    $allData = $manager->getnoofriskdashboard($userId, $userRole);
+    $allData = $manager->getnoofRisksForRiskOwner();
 ?>
 <!DOCTYPE html>
 
