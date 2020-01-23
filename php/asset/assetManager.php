@@ -166,7 +166,7 @@ private function getAllAssetsForOwnerBasedOnGroup($userId,$string){
 
 
      public function getAllreport($userId){
-         $sql = 'SELECT a.id as assetId, concat(ucase(mid(a.name,1,1)),lcase(mid(a.name,2))) as name, ag.name as assetGroup, a.retention_period as retentionPeriod, u.last_name as ownerName, c.name as companyName, a.status as status from asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status ="reviewed" ORDER BY a.id DESC';
+         $sql = 'SELECT a.id as assetId, concat(ucase(mid(a.name,1,1)),lcase(mid(a.name,2))) as name, ag.name as assetGroup, a.retention_period as retentionPeriod, u.last_name as ownerName, c.name as companyName, a.status as status,a.company_id from asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status ="reviewed" ORDER BY a.id DESC';
         $paramArray = array();
         $paramArray[] = $userId;        
         $dbOps = new DBOperations();
@@ -175,16 +175,10 @@ private function getAllAssetsForOwnerBasedOnGroup($userId,$string){
 
 
 
-    private function getAllAssetsForReviewer($userId){
-        $sql = 'SELECT a.id as assetId, concat(ucase(mid(a.name,1,1)),lcase(mid(a.name,2))) as name, ag.name as assetGroup, a.retention_period as retentionPeriod, u.last_name as ownerName, c.name as companyName, a.status as status from asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.asset_reviewer = ? and a.status = "assessed" ORDER BY a.id DESC';
-        $paramArray = array();
-        $paramArray[] = $userId;        
-        $dbOps = new DBOperations();
-        return $dbOps->fetchData($sql, 'i', $paramArray);        
-    }
 
+     
     public function getAllAssetsForReviewer1($userId){
-        $sql = 'SELECT a.id as assetId, concat(ucase(mid(a.name,1,1)),lcase(mid(a.name,2))) as name, ag.name as assetGroup, a.retention_period as retentionPeriod, u.last_name as ownerName, c.name as companyName, a.status as status from asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status = "assessed" ORDER BY a.id DESC';
+        $sql = 'SELECT a.id as assetId, concat(ucase(mid(a.name,1,1)),lcase(mid(a.name,2))) as name, ag.name as assetGroup, a.retention_period as retentionPeriod, u.last_name as ownerName, c.name as companyName, a.status as status,a.company_id from asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status = "assessed" ORDER BY a.id DESC';
         $paramArray = array();
         $paramArray[] = $userId;        
         $dbOps = new DBOperations();
