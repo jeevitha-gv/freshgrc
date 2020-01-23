@@ -179,6 +179,7 @@ include '../siteHeader.php';
             <div class="kt-widget17__stats">
                 <div class="kt-widget17__items">
                     <div class="kt-widget17__item">
+                      <a href="view/policy/totalpolicies.php">
                         <span class="kt-widget17__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--brand">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -193,10 +194,11 @@ include '../siteHeader.php';
                         </span> 
                         <span class="kt-widget17__desc">
                             <span data-counter="counterup" data-value="<?php echo $Totalpolicy[0]['count'];?>"><?php echo $Totalpolicy[0]['count'];?></span>
-                        </span>  
+                        </span>  </a>
                     </div>
 
                     <div class="kt-widget17__item">
+                      <a href="view/policy/totalidendifiedpolicy.php">
                         <span class="kt-widget17__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -211,10 +213,12 @@ include '../siteHeader.php';
                         <span class="kt-widget17__desc">
                             <span data-counter="counterup" data-value="<?php echo $totalPolicyIdentified[0]['count'];?>"><?php echo $totalPolicyIdentified[0]['count'];?></span>
                         </span>  
+                      </a>
                     </div>                  
                 </div>
                 <div class="kt-widget17__items">
                     <div class="kt-widget17__item">
+                      <a href="view/policy/totalpolicypublished.php">
                         <span class="kt-widget17__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--warning">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -229,9 +233,11 @@ include '../siteHeader.php';
                         <span class="kt-widget17__desc">
                             <span data-counter="counterup" data-value="><?php echo $totalPolicyPublished[0]['count'];?>"><?php echo $totalPolicyPublished[0]['count'];?></span>
                         </span>  
+                      </a>
                     </div>  
 
                     <div class="kt-widget17__item">
+                      <a href="view/policy/totalpolicyexpired.php">
                         <span class="kt-widget17__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--danger">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -244,8 +250,9 @@ include '../siteHeader.php';
                            EXPIRED
                         </span> 
                         <span class="kt-widget17__desc">
-                            <span data-counter="counterup" data-value="><?php echo $totalPolicyExpired[0]['count'];?>"><?php echo $expiredCount[0]["count"];?></span>
-                        </span>  
+                            <span data-counter="counterup" data-value="><?php echo $totalPolicyExpired[0]['count'];?>"><?php echo $totalPolicyExpired[0]["count"];?></span>
+                        </span> 
+                        </a> 
                     </div>              
                 </div>
             </div>
