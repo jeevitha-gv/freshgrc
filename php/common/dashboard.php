@@ -835,7 +835,7 @@ public function assetfieldstatus($id){
         return $this->fetchDataFromDB($sql);
     }
     public function noOfLibraries(){
-        $sql='SELECT count(id) as count FROM compliance';
+        $sql='SELECT count(*) as count FROM compliance where status="in_draft"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfPublished(){
@@ -843,7 +843,7 @@ public function assetfieldstatus($id){
         return $this->fetchDataFromDB($sql);
     }
     public function noOfDraft(){
-        $sql='SELECT count(*) as count FROM compliance where (status!="published" || status!="analyzed")';
+        $sql='SELECT count(*) as count FROM compliance where (status="created")';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAnalyzed(){
