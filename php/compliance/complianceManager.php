@@ -7,44 +7,43 @@ require_once __DIR__.'/../common/workflowManager.php';
 class ComplianceManager {
     
     public function getAll($companyId){
-        $sql = 'SELECT compl.id as compl.name as complianceName, compl.description as description, compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM 
+        $sql = 'SELECT compl.id as complianceId, compl.name as complianceName, compl.description as description, compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM 
         compliance compl, company c where compl.company_id = c.id and c.id=?';
         $dbOps = new DBOperations();
         $paramArray=array($companyId);
-        return $dbOps->fetchData($sql,'i',$paramArray);
+        return $dbOps->fetchData($sql);
     }
     public function getAllForDraft($companyId){
-        $sql = 'SELECT compl.id as complianceId, compl.name as complianceName, compl.description as description, compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM compliance compl, company c where compl.company_id = c.id and c.id=? and (compl.status="in_draft" || compl.status="in_review") order by compl.id desc ';
+        $sql = 'SELECT compl.id as complianceId, compl.name as complianceName, compl.description as description, compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM compliance compl, company c where compl.company_id = c.id and (compl.status="in_draft" || compl.status="in_review") order by compl.id desc ';
         $dbOps = new DBOperations();
         $paramArray=array($companyId);
-        return $dbOps->fetchData($sql,'i',$paramArray);
+        return $dbOps->fetchData($sql);
     }
     public function getAllForPublished($companyId){
         $sql = 'SELECT compl.id as complianceId, compl.name as complianceName, compl.description as description, 
         compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM 
-        compliance compl, company c where compl.company_id = c.id and c.id=? and compl.status="published" 
+        compliance compl, company c where compl.company_id = c.id and compl.status="published" 
         order by compl.id desc';
         $dbOps = new DBOperations();
         $paramArray=array($companyId);
-        return $dbOps->fetchData($sql,'i',$paramArray);
+        return $dbOps->fetchData($sql);
     }
     public function getAllForReview($companyId){
         $sql = 'SELECT compl.id as complianceId, compl.name as complianceName, compl.description as description,
          compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM 
-         compliance compl, company c where compl.company_id = c.id and c.id=? and
-          (compl.status="created" || compl.status="reviewed") order by compl.id desc';
+         compliance compl, company c where compl.company_id = c.id and (compl.status="created" || compl.status="reviewed") order by compl.id desc';
         $dbOps = new DBOperations();
         $paramArray=array($companyId);
-        return $dbOps->fetchData($sql,'i',$paramArray);
+        return $dbOps->fetchData($sql);
     }
     public function getAllForReport($companyId){
         $sql = 'SELECT compl.id as complianceId, compl.name as complianceName, compl.description as description,
          compl.version as version,  c.name as companyName, compl.company_id, compl.status as complStatus FROM 
-         compliance compl, company c where compl.company_id = c.id and c.id=? and (compl.status="analyzed") 
+         compliance compl, company c where compl.company_id = c.id and (compl.status="analyzed") 
          order by compl.id desc';
         $dbOps = new DBOperations();
         $paramArray=array($companyId);
-        return $dbOps->fetchData($sql,'i',$paramArray);
+        return $dbOps->fetchData($sql);
     }
     
     public function getComplianceData($complianceId, $userRole){
