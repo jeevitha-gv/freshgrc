@@ -103,6 +103,9 @@ include "../siteHeader.php";
 New Policy
 </h3>
 </div>
+<div class="clearfix" style="float: right;">   
+              <a href="view/policy/policyCsvImport.php"><img src="pic/upload.png" style="width: 30px; height: 30px;" title="Import Audit"></a>        
+            </div> 
 </div>
 
 <div class="kt-portlet__body">

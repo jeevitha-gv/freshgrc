@@ -543,11 +543,11 @@ function viewPolicyData(data) {
     $('#policyCsv').click();
     var myFormData = new FormData();
     myFormData.append('policyCsv', policyCsv.files[0]);
+    myFormData.append('Title', $('#Title').val());
+    myFormData.append('organization', $('#organization').val());
     myFormData.append('policytype', $('#policytype').val());
     myFormData.append('subPolicy', $('#subPolicy').val());
-    myFormData.append('policyowner', $('#policyowner').val());
-    myFormData.append('policyreviewer', $('#policyreviewer').val());
-    myFormData.append('policyapprover', $('#policyapprover').val());
+    myFormData.append('security', $('#security').val());
     myFormData.append('loggedInUser', $('#loggedInUser').val());
           $.ajax({
         url: "/freshgrc/php/policy/importPolicies.php",
