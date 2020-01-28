@@ -12,6 +12,7 @@ $GLOBALS['allClausesArray']=array();
 $checklists=array();
 $score=0;
 $auditId = $_GET['auditId'];
+
 $complianceId=array();
 $auditManager = new AuditManager();
 $auditdetails = $auditManager->getAuditDetails($auditId);
@@ -107,23 +108,28 @@ function tabledata($clause){
                         </td>
                     <td>  
             <h5>Priority</h5> 
+ 
             <div class="btn-group btn-group-solid">
-            <button type="button" class="btn btn-dark" id="priorityLow<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'low')" <?php if($clause['auditClauseForThisClauseId']['priority']=="low"){echo "style='background-color:green'";  
+  <button class="display"></button>
+            <!-- <button type="button" class="btn btn-dark" id="priorityLow<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'low')" <?php if($clause['auditClauseForThisClauseId']['priority']=="low"){echo "style='background-color:green'";  
             }?>>L</button>
               <button type="button" class="btn btn-dark" id="priorityMedium<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['priority']=="medium"){echo "style='background-color:yellow'"; }?>>M</button>
-              <button type="button" class="btn btn-dark" id="priorityHigh<?php echo $clause['clauseId'] ?>" onclick="setPriority(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['priority']=="high"){echo "style='background-color:red'";}?>>H</button>
+              <button type="button" class="btn btn-dark" id="priorityHigh<?php echo $clause['clauseId'] ?>" onclick="setPriority(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['priority']=="high"){echo "style='background-color:red'";}?>>H</button> -->
           </div>
+          
         <input type="hidden" id="<?php echo 'priority'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['priority']?>">
-                <h5 style="margin-left: 150px;margin-top: -60px;">Severity</h5>    
 
-        <div class="btn-group btn-group-solid" style="margin-left: 150px;margin-top: 3px;">
+                <h5 style="margin-left: 150px;margin-top: -50px;">Severity</h5>    
+                 <button style="margin-left: 150px;margin-top: -40px;" class="displaySev"></button>
+
+        <!-- <div class="btn-group btn-group-solid" style="margin-left: 150px;margin-top: 3px;">
          <button type="button" class="btn btn-dark" id="severityLow<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'low')"<?php if($clause['auditClauseForThisClauseId']['severity']=="low"){echo "style='background-color:green'";  
         }?>>L</button>
               <button type="button" class="btn btn-dark" id="severityMedium<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['severity']=="medium"){echo "style='background-color:yellow'"; 
             }?>>M</button>
               <button type="button" class="btn btn-dark" id="severityHigh<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['severity']=="high"){echo "style='background-color:red'";  
           }?>>H</button>
-                                    </div>
+                                    </div> -->
                                    
                                 <input type="hidden" id="<?php echo 'severity'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['severity']?>">
                     </td>
@@ -209,6 +215,31 @@ function tabledata($clause){
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
 <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+<head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+     function showInput() {
+  var x,i
+  var  y =document.getElementById("user_input").value;
+  x = document.querySelectorAll(".display");
+ for(i=0;i<x.length;i++)
+{
+  x[i].innerHTML=y;
+}
+
+}
+function showSev() {
+  var x, i;
+  var  y =document.getElementById("user_Sev").value;
+  x = document.querySelectorAll(".displaySev");
+  for (i = 0; i < x.length; i++) {
+
+    x[i].innerHTML= y;
+  }
+}
+  </script>
+
+  </head>
     </head>
     <?php 
       include '../siteHeader.php';
@@ -329,7 +360,33 @@ AUDIT PLAN</h3>
                         <th>Control Number</th>
                         <th style="width: 20% !important;">Control Set</th>
                         <th style="width: 20% !important;">Target Date</th>
-                        <th >Auditor Response</th>
+                        <th >Auditor Response<br>
+
+
+<div >
+          <strong>priority</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>severity</strong> <br>           
+        <select id="user_input" onclick="showInput()" class="btn-success">
+          <option>..select..</option>
+     <option style="background-color: red">Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>&nbsp;&nbsp;&nbsp;
+    
+   
+              
+        <select id="user_Sev" onclick="showSev()" class="btn-danger">
+        <option>..select..</option>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+     
+    
+   
+</div>
+   
+
+                        </th>
                         <th >Assign Checklists</th>
                      
 
