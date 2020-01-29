@@ -110,26 +110,26 @@ function tabledata($clause){
             <h5>Priority</h5> 
  
             <div class="btn-group btn-group-solid">
-  <button class="display"></button>
-            <!-- <button type="button" class="btn btn-dark" id="priorityLow<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'low')" <?php if($clause['auditClauseForThisClauseId']['priority']=="low"){echo "style='background-color:green'";  
+  <!-- <button class="display"></button> -->
+            <button type="button" class="btn btn-dark" id="priorityLow<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'low')" <?php if($clause['auditClauseForThisClauseId']['priority']=="low"){echo "style='background-color:green'";  
             }?>>L</button>
               <button type="button" class="btn btn-dark" id="priorityMedium<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['priority']=="medium"){echo "style='background-color:yellow'"; }?>>M</button>
-              <button type="button" class="btn btn-dark" id="priorityHigh<?php echo $clause['clauseId'] ?>" onclick="setPriority(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['priority']=="high"){echo "style='background-color:red'";}?>>H</button> -->
+              <button type="button" class="btn btn-dark" id="priorityHigh<?php echo $clause['clauseId'] ?>" onclick="setPriority(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['priority']=="high"){echo "style='background-color:red'";}?>>H</button>
           </div>
           
         <input type="hidden" id="<?php echo 'priority'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['priority']?>">
 
                 <h5 style="margin-left: 150px;margin-top: -50px;">Severity</h5>    
-                 <button style="margin-left: 150px;margin-top: -40px;" class="displaySev"></button>
+                 <!-- <button style="margin-left: 150px;margin-top: -40px;" class="displaySev"></button> -->
 
-        <!-- <div class="btn-group btn-group-solid" style="margin-left: 150px;margin-top: 3px;">
+        <div class="btn-group btn-group-solid" style="margin-left: 150px;margin-top: 3px;">
          <button type="button" class="btn btn-dark" id="severityLow<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'low')"<?php if($clause['auditClauseForThisClauseId']['severity']=="low"){echo "style='background-color:green'";  
         }?>>L</button>
               <button type="button" class="btn btn-dark" id="severityMedium<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['severity']=="medium"){echo "style='background-color:yellow'"; 
             }?>>M</button>
               <button type="button" class="btn btn-dark" id="severityHigh<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['severity']=="high"){echo "style='background-color:red'";  
           }?>>H</button>
-                                    </div> -->
+                                    </div>
                                    
                                 <input type="hidden" id="<?php echo 'severity'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['severity']?>">
                     </td>
@@ -363,7 +363,7 @@ AUDIT PLAN</h3>
                         <th >Auditor Response<br>
 
 
-<div >
+<!-- <div >
           <strong>priority</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>severity</strong> <br>           
         <select id="user_input" onclick="showInput()" class="btn-success">
           <option>..select..</option>
@@ -384,7 +384,7 @@ AUDIT PLAN</h3>
     
    
 </div>
-   
+    -->
 
                         </th>
                         <th >Assign Checklists</th>
