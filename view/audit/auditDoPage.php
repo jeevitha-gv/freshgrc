@@ -110,26 +110,29 @@ function tabledata($clause){
             <h5>Priority</h5> 
  
             <div class="btn-group btn-group-solid">
-  <!-- <button class="display"></button> -->
-            <button type="button" class="btn btn-dark" id="priorityLow<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'low')" <?php if($clause['auditClauseForThisClauseId']['priority']=="low"){echo "style='background-color:green'";  
+  
+            <button type="button" class="btn btn-dark low" id="priorityLow<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'low')" <?php if($clause['auditClauseForThisClauseId']['priority']=="low"){echo "style='background-color:green'";  
+
             }?>>L</button>
-              <button type="button" class="btn btn-dark" id="priorityMedium<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['priority']=="medium"){echo "style='background-color:yellow'"; }?>>M</button>
-              <button type="button" class="btn btn-dark" id="priorityHigh<?php echo $clause['clauseId'] ?>" onclick="setPriority(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['priority']=="high"){echo "style='background-color:red'";}?>>H</button>
+              <button type="button" class="btn btn-dark medium" id="priorityMedium<?php echo $clause['clauseId'] ?>"onclick="setPriority(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['priority']=="medium"){echo "style='background-color:yellow'"; }?>>M</button>
+              <button type="button" class="btn btn-dark high" id="priorityHigh<?php echo $clause['clauseId'] ?>" onclick="setPriority(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['priority']=="high"){echo "style='background-color:red'";}?>>H</button> 
           </div>
           
         <input type="hidden" id="<?php echo 'priority'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['priority']?>">
 
                 <h5 style="margin-left: 150px;margin-top: -50px;">Severity</h5>    
-                 <!-- <button style="margin-left: 150px;margin-top: -40px;" class="displaySev"></button> -->
+                  
 
         <div class="btn-group btn-group-solid" style="margin-left: 150px;margin-top: 3px;">
-         <button type="button" class="btn btn-dark" id="severityLow<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'low')"<?php if($clause['auditClauseForThisClauseId']['severity']=="low"){echo "style='background-color:green'";  
+         <button type="button" class="btn btn-dark lows" id="severityLow<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'low')"<?php if($clause['auditClauseForThisClauseId']['severity']=="low"){echo "style='background-color:green'";  
         }?>>L</button>
-              <button type="button" class="btn btn-dark" id="severityMedium<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['severity']=="medium"){echo "style='background-color:yellow'"; 
+         <button type="button" class="btn btn-dark mediums" id="severityMedium<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'medium')" <?php if($clause['auditClauseForThisClauseId']['severity']=="medium"){echo "style='background-color:yellow'"; 
             }?>>M</button>
-              <button type="button" class="btn btn-dark" id="severityHigh<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['severity']=="high"){echo "style='background-color:red'";  
+              
+              <button type="button" class="btn btn-dark highs" id="severityHigh<?php echo $clause['clauseId'] ?>" class="btn btn-dark" onclick="setSeverity(<?php echo $clause['clauseId']?>,'high')" <?php if($clause['auditClauseForThisClauseId']['severity']=="high"){echo "style='background-color:red'";  
           }?>>H</button>
-                                    </div>
+         
+                                    </div> 
                                    
                                 <input type="hidden" id="<?php echo 'severity'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['severity']?>">
                     </td>
@@ -219,23 +222,84 @@ function tabledata($clause){
   <meta charset="UTF-8">
   <script language="JavaScript">
      function showInput() {
-  var x,i
+  var x, i;
   var  y =document.getElementById("user_input").value;
-  x = document.querySelectorAll(".display");
- for(i=0;i<x.length;i++)
-{
-  x[i].innerHTML=y;
-}
+  if(y=="L")
+  {
+  x = document.querySelectorAll(".low");
+  for (i = 0; i < x.length; i++) {
 
+    x[i].innerHTML= y;
+    x[i].dispatchEvent(new MouseEvent("click"));
+
+  }
+
+
+}
+if(y=="M")
+  {
+  x = document.querySelectorAll(".medium");
+  for (i = 0; i < x.length; i++) {
+
+    x[i].innerHTML= y;
+    x[i].dispatchEvent(new MouseEvent("click"));
+
+  }
+
+
+}
+if(y=="H")
+  {
+  x = document.querySelectorAll(".high");
+  for (i = 0; i < x.length; i++) {
+
+    x[i].innerHTML= y;
+    x[i].dispatchEvent(new MouseEvent("click"));
+
+  }
+
+
+}
 }
 function showSev() {
   var x, i;
   var  y =document.getElementById("user_Sev").value;
-  x = document.querySelectorAll(".displaySev");
+   if(y=="L")
+  {
+  x = document.querySelectorAll(".lows");
   for (i = 0; i < x.length; i++) {
 
     x[i].innerHTML= y;
+    x[i].dispatchEvent(new MouseEvent("click"));
+
   }
+
+
+}
+if(y=="M")
+  {
+  x = document.querySelectorAll(".mediums");
+  for (i = 0; i < x.length; i++) {
+
+    x[i].innerHTML= y;
+    x[i].dispatchEvent(new MouseEvent("click"));
+
+  }
+
+
+}
+if(y=="H")
+  {
+  x = document.querySelectorAll(".highs");
+  for (i = 0; i < x.length; i++) {
+
+    x[i].innerHTML= y;
+    x[i].dispatchEvent(new MouseEvent("click"));
+
+  }
+
+
+}
 }
   </script>
 
@@ -363,28 +427,28 @@ AUDIT PLAN</h3>
                         <th >Auditor Response<br>
 
 
-<!-- <div >
+<div >
           <strong>priority</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>severity</strong> <br>           
-        <select id="user_input" onclick="showInput()" class="btn-success">
-          <option>..select..</option>
-     <option style="background-color: red">Low</option>
-      <option>Medium</option>
-      <option>High</option>
+        <select id="user_input" class="btn btn-warning" onclick="showInput()">
+          <option>select</option>
+      <option>L</option>
+      <option>M</option>
+      <option>H</option>
     </select>&nbsp;&nbsp;&nbsp;
     
    
               
-        <select id="user_Sev" onclick="showSev()" class="btn-danger">
-        <option>..select..</option>
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
+        <select style="margin-left:14%;"id="user_Sev" class="btn btn-danger" onclick="showSev()">
+         <option>select</option>
+      <option>L</option>
+      <option>M</option>
+      <option>H</option>
     </select>
      
     
    
 </div>
-    -->
+   
 
                         </th>
                         <th >Assign Checklists</th>
