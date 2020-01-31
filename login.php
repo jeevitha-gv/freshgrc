@@ -90,6 +90,32 @@ mysqli_close($link);
 
 ?>
 
+<script type="text/javascript">
+const rmCheck = document.getElementById("rememberMe"),
+    emailInput = document.getElementById("email");
+    passwordInput = document.getElementById("pass");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  rmCheck.setAttribute("checked", "checked");
+  emailInput.value = localStorage.username;
+  passwordInput.value = localStorage.password;
+} else {
+  rmCheck.removeAttribute("checked");
+  emailInput.value = "";
+}
+
+function lsRememberMe() {
+  if (rmCheck.checked && emailInput.value !== "" && passwordInput !=="") {
+    localStorage.username = emailInput.value;
+    localStorage.password = passwordInput.value;
+    localStorage.checkbox = rmCheck.value;
+  } else {
+    localStorage.username = "";
+    localStorage.checkbox = "";
+  }
+}
+</script>
+
 <!DOCTYPE html>
 
 <html lang="en" >
@@ -176,20 +202,20 @@ mysqli_close($link);
                             <div class="kt-login__form">
                                 <form class="kt-form" name="login" method="post" name="loginform">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Email" name="email" autocomplete="off">
+                                        <input class="form-control" type="text" placeholder="Email" id="email" name="email" autocomplete="off">
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control form-control-last" type="password" placeholder="Password" name="password">
+                                        <input class="form-control form-control-last" type="password" id="pass" placeholder="Password" name="password">
                                     </div>
                                     <div class="kt-login__extra">
                                         <label class="kt-checkbox">
-                                            <input type="checkbox" name="remember"> Remember me
+                                          <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label>
                                             <span></span>
                                         </label>                        
                                         <a href="javascript:;" id="kt_login_forgot">Forget Password ?</a>
                                     </div>
                                     <div class="kt-login__actions">
-                                        <button  type="submit" name="login" class="btn btn-brand btn-pill btn-elevate">Sign In</button>
+                                        <button  type="submit" name="login" onclick="lsRememberMe()" class="btn btn-brand btn-pill btn-elevate">Sign In</button>
                                     </div>
                                 </form>
                             </div>
@@ -220,6 +246,8 @@ mysqli_close($link);
     </div>
 </div>         	</div>
 	
+
+
 <!-- end:: Page -->
 
 
