@@ -277,9 +277,9 @@ function tabledata($clause){
                     </div>             
                   </div>
               </div>
+              
               <div class="row">
-              <div class="col-md-12">
-                  <div class="col-md-6" >
+                  <div class="col-md-12" >
                     <div class="form-group " >
                       <!-- <label for="auditTitle" >Standards:</label> -->
                         <?php include '../compliance/mitigationControlComplianceDropDown.php';?>
@@ -294,7 +294,7 @@ function tabledata($clause){
                     </div>
                   </div>
               </div>
-          </div>
+         
           <div class="row">
               <div class="col-md-12">
       

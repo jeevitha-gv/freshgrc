@@ -13,8 +13,8 @@
   <label>Compliance</label>
   <div class ="col-md-12">
 
-      <select id="compliance" class="form-control" onchange="getControls()" >
-        <option></option>
+      <select id="compliance" class="form-control select" onchange="getControls()" multiple="">
+        <!-- <option></option> -->
         <?php foreach($allCompliances as $compliance){ ?>
          <option value="<?php echo $compliance['id'] ?>"><?php echo $compliance['name'] ?></option>
         <?php } ?>                                     
@@ -23,5 +23,5 @@
      </div>
     </div>
 
- <script src="metronic/theme/assets/pages/scripts/components-select2.min.js" type="text/javascript"></script>
+ <!-- <script src="metronic/theme/assets/pages/scripts/components-select2.min.js" type="text/javascript"></script> -->
        
