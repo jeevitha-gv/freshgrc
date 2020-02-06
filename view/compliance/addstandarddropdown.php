@@ -15,6 +15,6 @@
     <?php } ?>
   </select>
   <button class="btn btn-outline-secondary" onclick="addstand()" title="Add Checklists" style="cursor: pointer; border-radius: 20px; margin-left: 5px; margin-top: -5px;"><span class="fa fa-plus-circle fa-2x"></span></button>
-  <a href="view/common/regulatoryTemplate.php" style="margin-left: 20%;"><img src="import.png" title="Import CheckLists" width="35" height="35"></a>
+  <a href="view/common/regulatoryTemplate.php" style="margin-left: 20%;"><img src="import.png" title="Import Checklist" width="35" height="35"></a>
 </div>
 </div>

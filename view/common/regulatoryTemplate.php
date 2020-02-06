@@ -60,15 +60,68 @@
 include '../siteHeader.php';
 ?>
    <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
-    <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content" >
- <div class="kt-grid kt-grid--hor kt-grid--root">
+   
+<div class="kt-grid kt-grid--hor kt-grid--root">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -9%;" >
+
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+<!-- begin:: Content -->
+<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
+
+<div class="kt-portlet">
+<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;"> 
+<div class="kt-portlet__head-label">
+<span class="kt-portlet__head-icon">
+<i class="kt-font-brand flaticon2-line-chart"></i>
+</span>
+<h3 class="kt-portlet__head-title" style="color:white;">
+LIBRARY
+</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+   </div>
+<div class="container" style="background-color: white;width: 60%;">
+  <center>
+    <strong>
+                          <a href="#tab_1_1"  data-toggle="tab" style="font-size: 25px;">Download<img src="downlaod-icon.png" title="Download" width="35" height="35" ></a>
+                        
+             
+<a href="#tab_1_2" data-toggle="tab" style="font-size: 25px; margin-left: 50px;" onclick="window.location.reload(true);">Template<img src="temp.png" title="Template" width="35" height="35" ></a>
+</strong>
+</center>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!--  <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content" >
+  <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-9%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
-<!-- begin:: Content -->
+begin:: Content 
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
 <div class="kt-portlet">
@@ -78,7 +131,7 @@ include '../siteHeader.php';
 LIBRARY
  <ul class="nav nav-tabs">
                         <li>
-                          <a href="#tab_1_1" data-toggle="tab"><img src="download.png" title="Download" width="35" height="35"></span></a>
+                          <a href="#tab_1_1" data-toggle="tab"><img src="downlaod-icon.png" title="Download" width="35" height="35"></span></a>
                         </li>&nbsp;&nbsp;&nbsp;&nbsp;
                         <li>
                           <a href="#tab_1_2" data-toggle="tab"><img src="template.png" title="Template" width="35" height="35"></a>
@@ -87,17 +140,19 @@ LIBRARY
 </h2>
 
 </div>
-</div>
+</div> -->
 
 <div class="kt-portlet__body">
  <div class="form-group row ">
                 
                     
-                    </div>
+                   
                     <div class="kt-portlet">
-                      <div class="tab-content">                         
+                      <div class="tab-content"> 
+                      
+
                         <div class="tab-pane" id="tab_1_1">
-                          <form role="form" action="#">
+                          <form role="form" action="#" style="margin:5px;margin-left:20%;">
                             <div class="form-group">
                               <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>"> 
                               <input type="hidden" name="action" id="action">                                         
@@ -105,11 +160,12 @@ LIBRARY
                             <table class="table">
                               <thead>
                                 <tr>
-                                  <td>
-                                   <b>File</b>
+                                  <hr>
+                                  <td >
+                                   <b1>File</b1>
                                   </td>
                                   <td>
-                                    <b>Action</b>
+                                    <b1>Action</b1>
                                   </td>
                                 </tr>
                               </thead>
@@ -117,7 +173,7 @@ LIBRARY
                                 <?php for($i=0;$i<count($uploadedFiles);$i++){ ?>
                                 <tr>
                                   <td><?php echo $uploadedFiles[$i]['imported_file_name'] ?></td>
-                                  <td><a href="/freshgrc/uploadedFiles/compliance/success/<?php echo $uploadedFiles[$i]['id'].$delim.$uploadedFiles[$i]['imported_file_name']?>" download><img src="download.jpg" title="Download" width="35" height="35"></a></td>
+                                  <td><a href="/freshgrc/uploadedFiles/compliance/success/<?php echo $uploadedFiles[$i]['id'].$delim.$uploadedFiles[$i]['imported_file_name']?>" download><img src="fileCsv.png" title="Download" width="35" height="35"></a></td>
                                 </tr>
                                 <?php } ?>
                               </tbody>
@@ -125,38 +181,40 @@ LIBRARY
                           </form>
                         </div>                            
                         <div class="tab-pane active" id="tab_1_2">                          
-                           <form action="#" role="form" style="margin:5px;margin-left: 40%;">
+                           <form action="#" role="form" style="margin:5px;margin-left: 30%;">
                             <div class="form-group">
                               <div class="fileinput fileinput-new" data-provides="fileinput">
-                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px; ">
-                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div>
-                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-                                <div> 
-                                <label for="complianceCsv" aria-hidden="true"style="margin-left: 30%;">
-                                <i class="btn btn-danger btn-block fa fa-file-excel-o">  Import Library</i>
+                                <!-- <div class="fileinput-new thumbnail" style="width: 200px; height: 150px; ">
+                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div> -->
+                                <!-- <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div> -->
+                               <hr>
+                                <div > 
+                                <!--  <h2>ImportCsv File</h2> -->
+            <div style="margin-top: 40px; margin-left: 120px; height: 50px; width: 40%; border-radius: 2px; border-color: #b2b2b2;   border-style: dotted;" >
+        
+                                         <label for="complianceCsv" aria-hidden="true"style="margin-left: 30%;">
+  <img src="csv.svg" title="ImportCsv File" width="35" height="35" style="margin-left: 10px;" >click to select a file.
+                                <!-- <i class="btn btn-danger btn-block fa fa-file-excel-o" style="background-color: #2A5AA8">  Import Library</i> -->
                                 <input type="file" accept=".csv" style="display:none" onchange= "importCsv()" id="complianceCsv"/>
-                                </label>                                 
-                                </div>
+                                </label>                                
+                              
                               </div>
                                
                               
-                              <div class="clearfix margin-top-10" style="margin-left: 30%;">
+                              <!-- <div class="clearfix margin-top-10" style="margin-left: 30%;">
                                 <span class="label label-danger">NOTE! </span>
                                 <span>Please Click the excel image to download template and please upload the filled library in csv format</span>
-                              </div>
-                            </div>                            
+                              </div> -->
+                            </div>  
+                            </div>
+                            </div>                          
                           </form>
                         </div>                                          
                       </div>
                     </div>
                   </div>                     
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+             
     
 
     
