@@ -1,5 +1,5 @@
 function importCsv() {
-    debugger
+   
     //var selectedData = table.rows('.selected').data();
     //var complianceId = selectedData[0][0];
     $('#complianceCsv').click();
@@ -21,12 +21,22 @@ function importCsv() {
               type: "success",
               closeOnConfirm: false,
               showLoaderOnConfirm: true
-            },function () {
-              setTimeout(function () {
-                window.location="view/compliance/complianceCreateAdmin.php";
-              }, 1000);
+            });
+                window.location="/freshgrc/view/policy/Regulatoryengine.php";
             });
 
+    // .done(function (data) {
+    //        Swal.fire({
+    //           title: "Your checklist has been uploaded successfully!",
+    //           type: "success",
+    //           closeOnConfirm: false,
+    //           showLoaderOnConfirm: true
+    //         },function () {
+    //           setTimeout(function () {
+    //            window.location="view/compliance/complianceCreateAdmin.php";
+    //           }, 1000);
+    //         });
+
  
-    });
+    // });
 }
