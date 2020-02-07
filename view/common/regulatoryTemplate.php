@@ -89,7 +89,7 @@ LIBRARY
 </div>
 </div>
    </div>
-<div class="container" style="background-color: white;width: 60%;">
+<div class="container" style="width: 60%;">
   <center>
     <strong>
                           <a href="#tab_1_1"  data-toggle="tab" style="font-size: 25px;">Download<img src="downlaod-icon.png" title="Download" width="35" height="35" ></a>
@@ -142,17 +142,17 @@ LIBRARY
 </div>
 </div> -->
 
-<div class="kt-portlet__body">
+<div class="kt-portlet__body" >
  <div class="form-group row ">
                 
                     
                    
-                    <div class="kt-portlet">
+                    <div class="kt-portlet" style="background-color: #F2F3F8";>
                       <div class="tab-content"> 
                       
 
-                        <div class="tab-pane" id="tab_1_1">
-                          <form role="form" action="#" style="margin:5px;margin-left:20%;">
+                        <div class="tab-pane" id="tab_1_1" >
+                          <form role="form" action="#" style="margin:5px;margin-left:20%; ">
                             <div class="form-group">
                               <input type="hidden" class="form-control" id="loggedInUser" value="<?php echo $_SESSION['user_id'] ?>"> 
                               <input type="hidden" name="action" id="action">                                         
@@ -160,7 +160,7 @@ LIBRARY
                             <table class="table">
                               <thead>
                                 <tr>
-                                  <hr>
+                                 
                                   <td >
                                    <b1>File</b1>
                                   </td>
@@ -187,7 +187,7 @@ LIBRARY
                                 <!-- <div class="fileinput-new thumbnail" style="width: 200px; height: 150px; ">
                                 <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div> -->
                                 <!-- <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div> -->
-                               <hr>
+                               
                                 <div > 
                                 <!--  <h2>ImportCsv File</h2> -->
             <div style="margin-top: 40px; margin-left: 120px; height: 50px; width: 40%; border-radius: 2px; border-color: #b2b2b2;   border-style: dotted;" >
