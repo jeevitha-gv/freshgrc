@@ -119,93 +119,109 @@ Policy
 
 </div>
 
-<div class="kt-portlet__body" style="overflow-x: scroll;">
+<div class="kt-portlet__body">
 <!--begin: Datatable -->
           
-<table class="table table-striped table-bordered table-hover dt-responsive" width="100%"  cellspacing="0" width="100%" id="sample_3">
-                    <thead>
-                      <tr>
-                        <th>Policy Title</th>
-                        <th>Policy Type</th>
-                        <th>Security Classification</th>
-                        <th>Policy Classification</th>
-                        <th>Audience</th>
-                      </tr>
-                    </thead>
-                    <tbody>                  
-                      <tr>
-                        <td><?php echo $policyData[0]["Title"];?></td>
-                        <td><?php echo $policyData[0]["policyType"];?></td>
-                        <td><?php echo $policyData[0]["securityClassification"];?></td>
-                        <td><?php echo $policyData[0]["policyClassification"];?></td>
-                        <td><?php echo $policyData[0]["audience"];?></td>
-                        </tr>      
-                    </tbody>
-                  </table>
-                  <table class="table table-striped table-bordered table-hover dt-responsive" width="100%"  cellspacing="0" width="100%" id="sample_3">
-                  <thead>
-                  <tr>
-                    <th>Scope</th>
-                    <th>Purpose</th>
-                    <th>Description</th>                        
-                  </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><?php echo $policyData[0]["scope"];?></td>
-                      <td><?php echo $policyData[0]["purpose"];?></td>
-                      <td><?php echo $policyData[0]["description"];?></td>                           
-                    </tr>      
-                  </tbody>
-                  </table>
+<div class="" style="margin-top:50px;">
+<div class="panel panel-default" style="border-color: #BAEFEF">
+<div class="row form-group"style="margin: 20px;">
+<div class="col-md-4 input_val">
+ <label>Policy Title</label>
+<span id="Title" class="form-control"><?php echo $policyData[0]["Title"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+ <label>Policy Type</label>
+<span id="policyType" class="form-control"><?php echo $policyData[0]["policyType"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+ <label>Security Classification</label>
+<span id="securityClassification" class="form-control"><?php echo $policyData[0]["securityClassification"];?></span> 
+</div> 
+</div>
+<div class="row form-group"style="margin: 20px;">
+<div class="col-md-4 input_val">
+ <label>Policy Classification</label>
+<span id="policyClassification" class="form-control"><?php echo $policyData[0]["policyClassification"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+ <label>Audience</label>
+<span id="audience" class="form-control"><?php echo $policyData[0]["audience"];?></span> 
+</div> 
+</div>
+</div> 
+<div class="row form-group">
+<div class="col-md-4 input_val">
+ <label>Scope</label>
+<span id="scope" class="form-control"><?php echo $policyData[0]["scope"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+ <label>Purpose</label>
+<span id="purpose" class="form-control"><?php echo $policyData[0]["purpose"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+ <label>Description</label>
+<span id="description" class="form-control"><?php echo $policyData[0]["description"];?></span> 
+</div>
+</div> 
+<div class="row form-group">
+<div class="col-md-4 input_val">
+ <label>Owner</label>
+<span id="owner" class="form-control"><?php echo $policyData[0]["owner"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+ <label>Reviewer</label>
+<span id="reviewer" class="form-control"><?php echo $policyReview[0]["reviewer"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+ <label>Effective from</label>
+<span id="effective_from" class="form-control"><?php echo $policyData[0]["effective_from"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+ <label>Effective Till</label>
+<span id="effective_till" class="form-control"><?php echo $policyData[0]["effective_till"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+ <label>Expected Publish Date</label>
+<span id="expected_publish_date" class="form-control"><?php echo $policyData[0]["expected_publish_date"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+ <label>Review within Date</label>
+<span id="review_within_date" class="form-control"><?php echo $policyData[0]["review_within_date"];?></span> 
+</div>
+</div> 
+ <div class=""><h5><strong>Statements</strong></h5></div>
+<?php
+foreach ($policyControls as $key => $control) {
+  ?> 
+<div class="panel panel-default" style="border-color: #BAEFEF">
+<div style="background-color: #f5f5f5;font-size:14px;color:#333;border-color: #BAEFEF;" class="panel-heading"><strong>Statement:<?php echo $control['statement'];?></strong></div>
+ <div class="row form-group" style="margin: 20px;">
+<div class="col-md-4 input_val">
+ <label>Main heading</label>
+<span id="main_heading" class="form-control"><?php echo $control["main_heading"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+ <label>Sub heading</label>
+<span id="sub_heading" class="form-control"><?php echo $control["sub_heading"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+ <label>Description</label>
+<span id="description" class="form-control"><?php echo $control["description"];?></span> 
+</div> 
+</div>                
+</div> 
+</div>                       
                     
-                  <table class="table table-striped table-bordered table-hover dt-responsive" width="100%"  cellspacing="0" width="100%" id="sample_3">
+                 
+                      
                     
-                    <thead>
-                      <tr>
-                        <th>Owner</th>
-                        <th>Reviewer</th>
-                        <th>Effective from</th>
-                        <th>Effective Till</th>
-                        <th>Expected Publish Date</th>
-                        <th>Review within Date</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><?php echo $policyData[0]["owner"];?></td> 
-                        <td><?php echo $policyReview[0]["reviewer"];?></td>             
-                        <td><?php echo $policyData[0]["effective_from"];?></td>  
-                        <td><?php echo $policyData[0]["effective_till"];?> </td> 
-                        <td><?php echo $policyData[0]["expected_publish_date"];?></td> 
-                        <td><?php echo $policyData[0]["review_within_date"];?></td>             
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div class="page-header"><h5><strong>Statements:</strong></h5></div>
-                 <?php
-                foreach ($policyControls as $key => $control) {
-                ?> 
-                     <div class="panel panel-default">
-                        <div style="background-color: #f5f5f5;font-weight:400;font-size:14px;color:#333" class="panel-heading"><strong>Statement:<?php echo $control['statement'];?></strong></div>
-                            
-                               <table class="table table-striped table-bordered table-hover dt-responsive" width="100%"  cellspacing="0" width="100%" id="sample_3">
-                  <thead>
-                  <tr>
-                    <th>Main Heading</th>
-                    <th>Sub Heading</th>
-                    <th>Description</th>                        
-                  </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><?php echo $control["main_heading"];?></td>
-                      <td><?php echo $control["sub_heading"];?></td>
-                      <td><?php echo $control["description"];?></td>                           
-                    </tr>      
-                  </tbody>
-                  </table>                             
-                      </div>
+                 
+                        
+                       
+                 
+                     
                     <?php
                     }
                     ?>

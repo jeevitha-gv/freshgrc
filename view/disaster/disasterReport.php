@@ -117,9 +117,9 @@ require_once __DIR__.'/../../php/disaster/disasterManager.php';
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+<i class="fa fa-file-pdf" id="cmd" data-toggle="tooltip" title="PDF" style="font-size: 30px; float: right; color: #2a5aa8;"></i> <br><br>
 
-
-<div class="kt-portlet">
+<div class="kt-portlet" id="element-to-print">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
@@ -131,261 +131,138 @@ DISASTER RECOVERY REPORT
 </div>
 
 </div>
-                         <div class="panel-body" style="overflow-x: scroll;">
-                                 <table class="table table-striped list-table table-bordered" id="kt_table_1">
-                                  <tr >
-                                      <th colspan="6">Summary & Scope</th>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Summary:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $summary ?>" readonly>
-                                                </div>
-                                       </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group row">
-                                           <label class="col-2 col-form-label">Scope:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $scope ?>" readonly>
-                                                </div>
-                                       </div>
-                                      </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Purpose:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $purpose ?>" readonly>
-                                               </div>
-                                             </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Disaster Defination:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $disaster_definition ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                         <div class="form-group row">
-                                           <label class="col-2 col-form-label">Areawide Disaster:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $areawide_disaster ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td><label  class="col-md-4"></label>
-                                       <!-- <input type="text" class="border" value="<?php echo $summary ?>" readonly > -->
-                                    </td>
-                                  </tr>
-                                </table>
-                                <hr>
-                                <br>
-                                <table class="table table-striped list-table table-bordered">
-                                  <tr  style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
-                                      <th colspan="6">Contractual Agreement</th>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Company Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $company_name ?>" readonly>
-                                                </div>
-                                            </div>
-                                      </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Contractor Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $contracted_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Covered System Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $covered_system_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                  </tr>
-                                  
-                                </table>
-                                <hr>
-                                <br>
-                                <table class="table table-striped list-table table-bordered">
-                                  <tr  style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
-                                      <th colspan="6">POC Internal:</th>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $internal_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Contact No:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $internal_phone ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Email:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $internal_email ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                  </tr>
-                                  
-                                </table>
-                                <hr>
-                                <br>
-                                <table class="table table-striped list-table table-bordered">
-                                  <tr  style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
-                                      <th colspan="6">POC External:</th>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $external_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Contact No:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $external_phone ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Email:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $external_email ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                  </tr>
-                                  
-                                </table>
-                                <hr>
-                                <br>
-                                <table class="table table-striped list-table table-bordered">
-                                  <tr  style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
-                                      <th colspan="6">BackUp & Storage Information</th>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">System Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $system_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Backup:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $backup_backup ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Company Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $backup_company_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Offsite Location:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $backup_offsite_location ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-2 col-form-label">Contractor Name:</label>
-                                                <div class="col-10">
-                                                  <input class="form-control" type="text" value="<?php echo $backup_contractor_name ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td><label  class="col-md-4"></label>
-                                       <!-- <input type="text" class="border" value="<?php echo $summary ?>" readonly > -->
-                                    </td>
-                                  </tr>
-                                </table>
+<div class="panel-body">
+<div class="form-group row">                      
+<div class="col-md-4">
+<label >Summary</label>
+<input class="form-control" type="text" value="<?php echo $summary ?>" readonly>
+</div>
+<div class="col-md-4">
+<label >Scope</label>
+<input class="form-control" type="text" value="<?php echo $scope ?>" readonly>
+</div>
+<div class="col-md-4">
+<label >Purpose</label>
+ <input class="form-control" type="text" value="<?php echo $purpose ?>" readonly>
+</div>
+</div>                                      
+<div class="form-group row">
+<div class="col-md-4">
+<label >Disaster Defination</label>
+<input class="form-control" type="text" value="<?php echo $disaster_definition ?>" readonly>
+</div>
+<div class="col-md-4">
+<label >Areawide Disaster</label>
+ <input class="form-control" type="text" value="<?php echo $areawide_disaster ?>" readonly>
+</div>
+</div> 
+<div class="panel panel-default" >
+<div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>Contractual Agreement</b></div>
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >Company Name</label> 
+<input class="form-control" type="text" value="<?php echo $company_name ?>" readonly> 
+</div>                                                            
+<div class="col-md-4">
+<label >Contractor Name</label> 
+<input class="form-control" type="text" value="<?php echo $contracted_name ?>" readonly> 
+</div>                                                           
+<div class="col-md-4">
+<label >Covered System Name</label> 
+<input class="form-control" type="text" value="<?php echo $covered_system_name ?>" readonly> 
+</div>                                       
+</div>  
+</div>
+<div class="panel panel-default" >
+<div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>POC Internal</b></div>
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >Name</label> 
+<input class="form-control" type="text" value="<?php echo $internal_name ?>" readonly> 
+</div>                                                            
+<div class="col-md-4">
+<label >Contact No</label> 
+<input class="form-control" type="text" value="<?php echo $internal_phone ?>" readonly> 
+</div>                                                           
+<div class="col-md-4">
+<label >Email</label> 
+<input class="form-control" type="text" value="<?php echo $internal_email ?>" readonly> 
+</div>                                       
+</div>  
+</div>
+<div class="panel panel-default" >
+<div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>POC External</b></div>
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >Name</label> 
+<input class="form-control" type="text" value="<?php echo $external_name ?>" readonly>
+</div>                                                            
+<div class="col-md-4">
+<label >Contact No</label> 
+<input class="form-control" type="text" value="<?php echo $external_phone ?>" readonly> 
+</div>                                                           
+<div class="col-md-4">
+<label >Email</label> 
+<input class="form-control" type="text" value="<?php echo $external_email ?>" readonly>
+</div>                                       
+</div>  
+</div> 
+<div class="panel panel-default" >
+<div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>BackUp & Storage Information</b></div>
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >System Name</label> 
+<input class="form-control" type="text" value="<?php echo $system_name ?>" readonly>
+</div>                                                            
+<div class="col-md-4">
+<label >Backup</label> 
+<input class="form-control" type="text" value="<?php echo $external_phone ?>" readonly> 
+</div>                                                           
+<div class="col-md-4">
+<label >Company Name</label> 
+<input class="form-control" type="text" value="<?php echo $backup_backup ?>" readonly>
+</div>                                       
+</div> 
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >Offsite Location</label> 
+<input class="form-control" type="text" value="<?php echo $backup_offsite_location ?>" readonly>
+</div> 
+<div class="col-md-4">
+<label >Contractor Name</label> 
+<input class="form-control" type="text" value="<?php echo $backup_contractor_name ?>" readonly>
+</div>     
+</div>  
+</div> 
+<div class="panel panel-default" >
+<div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>Review&Approval</b></div>
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >Review Date</label> 
+<input class="form-control" type="text" value="<?php echo $training_date ?>" readonly>
+</div>                                                            
+<div class="col-md-4">
+<label >Summary Of Changes</label> 
+<input class="form-control" type="text" value="<?php echo $summary_of_changes ?>" readonly>
+</div>                                                           
+<div class="col-md-4">
+<label >Approver Name</label> 
+<input class="form-control" type="text" value="<?php echo $approver_name_and_sign ?>" readonly>
+</div>                                       
+</div> 
+<div class="form-group row" style="margin: 20px">                      
+<div class="col-md-4">
+<label >Approver Date</label> 
+<input class="form-control" type="text" value="<?php echo $approval_date ?>" readonly>
+</div>  
+</div>  
+</div>                                   
+        
 
-                                <hr>
-                                <br>
-                                <table class="table table-striped list-table table-bordered">
-                                  <tr  style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
-                                      <th colspan="6">Review&Approval</th>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-4 col-form-label">Review Date:</label>
-                                                <div class="col-8">
-                                                  <input class="form-control" type="text" value="<?php echo $training_date ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-4 col-form-label">Summary Of Changes:</label>
-                                                <div class="col-8">
-                                                  <input class="form-control" type="text" value="<?php echo $summary_of_changes ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-4 col-form-label">Approver Name:</label>
-                                                <div class="col-8">
-                                                  <input class="form-control" type="text" value="<?php echo $approver_name_and_sign ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
-                                    <td>
-                                       <div class="form-group row">
-                                           <label class="col-4 col-form-label">Approver Date:</label>
-                                                <div class="col-8">
-                                                  <input class="form-control" type="text" value="<?php echo $approval_date ?>" readonly>
-                                                </div>
-                                              </div>
-                                    </td>
+                                           
+                                                 
                                    
-                                  </tr>
-                                </table>
+                              
                                </div>
                       </div>
                   </div>
@@ -478,6 +355,7 @@ DISASTER RECOVERY REPORT
 <!--begin::Global Theme Bundle(used by all pages) -->
           
       <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
+      <script type="text/javascript" src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
 <!--end::Global Theme Bundle -->
 
                     <!--begin::Page Vendors(used by this page) -->
@@ -490,3 +368,15 @@ DISASTER RECOVERY REPORT
     </body>
     
 </html>
+<script type="text/javascript">
+  $('#cmd').click(function() {
+    var element = document.getElementById('element-to-print');
+      html2pdf(element, {
+        margin:       0,
+        filename:     'PolicyReport.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
+    });
+  });
+</script>  

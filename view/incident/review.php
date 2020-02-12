@@ -105,9 +105,9 @@ $closure = $incidentManager->getIncidentDataClosure($IncidentId);
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+<i class="fa fa-file-pdf" id="cmd" data-toggle="tooltip" title="PDF" style="font-size: 30px; float: right; color: #2a5aa8;"></i> <br><br>
 
-
-<div class="kt-portlet">
+<div class="kt-portlet" id="element-to-print">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;"> 
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
@@ -122,187 +122,203 @@ Incident List
 
 <div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
- <div class="form-group row ">
+ <div class="" style="margin-top:50px;">
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Title</label>
+<span id="IncidentTitle" class="form-control"><?php echo $incidentData[0]["Incident"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+<label>Category</label>
+<span id="IncidentCategory" class="form-control"><?php echo $incidentData[0]["Incident_Category"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+<label>Sub-Category</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Incident_subCategory"];?></span> 
+</div> 
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Date of Filling</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Date_of_Reported"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+<label>Date of Occuring</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Date_of_Occured"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+<label>Request Type</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Request_Type"];?></span> 
+</div> 
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Contact No</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Phone"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+<label>Urgency</label>
+<span id="Urgency" class="form-control"><?php echo $incidentData[0]["Urgency"];?></span> 
+</div> 
+<div class="col-md-4 input_val">
+<label>Impact</label>
+<span id="Impact" class="form-control"><?php echo $incidentData[0]["Impact"];?></span> 
+</div> 
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Priority</label>
+<span id="Priority" class="form-control"><?php echo $incidentData[0]["Priority"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Reported By</label>
+<span id="PolicyId" class="form-control"><?php echo $ReportedBy[0]["Reportedby"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Recorded By</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["RecordedBy"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Response Team</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Incidentresponseteam"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Description of Event</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Description_of_Event"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Impacted Department</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Impacted_Department"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Line of Business</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Line_of_Business"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Channel Impacted</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Channel_Impacted"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Assignee</label>
+<span id="PolicyId" class="form-control"><?php echo $Assignee[0]["Assignee"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Esclation Users</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Esclation_User"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Risk Category</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["IncidentManager_Category"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Risk SubCategory</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["IncidentManager_SubCategory"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Risk Category2</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Manager_Category2"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Quantified Loss</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Quantified_Loss"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Realised Loss</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Currency"];?> <?php echo $incidentData[0]["Realised_Loss"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Policies Impacted</label>
+<span id="PolicyId" class="form-control"><?php echo $incidentData[0]["Policies_Impacted"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Course Classification</label>
+<span id="PolicyId" class="form-control"><?php echo $resolution[0]["course_classification"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Resolution Comment</label>
+<span id="PolicyId" class="form-control"><?php echo $resolution[0]["comment"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Action Taken</label>
+<span id="PolicyId" class="form-control"><?php echo $resolution[0]["actiontaken"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Management Action Plan Member</label>
+<span id="PolicyId" class="form-control"><?php echo $resolution[0]["managementactionplan"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Impact Status</label>
+<span id="PolicyId" class="form-control"><?php echo $resolution[0]["selectimapctstatus"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Litigation</label>
+<span id="PolicyId" class="form-control"><?php echo $resolution[0]["litigationstatus"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Root Cause</label>
+<span id="PolicyId" class="form-control"><?php echo $closure[0]["root_cause"];?></span> 
+</div>
+<div class="col-md-4 input_val">
+<label>Evaluate</label>
+<span id="PolicyId" class="form-control"><?php echo $closure[0]["evaluate"];?></span> 
+</div>
+</div>
+<div class="row form-group">
+<div class="col-md-4 input_val">
+<label>Closure Status</label>
+<span id="PolicyId" class="form-control"><?php echo $closure[0]["review_status"];?></span> 
+</div>
+</div>
+<!-- <div class="row form-group">
+<div class="col-md-4 input_val">
+ <div class="panel ">
+<div class="panel-heading"  style="background-color: #f5f5f5;font-weight:100;font-size:12px;"><b>Status</b></div>
+<span class="reportdata" class="form-control"><?php echo $incidentData[0]["Status"];?></span> 
+</div>
+</div>
+<div class="col-md-4 input_val">
+ <div class="panel ">
+<div class="panel-heading"  style="background-color: #f5f5f5;font-weight:100;font-size:12px;"><b>Comment</b></div>
+<span class="reportdata" class="form-control"><?php echo $incidentData[0]["Comment"];?></span> 
+</div>
+</div>
+<div class="col-md-4 input_val">
+ <div class="panel ">
+<div class="panel-heading"  style="background-color: #f5f5f5;font-weight:100;font-size:12px;"><b>Summary</b></div>
+<span class="reportdata" class="form-control"><?php echo $incidentData[0]["Summary"];?></span> 
+</div>
+</div>
+</div> -->
+</div>
 
-
-
-                <table class="table table-bordered">
-                        <tbody>
-                         <tr style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
-                           <td><b>Incident Requested Details<b></b></b></td><td>
-                           </td><td></td>
-                         </tr>
-                         <tr>                          
-                             <td><label class="col-sm-4">Title:</label>
-                             <input type="hidden" name="IncidentTitle" id="IncidentTitle" value="<?php echo $IncidentTitle;?>">
-                            <span><?php echo $incidentData[0]["Incident"];?></span>
-                           </td>                             
-                           <td><label class="col-sm-4">Category:</label>
-                             <input type="hidden" name="IncidentCategory" id="IncidentCategory" value="<?php echo $IncidentCategory;?>">
-                             <span><?php echo $incidentData[0]["Incident_Category"];?></span>
-                           </td>
-                            <td><label class="col-sm-4">Sub-Category:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Incident_subCategory"];?></span>
-                           </td>
-                         </tr>   
-                        <tr>           
-                            <td><label class="col-sm-4">Date of Filling:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Date_of_Reported"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Date of Occuring:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Date_of_Occured"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Request Type:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Request_Type"];?></span>
-                           </td>
-                         </tr> 
-                         <tr>                            
-                             <td><label class="col-sm-4">Contact No:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Phone"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Urgency:</label>
-                             <input type="hidden" name="Urgency" id="Urgency" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Urgency"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Impact:</label>
-                             <input type="hidden" name="Impact" id="Impact" value="<?php echo $Impact;?>">
-                             <span><?php echo $incidentData[0]["Impact"];?></span>
-                           </td>
-                         </tr>        
-                        <tr>                 
+                                               
+                                    
+                                                   
+                                      
                              
-                             <td><label class="col-sm-4">Priority:</label>
-                             <input type="hidden" name="Priority" id="Priority" value="<?php echo $Priority;?>">
-                             <span><?php echo $incidentData[0]["Priority"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Reported By:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $ReportedBy[0]["Reportedby"];?></span>
-                           </td>
-                            <td><label class="col-sm-4">Recorded By:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["RecordedBy"];?></span>
-                           </td>
-                         </tr> 
-                         <tr>                
-                             <td><label class="col-sm-4">Response Team:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Incidentresponseteam"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Description of Event:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Description_of_Event"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Impacted Department:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Impacted_Department"];?></span>
-                           </td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Line of Business:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Line_of_Business"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Channel Impacted:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Channel_Impacted"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Assignee:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $Assignee[0]["Assignee"];?></span>
-                           </td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Esclation Users:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Esclation_User"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Risk Category:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["IncidentManager_Category"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Risk SubCategory:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["IncidentManager_SubCategory"];?></span>
-                           </td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Risk Category2:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Manager_Category2"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Quantified Loss:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Quantified_Loss"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Realised Loss:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Currency"];?> <?php echo $incidentData[0]["Realised_Loss"];?></span>
-                           </td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Policies Impacted:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $incidentData[0]["Policies_Impacted"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Course Classification:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $resolution[0]["course_classification"];?></span></td>
-                           <td><label class="col-sm-4">Resolution Comment:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $resolution[0]["comment"];?></span></td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Action Taken:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $resolution[0]["actiontaken"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Management Action Plan Member:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $resolution[0]["managementactionplan"];?></span></td>
-                           <td><label class="col-sm-4">Impact Status:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $resolution[0]["selectimapctstatus"];?></span></td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Litigation:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $resolution[0]["litigationstatus"];?></span>
-                           </td>
-                           <td><label class="col-sm-4">Root Cause:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $closure[0]["root_cause"];?></span></td>
-                           <td><label class="col-sm-4">Evaluate:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $closure[0]["evaluate"];?></span></td>
-                         </tr>
-                         <tr>                
-                             <td><label class="col-sm-4">Closure Status:</label>
-                             <input type="hidden" name="PolicyId" id="PolicyId" value="<?php echo $PolicyId;?>">
-                             <span><?php echo $closure[0]["review_status"];?></span>
-                           </td>
-                           <td></td>
-                           <td></td>
-                         </tr>
-                        </tbody>
-                       </table>
-                       <div class="panel ">
-                        <div class="panel-heading"  style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>Status</b></div>
-                        <div class="reportdata"><?php echo $incidentData[0]["Status"];?></div>
-                       </div>                
-                       <div class="panel ">
-                        <div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>Comment</b></div>
-                        <div class="reportdata"><?php echo $incidentData[0]["Comment"];?></div>
-                       </div>
-                       <div class="panel ">
-                        <div class="panel-heading" style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333"><b>Summary</b></div>
-                        <div class="reportdata"><?php echo $incidentData[0]["Summary"];?></div>
-                       </div>
+                                        
+                                     
+                                      
+                                      
+                         
+                         
+                        
+                       
+                       
 </div>
 </div>
  </div>  
@@ -313,6 +329,7 @@ Incident List
 </div>
 </div>
 </div>
+
 </div>
 </div>
 
@@ -334,6 +351,7 @@ Incident List
 <script src="assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
 <script src="assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
 <script src="assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
 <!--end:: Global Mandatory Vendors -->
 
 
