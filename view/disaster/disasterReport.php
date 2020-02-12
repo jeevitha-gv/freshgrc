@@ -373,7 +373,7 @@ DISASTER RECOVERY REPORT
     var element = document.getElementById('element-to-print');
       html2pdf(element, {
         margin:       0,
-        filename:     'PolicyReport.pdf',
+        filename:     'DisasterReport.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  { dpi: 192, letterRendering: true },
         jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }

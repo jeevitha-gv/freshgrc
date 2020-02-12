@@ -120,7 +120,7 @@ Incident List
 
 </div>
 
-<div class="kt-portlet__body" style="overflow-x: scroll;">
+<div class="kt-portlet__body">
 <!--begin: Datatable -->
  <div class="" style="margin-top:50px;">
 <div class="row form-group">
