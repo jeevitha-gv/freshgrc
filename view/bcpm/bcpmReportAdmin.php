@@ -70,6 +70,8 @@ $bcpmManager = new BcpmManager();
 <link href="./assets/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/quill/dist/quill.snow.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+ <script type="text/javascript" src="../../assets/DataTables/pdfmake.min.js"></script>
+        <script type="text/javascript" src="../../assets/DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
 <link href="./assets/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
@@ -89,7 +91,7 @@ $bcpmManager = new BcpmManager();
 <?php
   include '../siteHeader.php';
   ?>
-<body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
+<body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #efefef;">
 
        
     <!-- begin:: Page -->
@@ -104,9 +106,10 @@ $bcpmManager = new BcpmManager();
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+  <i class="fa fa-file-pdf" id="cmd" data-toggle="tooltip" title="PDF" style="font-size: 30px; float: right; color: #2a5aa8;"></i> <br><br>
 
 
-<div class="kt-portlet">
+<div class="kt-portlet" id="element-to-print">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
@@ -390,6 +393,7 @@ BCPM EXERCISE
 <script src="./assets/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
 <!--end:: Global Optional Vendors -->
 
 <!--begin::Global Theme Bundle(used by all pages) -->
@@ -409,3 +413,15 @@ BCPM EXERCISE
     </body>
 </html>
 
+<script type="text/javascript">
+  $('#cmd').click(function() {
+    var element = document.getElementById('element-to-print');
+      html2pdf(element, {
+        margin:       0,
+        filename:     'bcpmReport.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
+    });
+  });
+</script>  
