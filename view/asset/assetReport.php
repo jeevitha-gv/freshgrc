@@ -77,7 +77,7 @@ $companyId=$id[0]['id'];
    <?php 
    include '../siteHeader.php';
 ?>
-  <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"  >
+  <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #efefef;" >
 
        
     <!-- begin:: Page -->
@@ -109,81 +109,117 @@ Report
 
 <div class="kt-portlet__body">
 
-      <div class="panel-body">
-       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-            <div class="form-group clearfix">
-              <div class="col-sm-12">
-                <label for="usr" style="font-size: 14px !important;">Display Name:</label>
-                <p><?php echo $assetDetails[0]['name']; ?></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-            <div class="form-group clearfix">
-              <div class="col-sm-12">
-                <label for="usr" style="font-size: 14px;">Asset Group:</label>
-                <p><?php echo $assetDetails[0]['assetGroup']; ?></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-            <div class="form-group clearfix">
-              <div class="col-sm-12">
-                <label for="usr" style="font-size: 14px;">Status:</label>
-                <p><?php echo $assetDetails[0]['status']; ?></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-            <div class="form-group clearfix">
-              <div class="col-sm-12">
-                <label for="usr" style="font-size: 14px;">Compliance Name:</label>
-                <p><?php echo $assetDetails[0]['complianceName']; ?></p>
-              </div>
-            </div>
-          </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="tab-pane active asset-border" id="all">
-              <div class="table-responsive">
-                <table style="width: 100%;">
-                  <tbody><tr>
-                    <th colspan="6" class="asset-th"><h5><b>Assignment / Security / CIA Information</b></h5></th>
-                  </tr>
-                  <tr>
-                  <td style="background-color: #F2F3F8"><b>Owner : </b><?php echo $assetDetails[0]['ownerName']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Custodian : </b><?php echo $assetDetails[0]['custodianName']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Identifier : </b><?php echo $assetDetails[0]['ReviewerName']; ?></td>
-                </tr>
+     
+                  <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Display Name</label><br>
+                                   <span id="Displayname" class="form-control"> <p><?php echo $assetDetails[0]['name']; ?></p></span>
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Asset Group</label><br>
+                                      <span id="Group" class="form-control" > <p><?php echo $assetDetails[0]['assetGroup']; ?></p></span>
+                                     </div>
+                                    </div>  
+                  <div class="row form-group" >
+                     <div class="col-md-6">
+                       <label>Status</label><br>
+                           <span id="status" class="form-control"><p><?php echo $assetDetails[0]['status']; ?></p></span>
+                         </div>
+                         <div class="col-md-6">
+                           <label>Compliance Name</label><br>
+                                  <span id="name" class="form-control" >  <p><?php echo $assetDetails[0]['complianceName']; ?></p></span>
+                                  </div>
+
+
+                                       </div>  
+
+            
+                 
+                   <h5><b>Assignment / Security / CIA Information</b></h5><br><br>
                   
-                 <tr>
-                  <td style="background-color: #F2F3F8"><b>Evaluator/CIO : </b><?php echo $assetDetails[0]['description']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Location : </b><?php echo $assetDetails[0]['locationname']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Department : </b><?php echo $assetDetails[0]['departmentname']; ?></td>
-                </tr>
-                <tr>
-                  <td style="background-color: #F2F3F8"><b>Confidentiality : </b><?php echo $assetDetails[0]['confidentiality']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Integrity : </b><?php echo $assetDetails[0]['integrity']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Availability : </b><?php echo $assetDetails[0]['availability']; ?></td>
-                </tr>
-                <tr>
-                  <td style="background-color: #F2F3F8"><b>Personal Data : </b><?php echo $assetDetails[0]['personal_data']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Sensitive Data : </b><?php echo $assetDetails[0]['sensitive_data']; ?></td>
-                  <td style="background-color: #F2F3F8"><b>Customer Data : </b><?php echo $assetDetails[0]['customer_data']; ?></td>
-                </tr>
-                  <tr>
-                     <td style="background-color: #F2F3F8"><b>Classification : </b><?php echo $assetDetails[0]['name']; ?></td>
-                     <td style="background-color: #F2F3F8"></td>
-                    <td style="background-color: #F2F3F8"></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+                                      <div class="row form-group" >
+<div class="col-md-6">
+<label>Owner</label><br>
+<span id="Owner" class="form-control"> <p><?php echo $assetDetails[0]['custodianName']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label>Custodian</label><br>
+<span id="Custodian" class="form-control" > <p><?php echo $assetDetails[0]['custodianName']; ?></p></span>
+</div>
+
+
+</div> 
+                                      <div class="row form-group" >
+<div class="col-md-6">
+<label>Identifier</label><br>
+<span id="Owner" class="form-control"> <p><?php echo $assetDetails[0]['ReviewerName']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label>Evaluator/CIO</label><br>
+<span id="description" class="form-control" > <?php echo $assetDetails[0]['description']; ?></p></span>
+</div>
+
+
+</div> 
+                                      <div class="row form-group" >
+<div class="col-md-6">
+<label>Location</label><br>
+<span id="locationname" class="form-control"> <?php echo $assetDetails[0]['locationname']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label>Department</label><br>
+<span id="departmentname" class="form-control" > <?php echo $assetDetails[0]['departmentname']; ?></p></span>
+</div>
+
+
+</div> 
+                                      <div class="row form-group" >
+<div class="col-md-6">
+<label>Confidentiality</label><br>
+<span id="confidentiality" class="form-control"> <p><?php echo $assetDetails[0]['confidentiality']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label>Integrity</label><br>
+<span id="integrity" class="form-control" > <p><?php echo $assetDetails[0]['integrity']; ?></p></span>
+</div>
+
+
+</div> 
+                                      <div class="row form-group" >
+<div class="col-md-6">
+<label>Availability</label><br>
+<span id="availability" class="form-control"> <p><?php echo $assetDetails[0]['availability']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label>Personal Data </label><br>
+<span id="personal_data" class="form-control" > <p><?php echo $assetDetails[0]['personal_data']; ?></p></span>
+</div>
+
+
+</div> 
+                                      <div class="row form-group" >
+<div class="col-md-6">
+<label>Sensitive Data </label><br>
+<span id="sensitive_data" class="form-control"> <p><?php echo $assetDetails[0]['sensitive_data']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label>Customer Data</label><br>
+<span id="customer_data" class="form-control" > <p><?php echo $assetDetails[0]['customer_data']; ?></p></span>
+</div>
+
+
+</div> 
+ <div class="row form-group" >
+        <div class="col-md-12">
+<label>Classification</label><br>
+<span id="name" class="form-control" > <p><?php echo $assetDetails[0]['name']; ?></p></span>
+</div>
+</div>
+      
             <div style="text-align: center;font-size: 15px;font-weight: bold; margin: 15px;">Asset Properties</div>  
              <div style="text-align: center;font-size: 15px;font-weight: bold; margin: 15px;">Current Level Of Production</div>         
-            <table class="table table-striped list-table table-bordered">
-              <tr style="background-color: #f5f5f5;font-weight:100;font-size:12px;color:#333">
+            <table class="table table-striped list-table table-bordered" style="border-color:#A1E6EA" >
+              <tr >
                   <th>When Info Is In Rest</th>
                   <th>When Info Is Moved</th>
               </tr>
@@ -192,16 +228,18 @@ Report
                 <td><?php echo $assetDetails[0]['info_moved']; ?></td>
               </tr>      
             </table>
-            <div class="panel panel-default">             
-              <div class="panel-body">
-                <label style="padding: 8px;">Assessment :</label>
-                <span><?php echo $assetAssesmentDetails[0]['assessment']; ?></span></br>
-                <label  style="padding: 8px;">Review Decision :</label>
-                <span><?php echo $assetReviewDetails[0]['asset_decision']; ?></span></br>           
-              </div>
-            </div>
-          </div>
-        </div>
+            <div class="panel panel-default" style="border-color:#A1E6EA">             
+              <div class="panel-body"  >
+                                                      <div class="row form-group" >
+<div class="col-md-6">
+<label><b>Assessment</b> </label><br>
+<span id="assessment" class="form-control"> <p><?php echo $assetAssesmentDetails[0]['assessment']; ?></p></span>
+</div>
+<div class="col-md-6">
+<label><b>Review Decision</b> </label><br>
+<span id="asset_decision" class="form-control" > <p><?php echo $assetReviewDetails[0]['asset_decision']; ?></p></span>
+</div>
+            
 
                                 </div>
                             </div>
