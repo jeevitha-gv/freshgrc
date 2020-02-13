@@ -1,9 +1,9 @@
-<?php 
+<?php
 require_once __DIR__.'/../header.php';
 require_once __DIR__.'/../../php/policy/policyManager.php';
     $manager = new PolicyManager();
     $userId = $_SESSION['user_id'];
-    $userRole = $_SESSION['user_role'];   
+    $userRole = $_SESSION['user_role'];  
     // echo $userId, $userRole;
     $allData = $manager->getAllPolicy($userId, $userRole);
     // echo json_encode($allData);
@@ -29,8 +29,8 @@ require_once __DIR__.'/../../php/policy/policyManager.php';
                     <!--begin::Page Vendors Styles(used by this page) -->
                             <link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
                         <!--end::Page Vendors Styles -->
-        
-        
+       
+       
         <!--begin:: Global Mandatory Vendors -->
 <link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
 <!--end:: Global Mandatory Vendors -->
@@ -71,22 +71,22 @@ require_once __DIR__.'/../../php/policy/policyManager.php';
     <script src="js/policy/policyManagement.js"></script>
 
     <!-- <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>  -->
-      
+     
     <!-- <script type="text/javascript" src="assets/DataTables/DataTables-1.10.12/js/jquery.dataTables.min.js"></script> -->
-        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/dataTables.buttons.min.js"></script> 
-           <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.flash.min.js"></script> 
+        <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/dataTables.buttons.min.js"></script>
+           <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.flash.min.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/pdfmake.min.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/pdfmake-0.1.18/build/vfs_fonts.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.html5.min.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
         <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>  
-  
-                    
+ 
+                   
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
         <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
     </head>
-   <?php 
+   <?php
    include '../siteHeader.php';
     ?>
 <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
@@ -119,7 +119,7 @@ Policy
 <div class="kt-portlet__body" style="overflow-x: scroll;">
 <!--begin: Datatable -->
              
-<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+<table class="table table-striped- table-bordered  table-checkable" id="kt_table_1">
   <thead>
     <tr>
       <th>Id</th>
@@ -143,11 +143,11 @@ Policy
           <td><?php echo $data['policyprocedure']; ?></td>
           <td><?php echo $data['status']; ?></td>
           <?php if($_SESSION['user_role'] == "policy_owner"){?>
-          <td><button class="btn btn-primary" onclick="viewReport();">Report</button>&nbsp;
+          <td><button class="btn btn-primary" ><a href="/freshgrc/view/policy/policyReport.php?PolicyId=<?php echo $data['policyId'];?>" style="color: white;"> Report</a></button>&nbsp;
             <?php if($data['status']=="identified") {?>
-            <button class="btn btn-primary" onclick="sendtoreviewer();">Review</button>
+             <button class="btn btn-primary"><a href="/freshgrc/view/policy/policyPublish.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Review</a></button>
           <?php }?>
-          <?php if($data['status'] == "published" || $data['status'] == "to be approved" || $data['status'] == "to be reviewed" || $data['status'] == "reviewed" || $data['status'] == "Returned" || $data['status'] == "published" || $data['status'] == "expired") {?>
+          <?php if($data['status'] == "published" || $data['status'] == "to be approved" || $data['status'] == "to be reviewed" || $data['status'] == "reviewed" || $data['status'] == "rejected" || $data['status'] == "Returned" || $data['status'] == "published" || $data['status'] == "expired") {?>
             <button class="btn btn-primary" disabled>Review</button>
           <?php }?>
           </td>
@@ -159,18 +159,18 @@ Policy
             <button class="btn btn-primary"><a href="/freshgrc/view/policy/policyPublish.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Review</a></button><?php } ?>
             <?php if($data['status']=="reviewed"){?>
             <button class="btn btn-info" disabled>Review</button><?php } ?>
-            &nbsp;<button class="btn btn-danger" onclick="viewReport();">Report</button>&nbsp;<button class="btn btn-success" onclick="sendtoapprover();">Approve</button></td>
+            &nbsp;<button class="btn btn-primary" ><a href="/freshgrc/view/policy/policyReport.php?PolicyId=<?php echo $data['policyId'];?>" style="color: white;"> Report</a></button>&nbsp; <button class="btn btn-primary"><a href="/freshgrc/view/policy/policyApprove.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Approve</a></button></td>
         <?php }?>
         <?php if($_SESSION['user_role']== "policy_approver"){?>
           <td>
-            <?php if($data['status'] == "published") {?>
+            <?php if($data['status'] == "published"|| $data['status'] == "rejected") {?>
               <button class="btn btn-success" disabled>Approve</button>
             <?php }?>
             <?php if($data['status'] == "to be approved" || $data['status'] == "Returned") {?>
-            <button class="btn btn-success"><a href="/freshgrc/view/policy/policyApprove.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Approve</a></button> <?php }?>&nbsp;<button class="btn btn-primary" onclick="viewReport();">Report</button></td>
+            <button class="btn btn-success"><a href="/freshgrc/view/policy/policyApprove.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Approve</a></button> <?php }?>&nbsp;<button class="btn btn-primary" ><a href="/freshgrc/view/policy/policyReport.php?PolicyId=<?php echo $data['policyId'];?>" style="color: white;"> Report</a></button></td>
         <?php }?>
           <?php if($_SESSION['user_role'] == "demo"){?>
-          <td><button class="btn btn-primary" onclick="sendtoreviewer();">Review</button>&nbsp;<button class="btn btn-success" onclick="sendtoapprover();">Approve</button>&nbsp;<button class="btn btn-primary" onclick="viewReport();">Report</button></td>
+          <td> <button class="btn btn-primary"><a href="/freshgrc/view/policy/policyPublish.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Review</a></button>&nbsp;<button class="btn btn-primary"><a href="/freshgrc/view/policy/policyApprove.php?PolicyId=<?php echo $data['policyId']; ?>" style="color: white;">Approve</a></button></td>&nbsp;<<button class="btn btn-primary" ><a href="/freshgrc/view/policy/policyReport.php?PolicyId=<?php echo $data['policyId'];?>" style="color: white;"> Report</a></button></td>
         <?php }?>
         </tr>
       <?php } ?>
@@ -265,7 +265,7 @@ include '../audit/sidemenu.php';
 <!--end:: Global Optional Vendors -->
 
 <!--begin::Global Theme Bundle(used by all pages) -->
-          
+         
       <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
 
