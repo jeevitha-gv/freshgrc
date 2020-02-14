@@ -50,12 +50,12 @@ var status = {
 Create: {'title': 'Create', 'class': 'kt-badge--danger'},
 create: {'title': 'Create', 'class': 'kt-badge--danger'},
 rejected: {'title': 'Rejected', 'class': 'kt-badge--danger'},
-prepared: {'title': 'prepared', 'class': ' kt-badge--primary'},
-performed: {'title': 'performed', 'class': ' kt-badge--success'},
-approved: {'title': 'approved', 'class': ' kt-badge--warning'},
-mitigated: {'title': 'mitigated', 'class': ' kt-badge--warning'},
+prepared: {'title': 'Prepared', 'class': ' kt-badge--primary'},
+performed: {'title': 'Performed', 'class': ' kt-badge--success'},
+approved: {'title': 'Approved', 'class': ' kt-badge--warning'},
+mitigated: {'title': 'Mitigated', 'class': ' kt-badge--warning'},
 Mitigated: {'title': 'Mitigated', 'class': ' kt-badge--warning'},
-reviewed: {'title': 'reviewed', 'class': ' kt-badge--success'},
+reviewed: {'title': 'Reviewed', 'class': ' kt-badge--success'},
 Reviewed: {'title': 'Reviewed', 'class': ' kt-badge--success'},
 identified: {'title': 'Identified', 'class': ' kt-badge--warning'},
 assessed: {'title': 'Assessed', 'class': ' kt-badge--primary'},
@@ -63,7 +63,6 @@ Closed: {'title': 'Closed', 'class': ' kt-badge--primary'},
 Recorded: {'title': 'Recorded', 'class': 'kt-badge--danger'},
 Resolved: {'title': 'Resolved', 'class': ' kt-badge--success'},
 Assigned: {'title': 'Assigned', 'class': ' kt-badge--warning'},
-to be approved: {'title': 'to be approved', 'class': ' kt-badge--warning'},
 training: {'title': 'Training', 'class': ' kt-badge--primary'},
 tested: {'title': 'Tested', 'class': ' kt-badge--success'},
 trained: {'title': 'Trained', 'class': ' kt-badge--warning'},
@@ -207,4 +206,5 @@ initTable2();
 jQuery(document).ready(function() {
 KTDatatablesExtensionButtons.init();
 });
+
 
