@@ -1,11 +1,55 @@
-<?php require_once __DIR__.'/../header.php';
-      require_once __DIR__.'/../../php/compliance/complianceManager.php'; 
-      $manager=new complianceManager();
-      $uploadedFiles=$manager->getAllUploadedFiles($_SESSION['company']);
-      error_log("all uploaded Files".print_r($uploadedFiles,true));
-      $delim="_";
-       $allData = $manager->getAllForDraft(7);
-      ?>
+<?php 
+require_once __DIR__.'/../header.php';
+require_once __DIR__.'/../subscription.php';
+require_once __DIR__.'/../../php/user/userManager.php';
+$companyId=$_POST['companyId'];
+    // error_log("userid".print_r($companyId,true));
+    $manager = new UserManager();
+    $allUsersArray = $manager->getAllUsers($companyId);
+ require_once '../../php/common/dashboard.php';
+require_once '../../php/common/feedManager.php';
+require_once __DIR__.'/timelinemanager.php';
+//timeline
+$timeManager = new TimeManager();
+$users = $timeManager->users(); //user choice
+$chats = $timeManager->timeLine(); //chat retrive
+$manager = new dashboard();
+$completedTasksForUsers=$manager->getCompletedTaskForUser($_SESSION['user_id']);
+$pendingTasksForUsers=$manager->getPendingTaskForUser($_SESSION['user_id']);
+ // $allTasksForUsers=$manager->getAllTaskForUser(1);
+$allUsers = $manager->getAllUsersForTicket();
+// $userSocialMedias = $manager->getUserSocialMedias($_SESSION['user_id']);
+ $userSocialMedias = $manager->getUserSocialMedias(1);
+ $userImage = $manager->getUserImage(1);
+
+$usermail = $manager->mail($_SESSION['user_id']);
+
+$projectId = $_SESSION['user_id'];
+$getAllSupportTickets=$manager->getAllSupportTickets($projectId);
+// echo $_SESSION['user_id'];
+$feedManager=new FeedManager();
+$loggedInUser=$_SESSION['user_id'];
+$feeds=$feedManager->getFeeds($loggedInUser,$_SESSION['user_role']);
+// $feeds=$feedManager->getFeeds(1,$_SESSION['user_role']);
+require_once __DIR__.'/../../php/company/companyManager.php';
+$manager=new CompanyManager();
+$id=$manager->getCompanyIdForUser($_SESSION['user_id']);
+switch ($_SESSION['user_role']) {
+  case 'super_admin':
+    $feedMessage="New Compliance Library is created by";
+    $isAuditor=0;
+    break;
+  case 'auditor':
+    $feedMessage="New Audit is assigned for";
+    $isAuditor=1;
+    break;
+  default:
+    # code...
+    break;
+}
+$companyId=$id[0]['id'];
+?>
+
     
 <head><!--begin::Base Path (base relative path for assets of this page) -->
 <base href="/freshgrc/"><!--end::Base Path -->
@@ -182,30 +226,27 @@ Bulk
           <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
                 <thead>
                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Version</th>
-                        <th>Company</th>
-                        <th>Company Id</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                      <th>User Id</th>
+                    <th>First Name</th> 
+                    <th>Last Name</th>                       
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Created_Date</th>
+                    <th>Company</th>
+                    <th>Action</th>
                     </tr>
                  </thead>
                  <tbody>
-                    <?php foreach ($allData as $data) { ?>
-                                      
-                     <tr>
-                         <td><?php echo $data['complianceId']; ?></td>
-                         <td><b><?php echo $data['complianceName']; ?></b></td>
-                         <td><?php echo $data['description']; ?></td>
-                         <td><?php echo $data['version']; ?></td>
-                         <td><?php echo $data['companyName']; ?></td>
-                         <td><?php echo $data['company_id']; ?></td>
-                         <td><?php echo $data['complStatus']; ?></td>
-                         
-                         <td>Manage Clauses</td>
-                     </tr>
+                   <?php foreach ($allUsersArray as $data) { ?>
+                    <tr>
+                    <td><?php echo $data['id'];?></td>
+                    <td><?php echo $data['firstName'];?></td>
+                    <td><?php echo $data['lastName'];?></td>
+                    <td><?php echo $data['email'];?></td>
+                    <td><?php echo $data['role'];?></td>
+                    <td><?php echo $data['created_at'];?></td>
+                    <td><?php echo $data['company_id']; ?></td>
+                       <td><button class="btn btn-primary"><a href="/freshgrc/view/common/edituserprofile.php?userId=<?php echo $data['id']; ?>" style="color: white;">Edit</a></button></td>
                  <?php } ?>
                  </tbody>
 
