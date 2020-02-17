@@ -21,7 +21,7 @@ function importCsv() {
               title: "Your checklist has been uploaded successfully!",
               type: "success",
               input: 'radio',
-              timer: 3000'
+              timer: 3000,
               closeOnConfirm: false,
               showLoaderOnConfirm: true
             });
