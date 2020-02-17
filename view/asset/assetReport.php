@@ -217,7 +217,7 @@ Report
 </div>
       
             <div style="text-align: center;font-size: 15px;font-weight: bold; margin: 15px;">Asset Properties</div>  
-             <div style="text-align: center;font-size: 15px;font-weight: bold; margin: 15px;">Current Level Of Production</div>         
+             <div style="text-align: center;font-size: 15px;font-weight: bold; margin: 15px;">Current Level Of Protection</div>         
             <table class="table table-striped list-table table-bordered" style="border-color:#A1E6EA" >
               <tr >
                   <th>When Info Is In Rest</th>
