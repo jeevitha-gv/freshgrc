@@ -80,7 +80,7 @@ $riskReviewReport = $manager->getRiskReviewReport($RiskId);
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.html5.min.js"></script>
         <script type="text/javascript" src="../../assets/DataTables/Buttons-1.2.1/js/buttons.print.min.js"></script>
         <script type="text/javascript" src="//cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>  
-  
+       <script type="text/javascript" src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.min.js"></script>
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
@@ -99,6 +99,7 @@ $riskReviewReport = $manager->getRiskReviewReport($RiskId);
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+<i class="fa fa-file-pdf" id="cmd" data-toggle="tooltip" title="PDF" style="font-size: 30px; float: right; color: #2a5aa8;margin-left:7px;margin-top:85px; "></i>
 
   
 
@@ -134,7 +135,7 @@ $riskReviewReport = $manager->getRiskReviewReport($RiskId);
     </div>
     </div> 
 
-<div class="kt-portlet">
+<div class="kt-portlet"  id="element-to-print">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
@@ -147,22 +148,23 @@ REPORT
 
 </div>
 
-        <div class="panel-body" style="overflow-x:scroll; ">
+        <div class="panel-body" style="overflow-x:scroll; "><br>
         <!--   <div class="table-responsive"> -->
-            <table class="table table-striped list-table table-bordered">
-            <tr>
-                <th  colspan="6">Plan</th>
-            </tr>
-            <tr>
-              <td><label  class="col-sm-4">Plan Created Date:</label>
-                <span><?php echo $riskPlanReport[0]['CreatedDate'];?></span>
-              </td>
-              <td><label class="col-sm-4">Subject:</label>
+             <div class="panel-body" style="border:1px solid #CEE0DD;">
+            <h4>Plan:</h4>
+            <div class="row form-group">
+              <div class="col-sm-4 input_val"> 
+            <label>Created Date:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['CreatedDate'];?></span>
+             </div>
+             <div class="col-sm-4 input_val"> 
+              <label>Subject:</label>
                 <input type="hidden" name="RiskId" id="RiskId" value="<?php echo $RiskId;?>">
-                <span><?php echo $riskPlanReport[0]['Subject'];?></span>
-              </td>
-                <td><label  class="col-sm-4">Risk Priority:</label>
-                <span><?php 
+                <span class="form-control"><?php echo $riskPlanReport[0]['Subject'];?></span>
+              </div>
+              <div class="col-sm-4 input_val"> 
+                <label>Risk Priority:</label><br>
+                <?php 
                 if ($riskPlanReport[0]['Risk_Status']==null){
                      $riskPlanReport[0]['Risk_Status']="None";
                     echo $riskPlanReport[0]['Risk_Status'];
@@ -179,121 +181,130 @@ REPORT
                   elseif ($riskPlanReport[0]['Risk_Status']==3) {
                     # code...
                     $riskPlanReport[0]['Risk_Status']="Extreme";
-                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:red; color:#fff; text-align:center;'>".$riskPlanReport[0]['Risk_Status']."</p>";
+                    echo "<p class='btn'  style='width:90px;  background-color:red; color:#fff; text-align:center;margin-left:20px;'>".$riskPlanReport[0]['Risk_Status']."</p>";
                   }
                   elseif($riskPlanReport[0]['Risk_Status']==0){
                     $riskPlanReport[0]['Risk_Status']="Low";
                     echo "<p class='btn'  style='width:114px; height:50% ; background-color:#5cb85c; color:#fff; text-align:center;'>".$riskPlanReport[0]['Risk_Status']."</p>";
-                  }?></span>
-              </td>
+                  }?>
+             </div>
+           </div>
+           <div class="row form-group">
+              <div class="col-sm-4 input_val">
+            <label>Category :</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['Category'];?></span>
+             </div>
+              <div class="col-sm-4 input_val">
+            <label>Location:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['Location'];?></span>
+             </div>
+              <div class="col-sm-4 input_val">                       
+             <label>Control Number:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['ControlNumber'];?></span>
+            </div> 
+            </div>
               
-            </tr>
-            <tr> 
-              <td><label  class="col-sm-4">Category :</label>
-                <span><?php echo $riskPlanReport[0]['Category'];?></span>
-              </td>
-            <td><label  class="col-sm-4">Location:</label>
-                <span><?php echo $riskPlanReport[0]['Location'];?></span>
-              </td>                        
-              <td><label  class="col-sm-4">Control Number:</label>
-                <span><?php echo $riskPlanReport[0]['ControlNumber'];?></span>
-              </td>
-              
-              
-            </tr>
-            <tr>
-            <td><label  class="col-sm-4">Affected Assets:</label>
-                <span><?php echo $riskPlanReport[0]['AffectedAsset'];?></span>
-              </td> 
-            <td><label class="col-sm-4">Technology:</label>
-                <span><?php echo $riskPlanReport[0]['Technology'];?></span>
-              </td>                         
-              <td><label  class="col-sm-4">Team:</label>
-                <span><?php echo $riskPlanReport[0]['Team'];?></span>
-              </td>
-               
-                                       
-            </tr>
-            <tr>
-            <td><label class="col-sm-4">Risk Source:</label>
-                <span><?php echo $riskPlanReport[0]['Source'];?></span>
-              </td>    
-            <td><label  class="col-sm-4">Risk Scoring Method:</label>
-                <span><?php echo $riskPlanReport[0]['ScoringMethod'];?></span>
-              </td>                      
-              <td><label  class="col-sm-4">Owner:</label>
-                <span><?php echo $riskPlanReport[0]['Owner'];?></span>
-              </td>
-              
-              
-            </tr> 
-                  <tr>
-                    <td><label  class="col-sm-4">Risk Assesment:</label>
-                <span><?php echo $riskPlanReport[0]['RiskAssessment'];?></span>
-              </td>
-                  <td><label class="col-sm-4">Additional Notes:</label>
-                <span><?php echo $riskPlanReport[0]['AdditionalNotes'];?></span>
-              </td>                         
-            </tr>    
             
-          </table>
-          <br>
-          <table class="table table-striped list-table table-bordered">
-            <tr>
-                <th style="font-size: 15px;" colspan="6">Mitigate</th>
-            </tr>
-            <tr>
-              <td><label class="col-sm-4">Planned Mitigation Date:</label>
-                <span><?php echo $riskMitigationReport[0]['PlannedMitigationDate'];?></span>
-              </td>
-              <td><label  class="col-sm-4">Planning strategy:</label>
-                <span><?php echo $riskMitigationReport[0]['PlanningStratergy'];?></span>
-              </td>
-              <td><label  class="col-sm-4">Mitigation Effort:</label>
-                <span><?php echo $riskMitigationReport[0]['MitigationEffort'];?></span>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="col-sm-4">Mitigation Team:</label>
-                <span><?php echo $riskMitigationReport[0]['MitigationTeam'];?></span>
-              </td>
-              <td><label  class="col-sm-4">Mitigation Cost:</label>
-                <span><?php echo $riskMitigationReport[0]['MitigationCost'];?></span>
-              </td>
-              <td><label  class="col-sm-4">Mitigation Owner:</label>
-                <span><?php echo $riskMitigationReport[0]['MitigationOwner'];?></span>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="col-sm-4">Mitigation Percent:</label>
-                <span><?php echo $riskMitigationReport[0]['MitigationPercent'];?></span>
-              </td>
-              <td><label  class="col-sm-4">Security Recommendations:</label>
-                <span><?php echo $riskMitigationReport[0]['SecurityRecomendation'];?></span>
-              </td>
-              <td><label class="col-sm-4">Current Solution:</label>
-                <span><?php echo $riskMitigationReport[0]['CurrentSolution'];?></span>
-              </td>                          
-            </tr>
-            <tr>                          
-              <td><label  class="col-sm-4">Security Requirements:</label>
-                <span><?php echo $riskMitigationReport[0]['SecurityRequirements'];?></span>
-              </td>
-              <td><label  class="col-sm-4"></label>
-                <span></span>
-              </td>
-              <td></td>
-            </tr>
-          </table>
-          <br>
+           <div class="row form-group">
+              <div class="col-sm-4 input_val"> 
+           <label>Affected Assets:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['AffectedAsset'];?>
+              </span>
+             </div> 
+             <div class="col-sm-4 input_val"> 
+           <label>Technology:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['Technology'];?></span>
+               </div>   
+             <div class="col-sm-4 input_val">                       
+              <label>Team:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['Team'];?></span>
+              </div>
+            </div><br>
+                                       
+           <div class="row form-group">
+              <div class="col-sm-4 input_val">  
+           <label>Risk Source:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['Source'];?></span>
+               </div> 
+                <div class="col-sm-4 input_val">    
+            <label>Risk Scoring Method:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['ScoringMethod'];?></span>
+              </div>
+               <div class="col-sm-4 input_val">                     
+              <label>Owner:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['Owner'];?></span>
+              </div>
+              </div><br>
+                
+               <div class="row form-group">
+              <div class="col-sm-4 input_val">   
+                <label>Risk Assesment:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['RiskAssessment'];?></span>
+              </div>
+               <div class="col-sm-4 input_val">   
+              <label>Additional Notes:</label>
+                <span class="form-control"><?php echo $riskPlanReport[0]['AdditionalNotes'];?></span>
+              </div>
+             </div>
+          
+        </div><br><br>
+        
+
+           <div class="panel-body"  style="border:1px solid #CEE0DD;">
+              <h4>Mitigate:</h4><br>
+            <div class="row form-group">
+              <div class="col-sm-4 input_val"> 
+            <label>Planned Mitigation Date:</label>
+                <span  class="form-control"><?php echo $riskMitigationReport[0]['PlannedMitigationDate'];?></span>
+             </div>
+             <div class="col-sm-4 input_val"> 
+            <label>Planning strategy:</label>
+                <span  class="form-control"><?php echo $riskMitigationReport[0]['PlanningStratergy'];?></span>
+              </div>
+              <div class="col-sm-4 input_val"> 
+           <label>Mitigation Effort:</label>
+                <span  class="form-control"><?php echo $riskMitigationReport[0]['MitigationEffort'];?></span>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-4 input_val"> 
+            <label>Mitigation Team:</label>
+                <span  class="form-control"><?php echo $riskMitigationReport[0]['MitigationTeam'];?></span>
+              </div>
+             <div class="col-sm-4 input_val">  
+             <label>Mitigation Cost:</label>
+                <span  class="form-control"><?php echo $riskMitigationReport[0]['MitigationCost'];?></span>
+              </div>
+              <div class="col-sm-4 input_val"> 
+             <label>Mitigation Owner:</label>
+                <span  class="form-control"><?php echo $riskMitigationReport[0]['MitigationOwner'];?></span>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-sm-4 input_val"> 
+            <label>Mitigation Percent:</label>
+                <span class="form-control"><?php echo $riskMitigationReport[0]['MitigationPercent'];?></span>
+              </div>
+              <div class="col-sm-4 input_val">  
+              <label>Security Recommendations:</label>
+                <span class="form-control"><?php echo $riskMitigationReport[0]['SecurityRecomendation'];?></span>
+             </div>
+              <div class="col-sm-4 input_val"> 
+              <label>Current Solution:</label>
+                <span class="form-control"><?php echo $riskMitigationReport[0]['CurrentSolution'];?></span>
+             </div>                         
+           </div>
+
+              <div class="col-sm-4 input_val" style="margin-left:-15px;"> 
+                <label>Security Requirements:</label>
+                <span class="form-control"><?php echo $riskMitigationReport[0]['SecurityRequirements'];?></span>
+              </div>
+             
+         </div>
+      </div>   
       <!--   </div> -->
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+      
     <?php 
         include '../audit/sidemenu.php';
         ?>
@@ -388,3 +399,15 @@ REPORT
     </body>
     
 </html>
+<script type="text/javascript">
+  $('#cmd').click(function() {
+    var element = document.getElementById('element-to-print');
+      html2pdf(element, {
+        margin:       0, 
+        filename:     'reportgenerator.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { dpi: 192, letterRendering: true },
+        jsPDF:        { unit: 'in', format: 'a3', orientation: 'portrait' }
+    });
+  });
+</script>

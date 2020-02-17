@@ -84,9 +84,9 @@ include "../siteHeader.php";
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
  
 
-<div class="kt-portlet">
-    <div class="row">
-                <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+<div class="">
+    <div class="row" style="margin-left: 25%;">
+                <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1" style="text-align: center;">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
                     <div class="kt-portlet__head-label">
                         <span class="kt-portlet__head-icon">
@@ -102,26 +102,28 @@ include "../siteHeader.php";
 <div class="kt-portlet__body" >
              <div class="form-group">
                      <form style="" method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php">
+                        
+                        <div class="form-group">
+                          <label for="comment"></label>
+                          <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
+                        </div>
                         <div class="form-group">
                         <select name="to_id" class="form-control select2-selection arrow">
+                          <option></option>
                            <?php foreach($users as $user){
                             if($_SESSION['user_id']!=$user['id']){ ?>
                           <option value="<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['last_name']); ?></option>
                            <?php } } ?> 
                         </select>
                     </div>
-                        <div class="form-group">
-                          <label for="comment"></label>
-                          <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
-                        </div>
                         <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
                         <button class="btn btn-primary" type="submit" name="submit">Post</button>
                       </form>
                   </div>
               </div>
-          </div>
+         <!--  </div>
 
-          <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1">
+          <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1"> -->
                     <div class="form-group ">
                     <div class="portlet-body" style="background-color: #ffffff;">
                       <div class="timeline" style="overflow:scroll; height:375px;">                               
