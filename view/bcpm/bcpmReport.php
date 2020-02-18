@@ -79,7 +79,7 @@ require_once __DIR__.'/../../php/bcpm/bcpmManager.php';
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-BCPM EXERCISE
+BCPM Report
 </h3>
 </div>
 
