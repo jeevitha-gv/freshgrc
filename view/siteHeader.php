@@ -120,7 +120,7 @@ a
 </div>
 <!-- end: Header Menu --> <!-- begin:: Header Topbar -->
 <div class="kt-header__topbar">
- <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo' || $_SESSION['user_role']== 'auditor') {?>
+ <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
 
 
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
@@ -129,29 +129,17 @@ a
            <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon2-user"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
    
-         
-       <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
-
-
-   </div>
- </div>
-
-<?php } ?>
-<?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo' || $_SESSION['user_role']== 'auditor') {?>
-
-
-   <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
-  
-
-           
+         <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="Add User">
+           <i class="flaticon-feed"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
             <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project & Task">
            <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
            <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
            <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
-           <i class="far fa-edit"></i>
+           <i class="flaticon-chat"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
       
-           
+           <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="Setup Guide">
+           <i class="flaticon-globe"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
 
 
@@ -159,7 +147,6 @@ a
  </div>
 
 <?php } ?>
-
    <div class="kt-header__topbar-item dropdown">
        <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true" title="Notification">
            <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
