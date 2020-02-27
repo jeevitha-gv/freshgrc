@@ -6,7 +6,7 @@
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Freshgrc</title>
+        <title>FreshGRC</title>
         <meta name="description" content="Login page example">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
           <script type="text/javascript" src="js/common/signupManagement.js"></script>
@@ -75,7 +75,7 @@
      
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--desktop kt-grid--ver-desktop kt-grid--hor-tablet-and-mobile" >
 
-        <div class="container" style="background-image: url(./assets/media/bg/bg-7.jpg);width: 45%;height: 66%;margin-top: 50px;">
+        <div class="container" style="width: 45%;height: 70%;margin-top: 10px;">
             <div class="kt-login__wrapper">
 
                 <div class="kt-login">
@@ -87,8 +87,8 @@
                           </div>
 
                             	<div class="kt-login__body">
-                       
-                                <h2 style="font-family: inherit;color: white;">Try FreshGRC free for 15 days</h2>
+                        <br>
+                                <h1 style="font-family: inherit;color: white; text-align: center;">Try FreshGRC free for 15 days</h1>
                             </div><br>
                             <div class="kt-login__form">
                             	
@@ -118,10 +118,10 @@
                                     <div class="form-group">
                                         <select class="form-control" id="plan">
                                             <option>Select</option>
-                                        	<option value="1">SMB-MF</option>
-                                        	<option value="2">SMB-CU</option>
-                                        	<option value="3">SMB</option>
-                                        	<option value="4">Enterprise plan</option>
+                                        	<option value="1">Adopter</option>
+                                        	<option value="2">Team Pro</option>
+                                        	<option value="3">Standard</option>
+                                        	<option value="4">Enterprise</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -130,13 +130,13 @@
                                     
                                     <div class="kt-login__extra">
                                         <label class="kt-checkbox">
-                                            <input type="checkbox" name="agree"> I Agree the <a href="https://www.fixnix.co/terms-of-service-fixnix">terms and conditions</a>.
+                                            <input type="checkbox" name="agree"><p style="color: #f2f2f2;"> I agree all statements in <a href="https://www.fixnix.co/terms-of-service-fixnix" style="color: #fff;"><u>Terms of service</u></a></p>
                                             <span></span>
                                         </label>
                                     </div>
-                                    <div>
-                                        <button type="submit" id="manageButton" onclick="manageModal()" data-dismiss="modal" class="btn btn-outline-brand btn-pill">Sign Up</button>
-                                        <button id="kt_login_signup_cancel" class="btn btn-outline-brand btn-pill">Cancel</button>
+                                    <div style="text-align: center;">
+                                        <button type="submit" id="manageButton" onclick="manageModal()" data-dismiss="modal" class="btn btn-outline-brand btn-pill" style="color: #fff;"><b>SIGN UP</b></button>
+                                        <!-- <button id="kt_login_signup_cancel" class="btn btn-outline-brand btn-pill">Cancel</button> -->
                                     </div>
                                
                             </div>
@@ -144,50 +144,49 @@
                        
                     </div>
                 </div>
-            </div><br>
-                <div class="kt-login__account">
-                    <span class="kt-login__account-msg" style="color: white;">
-                       Already have an account yet ?
-                    </span>&nbsp;&nbsp;
-                    <a href="login.php" style="color: yellow;">Sign In</a>
-                </div>
+            </div><br><br>
+              <!--   <div class="kt-login__account" style="text-align: center;">
+                    <span class="kt-login__account-msg" style="color: #f2f2f2;">
+                       Have already an account ?
+                    </span>
+                    <a href="login.php" style="color: #fff;"><u>Login here</u></a>
+                </div> -->
             </div>
         </div>
+        </div>
+
+    </div>
+    
+ </div> 
         
 
 
-	<div class="kt-footer" style="background-color: #100910;">
+	<div class="footer" style="padding: 1%; background-color: #A7A7A7;">
     <div class="form-group row">
       
     <div class="col-md-4 col-sm-4">
       <ul>
-        <li><a href="tel:+1(647)-825-2925" class="">+1 925 395 3684</a></li>
-        <li><a href="https://www.fixnix.co/" target="_blank">Our Product Stack</a></li>
-       
-
+        <li><a href="tel:+1(647)-825-2925" class="" style="color: black;">+1 925 395 3684</a></li>
+        <li><a href="https://www.fixnix.co/" target="_blank" style="color: black;">Our Product Stack</a></li>
       </ul>
     </div>
        <div class="col-md-4">
       <ul>
-        <span>By signing up, you agree to our <a href="https://www.fixnix.co/terms-of-service-fixnix/" target="_blank">T & C</a> and <a href="https://www.fixnix.co/privacy-policy-fixnix/">privacy policy</a></span>
-        <li><a href="http://www.freshgrc.com/">FreshGRC.com </a><span> powered by </span><a href="https://fixnix.co/"> FixNix</a></li>
+        <span><span style="color: black">By signing up, you agree to our</span> <a href="https://www.fixnix.co/terms-of-service-fixnix/" target="_blank">T & C</a> <span style="color: black">and</span> <a href="https://www.fixnix.co/privacy-policy-fixnix/">privacy policy</a></span><br>
+        <a href="http://www.freshgrc.com/">FreshGRC.com </a><span style="color: black"> powered by </span><a href="https://www.fixnix.co/"> FixNix</a>
       </ul>
     </div>
-        <div class="col-md-4">
+       <!--  <div class="col-md-4">
       <ul>
         <li><a href="https://www.fixnix.co/terms-of-service-fixnix">Terms and Conditions</a></li>
         <li><a href="https://www.fixnix.co/privacy-policy-fixnix/">Privacy Policy</a></li>
         <li><a href="https://www.fixnix.co//">Company</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
 
 </div>
-</div>
 
-    </div>
-    
- </div> 
   
 <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
