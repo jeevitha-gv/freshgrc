@@ -32,14 +32,14 @@ class dashboard{
 
 
     public function noOfAudits($companyId){
-        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and c.id=? and parent_audit=0';
+        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and parent_audit=0';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
         
     }  
      public function noOfAuditsPublished($companyId){
-        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and c.id=? and (a.status="published" or a.status="approved")';
+        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and (a.status="published" or a.status="approved")';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
@@ -715,22 +715,22 @@ public function getfrequency($id)
 
     }
     public function getNoOfCreatedRisk(){
-        $sql = 'SELECT count(*) as count from risks r,user u where r.mitigator = u.id AND r.status="create"';
+        $sql = 'SELECT count(*) as count from risks r,user u where r.owner = u.id AND r.status="create"';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
   public function getNoOfMitigatedRisk(){
-        $sql = 'SELECT count(*) as count FROM risks r WHERE r.status="Mitigated"';
+        $sql = 'SELECT count(*) as count FROM risks r,user u WHERE r.owner=u.id and r.status="Mitigated"';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
       public function getNoOfReviewedRisk(){
-        $sql = 'SELECT count(*) as count FROM risks r WHERE r.status="Reviewed"';
+        $sql = 'SELECT count(*) as count FROM risks r ,user u WHERE r.owner=u.id and r.status="Reviewed"';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
     public function getTotalNoOfRisks(){
-        $sql = 'SELECT count(*) AS total_records FROM risks r WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed")';
+        $sql = 'SELECT count(*) AS count FROM risks r,user u WHERE r.owner=u.id and (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed")';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -835,7 +835,7 @@ public function assetfieldstatus($id){
         return $this->fetchDataFromDB($sql);
     }
     public function noOfLibraries(){
-        $sql='SELECT count(*) as count FROM compliance where status="in_draft"';
+        $sql='SELECT count(*) as count FROM compliance where status="in_draft" or status="in_review" ';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfPublished(){
@@ -1353,19 +1353,19 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);        
      }
      public function noOfAsset(){
-        $sql='SELECT count(*) as count FROM asset ';
+        $sql='SELECT count(*) as count FROM asset where status="identified" or status="Create" or status="reviewed" ';
         return $this->fetchDataFromDB($sql);
     }
 public function noOfAssetPublished(){
-        $sql='SELECT count(*) as count FROM asset a where a.status="identified"';
+        $sql='SELECT count(*) as count FROM asset where status="identified"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAssetReviewed(){
-        $sql='SELECT count(*) as count FROM asset a where a.status="reviewed"';
+        $sql='SELECT count(*) as count FROM asset where status="reviewed"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAssetAssessed(){
-        $sql='SELECT count(*) as count FROM asset a where a.status="assessed"';
+        $sql='SELECT count(*) as count FROM asset where status="assessed"';
         return $this->fetchDataFromDB($sql);
     }
     public function getganttchartdatapolicy(){
