@@ -84,17 +84,17 @@ include "../siteHeader.php";
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
  
 
-<div class="">
-    <div class="row" style="margin-left: 25%;">
-                <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1" style="text-align: center;">
+<!-- <div class="col-md-8"> -->
+    <div class="col-md-10" style="margin-left: 10%;">
+                <!-- <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1" > -->
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
                     <div class="kt-portlet__head-label">
-                        <span class="kt-portlet__head-icon">
-                            <i class="kt-font-brand flaticon2-line-chart" ></i>
+                        <span class="kt-portlet__head-icon"><br>
+                            <!-- <i class="kt-font-brand flaticon2-line-chart" ></i> -->
                         </span>
                         <h3 class="kt-portlet__head-title" style="color: white;">
-                            <span class="caption-subject bold" style="color: #EA535A; text-transform: uppercase;"> Timeline</span>
-                            <span class="caption-helper" style="font-size: 13px;">user timeline</span>
+                            <span class="caption-subject bold" style="margin-left: 45%; color: #EA535A; text-transform: uppercase;"> Timeline</span>
+                            <!-- <span class="caption-helper" style="font-size: 13px;">user timeline</span> -->
                         </h3>
                     </div>        
                    </div>
@@ -117,7 +117,7 @@ include "../siteHeader.php";
                         </select>
                     </div>
                         <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
-                        <button class="btn btn-primary" type="submit" name="submit">Post</button>
+                        <button style="margin-left: 46%;" class="btn btn-primary" type="submit" name="submit">Post</button>
                       </form>
                   </div>
               </div>
@@ -135,10 +135,10 @@ include "../siteHeader.php";
                                         <img src="assets/img/shan.jpg">   
                                     </div>
                                     <div class="kt-widget4__info">
-                                        <a href="#" class="kt-widget4__username" style="color: #ffffff;">
-                                            Shanmugavel Sankaran
-                                        </a>
-                                        <p class="kt-widget4__text">
+                                        <!-- <a href="#" class="kt-widget4__username" style="color: #ffffff;"> -->
+                                            <h4 style="color: white;margin-left: 36%;">Shanmugavel Sankaran</h4>
+                                        <!-- </a> -->
+                                        <p class="kt-widget4__text"style="color: white;margin-left: 37.5%;">
                                             Added office location at 2:50 PM 
                                         </p>                                     
                                     </div>                       
@@ -148,16 +148,18 @@ include "../siteHeader.php";
                        <?php $from = $timeManager->userDetails($chat['from_id']); ?>                            
                           <div class="timeline-item">
                             <div class="timeline-badge">
-                              <div class="timeline-icon">
-                                <i class="flaticon2-correct" style="font-size: 35px; color: #38A2AE;"></i>@
+                              <div class="timeline-icon"><br>
+                                <i class="flaticon-businesswoman" style=" font-size: 35px; color: #38A2AE;"></i>
                                  <?php $to = $timeManager->userDetails($chat['to_id']); ?>
-                                <span class="" style="font-size: 15px;">  <?php echo $to[0]['last_name']; ?></span>&nbsp;&nbsp;&nbsp;<span style="font-size: 15px; ">  <?php echo $chat['message']; ?></span> 
-                              </div>   
+                                 <span style="color: red; font-size: 15px;"><?php echo $from[0]['last_name']; ?></span><br>
+                                   <?php echo $chat['message']; ?> </div>
+                                   <div style="font-size: 13px;margin-top: -50px; margin-left: 45%;"><?php echo $to[0]['last_name']; ?>
+                             
+                                  <span style="font-size: 13px; float: right;"><?php echo $chat['create_time']; ?></span><br><br><br><br>
+                                 
+                                   </div>   
 
                             </div>
-                                  <span><?php echo $from[0]['last_name']; ?></span>
-                                  <span style="font-size: 13px;"><?php echo $chat['create_time']; ?></span>
-                                 
                           </div> 
                       <?php }?>
                         </div>
@@ -168,9 +170,9 @@ include "../siteHeader.php";
         </div>
 
 <!--end::Form-->    
+<!-- </div> -->
 </div>
-</div>
-</div> 
+<!-- </div>  -->
  </div>
  </div>  
 </div>

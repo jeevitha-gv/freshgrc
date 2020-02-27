@@ -4,7 +4,7 @@
     // 4 is auditor role
     $allLocation = $riskManager->getAllLocation();
 ?>
-<!-- <label>Location</label> -->
+<label>Location</label>
 <select  id="location" name="locationDropDown"  class="form-control">
     <option>...select...</option> 
     <?php foreach($allLocation as $location){ ?>

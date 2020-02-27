@@ -273,7 +273,7 @@ $companyId=$id[0]['id'];
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Email Address</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
+                                                            
                                                             <input type="text" class="form-control" id="email">
                                                         </div>
                                                     </div>
@@ -288,7 +288,7 @@ $companyId=$id[0]['id'];
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
+                                                            
                                                             <input type="text" class="form-control" value="+45678967456" placeholder="Phone" aria-describedby="basic-addon1">
                                                         </div>
                                                        

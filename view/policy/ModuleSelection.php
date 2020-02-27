@@ -88,7 +88,7 @@ font-size:12px;
  
 </style>
 <?php
-    include '../siteHeaderforsetupguide.php';
+   include "../siteHeader.php";
     ?>
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #EEEEEE;">
 <!-- <div class="conatiner">

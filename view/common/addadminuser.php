@@ -103,6 +103,7 @@ $companyId=$id[0]['id'];
  <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
  <script src="js/superAdmin/userManagement.js"></script>
 
+
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 
         <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
@@ -111,7 +112,7 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
   }, 'google_translate_element');
-        document.querySelector('.goog-te-gadget').setAttribute('style', 'font-size: 0');
+        document.querySelector('.goog-te-gadget').setAttribute('style', 'font-size: 0','width:100');
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -315,8 +316,10 @@ a
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
+
                                                            
                                                             <input type="text" class="form-control"id="phone" placeholder="Phone" aria-describedby="basic-addon1">
+
                                                         </div>
                                                        
                                                     </div>
@@ -346,8 +349,8 @@ a
                                                
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Language</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                       <div id="google_translate_element"></div>
+                                                    <div class="col-lg-10 col-xl-9">
+                                                       <div id="google_translate_element"  ></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -545,9 +548,9 @@ USER MANAGEMENT
 </h3>
 
 </div>
-<div>
+<div style="margin: 5px;">
   <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Add User</a></button>
-   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkinvite.php" style="color:white;">Bulk Invite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button class="btn btn-danger" ><a href="view/common/bulkinvite.php" style="color:white;">Bulk Invite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
 </div>
 
