@@ -316,8 +316,10 @@ a
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            
-                                                            <input type="text" class="form-control" value="+45678967456" placeholder="Phone" aria-describedby="basic-addon1">
+
+                                                           
+                                                            <input type="text" class="form-control"id="phone" placeholder="Phone" aria-describedby="basic-addon1">
+
                                                         </div>
                                                        
                                                     </div>
@@ -390,96 +392,81 @@ a
                         <!--end: Form Wizard Step 2-->
 
                         <!--begin: Form Wizard Step 3-->
-                        <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
-							<div class="kt-heading kt-heading--md">Setup Your Address</div>
-							<div class="kt-form__section kt-form__section--first">
-								<div class="kt-wizard-v4__form">
-									<div class="form-group">
-										<label>Address Line </label>
-										<input type="text" class="form-control" name="address1" placeholder="Address Line 1" value="Address Line 1">
-										
-									</div>
-									
-									<div class="row">
-										<div class="col-xl-6">
-											<div class="form-group">
-												<label>Postcode</label>
-												<input type="text" class="form-control" name="postcode" placeholder="Postcode" value="2000">
-												
-											</div>
-										</div>
-										<div class="col-xl-6">
-											<div class="form-group">
-												<label>City</label>
-												<input type="text" class="form-control" name="state" placeholder="City" value="London">
-												
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-xl-6">
-											<div class="form-group">
-												<label>State</label>
-												<input type="text" class="form-control" name="state" placeholder="State" value="VIC">
-												
-											</div>
-										</div>
-										<div class="col-xl-6">
-											<div class="form-group">
-											<label>Country:</label>
-											<select name="country" class="form-control">
-												<option value="">Select</option>
-												<option value="AF">Afghanistan</option>
-												<option value="AX">Åland Islands</option>
-												<option value="AL">Albania</option>
-												<option value="DZ">Algeria</option>
-												<option value="AS">American Samoa</option>
-												<option value="AD">Andorra</option>
-												<option value="AO">Angola</option>
-												<option value="AI">Anguilla</option>
-												<option value="AQ">Antarctica</option>
-												<option value="AG">Antigua and Barbuda</option>
-												<option value="AR">Argentina</option>
-												<option value="AM">Armenia</option>
-												<option value="AW">Aruba</option>
-												<option value="AU" selected="">Australia</option>
-												<option value="AT">Austria</option>
-												<option value="AZ">Azerbaijan</option>
-												<option value="BS">Bahamas</option>
-												<option value="BH">Bahrain</option>
-												<option value="BD">Bangladesh</option>
-												<option value="BB">Barbados</option>
-												<option value="BY">Belarus</option>
-												<option value="BE">Belgium</option>
-												<option value="BZ">Belize</option>
-												<option value="BJ">Benin</option>
-												<option value="BM">Bermuda</option>
-												<option value="BT">Bhutan</option>
-												<option value="BO">Bolivia, Plurinational State of</option>
-												<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
-												<option value="BA">Bosnia and Herzegovina</option>
-												<option value="BW">Botswana</option>
-												<option value="BV">Bouvet Island</option>
-												<option value="BR">Brazil</option>
-												<option value="IO">British Indian Ocean Territory</option>
-												<option value="BN">Brunei Darussalam</option>
-												<option value="BG">Bulgaria</option>
-												<option value="BF">Burkina Faso</option>
-												<option value="BI">Burundi</option>
-												<option value="KH">Cambodia</option>
-												<option value="CM">Cameroon</option>
-												<option value="CA">Canada</option>
-												<option value="CV">Cape Verde</option>
-												<option value="KY">Cayman Islands</option>
-									
-									
-											</select>
-										</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+                           <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                            <div class="kt-heading kt-heading--md">Setup Your Address</div>
+                            <div class="kt-form__section kt-form__section--first">
+                                <div class="kt-wizard-v4__form">
+                                    <div class="form-group">
+                                        <label>Address Line </label>
+                                        <input type="text" class="form-control" id="address1" placeholder="Address Line 1" value="Address Line 1">
+                                        
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <div class="form-group">
+                                                <label>Postcode</label>
+                                                <input type="text" class="form-control" id="postcode" placeholder="Postcode" value="2000">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" class="form-control" id="city" placeholder="City" value="London">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <div class="form-group">
+                                                <label>State</label>
+                                                <input type="text" class="form-control" id="state" placeholder="State" value="VIC">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="form-group">
+                                            <label>Country:</label>
+                                            <select name="country" class="form-control" id="country">
+                                                <option value="">Select</option>
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AX">Åland Islands</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="AQ">Antarctica</option>
+                                                <option value="AG">Antigua and Barbuda</option>
+                                                <option value="AR">Argentina</option>
+                                                <option value="AM">Armenia</option>
+                                                <option value="AW">Aruba</option>
+                                                <option value="AU" selected="">Australia</option>
+                                                <option value="AT">Austria</option>
+                                                <option value="AZ">Azerbaijan</option>
+                                                <option value="BS">Bahamas</option>
+                                                <option value="BH">Bahrain</option>
+                                                <option value="BD">Bangladesh</option>
+                                                <option value="BB">Barbados</option>
+                                                <option value="BY">Belarus</option>
+                                                <option value="BE">Belgium</option>
+                                                <option value="BZ">Belize</option>
+                                                <option value="BJ">Benin</option>
+                                                <option value="BM">Bermuda</option>
+                                                <option value="BT">Bhutan</option>
+                                                <option value="BO">Bolivia, Plurinational State of</option>
+                                                
+                                    
+                                            </select>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--end: Form Wizard Step 3-->
 
                         <!--begin: Form Wizard Step 4-->
@@ -492,31 +479,20 @@ a
                                             Your Account Details
                                         </div>
                                         <div class="kt-wizard-v4__review-content">
-                                            John Wick
-                                            <br/> Phone: +61412345678
-                                            <br/> Email: johnwick@reeves.com
+                                          <label><b>FirstName:</b></label><p id="result1"></p>
+                                           <label><b>LastName:</b></label><p id="result2"></p>
+                                           <label><b>Email:</b></label><p id="result3"></p>
+                                           <label><b>phone:</b></label><p id="result4"></p>
+                                           <label><b>Address:</b></label><p id="result5"></p>
+                                           <label><b>PostCode:</b></label><p id="result6"></p>
+                                           <label><b>City:</b></label><p id="result7"></p>
+
+                                           <label><b>State:</b></label><p id="result8"></p>
+                                           <label><b>Country:</b></label><p id="result9"></p>
                                         </div>
                                     </div>
-                                    <div class="kt-wizard-v4__review-item">
-                                        <div class="kt-wizard-v4__review-title">
-                                            Your Address Details
-                                        </div>
-                                        <div class="kt-wizard-v4__review-content">
-                                            Address Line 1
-                                            <br/> Address Line 2
-                                            <br/> Melbourne 3000, VIC, Australia
-                                        </div>
-                                    </div>
-                                    <div class="kt-wizard-v4__review-item">
-                                        <div class="kt-wizard-v4__review-title">
-                                            Payment Details
-                                        </div>
-                                        <div class="kt-wizard-v4__review-content">
-                                            Card Number: xxxx xxxx xxxx 1111
-                                            <br/> Card Name: John Wick
-                                            <br/> Card Expiry: 01/21
-                                        </div>
-                                    </div>
+                             
+                                 
                                 </div>
                             </div>
                         </div>
@@ -530,7 +506,7 @@ a
                             <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="manageUser()">
                                 Submit
                             </div>
-                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next" onclick="showvalue()">
                                 Next Step
                             </div>
                         </div>
@@ -721,3 +697,27 @@ include '../audit/sidemenu.php';
             </body>
     <!-- end::Body -->
 </html>
+<script type="text/javascript">
+    function showvalue()
+    {
+        var firstName=document.getElementById('firstName').value;
+        document.getElementById('result1').innerHTML=firstName;
+        var lastName=document.getElementById('lastName').value;
+        document.getElementById('result2').innerHTML=lastName;
+           var email=document.getElementById('email').value;
+        document.getElementById('result3').innerHTML=email;
+         var phone=document.getElementById('phone').value;
+        document.getElementById('result4').innerHTML=phone;
+         var address1=document.getElementById('address1').value;
+        document.getElementById('result5').innerHTML=address1;
+         var postcode=document.getElementById('postcode').value;
+        document.getElementById('result6').innerHTML=postcode;
+        var city=document.getElementById('city').value;
+        document.getElementById('result7').innerHTML=city;
+        var state=document.getElementById('state').value;
+        document.getElementById('result8').innerHTML=state;
+        var country=document.getElementById('country').value;
+        document.getElementById('result9').innerHTML=country;
+
+    } 
+ </script>
