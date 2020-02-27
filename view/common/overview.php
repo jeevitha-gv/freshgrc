@@ -299,7 +299,7 @@ Business Unit
 </div>
 <div>
   <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Adduser</a></button>
-   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkbusinessunit.php" style="color:white;">Add BusinessUnit</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button class="btn btn-danger" style=""><a href="view/common/bulkbusinessunit.php" style="color:white;">Add BusinessUnit</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
 </div>
 

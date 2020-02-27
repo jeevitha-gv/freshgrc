@@ -205,7 +205,7 @@ $companyId=$id[0]['id'];
 									
 								</div>
 								<div class="row">
-									<div class="col-xl-6">
+									<div class="col-xl-12">
 										<div class="form-group">
 											<label>Team</label>
 										  <select id="assignedto1" name="assignedtoDropDown" class="form-control select2" multiple="">
@@ -217,7 +217,7 @@ $companyId=$id[0]['id'];
                         </select>
 										</div>
 									</div>
-									<div class="col-xl-6">
+									<!-- <div class="col-xl-6">
 										<div class="form-group">
                                             <label>Team 2</label>
 											 <select id="sd" name="assignedtoDropDown" class="form-control select2" multiple="">
@@ -228,18 +228,18 @@ $companyId=$id[0]['id'];
                           <?php } ?>
                         </select>
 										</div>
-									</div>
+									</div> -->
 								</div>
                                 <div class="form-group">
                                     <label>Location</label>
                                     <?php include'../common/locationDropDown.php'; ?>
                                     
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label>Global Id</label>
                                     <input type="text" class="form-control" name="Audit_Role" line="5">
                                     
-                                </div>
+                                </div> -->
                                  
 							</div> 
 						</div>
@@ -283,13 +283,13 @@ $companyId=$id[0]['id'];
                         <label for="projectname">Due Date</label>
                         <div class="input-icon">
                           
-                          <i class="fa fa-calendar"></i>
-                          <input type="date" class="form-control todo-taskbody-due" placeholder="Due Date..." id="duedate"> </div>
+                          
+                          <input type="date" class="form-control todo-taskbody-due fa fa-calendar" placeholder="Due Date..." id="duedate"> </div>
                       </div>
                  
                               <div class="form-group">
                                     <label>Team</label>
-                                  <div class="col-md-12">
+                                  <div class="col-md-13">
                                      <?php include '../common/usersDropdown.php';?>
                                     </div>
                                </div>
@@ -363,9 +363,9 @@ $companyId=$id[0]['id'];
 Project & Task
 </h3>
 </div>
- <div>
+ <div style="margin: 5px;">
   <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Add User</a></button>
-   <button class="btn btn-danger" style="float: right;"><a href="view/common/bulkinvite.php" style="color:white;">Bulk Invite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button class="btn btn-danger" style=""><a href="view/common/bulkinvite.php" style="color:white;">Bulk Invite</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
 </div>
 </div>
@@ -382,7 +382,7 @@ Project & Task
                     <th>Team</th>
                    
                     <th>Created_Date</th>
-                    
+                    <th>Action</th>
                     
   </tr>
 </thead>
@@ -398,6 +398,7 @@ Project & Task
 <td><?php echo $data['project_description'];?></td>
 <td><?php echo $data['assigned_to'];?></td>
 <td><?php echo $data['created_date'];?></td>
+<td><button class="btn btn-primary"><a href="/freshgrc/view/common/editbulkbussinessunit.php?userId=7<?php echo $data['userId']; ?>" style="color: white;">Edit</a></button></td>
 </tr>
 <?php } ?>
 </table>

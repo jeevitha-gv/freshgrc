@@ -7,7 +7,7 @@ $allUsers = $manager->getAllUsersForTicket();
 
 
 ?>
-    <div class="col-md-12">
+    <div class="col-md-13">
     <select id="assignedto" name="assignedtoDropDown" class="form-control" >
     <option>--Select User--</option>    
     <?php foreach($allUsers as $users){ ?>
