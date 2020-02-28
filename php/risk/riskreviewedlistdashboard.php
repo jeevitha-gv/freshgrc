@@ -4,7 +4,7 @@ function fetchAll(){
     $manager = new RiskManager();
     $userId = $_POST['userId'];
     $userRole = $_POST['userRole'];   
-    $allData = $manager->getAllReviewedRisksdashboard($userId, $userRole);
+    $allData = $manager->getAllReviewedRisksdashboardForRiskReviewer()($userId, $userRole);
     echo json_encode($allData);
 }
 fetchAll();

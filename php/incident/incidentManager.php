@@ -196,17 +196,27 @@ class IncidentManager {
         return $dbOps->fetchData($sql);        
     }
     public function getallIncidentList(){
-        $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id ORDER BY IncidentId DESC';
+        $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND Incf.status = "Assigned"';
         $dbOps = new DBOperations();    
         return $dbOps->fetchData($sql);        
     }
-    public function getallIncidentResolverList(){
+    public function getallIncidentAssignedList(){
         $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND Incf.status = "Assigned" ORDER BY IncidentId DESC';
         $dbOps = new DBOperations();    
         return $dbOps->fetchData($sql);        
     }
-    public function getallIncidentReviewerList(){
-        $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Recorded" OR Incf.status = "Resolved") ORDER BY IncidentId DESC';
+    public function getallIncidentRecordList(){
+        $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Recorded") ORDER BY IncidentId DESC';
+        $dbOps = new DBOperations();    
+        return $dbOps->fetchData($sql);        
+    }
+    public function getallIncidentResolvedList(){
+        $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Resolved") ORDER BY IncidentId DESC';
+        $dbOps = new DBOperations();    
+        return $dbOps->fetchData($sql);        
+    }
+    public function getallIncidentClosedList(){
+        $sql = 'SELECT Incf.id as IncidentId, concat(ucase(mid(Incf.Title,1,1)),lcase(mid(Incf.Title,2))) as IncidentTitle, Incf.Type as IncidentType, ic.name as IncidentCategory, Incf.status as IncidentStatus, u.last_name as IncidentAnalyst, Incf.company_id as IncidentCompanyId FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Closed") ORDER BY IncidentId DESC';
         $dbOps = new DBOperations();    
         return $dbOps->fetchData($sql);        
     }
