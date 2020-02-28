@@ -32,21 +32,21 @@ class dashboard{
 
 
     public function noOfAudits($companyId){
-        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and parent_audit=0';
+        $sql='SELECT count(*) as count FROM audit a,company c, compliance compl, user u where (a.company_id = c.id and a.compliance_id = compl.id and (a.auditor = u.id or a.auditor=u.id)  and a.status="create" and (a.audit_freq="once" or DATE(a.start_date)<=DATE(NOW()) or a.parent_audit=0))';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
         
     }  
      public function noOfAuditsPublished($companyId){
-        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and (a.status="published" or a.status="approved")';
+        $sql='SELECT count(*) as count FROM audit a,company c, compliance compl, user u where (a.company_id = c.id and a.compliance_id = compl.id and (a.auditor = u.id or a.auditor=u.id)  and (a.status="published" or a.status="approved") and (a.audit_freq="once" or DATE(a.start_date)<=DATE(NOW()) or a.parent_audit=0))';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
         
     } 
       public function noOfAuditsDue($companyId){
-        $sql='SELECT count(*) as count  from audit a, company c, compliance compl, user u where a.company_id = c.id and a.compliance_id = compl.id and a.auditor = u.id and a.start_date<CURDATE() and a.status!="published" and a.status!="approved" and a.status!="returned" and a.status!="prepared" and a.status!="approval pending"';
+        $sql='SELECT count(*) as count  from audit a, company c, compliance compl, user u where a.company_id = c.id and a.compliance_id = compl.id and a.auditor = u.id and a.start_date<CURDATE() and a.status!="published" and a.status!="approved" and a.status!="returned" and a.status!="prepared" and a.status!="approval pending" and parent_audit=0';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
@@ -790,7 +790,7 @@ public function assetfieldstatus($id){
     //DISASTER DASHBORAD//
 
     public function disaster_business(){
-        $sql = 'SELECT business_impact_scale, count(*) AS count FROM disaster_plan WHERE business_impact_scale is not null GROUP BY business_impact_scale';
+        $sql = 'SELECT count(*) AS count FROM disaster_plan';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);    
     }  
@@ -1353,19 +1353,19 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);        
      }
      public function noOfAsset(){
-        $sql='SELECT count(*) as count FROM asset where status="identified" or status="Create" or status="reviewed" ';
+        $sql='SELECT count(*) as count FROM asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group';
         return $this->fetchDataFromDB($sql);
     }
 public function noOfAssetPublished(){
-        $sql='SELECT count(*) as count FROM asset where status="identified"';
+        $sql='SELECT count(*) as count FROM  asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status ="identified"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAssetReviewed(){
-        $sql='SELECT count(*) as count FROM asset where status="reviewed"';
+        $sql='SELECT count(*) as count FROM asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status ="reviewed"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAssetAssessed(){
-        $sql='SELECT count(*) as count FROM asset where status="assessed"';
+        $sql='SELECT count(*) as count FROM asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status = "assessed"';
         return $this->fetchDataFromDB($sql);
     }
     public function getganttchartdatapolicy(){

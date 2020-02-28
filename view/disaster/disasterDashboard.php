@@ -1,6 +1,16 @@
  <?php require_once __DIR__.'/../header.php';
+  require_once __DIR__.'/../../php/common/dashboard.php';
 $complianceWiseStatusGraph=false;
-
+$manager=new dashboard();
+$cardLibraries=$manager->disaster_business();
+$cardLibraries=$cardLibraries[0]['count'];
+$cardLibrariesPublished=$manager->disaster_category();
+$cardLibrariesPublished=$cardLibrariesPublished[0]['count'];
+$cardLibrariesInDraft=$manager->disaster_critical();
+$cardLibrariesInDraft=$cardLibrariesInDraft[0]['count'];
+$cardLibrariesAnalyzed=$manager->disaster_resource();
+$cardLibrariesAnalyzed=$cardLibrariesAnalyzed[0]['count'];
+//error_log("no of Libraries".print_r($cardLibraries));
  
 //error_log("no of Libraries".print_r($cardLibraries));
 
@@ -237,7 +247,9 @@ $complianceWiseStatusGraph=false;
                                                                 
                                                             <span class="kt-widget17__subtitle">
                                                                 Registered users<br>
-                                                                <span>12</span>
+                                                               <span class="kt-widget17__desc">
+                                                             <?php echo $cardLibraries ?>
+                                                            </span>
 
 
                                                             </span></a>
@@ -256,9 +268,9 @@ $complianceWiseStatusGraph=false;
                                                                 
                                                             <span class="kt-widget17__subtitle">
                                                                 Investigate <br>  
-                                                                <span> 8</span>
+                                                                
                                                             </span></a>
-                                                            <span class="kt-widget17__desc">
+                                                             <span class="kt-widget17__desc">
                                                              <?php echo $cardLibrariesPublished ?>
                                                             </span>
                                                         </div>
@@ -276,12 +288,12 @@ $complianceWiseStatusGraph=false;
                                                                 </svg> </span>
                                                                 
                                                             <span class="kt-widget17__subtitle">
-                                                              Reviewed <br>
-                                                              <span> 13 </span>
+                                                              Reviewed 
+                                                             
 
                                                             </span></a>
                                                             <span class="kt-widget17__desc">
-                                                                <?php echo $cardLibrariesInDraft ?>                        
+                                                             <?php echo $cardLibrariesInDraft ?>
                                                             </span></a>
                                                         </div>
                                                         <div class="kt-widget17__item">
@@ -295,8 +307,7 @@ $complianceWiseStatusGraph=false;
                                                                     </g>
                                                                 </svg> </span>
                                                             <span class="kt-widget17__subtitle">
-                                                                Closed <br>
-                                                                <span> 6 </span>
+                                                                Closed 
                                                             </span></a>
                                                             <span class="kt-widget17__desc">
                                                               <?php echo $cardLibrariesAnalyzed ?>                             

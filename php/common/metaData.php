@@ -13,6 +13,10 @@ class MetaData{
     public function getAllRoles(){
         $sql = 'SELECT * from role';
         return $this->fetchDataFromDB($sql);
+    }   
+    public function getAllCategory(){
+        $sql = 'SELECT * from category';
+        return $this->fetchDataFromDB($sql);
     }    
     
     public function getAllIndustries(){

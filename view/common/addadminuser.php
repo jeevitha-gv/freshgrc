@@ -396,6 +396,12 @@ a
                             <div class="kt-heading kt-heading--md">Setup Your Address</div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v4__form">
+                                     <div class="form-group row col 13">
+                                                    <label>Category</label>
+                                                    
+                                                        <?php include '../common/dropdownCategory.php';?>
+                                                    
+                                                </div>
                                     <div class="form-group">
                                         <label>Address Line </label>
                                         <input type="text" class="form-control" id="address1" placeholder="Address Line 1" value="Address Line 1">

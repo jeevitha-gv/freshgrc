@@ -239,16 +239,10 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                                 DUE
                                                             </span>
                                                             <span class="kt-widget17__desc">
+                                                              <?php echo $noOfAuditsdue[0]['count'] ?>
                                                             </span>
                                                           </a>
-                                                                <div class="number">   
-                    <?php if($_SESSION['user_role']=='auditor'){ ?>                 
-                      <span data-counter="counterup" data-value="<?php echo $noOfAuditsDue[0]['count']?>"><?php echo $noOfAuditsDue[0]['count']?></span>
-                      <?php }?>
-                       <?php if($_SESSION['user_role']=='auditee'){ ?>                 
-                      <span data-counter="counterup" data-value="<?php echo $noOfAuditsDueauditee[0]['count']?>"><?php echo $noOfAuditsDueauditee[0]['count']?></span>
-                      <?php }?>
-                    </div>  
+                                   
                                                             </span>
                                                         </div>
                                                         <div class="kt-widget17__item">
