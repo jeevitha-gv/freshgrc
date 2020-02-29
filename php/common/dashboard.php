@@ -796,17 +796,17 @@ public function assetfieldstatus($id){
     }  
 
     public function disaster_category(){
-         $sql = 'SELECT system_category, count(*) AS count FROM disaster_plan WHERE system_category is not null GROUP BY system_category';
+         $sql = 'SELECT count(*) AS count FROM whistle WHERE whistle.status = 2';
         return $this->fetchDataFromDB($sql);
     } 
 
     public function disaster_critical(){
-         $sql = 'SELECT critical_resources, count(*) AS count FROM disaster_plan WHERE critical_resources is not null GROUP BY critical_resources';
+         $sql = 'SELECT count(*) AS count FROM whistle WHERE whistle.status = 2';
         return $this->fetchDataFromDB($sql);
     } 
 
     public function disaster_resource(){
-         $sql = 'SELECT critical_resources, count(*) AS count FROM disaster_plan WHERE critical_resources is not null GROUP BY critical_resources';
+         $sql = 'SELECT count(*) AS count FROM whistle WHERE whistle.status = 2';
         return $this->fetchDataFromDB($sql);
     } 
 
@@ -1262,7 +1262,12 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);
     }
     public function bcpmFutureExercise(){
-        $sql='SELECT SUM(number_exercise) AS count,erercise_type FROM `bcpm_exercise` GROUP BY erercise_type ORDER BY count DESC LIMIT 2';
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+    public function bcpmFutureConducted(){
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
@@ -1282,12 +1287,12 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);
     }
     public function bcpmFutureRto(){
-        $sql='SELECT bia  ,SUM(rto) AS count FROM `bcpm_implement` GROUP BY bia ORDER BY count DESC LIMIT 2';
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
     public function bcpmFutureDailyLoss(){
-        $sql='SELECT SUM(daily_loss) AS count,bia FROM `bcpm_implement` GROUP BY bia ORDER BY count DESC LIMIT 2';
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }

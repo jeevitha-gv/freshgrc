@@ -1,7 +1,18 @@
 <?php require_once __DIR__.'/../header.php';
+require_once __DIR__.'/../../php/common/dashboard.php';
 $complianceWiseStatusGraph=false;
-$totalexercise=$manager->getTotalexercise();
- 
+
+$manager=new dashboard();
+$cardLibraries=$manager->bcpmFutureExercise();
+$cardLibraries=$cardLibraries[0]['count'];
+$cardLibrariesPublished=$manager->bcpmFutureConducted();
+$cardLibrariesPublished=$cardLibrariesPublished[0]['count'];
+$cardLibrariesInDraft=$manager->bcpmFutureRto();
+$cardLibrariesInDraft=$cardLibrariesInDraft[0]['count'];
+$cardLibrariesAnalyzed=$manager->bcpmFutureDailyLoss();
+$cardLibrariesAnalyzed=$cardLibrariesAnalyzed[0]['count'];
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -157,7 +168,9 @@ $totalexercise=$manager->getTotalexercise();
                                                                NO of EXERCISE CONDUCTED
                                                             </span>
                                                             <span class="kt-widget17__desc">
-                                                              <?php echo $totalexercise[0]['count'];?>
+
+                                                             <?php echo $cardLibraries ?>
+
                                                             </span></a>
                                                         </div>
                                                         <div class="kt-widget17__item">
@@ -173,8 +186,8 @@ $totalexercise=$manager->getTotalexercise();
                                                             <span class="kt-widget17__subtitle">
                                                                 NO of TRAININGS CONDUCTED
                                                             </span>
-                                                            <span class="kt-widget17__desc">
-                                                             2
+                                                           <span class="kt-widget17__desc">
+                                                             <?php echo $cardLibrariesPublished ?>
                                                             </span></a>
                                                         </div>
                                                     </div>
@@ -192,10 +205,8 @@ $totalexercise=$manager->getTotalexercise();
                                                             <span class="kt-widget17__subtitle">
                                                               RTO
                                                             </span>
-                                                            <span class="kt-widget17__desc">
-                                                                <div class="number">   
-                                                                   3
-                                                                </div>                         
+                                                           <span class="kt-widget17__desc">
+                                                             <?php echo $cardLibrariesInDraft ?>
                                                             </span></a>
                                                         </div>
                                                         <div class="kt-widget17__item">
@@ -211,8 +222,7 @@ $totalexercise=$manager->getTotalexercise();
                                                                 DAILY LOSS
                                                             </span>
                                                             <span class="kt-widget17__desc">
-                                                              <div class="number"> 
-                     </div>
+                                                             <?php echo $cardLibrariesAnalyzed ?>
                                                             </span>
                                                         </div>
                                                     </div>
