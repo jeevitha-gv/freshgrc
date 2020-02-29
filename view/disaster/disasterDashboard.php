@@ -16,7 +16,8 @@ $cardLibrariesAnalyzed=$cardLibrariesAnalyzed[0]['count'];
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html>              
+
 <html>
 
   <head lang="en">
