@@ -1,6 +1,7 @@
 <?php require_once __DIR__.'/../header.php';
 $complianceWiseStatusGraph=false;
-
+$totalexercise=$manager->getTotalexercise();
+ 
 ?>
 <!DOCTYPE html>
 <html>
@@ -156,7 +157,7 @@ $complianceWiseStatusGraph=false;
                                                                NO of EXERCISE CONDUCTED
                                                             </span>
                                                             <span class="kt-widget17__desc">
-                                                           15
+                                                              <?php echo $totalexercise[0]['count'];?>
                                                             </span></a>
                                                         </div>
                                                         <div class="kt-widget17__item">

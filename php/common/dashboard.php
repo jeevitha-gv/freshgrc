@@ -715,7 +715,7 @@ public function getfrequency($id)
 
     }
     public function getNoOfCreatedRisk(){
-        $sql = 'SELECT count(*) as count from risks r,user u where r.owner = u.id AND r.status="create"';
+        $sql = 'SELECT count(*) as count from risks r, risk_scenario rs, technology t, source s WHERE ( r.status="Create" ) AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -725,12 +725,12 @@ public function getfrequency($id)
         return $dbOps->fetchData($sql);         
     }
       public function getNoOfReviewedRisk(){
-        $sql = 'SELECT count(*) as count FROM risks r ,user u WHERE r.owner=u.id and r.status="Reviewed"';
+        $sql = 'SELECT count(*) as count FROM risks r, risk_scenario rs, technology t, source s WHERE (r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
     public function getTotalNoOfRisks(){
-        $sql = 'SELECT count(*) AS count FROM risks r,user u WHERE r.owner=u.id and (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed")';
+        $sql = 'SELECT count(*) AS count FROM risks r, risk_scenario rs, technology t, source s WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -1031,7 +1031,7 @@ public function assetfieldstatus($id){
 
     }
     public function incidentRecordedStatus(){
-        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf WHERE Incf.status="Recorded"';
+        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Recorded") ';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -1041,12 +1041,17 @@ public function assetfieldstatus($id){
         return $dbOps->fetchData($sql);         
     }
     public function incidentResolvedStatus(){
-        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf WHERE Incf.status="Resolved"';
+        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Resolved")';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
     public function incidentClosedStatus(){
-        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf WHERE Incf.status="Closed"';
+        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Closed")';
+       $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);         
+    }
+    public function getTotalrecords(){
+        $sql = 'SELECT count(*) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -1395,6 +1400,7 @@ public function noOfAssetPublished(){
     $dbOps=new DBOperations();
     return $dbOps->fetchData($sql);
     }
+
 //boarddashboardchart
     public function totalmeetingschart(){
     $sql='SELECT boardindex.title, count(*) AS count FROM boardindex GROUP BY title';
