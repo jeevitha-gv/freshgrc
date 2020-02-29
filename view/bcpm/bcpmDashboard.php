@@ -1,6 +1,7 @@
 <?php require_once __DIR__.'/../header.php';
 require_once __DIR__.'/../../php/common/dashboard.php';
 $complianceWiseStatusGraph=false;
+
 $manager=new dashboard();
 $cardLibraries=$manager->bcpmFutureExercise();
 $cardLibraries=$cardLibraries[0]['count'];
@@ -10,6 +11,7 @@ $cardLibrariesInDraft=$manager->bcpmFutureRto();
 $cardLibrariesInDraft=$cardLibrariesInDraft[0]['count'];
 $cardLibrariesAnalyzed=$manager->bcpmFutureDailyLoss();
 $cardLibrariesAnalyzed=$cardLibrariesAnalyzed[0]['count'];
+
 
 ?>
 <!DOCTYPE html>
@@ -166,7 +168,9 @@ $cardLibrariesAnalyzed=$cardLibrariesAnalyzed[0]['count'];
                                                                NO of EXERCISE CONDUCTED
                                                             </span>
                                                             <span class="kt-widget17__desc">
+
                                                              <?php echo $cardLibraries ?>
+
                                                             </span></a>
                                                         </div>
                                                         <div class="kt-widget17__item">
