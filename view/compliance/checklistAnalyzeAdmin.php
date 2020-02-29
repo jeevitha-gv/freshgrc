@@ -223,7 +223,7 @@ function tabledata($clause){
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" ></button>
           <h4 class="modal-title"><i class="fa fa-gift"></i>Compliance Package item info</h4>
         </div>
         <div class="modal-body">
@@ -251,9 +251,9 @@ function tabledata($clause){
                       
 
                         <div class="btn-group" id="treatmentStrategy">
-                          <button type="button" id="Compliant"   class="btn btn-success" onclick="treat('Compliant')" value="Compliant">Compliant</button>
-                          <button type="button" id="Non Compliant" class="btn btn-danger" onclick="treat('Non Compliant')" value="Non Compliant">Non Compliant</button>
-                          <button type="button" id="Not Applicable" class="btn btn-info" onclick="treat('Not Applicable')" value="Not Applicable">Not Applicable</button>
+                          <button type="button" id="Compliant"   class="btn btn-success" onclick="treat('Compliant')" value="Compliant">Compliant</button>&nbsp;&nbsp;&nbsp;
+                          <button type="button" id="Non Compliant" class="btn btn-danger" onclick="treat('Non Compliant')" value="Non Compliant">Non Compliant</button>&nbsp;&nbsp;&nbsp;
+                          <button type="button" id="Not Applicable" class="btn btn-info" onclick="treat('Not Applicable')" value="Not Applicable">Not Applicable</button>&nbsp;&nbsp;&nbsp;
                         </div>
                         
                       
@@ -271,7 +271,7 @@ function tabledata($clause){
                         <?php $score=50; ?>
 
                    <div class="slidecontainer">
-                      <input type="range" style="display: block;width: 41%;margin-top: -6px;margin-left: 98px;"  min="1" max="100"  value="50" class="slider" id="complianceEfficacy" name="auditorScoreDropDown" class="form-control"  onchange="<?php echo 'updateScore()'?>">
+                      <input type="range" style="display: block;width: 41%;margin-top: -6px;margin-left: 120px;"  min="1" max="100"  value="50" class="slider" id="complianceEfficacy" name="auditorScoreDropDown" class="form-control"  onchange="<?php echo 'updateScore()'?>">
                     <p id="scoreAnalyze"  style="margin-top: -7px;margin-left: 108px;"><?php echo $score ?></p>
                    </div> 
                     </div>             
@@ -281,6 +281,7 @@ function tabledata($clause){
               <div class="row">
                   <div class="col-md-12" >
                     <div class="form-group " >
+                      <!-- <label>Compliance</label> -->
                       <!-- <label for="auditTitle" >Standards:</label> -->
                         <?php include '../compliance/mitigationControlComplianceDropDown.php';?>
                     </div>          
