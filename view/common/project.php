@@ -398,7 +398,7 @@ Project & Task
 <td><?php echo $data['project_description'];?></td>
 <td><?php echo $data['assigned_to'];?></td>
 <td><?php echo $data['created_date'];?></td>
-<td><button class="btn btn-primary"><a href="/freshgrc/view/common/editbulkbussinessunit.php?userId=7<?php echo $data['userId']; ?>" style="color: white;">Edit</a></button></td>
+<td><button class="btn btn-primary"><a href="/freshgrc/view/common/edituserproject.php?userId=7<?php echo $data['userId']; ?>" style="color: white;">Edit</a></button></td>
 </tr>
 <?php } ?>
 </table>
