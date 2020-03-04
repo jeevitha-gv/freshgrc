@@ -1303,28 +1303,49 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);
     }
     
-    public function getAuditNotify(){
-        $sql='SELECT * FROM `audit` WHERE notification_status =1 ORDER BY `id` DESC';
+    public function getAuditCount(){
+        $sql='SELECT * FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
-    public function getAuditNotifyinkickoff(){
-        $sql='SELECT * FROM `audit` WHERE kickoff_notification_status =1 ORDER BY `id` DESC';
+
+       public function getAuditeeCount(){
+        $sql='SELECT * FROM `audit` WHERE kickoff_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 OR followup_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+     public function getAuditNotifyForAdmin(){
+        $sql='SELECT * FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 OR kickoff_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+    public function getAuditNotifysum(){
+        $sql='SELECT sum((select notification_status)+ (select respond_notification_status) + (select review_notification_status)) as total FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+    public function getAuditeeNotifysum(){
+        $sql='SELECT sum((select kickoff_notification_status)+ (select followup_notification_status)) as total FROM `audit` WHERE kickoff_notification_status =1 and parent_audit=0 OR followup_notification_status=1 and parent_audit=0  ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+      public function getAllAuditsum(){
+        $sql='SELECT sum((select notification_status)+ (select respond_notification_status) + (select review_notification_status) + (select kickoff_notification_status) + (select followup_notification_status)) as total FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 OR kickoff_notification_status=1 and parent_audit=0 OR followup_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
       public function getAuditNotifyinrespond(){
-        $sql='SELECT * FROM `audit` WHERE status="prepared" and respond_notification_status =1 ORDER BY `id` DESC';
+        $sql='SELECT * FROM `audit` WHERE respond_notification_status =1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
     public function getAuditNotifyinperformed(){
-        $sql='SELECT * FROM `audit` WHERE status="performed" and review_notification_status =1 ORDER BY `id` DESC';
+        $sql='SELECT * FROM `audit` WHERE review_notification_status =1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
     public function getAuditNotifyinfollowup(){
-        $sql='SELECT * FROM `audit` WHERE status="returned" and followup_notification_status =1 ORDER BY `id` DESC';
+        $sql='SELECT * FROM `audit` WHERE status="returned" and followup_notification_status =1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }

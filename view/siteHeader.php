@@ -1,3 +1,20 @@
+<?php
+    require_once '../../php/common/dashboard.php';
+
+    $manager=new dashboard();
+    $auditcount=$manager->getAuditCount();
+    $auditeecount=$manager->getAuditeeCount();
+    $plan=$manager->getAuditNotifysum();
+    $kickoff=$manager->getAuditeeNotifysum();
+    $admin=$manager->getAllAuditsum();
+    $adminaudit=$manager->getAuditNotifyForAdmin();
+
+    // $review=$manager->getAuditNotifyinperformed();
+    // $followup=$manager->getAuditNotifyinfollowup();
+    // $reports=$manager->getAuditNotifyinreports();
+    // $auditriview=$manager->getAuditNotifyinReview();
+    // echo count($plan);
+?>
 
 <!DOCTYPE html>
 
@@ -17,8 +34,8 @@
                     <!--begin::Page Vendors Styles(used by this page) -->
                             <link href="./assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
                         <!--end::Page Vendors Styles -->
-        
-        
+       
+       
         <!--begin:: Global Mandatory Vendors -->
 <link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
 <!--end:: Global Mandatory Vendors -->
@@ -69,15 +86,15 @@
     }
     .goog-te-banner-frame.skiptranslate {
     display: none !important;
-    } 
-body {
-    top: 0px !important; 
     }
-  
+body {
+    top: 0px !important;
+    }
+ 
 .form-popup {
   display: none;
   position: fixed;
-  
+ 
 }
 a
 {
@@ -116,20 +133,19 @@ a
       <!-- begin: Header Menu -->
 <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
 <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
-  
+ 
 </div>
 <!-- end: Header Menu --> <!-- begin:: Header Topbar -->
 <div class="kt-header__topbar">
- 
+ <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
 
 
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
-  
+ 
 
            <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon-calendar-1"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
          </div>
-         <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
          <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="Add User">
            <i class="flaticon2-user"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
@@ -138,17 +154,14 @@ a
             <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project & Task">
            <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
            <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a></div>
-           <?php } ?>
            <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
            <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
            <i class="flaticon-time"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
          </div>
-         <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
       <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
            <a href="view/policy/ModuleSelection.php?i=1" class="kt-header__topbar-icon" title="Setup Guide">
            <i class="flaticon-globe"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-
        <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
 
 
@@ -156,21 +169,338 @@ a
  </div>
 
 <?php } ?>
-<div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
-<a href="#" class="kt-header__topbar-icon" title="Payment">
-           <i class="flaticon-presentation-1"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
-           </div>
-   <div class="kt-header__topbar-item dropdown">
-       <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true" title="Notification">
-           <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i></span>
-           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span>
-       </div>
-       <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
-           <form>
+<!-- Auditor Notification -->
+ <?php if($_SESSION['user_role']=='auditor') { ?>
+<div class="kt-header__topbar-item dropdown">
+          <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+              <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i><p style="font-size: 15px;color: red">
 
-           </form>
-       </div>
-   </div>
+              <span class="kt-badge--dot kt-badge--notify kt-badge--sm">
+    <?php foreach ($plan as $value) {
+      ?>
+      <?php echo $value['total'];?>
+      <?php 
+    }
+    ?>
+  </span>
+</p>
+    </span>
+          </div>
+          <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+              <form>
+                  <!--begin: Head -->
+    <div class="kt-head kt-head--skin-light kt-head--fit-x kt-head--fit-b">
+        <h3 class="kt-head__title">
+            User Notifications
+            &nbsp;
+            <!-- <span class="btn btn-label-primary btn-sm btn-bold btn-font-md"><?php echo count($plan)?></span> -->
+        </h3>
+        <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true">Alerts</a>
+            </li>
+         
+        </ul>
+    </div>
+<!--end: Head -->
+
+<div class="tab-content">
+    <div class="tab-pane active show" id="topbar_notifications_notifications" role="tabpanel">
+        <div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+          <?php
+          foreach ($auditcount as $create) {
+            if($create['notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditCreateAdmin.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> - has been created
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+        <?php
+          foreach ($auditcount as $create) {
+            if($create['respond_notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditPerformAdmin.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> - has been Responded
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+         <?php
+          foreach ($auditcount as $create) {
+            if($create['review_notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditPublished.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> - has been Reviewed
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+
+         
+        </div>
+    </div>
+
+</div>
+              </form>
+          </div>
+      </div>
+      <?php
+    }
+    ?>
+    <!-- Auditee Notification -->
+ <?php if($_SESSION['user_role']=='auditee') { ?>
+<div class="kt-header__topbar-item dropdown">
+          <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+                <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i><p style="font-size: 15px;color: red">
+
+              <span class="kt-badge--dot kt-badge--notify kt-badge--sm">
+    <?php foreach ($kickoff as $value) {
+      ?>
+      <?php echo $value['total'];?>
+      <?php 
+    }
+    ?>
+  </span>
+</p>
+    </span>
+          </div>
+          <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+   
+                  <!--begin: Head -->
+    <div class="kt-head kt-head--skin-light kt-head--fit-x kt-head--fit-b">
+        <h3 class="kt-head__title">
+            User Notifications
+            &nbsp;
+            <!-- <span class="btn btn-label-primary btn-sm btn-bold btn-font-md"><?php echo count($plan)?></span> -->
+        </h3>
+        <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true">Alerts</a>
+            </li>
+         
+        </ul>
+    </div>
+<!--end: Head -->
+
+<div class="tab-content">
+    <div class="tab-pane active show" id="topbar_notifications_notifications" role="tabpanel">
+        <div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+          <?php
+          foreach ($auditeecount as $create) {
+           if($create['kickoff_notification_status']==1)
+           {
+         ?>
+            <a href="#" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> - has been scheduled
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+         
+        </div>
+    </div>
+
+</div>
+             
+          </div>
+      </div>
+      <?php
+    }
+    ?>
+    <!-- superadmin notification from audit -->
+     <?php if($_SESSION['user_role']=='super_admin') { ?>
+<div class="kt-header__topbar-item dropdown">
+          <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="true">
+              <span class="kt-header__topbar-icon"><i class="flaticon2-bell-alarm-symbol"></i><p style="font-size: 15px;color: red">
+
+              <span class="kt-badge--dot kt-badge--notify kt-badge--sm">
+    <?php foreach ($admin as $value) {
+      ?>
+      <?php echo $value['total'];?>
+      <?php 
+    }
+    ?>
+  </span>
+</p>
+    </span>
+          </div>
+          <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+              <form>
+                  <!--begin: Head -->
+    <div class="kt-head kt-head--skin-light kt-head--fit-x kt-head--fit-b">
+        <h3 class="kt-head__title">
+            User Notifications
+            &nbsp;
+            <!-- <span class="btn btn-label-primary btn-sm btn-bold btn-font-md"><?php echo count($plan)?></span> -->
+        </h3>
+        <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand  kt-notification-item-padding-x" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active show" data-toggle="tab" href="#topbar_notifications_notifications" role="tab" aria-selected="true">Alerts</a>
+            </li>
+         
+        </ul>
+    </div>
+<!--end: Head -->
+
+<div class="tab-content">
+    <div class="tab-pane active show" id="topbar_notifications_notifications" role="tabpanel">
+        <div class="kt-notification kt-margin-t-10 kt-margin-b-10 kt-scroll" data-scroll="true" data-height="300" data-mobile-height="200">
+          <?php
+          foreach ($adminaudit as $create) {
+            if($create['notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditCreateAdmin.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> - has been created
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+        <?php
+          foreach ($adminaudit as $create) {
+            if($create['kickoff_notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditPerformAdmin.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> -has been Scheduled
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+        <?php
+          foreach ($adminaudit as $create) {
+            if($create['respond_notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditPerformAdmin.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?>- has been Responded
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+         <?php
+          foreach ($adminaudit as $create) {
+            if($create['review_notification_status']==1)
+            {
+
+         ?>
+            <a href="view/audit/auditPublished.php" class="kt-notification__item">
+                <div class="kt-notification__item-icon">
+                    <i class="flaticon2-line-chart kt-font-success"></i>
+                </div>
+                <div class="kt-notification__item-details">
+                    <div class="kt-notification__item-title">
+                    <?php echo $create['title']; ?> -has been Reviewed
+                    </div>
+                    <div class="kt-notification__item-time">
+                      <?php echo $create['updated_time']; ?>
+                    </div>
+                </div>
+            </a>
+         <?php
+       }
+     }
+       ?>
+
+         
+        </div>
+    </div>
+
+</div>
+              </form>
+          </div>
+      </div>
+      <?php
+    }
+    ?>
 
 <!-- <div id="google_translate_element"></div> -->
 <div class="kt-header__topbar-item kt-header__topbar-item--langs">
@@ -213,7 +543,7 @@ a
     <!--begin:: Global Mandatory Vendors -->
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-<script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script> -->
 <script src="./assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
@@ -288,7 +618,7 @@ a
                         <!--end::Page Vendors -->
          
                     <!--begin::Page Scripts(used by this page) -->
-                            <script src="./assets/js/demo3/pages/dashboard.js" type="text/javascript"></script>
+                            <!-- <script src="./assets/js/demo3/pages/dashboard.js" type="text/javascript"></script> -->
                         <!--end::Page Scripts -->
             </body>
     <!-- end::Body -->

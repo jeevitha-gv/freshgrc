@@ -497,7 +497,23 @@ public function getAllAuditsForPublish($userId, $userRole){
     
     public function saveStatus($auditData){
         $status = $this->determineWorkflowStatus($auditData);
-        $sql = 'UPDATE audit SET status=?, updated_by=?, updated_time=? WHERE id=?';
+        if($status=="prepared")
+        {
+        $sql = 'UPDATE audit SET status=?, updated_by=?, updated_time=?, kickoff_notification_status=1 WHERE id=?';
+    }
+    elseif($status=="performed")
+    {
+       $sql = 'UPDATE audit SET status=?, updated_by=?, updated_time=?, respond_notification_status=1 WHERE id=?'; 
+    }
+     elseif($status=="approved")
+    {
+       $sql = 'UPDATE audit SET status=?, updated_by=?, updated_time=?, review_notification_status=1 WHERE id=?'; 
+    }
+   
+      else
+    {
+       $sql = 'UPDATE audit SET status=?, updated_by=?, updated_time=? WHERE id=?'; 
+    }
         $paramArray = array($status, $auditData->loggedInUser, date("Y-m-d h:i:s"), $auditData->auditId); 
         $dbOps = new DBOperations(); 
         error_log("show params".print_r($paramArray,true));       
@@ -612,4 +628,5 @@ public function getAllAuditsForPublish($userId, $userRole){
         $dbOps = new dbOperations();
         return $dbOps->fetchData($sql);
     }
+
 }
