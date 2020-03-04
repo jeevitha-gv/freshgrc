@@ -55,7 +55,7 @@
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 <div class="kt-portlet">
 <div class="kt-portlet__head">
-<div class="kt-portlet__head-label" style="text-align: center;  margin-top: 50px; margin-left: 44%;">
+<div class="kt-portlet__head-label" style="text-align: center;  margin-top: 50px; margin-left: 30%;">
 <h3 class="kt-portlet__head-title" >
 LIBRARY
  <ul class="nav nav-tabs">
@@ -108,10 +108,10 @@ LIBRARY
                         </div>                            
                         <div class="tab-pane active" id="tab_1_2">                          
                            <form action="#" role="form" style="margin:5px;">
-                            <div class="form-group" style="margin-left: 43%;">
+                            <div class="form-group" style="margin-left: 27%;">
                               <div class="fileinput fileinput-new" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div>
+                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 250px;height: 150px;" /> </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div><br>
                                 <div> 
                                 <label for="complianceCsv" aria-hidden="true">
@@ -123,7 +123,7 @@ LIBRARY
                                
                               
                               <div class="clearfix margin-top-10">
-                                <span class="label label-danger">NOTE! </span>
+                                <span class="label label-danger"><b>NOTE!</b> </span>
                                 <span>Please Click the excel image to download template and please upload the filled library in csv format</span>
                               </div>
                             </div>                            

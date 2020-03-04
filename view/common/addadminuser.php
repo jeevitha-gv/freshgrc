@@ -1,4 +1,3 @@
-
 <?php 
 require_once __DIR__.'/../header.php';
 require_once __DIR__.'/../subscription.php';
@@ -140,6 +139,7 @@ body {
   position: fixed;
   
 }
+.goog-te-combo  { margin: 0; border:1px solid #D5DAD9; border-radius:4px; padding: 5px 0px 5px 35px; background: #fff url(images/google-logo.gif) no-repeat 10px center; -moz-appearance: none; appearance: none; -webkit-appearance: none;width:488px;height:40px; }
 a
 {
   color: white;
@@ -246,7 +246,7 @@ a
  
 
     <div class="kt-portlet">
-         <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 70%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
+         
         <div class="kt-portlet__body kt-portlet__body--fit">
             <div class="kt-grid">
                 <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
@@ -254,7 +254,7 @@ a
                     <form class="kt-form" id="kt_user_add_form">
                         <!--begin: Form Wizard Step 1-->
                         <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-
+                          <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 80%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
                             <div class="kt-heading kt-heading--md">User's Profile Details:</div>
                             <div class="kt-section kt-section--first">
                                 <div class="kt-wizard-v4__form">
@@ -350,9 +350,16 @@ a
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Language</label>
                                                     <div class="col-lg-10 col-xl-9">
-                                                       <div id="google_translate_element"  ></div>
+                                                       <div id="google_translate_element" style="margin-top:-50px;margin-left:170px;"></div>
                                                     </div>
                                                 </div>
+<!-- 
+                                                 <div class="form-group row" style="margin-left:4%;">
+                    <label class="col-xs-1 col-form-label">Subject: </label>
+                    <div class="col-xs-11">
+                  <input type="text" class="form-control" id="riskSubject">
+                </div>
+               </div> -->
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Time Zone</label>
                                                     <div class="col-lg-9 col-xl-9">
