@@ -103,6 +103,7 @@ $companyId=$id[0]['id'];
 <link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
  <!-- <script src="js/superAdmin/userManagement.js"></script> -->
     </head>
@@ -162,7 +163,19 @@ $companyId=$id[0]['id'];
                                 <i class="fa flaticon2-black-back-closed-envelope-shape"></i>
                             </a>
                             <i><?php echo $usermail[0]['email'];?></i>                             
-                        </div>
+                        </div>&nbsp;
+                         <div >
+                            <a href="#" class="btn btn-icon btn-circle btn-label-facebook">
+                                <i class="la la-facebook"></i>
+                            </a>
+                            <i><?php echo $usermail[0][''];?></i>                             
+                        </div>&nbsp;
+                         <div>
+                            <a href="#" class="btn btn-icon btn-circle btn-label-twitter">
+                                <i class="la la-twitter"></i>
+                            </a>
+                            <i><?php echo $usermail[0][''];?></i>                             
+                        </div>&nbsp;
                     </div>
                 </div>
             </div>
@@ -197,7 +210,7 @@ $companyId=$id[0]['id'];
        <div class="portlet-body" style="overflow-x:scroll;">                                               
                       <div class="tab-content">
                         <div class="tab-pane active" id="tab_1_1">
-                          <div class="scroller kt-scroll" data-scroll="true" data-height="245" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
+                          <div class="scroller kt-scroll" data-scroll="true" data-height="381" data-mobile-height="200" data-always-visible="1" data-rail-visible1="0" data-handle-color="#FFA130">
                             <ul class="feeds">
                               <?php foreach($feeds as $feed){ ?>
                                 <li>
@@ -277,7 +290,7 @@ $companyId=$id[0]['id'];
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-9%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content"style="margin-top:-3%;">
 
