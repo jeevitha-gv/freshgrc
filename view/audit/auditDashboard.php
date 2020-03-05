@@ -27,8 +27,7 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
   <script type="text/javascript" src="assets/DataTables/datatables.min.js"></script>
   <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>      
   <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css" />    
-  <script src="js/audit/auditManagement.js"></script> 
-  <script src="js/audit/auditByCompliance.js"></script>
+  
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/heatmap.js"></script>
 <script src="https://code.highcharts.com/modules/treemap.js"></script>
@@ -239,16 +238,10 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                                 DUE
                                                             </span>
                                                             <span class="kt-widget17__desc">
+                                                              <?php echo $noOfAuditsdue[0]['count'] ?>
                                                             </span>
                                                           </a>
-                                                                <div class="number">   
-                    <?php if($_SESSION['user_role']=='auditor'){ ?>                 
-                      <span data-counter="counterup" data-value="<?php echo $noOfAuditsDue[0]['count']?>"><?php echo $noOfAuditsDue[0]['count']?></span>
-                      <?php }?>
-                       <?php if($_SESSION['user_role']=='auditee'){ ?>                 
-                      <span data-counter="counterup" data-value="<?php echo $noOfAuditsDueauditee[0]['count']?>"><?php echo $noOfAuditsDueauditee[0]['count']?></span>
-                      <?php }?>
-                    </div>  
+                                   
                                                             </span>
                                                         </div>
                                                         <div class="kt-widget17__item">
@@ -1279,10 +1272,27 @@ function getRiskList(status){
 }
 </script> 
 
-      </body>
-    
-</html>
+  
  <?php 
        
         include 'sidemenu.php';
       ?>
+      <script>
+            var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
+        </script>
+        <!-- end::Global Config -->
+
+    <!--begin:: Global Mandatory Vendors -->
+    <script type="text/javascript"></script>
+<script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+<script src="./assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+    </body>
+    
+</html>

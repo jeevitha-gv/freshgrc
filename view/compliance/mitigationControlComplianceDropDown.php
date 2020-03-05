@@ -9,9 +9,9 @@
    
 
         
-<div class="form-group" >
-  <label>Compliance</label>
-  <div class ="col-md-12">
+ <label class="col-lg-3 col-form-label">Compliance </label>
+  <div class="col-lg-9">
+         
 
       <select id="compliance" class="form-control select" onchange="getControls()" multiple="">
         <!-- <option></option> -->

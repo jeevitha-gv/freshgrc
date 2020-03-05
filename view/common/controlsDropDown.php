@@ -64,7 +64,7 @@ function optionData($clause){
  
 ?>
  <label class="col-lg-3 col-form-label">Control Number: </label>
-  <div class="col-lg-9">
+  <div class="col-lg-8">
     <select id="controls" class="form-control">
               
                 

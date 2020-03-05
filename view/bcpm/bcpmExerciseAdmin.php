@@ -18,6 +18,7 @@
         <!--begin::Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        <!--end::Fonts -->
 
+                   
                     <!--begin::Page Vendors Styles(used by this page) -->
                             <link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
                         <!--end::Page Vendors Styles -->
@@ -87,7 +88,7 @@ include '../siteHeader.php';
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color: white;">
-BCPM Maintain
+BCPM EXERCISE
 </h3>
 </div>
 
@@ -143,7 +144,7 @@ include '../audit/sidemenu.php';
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
         <!-- end::Global Config -->
- <script src="js/bcpm/bcpmExerciseManagement.js"></script>
+<script src="js/bcpm/bcpmImplementManagement.js"></script>
     <!--begin:: Global Mandatory Vendors -->
 
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
@@ -214,7 +215,6 @@ include '../audit/sidemenu.php';
 <script src="./assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
 <!--end:: Global Optional Vendors -->
-
 <!--begin::Global Theme Bundle(used by all pages) -->
           
       <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>

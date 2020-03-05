@@ -394,8 +394,7 @@
 
 						</ul>
 						<?php } ?>
-
-						<?php
+							<?php
 						if($_SESSION['user_role']=='bcpm_tester') { ?>
 
 						<ul class="kt-menu__nav ">
@@ -403,12 +402,13 @@
 
 						<li class="kt-menu__item " aria-haspopup="true"><a href="view/bcpm/bcpmExerciseAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Exercise</span></a>
 						</li>
-
-						<li class="kt-menu__item " aria-haspopup="true"><a href="view/bcpm/bcpmReport.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Reports</span></a></li>
+							<li class="kt-menu__item " aria-haspopup="true"><a href="view/bcpm/bcpmReport.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Reports</span></a></li>
 
 
 						</ul>
 						<?php } ?>
+
+					
 						<?php
 						if($_SESSION['user_role']=='bcpm_implementer') { ?>
 

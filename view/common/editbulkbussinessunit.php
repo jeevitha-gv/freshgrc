@@ -175,8 +175,8 @@ require_once '../../php/common/dashboard.php';
                     </div>
                 </div>
             </a>
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
-                <div class="kt-wizard-v4__nav-body">
+            <!-- <a class="kt-wizard-v4__nav-item nav-item"  style="display: none;"> -->
+                <!-- <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         3
                     </div>
@@ -188,14 +188,21 @@ require_once '../../php/common/dashboard.php';
                           support channels
                         </div>
                     </div>
-                </div>
-            </a>
+                </div> -->
+            <!-- </a> -->
             <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
-                        4
+                        3
                     </div>
-                    
+                     <div class="kt-wizard-v4__nav-label">
+                        <div class="kt-wizard-v4__nav-label-title">
+                            Submission
+                        </div>
+                        <div class="kt-wizard-v4__nav-label-desc">
+                            Review and Submit
+                        </div>
+                    </div>
                 </div>
             </a>
              
@@ -303,8 +310,8 @@ require_once '../../php/common/dashboard.php';
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            <div class="input-group-prepend" style="border: 1px solid #b2abab;"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                                            <input type="text" class="form-control" value="+45678967456" placeholder="Phone" aria-describedby="basic-addon1" style="border: 1px solid #b2abab;" value="<?php echo $data['phone'];?>">
+                                                            
+                                                            <input type="text" class="form-control" id="phone" value="9876543287" placeholder="Phone" aria-describedby="basic-addon1" style="border: 1px solid #b2abab;" value="<?php echo $data['phone'];?>">
                                                         </div>
                                                        
                                                     </div>
@@ -407,7 +414,7 @@ require_once '../../php/common/dashboard.php';
                                                 </div>
 
                                                 <div class="kt-separator kt-separator--border-dashed kt-separator--portlet-fit kt-separator--space-lg"></div>
-
+                                                <div style="display: none;">
                                                 <div class="form-group row">                                                  
                                                     <div class="col-lg-9 col-xl-6">
                                                         <h3 class="kt-section__title kt-section__title-md">User's Account Settings</h3>
@@ -444,7 +451,7 @@ require_once '../../php/common/dashboard.php';
                                                         <button type="button" class="btn btn-label-danger btn-bold btn-sm kt-margin-t-5 kt-margin-b-5">Deactivate your account ?</button>
                                                     </div>
                                                 </div>
-
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -454,7 +461,7 @@ require_once '../../php/common/dashboard.php';
                         <!--end: Form Wizard Step 2-->
 
                         <!--begin: Form Wizard Step 3-->
-                        <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                        <div class="kt-wizard-v4__content" style="display: none;">
               <div class="kt-heading kt-heading--md">Details</div>
               <div class="kt-form__section kt-form__section--first">
                 <div class="kt-wizard-v2__form">
@@ -520,7 +527,7 @@ require_once '../../php/common/dashboard.php';
                         <!--end: Form Wizard Step 3-->
 
                         <!--begin: Form Wizard Step 4-->
-                        <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                           <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
                             <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v4__review">
@@ -529,31 +536,19 @@ require_once '../../php/common/dashboard.php';
                                             Your Account Details
                                         </div>
                                         <div class="kt-wizard-v4__review-content">
-                                            John Wick
-                                            <br/> Phone: +61412345678
-                                            <br/> Email: johnwick@reeves.com
+                                          <label><b>Location:</b></label><p id="result1"></p>
+                                           <label><b>Businessunit:</b></label><p id="result2"></p>
+                                           <label><b>Address:</b></label><p id="result3"></p>
+                                           <label><b>City:</b></label><p id="result4"></p>
+                                           <label><b>ZipCode:</b></label><p id="result5"></p>
+                                           <label><b>Phone:</b></label><p id="result6"></p>
+                                           <label><b>Team</b></label><p id="result7"></p>
+
+                                        
                                         </div>
                                     </div>
-                                    <div class="kt-wizard-v4__review-item">
-                                        <div class="kt-wizard-v4__review-title">
-                                            Your Address Details
-                                        </div>
-                                        <div class="kt-wizard-v4__review-content">
-                                            Address Line 1
-                                            <br/> Address Line 2
-                                            <br/> Melbourne 3000, VIC, Australia
-                                        </div>
-                                    </div>
-                                    <div class="kt-wizard-v4__review-item">
-                                        <div class="kt-wizard-v4__review-title">
-                                            Payment Details
-                                        </div>
-                                        <div class="kt-wizard-v4__review-content">
-                                            Card Number: xxxx xxxx xxxx 1111
-                                            <br/> Card Name: John Wick
-                                            <br/> Card Expiry: 01/21
-                                        </div>
-                                    </div>
+                             
+                                 
                                 </div>
                             </div>
                         </div>
@@ -567,7 +562,7 @@ require_once '../../php/common/dashboard.php';
                             <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="saveUserProfileChanges()">
                                 Submit
                             </div>
-                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next" onclick="showvalue()">
                                 Next Step
                             </div>
                         </div>
@@ -589,6 +584,7 @@ require_once '../../php/common/dashboard.php';
   
 <?php
 include '../audit/sidemenu.php';
+include '../siteHeader.php';
  ?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
@@ -674,3 +670,23 @@ include '../audit/sidemenu.php';
             </body>
     <!-- end::Body -->
 </html>
+<script type="text/javascript">
+    function showvalue()
+    {
+        var location=document.getElementById('location').value;
+        document.getElementById('result1').innerHTML=location;
+        var category=document.getElementById('category').value;
+        document.getElementById('result2').innerHTML=category;
+           var address=document.getElementById('address').value;
+        document.getElementById('result3').innerHTML=address;
+         var city=document.getElementById('city').value;
+        document.getElementById('result4').innerHTML=city;
+         var code=document.getElementById('code').value;
+        document.getElementById('result5').innerHTML=code;
+         var phone=document.getElementById('phone').value;
+        document.getElementById('result6').innerHTML=phone;
+        var team=document.getElementById('team').value;
+        document.getElementById('result7').innerHTML=team;
+        
+    } 
+ </script>

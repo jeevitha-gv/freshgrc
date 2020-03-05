@@ -88,7 +88,7 @@ font-size:12px;
  
 </style>
 <?php
-    include '../siteHeaderforsetupguide.php';
+   include "../siteHeader.php";
     ?>
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #EEEEEE;">
 <!-- <div class="conatiner">
@@ -175,11 +175,11 @@ All the important stuff including what's free vs paid, how we secure your data, 
 <!-- <button type="button" class="btn btn-success" style="float: right;">Read</button> -->
 </div>
 </div>
- <div class="row" style="float: right;margin-top: -10%">
+ <!-- <div class="row" style="float: right;margin-top: -10%">
                   <div class="modal-footer">
                   <button type="button" value="1" class="w3-btn w3-white w3-border w3-border-red w3-round-large" onclick="allocatemodules()" name="submit" data-dismiss="modal" style="font-size: 18px;" id="demo">Submit</button>
                   </div>
-              </div>
+              </div> -->
 </div>
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

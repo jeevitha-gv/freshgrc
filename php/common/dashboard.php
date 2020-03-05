@@ -32,21 +32,21 @@ class dashboard{
 
 
     public function noOfAudits($companyId){
-        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and c.id=? and parent_audit=0';
+        $sql='SELECT count(*) as count FROM audit a,company c, compliance compl, user u where (a.company_id = c.id and a.compliance_id = compl.id and (a.auditor = u.id or a.auditor=u.id)  and a.status="create" and (a.audit_freq="once" or DATE(a.start_date)<=DATE(NOW()) or a.parent_audit=0))';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
         
     }  
      public function noOfAuditsPublished($companyId){
-        $sql='SELECT count(*) as count FROM audit a,company c WHERE a.company_id=c.id and c.id=? and (a.status="published" or a.status="approved")';
+        $sql='SELECT count(*) as count FROM audit a,company c, compliance compl, user u where (a.company_id = c.id and a.compliance_id = compl.id and (a.auditor = u.id or a.auditor=u.id)  and (a.status="published" or a.status="approved") and (a.audit_freq="once" or DATE(a.start_date)<=DATE(NOW()) or a.parent_audit=0))';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
         
     } 
       public function noOfAuditsDue($companyId){
-        $sql='SELECT count(*) as count  from audit a, company c, compliance compl, user u where a.company_id = c.id and a.compliance_id = compl.id and a.auditor = u.id and a.start_date<CURDATE() and a.status!="published" and a.status!="approved" and a.status!="returned" and a.status!="prepared" and a.status!="approval pending"';
+        $sql='SELECT count(*) as count  from audit a, company c, compliance compl, user u where a.company_id = c.id and a.compliance_id = compl.id and a.auditor = u.id and a.start_date<CURDATE() and a.status!="published" and a.status!="approved" and a.status!="returned" and a.status!="prepared" and a.status!="approval pending" and parent_audit=0';
         $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
@@ -715,22 +715,22 @@ public function getfrequency($id)
 
     }
     public function getNoOfCreatedRisk(){
-        $sql = 'SELECT count(*) as count from risks r,user u where r.mitigator = u.id AND r.status="create"';
+        $sql = 'SELECT count(*) as count from risks r, risk_scenario rs, technology t, source s WHERE ( r.status="Create" ) AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id ';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
   public function getNoOfMitigatedRisk(){
-        $sql = 'SELECT count(*) as count FROM risks r WHERE r.status="Mitigated"';
+        $sql = 'SELECT count(*) as count FROM risks r,user u WHERE r.owner=u.id and r.status="Mitigated"';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
       public function getNoOfReviewedRisk(){
-        $sql = 'SELECT count(*) as count FROM risks r WHERE r.status="Reviewed"';
+        $sql = 'SELECT count(*) as count FROM risks r, risk_scenario rs, technology t, source s WHERE (r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
     public function getTotalNoOfRisks(){
-        $sql = 'SELECT count(*) AS total_records FROM risks r WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed")';
+        $sql = 'SELECT count(*) AS count FROM risks r, risk_scenario rs, technology t, source s WHERE (r.status="Mitigated" OR r.status="Create" OR r.status="Reviewed") AND r.scenario_id = rs.id AND r.technology = t.id AND r.source= s.id';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -790,23 +790,23 @@ public function assetfieldstatus($id){
     //DISASTER DASHBORAD//
 
     public function disaster_business(){
-        $sql = 'SELECT business_impact_scale, count(*) AS count FROM disaster_plan WHERE business_impact_scale is not null GROUP BY business_impact_scale';
+        $sql = 'SELECT count(*) AS count FROM disaster_plan';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);    
     }  
 
     public function disaster_category(){
-         $sql = 'SELECT system_category, count(*) AS count FROM disaster_plan WHERE system_category is not null GROUP BY system_category';
+         $sql = 'SELECT count(*) AS count FROM whistle WHERE whistle.status = 2';
         return $this->fetchDataFromDB($sql);
     } 
 
     public function disaster_critical(){
-         $sql = 'SELECT critical_resources, count(*) AS count FROM disaster_plan WHERE critical_resources is not null GROUP BY critical_resources';
+         $sql = 'SELECT count(*) AS count FROM whistle WHERE whistle.status = 2';
         return $this->fetchDataFromDB($sql);
     } 
 
     public function disaster_resource(){
-         $sql = 'SELECT critical_resources, count(*) AS count FROM disaster_plan WHERE critical_resources is not null GROUP BY critical_resources';
+         $sql = 'SELECT count(*) AS count FROM whistle WHERE whistle.status = 2';
         return $this->fetchDataFromDB($sql);
     } 
 
@@ -835,7 +835,7 @@ public function assetfieldstatus($id){
         return $this->fetchDataFromDB($sql);
     }
     public function noOfLibraries(){
-        $sql='SELECT count(*) as count FROM compliance where status="in_draft"';
+        $sql='SELECT count(*) as count FROM compliance where status="in_draft" or status="in_review" ';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfPublished(){
@@ -1031,7 +1031,7 @@ public function assetfieldstatus($id){
 
     }
     public function incidentRecordedStatus(){
-        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf WHERE Incf.status="Recorded"';
+        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Recorded") ';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -1041,12 +1041,17 @@ public function assetfieldstatus($id){
         return $dbOps->fetchData($sql);         
     }
     public function incidentResolvedStatus(){
-        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf WHERE Incf.status="Resolved"';
+        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Resolved")';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
     public function incidentClosedStatus(){
-        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf WHERE Incf.status="Closed"';
+        $sql = 'SELECT Incf.status as name,count(Incf.status) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id AND (Incf.status = "Closed")';
+       $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);         
+    }
+    public function getTotalrecords(){
+        $sql = 'SELECT count(*) AS count FROM incident_file Incf,user u,incident_category ic WHERE Incf.Recorded_By=u.id AND Incf.Category=ic.id';
        $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);         
     }
@@ -1257,7 +1262,12 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);
     }
     public function bcpmFutureExercise(){
-        $sql='SELECT SUM(number_exercise) AS count,erercise_type FROM `bcpm_exercise` GROUP BY erercise_type ORDER BY count DESC LIMIT 2';
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+    public function bcpmFutureConducted(){
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
@@ -1277,12 +1287,12 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);
     }
     public function bcpmFutureRto(){
-        $sql='SELECT bia  ,SUM(rto) AS count FROM `bcpm_implement` GROUP BY bia ORDER BY count DESC LIMIT 2';
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
     public function bcpmFutureDailyLoss(){
-        $sql='SELECT SUM(daily_loss) AS count,bia FROM `bcpm_implement` GROUP BY bia ORDER BY count DESC LIMIT 2';
+        $sql='SELECT count(*) as count FROM bcpm b,user u WHERE b.status="create" and b.approved_by=u.id';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
@@ -1293,28 +1303,49 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);
     }
     
-    public function getAuditNotify(){
-        $sql='SELECT * FROM `audit` WHERE notification_status =1 ORDER BY `id` DESC';
+    public function getAuditCount(){
+        $sql='SELECT * FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
-    public function getAuditNotifyinkickoff(){
-        $sql='SELECT * FROM `audit` WHERE kickoff_notification_status =1 ORDER BY `id` DESC';
+
+       public function getAuditeeCount(){
+        $sql='SELECT * FROM `audit` WHERE kickoff_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 OR followup_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+     public function getAuditNotifyForAdmin(){
+        $sql='SELECT * FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 OR kickoff_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+    public function getAuditNotifysum(){
+        $sql='SELECT sum((select notification_status)+ (select respond_notification_status) + (select review_notification_status)) as total FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+    public function getAuditeeNotifysum(){
+        $sql='SELECT sum((select kickoff_notification_status)+ (select followup_notification_status)) as total FROM `audit` WHERE kickoff_notification_status =1 and parent_audit=0 OR followup_notification_status=1 and parent_audit=0  ORDER BY `id` DESC';
+        $dbOps=new DBOperations();
+        return $dbOps->fetchData($sql);
+    }
+      public function getAllAuditsum(){
+        $sql='SELECT sum((select notification_status)+ (select respond_notification_status) + (select review_notification_status) + (select kickoff_notification_status) + (select followup_notification_status)) as total FROM `audit` WHERE notification_status =1 and parent_audit=0 OR respond_notification_status=1 and parent_audit=0 OR review_notification_status=1 and parent_audit=0 OR kickoff_notification_status=1 and parent_audit=0 OR followup_notification_status=1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
       public function getAuditNotifyinrespond(){
-        $sql='SELECT * FROM `audit` WHERE status="prepared" and respond_notification_status =1 ORDER BY `id` DESC';
+        $sql='SELECT * FROM `audit` WHERE respond_notification_status =1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
     public function getAuditNotifyinperformed(){
-        $sql='SELECT * FROM `audit` WHERE status="performed" and review_notification_status =1 ORDER BY `id` DESC';
+        $sql='SELECT * FROM `audit` WHERE review_notification_status =1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
     public function getAuditNotifyinfollowup(){
-        $sql='SELECT * FROM `audit` WHERE status="returned" and followup_notification_status =1 ORDER BY `id` DESC';
+        $sql='SELECT * FROM `audit` WHERE status="returned" and followup_notification_status =1 and parent_audit=0 ORDER BY `id` DESC';
         $dbOps=new DBOperations();
         return $dbOps->fetchData($sql);
     }
@@ -1353,19 +1384,19 @@ public function getganttchartdatarisk(){
         return $dbOps->fetchData($sql);        
      }
      public function noOfAsset(){
-        $sql='SELECT count(*) as count FROM asset ';
+        $sql='SELECT count(*) as count FROM asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group';
         return $this->fetchDataFromDB($sql);
     }
 public function noOfAssetPublished(){
-        $sql='SELECT count(*) as count FROM asset a where a.status="identified"';
+        $sql='SELECT count(*) as count FROM  asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status ="identified"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAssetReviewed(){
-        $sql='SELECT count(*) as count FROM asset a where a.status="reviewed"';
+        $sql='SELECT count(*) as count FROM asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status ="reviewed"';
         return $this->fetchDataFromDB($sql);
     }
     public function noOfAssetAssessed(){
-        $sql='SELECT count(*) as count FROM asset a where a.status="assessed"';
+        $sql='SELECT count(*) as count FROM asset a, company c, user u, asset_group ag where a.company_id = c.id and a.asset_owner = u.id and ag.id=a.asset_group and a.status = "assessed"';
         return $this->fetchDataFromDB($sql);
     }
     public function getganttchartdatapolicy(){
@@ -1395,6 +1426,7 @@ public function noOfAssetPublished(){
     $dbOps=new DBOperations();
     return $dbOps->fetchData($sql);
     }
+
 //boarddashboardchart
     public function totalmeetingschart(){
     $sql='SELECT boardindex.title, count(*) AS count FROM boardindex GROUP BY title';

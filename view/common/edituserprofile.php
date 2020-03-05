@@ -266,15 +266,15 @@ $companyId=$id[0]['id'];
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Last Name</label>
                                                     <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="lastName">
+                                                        <input class="form-control" type="text" id="lastName" value="<?php echo $data['lastName'];?>">
                                                     </div>
                                                 </div>
                                                  <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Email Address</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
-                                                            <input type="text" class="form-control" id="email">
+                                                            
+                                                            <input type="text" class="form-control" id="email" value="<?php echo $data['email'];?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -288,8 +288,8 @@ $companyId=$id[0]['id'];
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            <div class="input-group-prepend"><span class="input-group-text"><i class="la la-phone"></i></span></div>
-                                                            <input type="text" class="form-control" value="+45678967456" placeholder="Phone" aria-describedby="basic-addon1">
+                                                            
+                                                            <input type="text" class="form-control" value="<?php echo $data['phone'];?>" placeholder="Phone" id="phone" aria-describedby="basic-addon1">
                                                         </div>
                                                        
                                                     </div>
@@ -310,7 +310,7 @@ $companyId=$id[0]['id'];
                                 <div class="kt-wizard-v4__form">
                                     <div class="row">
                                         <div class="col-xl-12">
-                                            <div class="kt-section__body">
+                                            <div class="kt-section__body hidden" >
                                                 <div class="form-group row">                                                     
                                                     <div class="col-lg-9 col-xl-6">
                                                         <h3 class="kt-section__title kt-section__title-md">User's Account Details</h3>
@@ -378,7 +378,7 @@ $companyId=$id[0]['id'];
                                                 </div>
 
                                                 <div class="kt-separator kt-separator--border-dashed kt-separator--portlet-fit kt-separator--space-lg"></div>
-
+                                                <div style="display: none;">
                                                 <div class="form-group row">                                                  
                                                     <div class="col-lg-9 col-xl-6">
                                                         <h3 class="kt-section__title kt-section__title-md">User's Account Settings</h3>
@@ -418,6 +418,7 @@ $companyId=$id[0]['id'];
 
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -432,7 +433,7 @@ $companyId=$id[0]['id'];
                 <div class="kt-wizard-v4__form">
                   <div class="form-group">
                     <label>Address Line </label>
-                    <input type="text" class="form-control" name="address1" placeholder="Address Line 1" value="Address Line 1">
+                    <input type="text" id="address1" class="form-control" name="address1" placeholder="Address Line 1" value="Address Line 1">
                     
                   </div>
                   
@@ -440,14 +441,14 @@ $companyId=$id[0]['id'];
                     <div class="col-xl-6">
                       <div class="form-group">
                         <label>Postcode</label>
-                        <input type="text" class="form-control" name="postcode" placeholder="Postcode" value="2000">
+                        <input type="text" id="postcode" class="form-control" name="postcode" placeholder="Postcode" value="2000">
                         
                       </div>
                     </div>
                     <div class="col-xl-6">
                       <div class="form-group">
                         <label>City</label>
-                        <input type="text" class="form-control" name="state" placeholder="City" value="London">
+                        <input type="text" id="city" class="form-control" name="state" placeholder="City" value="London">
                         
                       </div>
                     </div>
@@ -456,14 +457,14 @@ $companyId=$id[0]['id'];
                     <div class="col-xl-6">
                       <div class="form-group">
                         <label>State</label>
-                        <input type="text" class="form-control" name="state" placeholder="State" value="VIC">
+                        <input type="text" id="state" class="form-control" name="state" placeholder="State" value="VIC">
                         
                       </div>
                     </div>
                     <div class="col-xl-6">
                       <div class="form-group">
                       <label>Country:</label>
-                      <select name="country" class="form-control">
+                      <select name="country" id="country" class="form-control">
                         <option value="">Select</option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
@@ -518,8 +519,7 @@ $companyId=$id[0]['id'];
             </div>
                         <!--end: Form Wizard Step 3-->
 
-                        <!--begin: Form Wizard Step 4-->
-                        <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                      <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
                             <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v4__review">
@@ -528,31 +528,20 @@ $companyId=$id[0]['id'];
                                             Your Account Details
                                         </div>
                                         <div class="kt-wizard-v4__review-content">
-                                            John Wick
-                                            <br/> Phone: +61412345678
-                                            <br/> Email: johnwick@reeves.com
+                                          <label><b>FirstName:</b></label><p id="result1"></p>
+                                           <label><b>LastName:</b></label><p id="result2"></p>
+                                           <label><b>Email:</b></label><p id="result3"></p>
+                                           <label><b>phone:</b></label><p id="result4"></p>
+                                           <label><b>Address:</b></label><p id="result5"></p>
+                                           <label><b>PostCode:</b></label><p id="result6"></p>
+                                           <label><b>City:</b></label><p id="result7"></p>
+
+                                           <label><b>State:</b></label><p id="result8"></p>
+                                           <label><b>Country:</b></label><p id="result9"></p>
                                         </div>
                                     </div>
-                                    <div class="kt-wizard-v4__review-item">
-                                        <div class="kt-wizard-v4__review-title">
-                                            Your Address Details
-                                        </div>
-                                        <div class="kt-wizard-v4__review-content">
-                                            Address Line 1
-                                            <br/> Address Line 2
-                                            <br/> Melbourne 3000, VIC, Australia
-                                        </div>
-                                    </div>
-                                    <div class="kt-wizard-v4__review-item">
-                                        <div class="kt-wizard-v4__review-title">
-                                            Payment Details
-                                        </div>
-                                        <div class="kt-wizard-v4__review-content">
-                                            Card Number: xxxx xxxx xxxx 1111
-                                            <br/> Card Name: John Wick
-                                            <br/> Card Expiry: 01/21
-                                        </div>
-                                    </div>
+                             
+                                 
                                 </div>
                             </div>
                         </div>
@@ -563,10 +552,10 @@ $companyId=$id[0]['id'];
                             <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                 Previous
                             </div>
-                            <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="manageUser()">
+                             <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="manageUser()">
                                 Submit
                             </div>
-                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next" onclick="showvalue()">
                                 Next Step
                             </div>
                         </div>
@@ -673,3 +662,27 @@ include '../audit/sidemenu.php';
             </body>
     <!-- end::Body -->
 </html>
+<script type="text/javascript">
+    function showvalue()
+    {
+        var firstName=document.getElementById('firstName').value;
+        document.getElementById('result1').innerHTML=firstName;
+        var lastName=document.getElementById('lastName').value;
+        document.getElementById('result2').innerHTML=lastName;
+           var email=document.getElementById('email').value;
+        document.getElementById('result3').innerHTML=email;
+         var phone=document.getElementById('phone').value;
+        document.getElementById('result4').innerHTML=phone;
+         var address1=document.getElementById('address1').value;
+        document.getElementById('result5').innerHTML=address1;
+         var postcode=document.getElementById('postcode').value;
+        document.getElementById('result6').innerHTML=postcode;
+        var city=document.getElementById('city').value;
+        document.getElementById('result7').innerHTML=city;
+        var state=document.getElementById('state').value;
+        document.getElementById('result8').innerHTML=state;
+        var country=document.getElementById('country').value;
+        document.getElementById('result9').innerHTML=country;
+
+    } 
+ </script>

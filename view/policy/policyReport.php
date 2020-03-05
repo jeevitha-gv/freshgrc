@@ -123,8 +123,93 @@ Policy
 <!--begin: Datatable -->
           
 <div class="" style="margin-top:50px;">
-<div class="panel panel-default" style="border-color: #BAEFEF">
-<div class="row form-group"style="margin: 20px;">
+<!-- <div class="panel panel-default" style="border-color: #BAEFEF"> -->
+    <div class="container">
+                  <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Policy Title</label><br>
+                                  <span id="Title" class="form-control"><?php echo $policyData[0]["Title"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Policy Type</label><br>
+                                      <span id="policyType" class="form-control"><?php echo $policyData[0]["policyType"];?></span>
+                                     </div>
+                                    </div>  
+                                </div>  
+                                  <div class="container">
+                  <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Security Classification</label>
+                                    <span id="securityClassification" class="form-control"><?php echo $policyData[0]["securityClassification"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Policy Classification</label>
+                                <span id="policyClassification" class="form-control"><?php echo $policyData[0]["policyClassification"];?></span> 
+                                     </div>
+                                    </div>  
+                                </div> 
+                                  <div class="container">
+                  <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Audience</label>
+                         <span id="audience" class="form-control"><?php echo $policyData[0]["audience"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Scope</label>
+                               <span id="scope" class="form-control"><?php echo $policyData[0]["scope"];?></span> 
+                                     </div>
+                                    </div>  
+                                </div> 
+                                  <div class="container">
+                            <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Purpose</label>
+                                   <span id="purpose" class="form-control"><?php echo $policyData[0]["purpose"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                 <label>Description</label>
+                                    <span id="description" class="form-control"><?php echo $policyData[0]["description"];?></span> 
+                                     </div>
+                                    </div>  
+                                </div> 
+                                  <div class="container">
+                              <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Owner</label>
+                            <span id="owner" class="form-control"><?php echo $policyData[0]["owner"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Reviewer</label>
+                             <span id="reviewer" class="form-control"><?php echo $policyReview[0]["reviewer"];?></span> 
+                                     </div>
+                                    </div>  
+                                </div> 
+                                  <div class="container">
+                               <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Effective from</label>
+                                <span id="effective_from" class="form-control"><?php echo $policyData[0]["effective_from"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Effective Till</label>
+                                        <span id="effective_till" class="form-control"><?php echo $policyData[0]["effective_till"];?></span> 
+                                     </div>
+                                    </div>  
+                                </div> 
+                                  <div class="container">
+                                      <div class="row form-group" >
+                          <div class="col-md-6">
+                               <label>Expected Publish Date</label>
+                             <span id="expected_publish_date" class="form-control"><?php echo $policyData[0]["expected_publish_date"];?></span> 
+                              </div>
+                              <div class="col-md-6">
+                                   <label>Review within Date</label>
+                                    <span id="review_within_date" class="form-control"><?php echo $policyData[0]["review_within_date"];?></span> 
+                                     </div>
+                                    </div>  
+                                </div> 
+
+<!-- <div class="row form-group"style="margin: 20px;">
 <div class="col-md-4 input_val">
  <label>Policy Title</label>
 <span id="Title" class="form-control"><?php echo $policyData[0]["Title"];?></span> 
@@ -132,8 +217,8 @@ Policy
 <div class="col-md-4 input_val">
  <label>Policy Type</label>
 <span id="policyType" class="form-control"><?php echo $policyData[0]["policyType"];?></span> 
-</div> 
-<div class="col-md-4 input_val">
+</div>  -->
+<!-- <div class="col-md-4 input_val">
  <label>Security Classification</label>
 <span id="securityClassification" class="form-control"><?php echo $policyData[0]["securityClassification"];?></span> 
 </div> 
@@ -190,7 +275,8 @@ Policy
  <label>Review within Date</label>
 <span id="review_within_date" class="form-control"><?php echo $policyData[0]["review_within_date"];?></span> 
 </div>
-</div> 
+</div>  -->
+<div class="container">
  <div class=""><h5><strong>Statements</strong></h5></div>
 <?php
 foreach ($policyControls as $key => $control) {
@@ -212,7 +298,8 @@ foreach ($policyControls as $key => $control) {
 </div> 
 </div>                
 </div> 
-</div>                       
+</div> 
+</div>                      
                     
                  
                       

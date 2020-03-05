@@ -114,7 +114,7 @@ $closure = $incidentManager->getIncidentDataClosure($IncidentId);
 <i class="kt-font-brand flaticon2-line-chart"></i>
 </span>
 <h3 class="kt-portlet__head-title" style="color:white;">
-Incident List
+Incident Report
 </h3>
 </div>
 

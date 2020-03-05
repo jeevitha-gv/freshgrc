@@ -14,11 +14,14 @@ function importCsv() {
         processData: false, // important
         contentType: false, // important
         data: myFormData,
+
         
     }).done(function (data) {
            Swal.fire({
               title: "Your checklist has been uploaded successfully!",
               type: "success",
+              input: 'radio',
+              timer: 3000,
               closeOnConfirm: false,
               showLoaderOnConfirm: true
             });
@@ -40,3 +43,4 @@ function importCsv() {
  
     // });
 }
+

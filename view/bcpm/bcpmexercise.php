@@ -143,7 +143,7 @@ BCPM Review
             <div class="form-group">
             <label for="usr"  style="font-size: 15px;">Dates:</label>
           <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd" style="width: 98% !important;">
-                        <input type="text" id="dates" class="form-control datepickerClass  notranslate" name="from" class="">
+                        <input type="text" autocomplete="off" id="dates" class="form-control datepickerClass  notranslate" name="from" class="">
                         </div>
                       </div>
             </div>
