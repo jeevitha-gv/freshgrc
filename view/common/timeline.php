@@ -1,4 +1,3 @@
-
 <?php 
 require_once __DIR__.'/../header.php';
 require_once '../../php/common/dashboard.php';
@@ -59,9 +58,7 @@ $chats = $timeManager->timeLine(); //chat retrive
 <link href="assets/toggleButton/bootstrap-toggle.min.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
 <link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-<link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
-<script src="js/audit/auditCreateManagement.js"></script>
-<script src="js/common/userProfile.js"></script>  
+<link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 <style>
  
 
@@ -144,7 +141,9 @@ button:hover {
 
 <?php 
 include "../siteHeader.php";
+
 ?>
+
       <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" >
 
 
@@ -161,18 +160,18 @@ include "../siteHeader.php";
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
  
 
-<!-- <div class="col-md-8"> -->
-    <div class="col-md-10" style="margin-left: 10%;">
-                <!-- <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1" > -->
+<div class="">
+    <div class="row" style="margin-left: 5%;">
+                <div class="col-lg-9 col-xl-11 order-lg-1 order-xl-1" style="text-align: center;">
 <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 
                     <div class="kt-portlet__head-label">
-                        <span class="kt-portlet__head-icon"><br>
-                            <!-- <i class="kt-font-brand flaticon2-line-chart" ></i> -->
+                        <span class="kt-portlet__head-icon">
+                            <i class=" " ></i>
                         </span>
                         <h3 class="kt-portlet__head-title" style="color: white;">
-                            <span class="caption-subject bold" style="margin-left: 45%; color: #EA535A; text-transform: uppercase;"> Timeline</span>
-                            <!-- <span class="caption-helper" style="font-size: 13px;">user timeline</span> -->
+                            <span class="caption-subject bold" style="color: #EA535A; text-transform: uppercase;"> Timeline</span>
+                             
                         </h3>
                     </div>        
                    </div>
@@ -185,11 +184,11 @@ include "../siteHeader.php";
                         
                         <div class="form-group">
                           <label for="comment"></label>
-                          <textarea onclick="document.getElementById('modal-wrapper').style.display='block'" name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
+                          <textarea data-toggle="modal" data-target="#myModal7"    name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
                         </div>
                         
                         <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
-
+ 
                   </div>
               </div>
          <!--  </div>
@@ -206,13 +205,13 @@ include "../siteHeader.php";
                             <div class="kt-widget4">
                                 <div class="kt-widget4__item" style="background-color: #2a5aa8; height: 60px;">
                                     <div class="kt-widget4__pic kt-widget4__pic--pic">
-                                        <img src="assets/img/shan.jpg" class="rounded-circle" alt="Cinque Terre" >   
+                                        <img  style="margin-left:10%;" class="rounded-circle" src="assets/img/shan.jpg">   
                                     </div>
                                     <div class="kt-widget4__info">
                                         <!-- <a href="#" class="kt-widget4__username" style="color: #ffffff;"> -->
-                                            <h4 style="color: white;margin-left: 36%;">Shanmugavel Sankaran</h4>
+                                            <h4 style="color: white; ">Shanmugavel Sankaran</h4>
                                         <!-- </a> -->
-                                        <p class="kt-widget4__text"style="color: white;margin-left: 37.5%;">
+                                        <p class="kt-widget4__text"style="color: white; ">
                                             Added office location at 2:50 PM 
                                         </p>                                     
                                     </div>                       
@@ -220,9 +219,10 @@ include "../siteHeader.php";
                           
                        <?php foreach($chats as $chat){ ?>  
                        <?php $from = $timeManager->userDetails($chat['from_id']); ?>                            
-                          <div class="timeline-item" style="margin-left:20px;" align="left">
+                          <div class="timeline-item" style="margin-left:-90%;">
                             <div class="timeline-badge">
-
+                              <div class="timeline-icon"><br>
+                                <i class="flaticon-businesswoman" style=" font-size: 35px; color: #38A2AE;"></i>
                                  <?php $to = $timeManager->userDetails($chat['to_id']); ?>
                                  <span style="color: red; font-size: 15px;"><?php echo $from[0]['last_name']; ?></span><br>
                                    <?php echo $chat['message']; ?> </div>
@@ -243,27 +243,34 @@ include "../siteHeader.php";
         </div>
 
 
+
 <!--end::Form-->    
-<!-- </div> -->
 </div>
-<!-- </div>  -->
+</div>
+</div> 
  </div>
  </div>  
 </div>
 </div>
 </div>
- <div id="modal-wrapper" style="width: 43.1%;margin-left: 33.2%;margin-top:10%;background-color: #F2F2F2;"class="modal">
   
-              <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php" class="modal-content animate" >
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    
+        <button type="button" class="close" style="width:5%;height:10%;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         
+       
+      <center>
+      <h3>Time Line</h3>
+    </center>
+       
+       <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php"  >
         
-                <div class="imgcontainer">
-                     <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-      
-                       <h1 style="text-align:center">Time Line</h1>
-                </div>
+                
 
-                 <div class="container">
-                      <div class="form-group">
+                 
+                      
                      
                         
                           <div class="form-group">
@@ -274,17 +281,14 @@ include "../siteHeader.php";
 
                           </div>
                           <div class="form-group">
-                           <div class="custom-control custom-radio" style="margin-left: 20%">
-                        <input type="radio" class="custom-control-input" id="defaultGroupExample1" name="groupOfDefaultRadios">
-                                                            <label class="custom-control-label" for="defaultGroupExample1">New Feed</label>
-                        </div>
+                           
  
 
-                          <select name="to_id" class="form-control select2-selection arrow" style="width: 40%;margin-left:40%;margin-top:-3%;">
+                          <select name="to_id" class="form-control select2-selection arrow" style="width: 60%;margin-left:20%;margin-top:-3%;">
                              <option></option>
                                 <?php foreach($users as $user){
                                    if($_SESSION['user_id']!=$user['id']){ ?>
-                               <option value="<?php echo $user['id']; ?>"><?php echo htmlspecialchars($user['last_name']); ?></option>
+                               <option  value="<?php echo $user['id']; ?>">  <?php echo htmlspecialchars($user['last_name']); ?></option>
                            <?php } } ?> 
                            </select>
                            
@@ -292,35 +296,30 @@ include "../siteHeader.php";
                           </div>
                         <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
                         <center>
-                        <button class="btn btn-primary" type="submit" name="submit">Post</button>
+                        <button class="btn btn-primary" type="submit" style="width:15%;" name="submit">Post</button>
                       </center>
-                     </div>
+                      
                         
-               </div>
+               
     
       </form>
-  
+
+       
     
+  </div>
 </div>
-<?php 
-include "../audit/sidemenu.php";
-?>
+</div>
+<?php
+include '../audit/sidemenu.php';
+
+ ?>
+ 
               <!-- begin::Global Config(global config for global JS sciprts) -->
        <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
         <!-- end::Global Config -->
-<script>
-// If user clicks anywhere outside of the modal, Modal will close
-
-var modal = document.getElementById('modal-wrapper');
  
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
     <!--begin:: Global Mandatory Vendors -->
 <script src="assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
@@ -405,11 +404,3 @@ window.onclick = function(event) {
 </html>
             
 
-
-            </div>
-      </div>
-  </div>
-</div>
-  </div>
-</div>
-</div>
