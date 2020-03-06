@@ -33,13 +33,14 @@ $getAllSupportTickets=$manager->getAllSupportTickets($projectId);
 $feedManager=new FeedManager();
 $loggedInUser=$_SESSION['user_id'];
 $feeds=$feedManager->getFeeds($loggedInUser,$_SESSION['user_role']);
+
 // $feeds=$feedManager->getFeeds(1,$_SESSION['user_role']);
 require_once __DIR__.'/../../php/company/companyManager.php';
 $manager=new CompanyManager();
 $id=$manager->getCompanyIdForUser($_SESSION['user_id']);
 switch ($_SESSION['user_role']) {
   case 'super_admin':
-    $feedMessage="New Compliance Library is created by";
+    $feedMessage="";
     $isAuditor=0;
     break;
   case 'auditor':
