@@ -17,71 +17,71 @@
 <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
                        
 <div class="kt-aside__brand kt-grid__item" id="kt_aside_brand">
-<div class="kt-aside__brand-logo">
-<?php if($_SESSION['user_role']=='auditor'||$_SESSION['user_role']=='auditees1') {?>
-<a href="view/audit/auditDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='auditee') {?>
-<a href="view/audit/auditDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='super_admin'||$_SESSION['user_role']=='demo') {?>
-<a href="view/common/overview.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='policy_owner' ||$_SESSION['user_role']=='policy_approver' ||$_SESSION['user_role']=='policy_reviewer')  {?>
-<a href="view/policy/policyDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='board_user'||$_SESSION['user_role']=='board_reviewer') {?>
-<a href="view/board/board_dashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='risk_owner'||$_SESSION['user_role']=='risk_mitigator'||$_SESSION['user_role']=='risk_reviewer') {?>
-<a href="view/common/riskDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='compliance_author'||$_SESSION['user_role']=='compliance_reviewer') {?>
-<a href="view/compliance/complianceDashboardAdmin.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='disaster_owner'||$_SESSION['user_role']=='disaster_tester'||$_SESSION['user_role']=='disaster_trainer') {?>
-<a href="view/disaster/disasterDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='bcpm_planner' || $_SESSION['user_role']=='bcpm_maintainer' || $_SESSION['user_role']=='bcpm_tester' || $_SESSION['user_role']=='bcpm_implementer') {?>
-<a href="view/common/overview.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="80px" />
-</a>
-<?php } ?>
-<?php if($_SESSION['user_role']=='asset_owner' || $_SESSION['user_role']=='asset_custodian' || $_SESSION['user_role']=='asset_reviewer') {?>
-<a href="view/asset/assetDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
+	<div class="kt-aside__brand-logo">
+		<?php if($_SESSION['user_role']=='auditor'||$_SESSION['user_role']=='auditees1') {?>
+			<a href="view/audit/auditDashboard.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='auditee') {?>
+			<a href="view/audit/auditDashboard.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='super_admin'||$_SESSION['user_role']=='demo') {?>
+			<a href="view/common/overview.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='policy_owner' ||$_SESSION['user_role']=='policy_approver' ||$_SESSION['user_role']=='policy_reviewer')  {?>
+			<a href="view/policy/policyDashboard.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='board_user'||$_SESSION['user_role']=='board_reviewer') {?>
+			<a href="view/board/board_dashboard.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='risk_owner'||$_SESSION['user_role']=='risk_mitigator'||$_SESSION['user_role']=='risk_reviewer') {?>
+			<a href="view/common/riskDashboard.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='compliance_author'||$_SESSION['user_role']=='compliance_reviewer') {?>
+			<a href="view/compliance/complianceDashboardAdmin.php">
+			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='disaster_owner'||$_SESSION['user_role']=='disaster_tester'||$_SESSION['user_role']=='disaster_trainer') {?>
+		<a href="view/disaster/disasterDashboard.php">
+		<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='bcpm_planner' || $_SESSION['user_role']=='bcpm_maintainer' || $_SESSION['user_role']=='bcpm_tester' || $_SESSION['user_role']=='bcpm_implementer') {?>
+		<a href="view/common/overview.php">
+		<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="80px" />
+		</a>
+		<?php } ?>
+		<?php if($_SESSION['user_role']=='asset_owner' || $_SESSION['user_role']=='asset_custodian' || $_SESSION['user_role']=='asset_reviewer') {?>
+		<a href="view/asset/assetDashboard.php">
+		<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+		</a>
+		<?php } ?>
 
-                        <?php if($_SESSION['user_role']=='incident_analyst' || $_SESSION['user_role']=='incident_resolver'|| $_SESSION['user_role']=='incident_manager' || $_SESSION['user_role']=='incident_reviewer') {?>
-<a href="view/incident/incidentDashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
+	                        <?php if($_SESSION['user_role']=='incident_analyst' || $_SESSION['user_role']=='incident_resolver'|| $_SESSION['user_role']=='incident_manager' || $_SESSION['user_role']=='incident_reviewer') {?>
+	<a href="view/incident/incidentDashboard.php">
+	<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+	</a>
+	<?php } ?>
 
-                        <?php if($_SESSION['user_role']=='employee' || $_SESSION['user_role']=='ethics_reviewer'|| $_SESSION['user_role']=='ethics_approver') {?>
-<a href="view/ethics/ethics_dashboard.php">
-<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
-</a>
-<?php } ?>
+	                        <?php if($_SESSION['user_role']=='employee' || $_SESSION['user_role']=='ethics_reviewer'|| $_SESSION['user_role']=='ethics_approver') {?>
+	<a href="view/ethics/ethics_dashboard.php">
+	<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
+	</a>
+	<?php } ?>
 
-</div>
+	</div>
 </div>
 
 <!-- end:: Aside -->
@@ -222,10 +222,10 @@ if($_SESSION['user_role']=='risk_reviewer') { ?>
 <?php
 if($_SESSION['user_role']=='super_admin') { ?>
                              
-<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="550" data-mobile-height="200">
+<div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="700" data-mobile-height="200">
 <ul class="kt-menu__nav ">
 
-<li class="kt-menu__item toggle" aria-haspopup="true"><span class="kt-menu__link text-center"><i class="kt-menu__link-icon flaticon2-graph kt-menu__link text-center"></i><span class="kt-menu__link-text">Regulatory Engine</span></span>
+<li class="kt-menu__item toggle" aria-haspopup="true"><span class="kt-menu__link text-center"><i class="kt-menu__link-icon flaticon2-graph kt-menu__link text-center"></i><span class="kt-menu__link-text">Regulatory Engine<i class="la la-angle-down" style="margin-top: 20px; margin-left: -7px;"></i></span></span>
 
 <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a  href="view/policy/new.php" class="kt-menu__link  text-center" ><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text ">New</span></a></li>
 
@@ -234,7 +234,7 @@ if($_SESSION['user_role']=='super_admin') { ?>
 <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;" ><a href="view/policy/Enablestd.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Enable Standard</span></a>
 </li>
 
-<li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/Regulatoryengine.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Upload Standard</span></a>
+<li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/uploadStandard.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Upload Standard</span></a>
 
 <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/Regulatoryengine.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Mapping</span></a>
 </li>
@@ -666,7 +666,7 @@ if($_SESSION['user_role']=='demo') { ?>
 <script>
 $(document).ready(function(){
   $(".toggle").click(function(){
-    $(".shw").toggle(400);
+    $(".shw").toggle(200);
   });
 });
 </script>
