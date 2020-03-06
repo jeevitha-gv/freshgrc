@@ -120,6 +120,8 @@ License: You must have a valid license purchased only from themeforest(the above
              }
              </script>             
            </div>
+
+           
            <div class="input-group">
                <select class="form-control" id="plan" style="color: white;">
                    <option>Select</option>
