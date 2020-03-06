@@ -112,9 +112,7 @@ $companyId=$id[0]['id'];
     ?>
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
 
-       
-
-      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-10%;">
+  <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-12%;">
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
@@ -129,7 +127,7 @@ $companyId=$id[0]['id'];
     <!--Begin:: App Aside-->
     <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside" >
         <!--begin:: Widgets/Applications/User/Profile4-->
-<div class="kt-portlet kt-portlet--height-fluid-">
+<div class="kt-portlet kt-portlet--height-fluid-" style="height:478px;">
     <div class="kt-portlet__body" >
         <!--begin::Widget -->
         <div class="kt-widget kt-widget--user-profile-4">
@@ -147,35 +145,46 @@ $companyId=$id[0]['id'];
                         </div>
 
                         <div>                             
-                            <a href="#" class="btn btn-icon btn-circle btn-label-facebook">
+                            <a href="" class="btn btn-icon btn-circle btn-label-facebook">
                                 <i class="fa flaticon-users-1"></i>
                             </a>
                             <i><?php echo $_SESSION['user_role'];?></i>
-                          </div>&nbsp;
+                          </div><br><br>
                           <div>
-                            <a href="#" class="btn btn-icon btn-circle btn-label-twitter">
+                            <a href="tel:+(91) 87 90 878 222" rel=" noopener" class="btn btn-icon btn-circle btn-label-twitter">
                                 <i class="la la-phone"></i>
                             </a>
                             <i><?php echo $usermail[0]['phone_no'];?></i>
-                          </div>&nbsp;
+                          </div><br><br>
                           <div>
-                            <a href="#" class="btn btn-icon btn-circle btn-label-google">
+                            <a href="mailto:sales@FixNix.co"title="black_email_mail_envelope-512" class="btn btn-icon btn-circle btn-label-google">
                                 <i class="fa flaticon2-black-back-closed-envelope-shape"></i>
                             </a>
                             <i><?php echo $usermail[0]['email'];?></i>                             
-                        </div>&nbsp;
+                        </div><br><br>
+                        <div class="formgroup row">
                          <div >
-                            <a href="#" class="btn btn-icon btn-circle btn-label-facebook">
+                            <a href="https://www.facebook.com/fixRnix" title="Facebook" class="btn btn-icon btn-circle btn-label-facebook" style="margin-left:9px;">
                                 <i class="la la-facebook"></i>
                             </a>
-                            <i><?php echo $usermail[0][''];?></i>                             
-                        </div>&nbsp;
+                                                 
+                        </div>
                          <div>
-                            <a href="#" class="btn btn-icon btn-circle btn-label-twitter">
+                            <a href="https://www.facebook.com/fixRnix" title="Twitter" class="btn btn-icon btn-circle btn-label-facebook" style="margin-left:14px;"> 
                                 <i class="la la-twitter"></i>
                             </a>
-                            <i><?php echo $usermail[0][''];?></i>                             
-                        </div>&nbsp;
+                                                   
+                        </div>
+                        <div >
+                            <a href="https://www.linkedin.com/company/fixrnix/" title="Linkedin" class="btn btn-icon btn-circle btn-label-facebook" style="margin-left:19px;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                                                 
+                        </div>
+                        
+                      </div>
+                        &nbsp;
+
                     </div>
                 </div>
             </div>
