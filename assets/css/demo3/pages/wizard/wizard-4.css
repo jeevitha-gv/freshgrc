@@ -12,7 +12,9 @@
     align-items: flex-end;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    width: 134%;
+    margin-left: 1px;
+    justify-content: initial;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .kt-wizard-v4 .kt-wizard-v4__nav .kt-wizard-v4__nav-items .kt-wizard-v4__nav-item {
