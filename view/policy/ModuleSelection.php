@@ -1,5 +1,6 @@
-<?php 
-require_once __DIR__.'/../header.php';
+<?php
+ require_once __DIR__.'/../header.php';
+
 // require_once __DIR__.'/../../php/audit/auditClauseManager.php';
 // require_once __DIR__.'/../../php/compliance/complianceManager.php';
 // require_once __DIR__.'/../../php/audit/auditManager.php';
@@ -33,8 +34,8 @@ $user_role=$_SESSION['user_role'];
                     <!--begin::Page Vendors Styles(used by this page) -->
                             <link href="./assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
                         <!--end::Page Vendors Styles -->
-        
-        
+       
+       
         <!--begin:: Global Mandatory Vendors -->
 <link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
 <!--end:: Global Mandatory Vendors -->
@@ -74,21 +75,22 @@ $user_role=$_SESSION['user_role'];
 
     </head>
 <style type="text/css">
-  #progressbar
-  {
-    width:100%;
-  
-  }
+  #progressbar
+  {
+    width:100%;
+ 
+  }
 #bar
 {
 background-color: #32ACB5;
 color: white;
 font-size:12px;
 }
- 
+ 
 </style>
 <?php
-   include "../siteHeader.php";
+    include '../siteHeader.php';
+
     ?>
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #EEEEEE;">
 <!-- <div class="conatiner">
@@ -102,14 +104,12 @@ font-size:12px;
 <h4>Welcome back, <strong><?php echo $user_name; ?></strong></h4>
 <p style="color: #141f1f;">You're doing great.  Keep going!</p><br /><br />
 <img src="sunny.svg" class="rounded float-right" width="100" height="100" alt="" style="margin-top: -50px;">
-<div class="progress" id="progressbar">
-  <div id="bar">10%
-  </div>
-</div>
+<div class="row">
+ &nbsp; &nbsp; <progress id="myProgress" value="0" max="100" style="width:80%">
+</progress>
+ &nbsp; &nbsp; &nbsp; &nbsp;<h5 id="percent">0% complete</h5>
 </div><br>
-
-
-<div class="container" style="background-color: white;width: 75%;">
+ 
   <h5><strong>Learn about freshGRC</strong></h5><hr>
 
 <div class="form-group row">
@@ -128,92 +128,255 @@ font-size:12px;
 
 </div>
 <div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal2"><img src="video.jpg" title="watch video" width="40" height="40"></a>
+<a href="#" data-toggle="modal" data-target="#myModal2"><img src="video.png" title="watch video" width="40" height="40"></a>
 </div>
 </div><hr>
 <div class="form-group row">
 <div class="col-sm-10">
-<h5><strong>Read our FAQ
-</strong></h5>
+ 
 <P style="color: #141f1f;">Read our FAQ
 All the important stuff including what's free vs paid, how we secure your data, and which other tools FreshGRC works with.</P>
 </div>
 <div class="col-sm-2">
-<a href="#" data-toggle="modal" data-target="#myModal2"><img src="FAQ.png" title="Read FAQ" width="40" height="40"> </a>
+<a href="#" data-toggle="modal" data-target="#myModal3"><img src="FAQ.png" title="Read FAQ" width="40" height="40"> </a>
 </div>
 </div><hr>
-</div>
-<br>
-<div class="container" style="background-color: white;width: 75%;">
 <div class="form-group row">
 <div class="col-sm-10">
-<h5><strong>Explore FreshGRC</strong>
-</h5>
-</div>
+<p style="color: #141f1f;">BCPM</p>
 
 </div>
+<div class="col-sm-2">
+<a href="#" data-toggle="modal" data-target="#myModal4"><img src="video1.png" title="watch BCPM" width="40" height="40"></a>
 </div>
-<div class="container" style="background-color: white;width: 75%;">
+</div><hr>
 <div class="form-group row">
 <div class="col-sm-10">
-<p style="color: #141f1f;">Create your first contact</p>
+<p style="color: #141f1f;">Audit
+</p>
+
 </div>
 <div class="col-sm-2">
-<a href="http://freshgrc.com/freshgrc/signup.php"><img src="contact.png" title="create conatct" width="40" height="40"></a>
+<a href="#" data-toggle="modal" data-target="#myModal5"><img src="video6.png" title="watch Audit" width="40" height="40"></a>
 </div>
-</div>
-</div>
-<div class="container" style="background-color: white;width: 75%;">
-<h4>Read our FAQ</h4>
+</div><hr>
 <div class="form-group row">
 <div class="col-sm-10">
-<p style="color: #141f1f;">All the important stuff including what's free vs paid,how we secure your data, and which other tools FixNix works with.</p>
+<p style="color: #141f1f;">Asset</p>
+
 </div>
+<div class="col-sm-2">
+<a href="#" data-toggle="modal" data-target="#myModal6"><img src="video3.png" title="watch Asset" width="40" height="40"></a>
 </div>
+</div><hr>
 <div class="form-group row">
+<div class="col-sm-10">
+<p style="color: #141f1f;">Regulatory Engine
+</p>
+
+</div>
+<div class="col-sm-2">
+<a href="#" data-toggle="modal" data-target="#myModal7"><img src="video4.png" title="watch Regulatory Engine" width="40" height="40"></a>
+</div>
+</div><hr>
+<div class="form-group row">
+<div class="col-sm-10">
+<p style="color: #141f1f;">Blockchain</p>
+
+</div>
+<div class="col-sm-2">
+<a href="#" data-toggle="modal" data-target="#myModal8"><img src="video5.png" title="watch Blockchain" width="40" height="40"></a>
+</div>
+</div><hr>
+<div class="form-group row">
+<div class="col-sm-10">
+<p style="color: #141f1f;">Nix Privacy
+</p>
+
+</div>
+<div class="col-sm-2">
+<a href="#" data-toggle="modal" data-target="#myModal9"><img src="video7.png" title="watch Nix Privacy" width="40" height="40"></a>
+</div>
+</div><hr>
+ 
+ 
+ 
+<div class="col-sm-10">
+<p style="color: #141f1f;">Checklist
+</p>
+
+</div>
+ 
 <div class="col-sm-12">
 <!-- <button type="button" class="btn btn-success" style="float: right;">Read</button> -->
+<div class="form-group">
+                            <input type="hidden" class="form-control" id="action" value="in_draft">
+                            <input type="hidden" class="form-control" id="company_id" value="<?php echo $companyId ?>">
+                          </div>
+ <div class="form-group text-center" style="margin-top: 2%;">
+                     
+  <?php include '../compliance/addstandarddropdown.php';?>
+                       
+
+  </div>
 </div>
-</div>
- <!-- <div class="row" style="float: right;margin-top: -10%">
-                  <div class="modal-footer">
-                  <button type="button" value="1" class="w3-btn w3-white w3-border w3-border-red w3-round-large" onclick="allocatemodules()" name="submit" data-dismiss="modal" style="font-size: 18px;" id="demo">Submit</button>
-                  </div>
-              </div> -->
+ 
+
+<hr>
+ 
+ 
+
+ 
 </div>
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second();">okay</button>
-      </div>
-    </div>
-  </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  id="btn1"class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
-      </div>
-      <div class="modal-body">
-        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="second();">okay</button>
-      </div>
-    </div>
-  </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn2"class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+        <iframe width="480" height="300" src="https://www.youtube.com/embed/GRrE1aZgCLk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn3" class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+         <iframe width="480" height="300" src="https://www.youtube.com/embed/HPE4W7s5Aug" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn4" class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+         <iframe width="480" height="300" src="https://www.youtube.com/embed/hQn7vJNz2mY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn5" class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+         <iframe width="480" height="300" src="https://www.youtube.com/embed/fgoY_cfWlYg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn6" class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+         <iframe width="480" height="300" src="https://www.youtube.com/embed/voeNGMZ7hqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn7"class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+         <iframe width="480" height="300" src="https://www.youtube.com/embed/pgy2HcHDf_g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn8"class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body">
+         <iframe width="480" height="300" src="https://www.youtube.com/embed/7Yg6zxLiT4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btn9" class="btn btn-default" onclick="second(this);">okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
 
  <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
@@ -221,6 +384,8 @@ All the important stuff including what's free vs paid, how we secure your data, 
         <!-- end::Global Config -->
 
     <!--begin:: Global Mandatory Vendors -->
+    <script src="js/compliance/complianceCreateManagement.js"></script>
+ <script src="js/policy/ModuleManagement.js"></script>
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -300,78 +465,115 @@ All the important stuff including what's free vs paid, how we secure your data, 
                     <!--begin::Page Scripts(used by this page) -->
                             <script src="./assets/js/demo3/pages/dashboard.js" type="text/javascript"></script>
                         <!--end::Page Scripts -->
+
+
+
+
+
+
+
+
+
+
+
+
             </body>
  <script src="js/policy/ModuleManagement.js"></script>
+ <?php
+include '../audit/sidemenu.php';
+
+ ?>
 
 </html>
 <!-- <script type="text/javascript">
 $(document).ready(function()
 {
-  $("#start").click(function()
-  {
-    $("#bar").progressbar({
-        value:20
-  });
+  $("#start").click(function()
+  {
+    $("#bar").progressbar({
+        value:20
+  });
 });
 });
-    
- 
+   
+ 
 </script> -->
-             
-             <script type="text/javascript">
-               function start()
-               {
-                var name=document.getElementById('email').value;
-                var pass=document.getElementById('company').value;
-                var first=document.getElementById('bar');
-                var width=20;
-                if(email=='' || pass=='')
-                {
-                  alert("please fill all the form fields");
-                }
-                else if (width>=100) {
-                  clearInterval(id);
+             
+             <script type="text/javascript">
+               function start()
+               {
+                var name=document.getElementById('email').value;
+                var pass=document.getElementById('company').value;
+                var first=document.getElementById('bar');
+                var width=20;
+                if(email=='' || pass=='')
+                {
+                  alert("please fill all the form fields");
+                }
+                else if (width>=100) {
+                  clearInterval(id);
 
-                }
-                else
-                {
-                  width++;
-                  first.style.width=width+'%';
-                  first.innerHTML=width+9 +'%';
+                }
+                else
+                {
+                  width++;
+                  first.style.width=width+'%';
+                  first.innerHTML=width+9 +'%';
 
-                }
-           }
-           function second()
-           {
-            var second=document.getElementById('bar');
-            var width=30;
+                }
+           }
+function second(btn) {
+  var width=document.getElementById("myProgress").value ;
+  if(width>=100)
+            {
+              clearInterval(id);
+            }
+  else(width<100)
+  {
+     width +=10;
+
+  }
+ 
+   
+  document.getElementById("myProgress").value=width;
+  document.getElementById("percent").innerHTML=width+'% completed';
+ 
+    document.getElementById(btn.id).disabled = true;
+}
+         
+  function second1()
+           {
+            var second=document.getElementById('myProgress');
+            var width=second.value;
+
             if(width>=100)
-            {
-              clearInterval(id);
-            }
-            else
-            {
-              width++;
-              second.style.width=width+'%';
-              second.innerHTML=width+19 +'%';
+            {
+              clearInterval(id);
+            }
+            else
+            {
+             
+              second.style.width=width+'%';
+              second.innerHTML=width+10+'%';
 
-            }
-          }
-           function create()
-          {
-        
+            }
+          }
+ 
+           function create()
+          {
+       
             var create = document.getElementById('bar');
-            var width=50;
+            var width=50;
            if(width>=100)
-            {
-              clearInterval(id);
-            }
-            else
-              {
-              width++;
-              create.style.width=width + '%';
-              create.innerHTML=width+49 +'%';
-             
-        }
-      }
-        </script>
+            {
+              clearInterval(id);
+            }
+            else
+              {
+              width++;
+              create.style.width=width + '%';
+              create.innerHTML=width+49 +'%';
+             
+        }
+      }
+        </script>

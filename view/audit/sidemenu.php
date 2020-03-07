@@ -231,7 +231,7 @@ if($_SESSION['user_role']=='super_admin') { ?>
 
 
 
-<li class="kt-menu__item shw" aria-haspopup="true" style="display: none;" ><a href="view/policy/Enablestd.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Enable Standard</span></a>
+<li class="kt-menu__item shw" aria-haspopup="true" style="display: none;" ><a href="view/policy/Regulatoryengine.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Enable Standard</span></a>
 </li>
 
 <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/uploadStandard.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Upload Standard</span></a>
