@@ -93,6 +93,8 @@
 <?php if($_SESSION['user_role']=='auditor'){?>
 <ul class="kt-menu__nav ">
 <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-gear"></i><span class="kt-menu__link-text">Audit</span></a></li>
+
+
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/audit/plan.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Plan</span></a>
 </li>
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/audit/auditCreateAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Kickoff</span></a>
@@ -241,23 +243,23 @@ if($_SESSION['user_role']=='super_admin') { ?>
 </li>
 
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Audit</span></a>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/audit/auditDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-files-and-folders"></i><span class="kt-menu__link-text">Audit</span></a>
 </li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/common/riskDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Risk</span></a></li>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/common/riskDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-warning"></i><span class="kt-menu__link-text">Risk</span></a></li>
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Compliance</span></a></li>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-checking "></i><span class="kt-menu__link-text"> Compliance</span></a></li>
 
-          <li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Policy</span></a></li>
-          <li class="kt-menu__item " aria-haspopup="true"><a href="view/asset/assetDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-protected"></i><span class="kt-menu__link-text">Asset</span></a>
+          <li class="kt-menu__item " aria-haspopup="true"><a href="view/policy/policyDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-protection"></i><span class="kt-menu__link-text">Policy</span></a></li>
+          <li class="kt-menu__item " aria-haspopup="true"><a href="view/asset/assetDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-shelter"></i><span class="kt-menu__link-text">Asset</span></a>
 </li>
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-mail-1"></i><span class="kt-menu__link-text">Incident</span></a>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/incident/incidentDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-hourglass"></i><span class="kt-menu__link-text">Incident</span></a>
 </li>
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Disaster</span></a>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/disaster/disasterDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph-2"></i><span class="kt-menu__link-text">Disaster</span></a>
 </li>
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/bcpm/bcpmDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Bcpm</span></a>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/bcpm/bcpmDashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon-rotate"></i><span class="kt-menu__link-text">Bcpm</span></a>
 </li>
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/board/board_dashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Board</span></a>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/board/board_dashboard.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-notepad"></i><span class="kt-menu__link-text">Board</span></a>
 </li>
 </ul>
 </div>
