@@ -438,59 +438,13 @@ function getModalDetailsFromModal1() {
 }
 
 function saveCompliance() {
-  var complianceName = $('#complianceName').val();
-    var complianceDesc = $('#complianceDesc').val();
-    var version = $('#version').val();
-     if(complianceName == "")
-    {
-      alert("Required Compliance Name");
-        return false;
-    }
-    if(complianceDesc == "")
-    {
-      alert("Required Description");
-      return false;
-    }
-    if(version == "")
-    {
-      alert("Required Version");
-      return false;
-    }
-    if(complianceName != '')
-  {
-    var regexname = /^[a-zA-Z0-9\s]+$/;
-    if(!regexname.test(complianceName)) {
-      alert("Invalid Compliance Name");
-      $('#complianceName').val('');
-      return false;
-  }
-}
-if(complianceDesc != '')
-  {
-    var regexname =/^[a-zA-Z0-9\s]+$/;
-    if(!regexname.test(complianceDesc)) {
-      alert("Invalid Description");
-      $('#complianceDesc').val('');
-       return false;
-  }
-}
-if(version != '')
-  {
-    var regexname =/^((\d+(\\.\d{0,2})?)|((\d*(\.\d{1,2}))))$/;
-    if(!regexname.test(version)) {
-      alert("Invalid Version");
-      $('#version').val('');
-      return false;
-  }
-}
-    
     var modalDetails1 = getModalDetailsFromModal1();
     $.ajax({
         type: "POST",
         url: "/freshgrc/php/compliance/manageCompliance.php",
         data: modalDetails1
     }).done(function (data) {
-        location.reload();
+       window.location="/freshgrc/view/compliance/complianceCreateAdmin.php";
     });
 }
 

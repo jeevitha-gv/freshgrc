@@ -92,18 +92,19 @@ Plan
           <div class="kt-portlet__body " >
             <?php if($_SESSION['user_role'] == 'compliance_author' || $_SESSION['user_role'] == 'super_admin') {?>
                 <div class="row">
-                    <div class="col-xs-2 col-sm-2" id="newCompl">
+                   <!--  <div class="col-xs-2 col-sm-2" id="newCompl">
                         <button class="btn btn-warning" onclick="showModal(true)"><i class="fa fa-plus-circle" ></i> New</button>
-                    </div>
-                    <div class="col-xs-2 col-sm-2" id="importCompl">                      
+                    </div> -->
+                  <!--   <div class="col-xs-2 col-sm-2" id="importCompl">                      
                         <label for="complianceCsv" aria-hidden="true">
                             <i class="btn btn-danger fa fa-file-excel-o">  Import Library</i>
                             <input type="file" style="display:none" onchange= "importCsv()" id="complianceCsv"/>
                         </label>
-                    </div> 
-                      <div class="col-xs-2 col-sm-2">                      
+                    </div> --> 
+                   <!--    <div class="col-xs-2 col-sm-2">                      
                          <i class="btn btn-danger fa fa-file-excel-o"> <a href="view/compliance/complianceUcfview.php">View Library</a></i>
-                    </div><!-- 
+                    </div> -->
+                    <!-- 
                     <div class="col-xs-2 col-sm-2">                      
                             <i class="btn btn-danger fa fa-file-excel-o" onclick="insertData()"> Add Library</i>
                     </div> -->

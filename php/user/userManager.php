@@ -47,7 +47,7 @@ class UserManager {
      
      public function getAllUser($userid){
 
-        $sql = 'SELECT u.id as id, u.first_name as firstName, u.last_name as lastName, u.email,u.created_at,u.company_id, r.name as role,r.id as roleId from user u, role r, user_role ur, company c where ur.user_id = u.id and ur.role_id = r.id and u.company_id = c.id and c.id=7 and u.id=?';
+        $sql = 'SELECT u.id as id, u.first_name as firstName, u.last_name as lastName, u.email,u.phone_no,u.created_at,u.company_id, r.name as role,r.id as roleId from user u, role r, user_role ur, company c where ur.user_id = u.id and ur.role_id = r.id and u.company_id = c.id and c.id=7 and u.id=?';
         $paramArray=array();
         $paramArray[]=$userid;
         $dbOps = new DBOperations();
@@ -93,10 +93,10 @@ class UserManager {
     }
     
     private function updateUser($userData){
-        $sql = 'UPDATE user SET last_name=?,first_name=?,middle_name=?,company_id=? WHERE email=?';
-        $paramArray = array($userData->lastName, $userData->firstName, $userData->middleName, $userData->company, $userData->email);
+        $sql = 'UPDATE user SET last_name=?,first_name=?,middle_name=?,email=?,phone_no=? WHERE id=?';
+        $paramArray = array($userData->lastName, $userData->firstName, $userData->middleName, $userData->email, $userData->phone,$userData->id);
         $dbOps = new DBOperations();
-        return $dbOps->cudData($sql, 'sssis', $paramArray);         
+        return $dbOps->cudData($sql, 'sssssi', $paramArray);         
     }
     
     private function updateUserRole($userData){
@@ -144,11 +144,11 @@ class UserManager {
         return $dbOps->fetchData($sql, 'i', $paramArray);        
     }
 
-    public function updateUserProfileData($userData){
-        $sql = 'UPDATE user u, user_profile up SET u.first_name=?, u.last_name=?, up.mobile_number=?, up.facebook=?, up.industry=?, up.twitter=?,up.site=?,up.category=?,up.address=?,up.city=?,up.code=?,up.team=?,up.department=? WHERE u.id=up.user_id and u.id=?';
-        $paramArray = array($userData->firstname, $userData->lastname, $userData->mobileno,$userData->facebook,$userData->industry,$userData->twitter,$userData->site,$userData->category,$userData->address,$userData->code,$userData->city,$userData->team,$userData->department,$userData->loggedInUser);
+   public function updateUserProfileData($userData){
+        $sql = 'UPDATE user u, user_profile up SET u.first_name=?, u.last_name=?,u.phone_no=?,u.email=?,up.mobile_number=?, up.facebook=?, up.industry=?, up.twitter=?,up.site=?  WHERE u.id=up.user_id and u.id=?';
+        $paramArray = array($userData->firstname, $userData->lastname,$userData->phone_no, $userData->email, $userData->mobileno,$userData->facebook,$userData->industry,$userData->twitter,$userData->site,$userData->loggedInUser);
         $dbOps = new DBOperations();
-        return $dbOps->cudData($sql, 'ssissssssssssi', $paramArray);         
+        return $dbOps->cudData($sql, 'ssssissssi', $paramArray);         
     }
     public function companyprofiletable($companyId){
         $sql = 'SELECT * FROM user_profile';

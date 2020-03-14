@@ -256,6 +256,8 @@ debugger
         'firstname': $('#firstname').val(),
         'lastname': $('#lastname').val(),
         'mobileno': $('#mobileno').val(),
+         'phone_no': $('#phone_no').val(),
+         'email': $('#email').val(),
         'site': $('#site').val(),
         'industry': $('#industry').val(),
         'facebook': $('#facebook').val(),
