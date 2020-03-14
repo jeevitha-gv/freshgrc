@@ -118,8 +118,11 @@ License: You must have a valid license purchased only from themeforest(the above
                return false;
             }
              }
-             </script>             
+             </script>  
+
            </div>
+           <div class="input-group" style="position: absolute; margin-top:-37px; margin-left:510px; color: white; font-size: 16px;">-FreshGRC.com</div>  
+
 
            
            <div class="input-group">
@@ -138,7 +141,10 @@ License: You must have a valid license purchased only from themeforest(the above
               <div class="row kt-login__extra">
               <div class="col kt-align-left">
                 <label class="kt-checkbox">
-                  <input type="checkbox" name="agree">I Agree the <a href="https://www.fixnix.co/terms-of-service-fixnix" class="kt-link kt-login__link kt-font-bold">terms and conditions</a>.
+                  <input type="checkbox" name="agree">I Agree the <!-- <a href="https://www.fixnix.co/terms-of-service-fixnix" class="kt-link kt-login__link kt-font-bold">terms and conditions</a> -->
+                  <a href="https://www.fixnix.co/terms-of-service-fixnix/" class="kt-link kt-login__link kt-font-bold" target="_blank" >T & C</a>
+                 <h>and</h>
+                  <a href="https://www.fixnix.co/privacy-policy-fixnix/" class="kt-link kt-login__link kt-font-bold">privacy policy</a>
                   <span></span>
                 </label>
                 <span></span>
@@ -147,7 +153,7 @@ License: You must have a valid license purchased only from themeforest(the above
             
             <div class="kt-login__actions">
               <button type="submit" id="manageButton" onclick="manageModal();" data-dismiss="modal" class="btn btn-pill kt-login__btn-primary">Sign Up</button>&nbsp;&nbsp;
-              <button onclick="location.href='./login.php'" id="kt_login_signup_cancel" class="btn btn-pill kt-login__btn-secondary">Cancel</button>
+              <button onclick="location.href='https://freshgrc.com/#About'" id="kt_login_signup_cancel" class="btn btn-pill kt-login__btn-secondary">Cancel</button>
             </div>
           </form>
         
@@ -156,7 +162,7 @@ License: You must have a valid license purchased only from themeforest(the above
   </div>
 </div>  
   </div>
-    <div class="footer" style="padding:0%; background-color: #473ea5; ">
+    <!-- <div class="footer" style="padding:0%; background-color: #473ea5; ">
       <div class="form-group row">
         
       <div class="col-md-4 col-sm-4" style="color: block; font-size:16px; margin-top: 20px;">
@@ -180,7 +186,7 @@ License: You must have a valid license purchased only from themeforest(the above
       </div> -->
     </div>
 
-  </div>
+  </div> -->
 <!-- end:: Page -->
 
 

@@ -170,7 +170,7 @@ include "../siteHeader.php";
                             <i class=" " ></i>
                         </span>
                         <h3 class="kt-portlet__head-title" style="color: white;">
-                            <span class="caption-subject bold" style="color: #EA535A; text-transform: uppercase;"> Timeline</span>
+                            <span class="caption-subject bold" style="color:white; text-transform: uppercase;"> Timeline</span>
                              
                         </h3>
                     </div>        
@@ -254,18 +254,21 @@ include "../siteHeader.php";
 </div>
 </div>
   
-<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div  class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
+     <div style="width:1000px;height:700px; margin-left:-40.5%;" >
     <div class="modal-content">
+     
     
-        <button type="button" class="close" style="width:5%;height:10%;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" title="close" class="close" style="width:5%;height:10%; color: white;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
          
        
-      <center>
-      <h3>Time Line</h3>
-    </center>
+     <div style="background: #2A5AA8;">
+      <h3 style="color: white; text-align: center;">Time Line</h3>
+    </div>
+    
        
-       <form method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php"  >
+       <form  method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php"  >
         
                 
 
@@ -276,7 +279,7 @@ include "../siteHeader.php";
                           <div class="form-group">
                           <label for="comment"></label>
                           <center>
-                          <textarea style="width: 60%;" name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control"  rows="4"></textarea>
+                          <textarea style="width: 80%; height:200px;  " name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control"  rows="4"></textarea>
                         </center>
 
                           </div>
@@ -284,7 +287,7 @@ include "../siteHeader.php";
                            
  
 
-                          <select name="to_id" class="form-control select2-selection arrow" style="width: 60%;margin-left:20%;margin-top:-3%;">
+                          <select name="to_id" class="form-control select2-selection arrow" style="width: 80%;margin-left:10%;margin-top:3%;">
                              <option></option>
                                 <?php foreach($users as $user){
                                    if($_SESSION['user_id']!=$user['id']){ ?>
@@ -307,6 +310,7 @@ include "../siteHeader.php";
        
     
   </div>
+</div>
 </div>
 </div>
 <?php

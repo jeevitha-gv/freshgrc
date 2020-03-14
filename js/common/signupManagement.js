@@ -53,7 +53,7 @@ function success(data) {
         });
 setTimeout(function () { location.reload(1); }, 5000);
     });
-              // window.location.href="/freshgrc/login.php";
+              window.location.href="/freshgrc/login.php";
 
   }
   else
