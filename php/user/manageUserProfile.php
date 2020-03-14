@@ -19,6 +19,8 @@ function getUserDataFromRequest(){
     $userData->firstname = htmlentities($_POST['firstname'], ENT_QUOTES);
     $userData->lastname = htmlentities($_POST['lastname'], ENT_QUOTES);
     $userData->mobileno = htmlentities($_POST['mobileno'], ENT_QUOTES);
+    $userData->phone_no = htmlentities($_POST['phone_no'], ENT_QUOTES);
+    $userData->email = htmlentities($_POST['email'], ENT_QUOTES);
     $userData->site = htmlentities($_POST['site'], ENT_QUOTES);
     $userData->industry = htmlentities($_POST['industry'], ENT_QUOTES);
     $userData->facebook = htmlentities($_POST['facebook'], ENT_QUOTES);
