@@ -11,7 +11,7 @@ class TimeManager{
 	}
 	public function timeLine()
 	{
-		$sql = 'SELECT id, from_id, to_id, concat(ucase(mid(message,1,1)),lcase(mid(message,2))) as message, create_time FROM timeline ORDER BY create_time DESC';
+		$sql = 'SELECT id, from_Id, to_id, concat(ucase(mid(message,1,1)),lcase(mid(message,2))) as message, create_time FROM timeline ORDER BY id DESC';
         $dbOps = new DBOperations();    
         return $dbOps->fetchData($sql);
 	}

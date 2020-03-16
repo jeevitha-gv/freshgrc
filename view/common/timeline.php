@@ -152,12 +152,37 @@ include "../siteHeader.php";
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-13%;">
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-13%;" >
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <!--Begin::Portlet-->
+<div class="kt-portlet" style="margin-left: -20px;">
+    <div class="kt-portlet__head" style="border-color: red; background: #2A5AA8;">
+
+        <div class="kt-portlet__head-label">
+            <div class="flaticon-time" style="font-size: 30px; color: white;"></div>
+            <h3 class="kt-portlet__head-title " style="color: white; font-size:25px; margin-left: 10px;">
+                 Timeline 
+            </h3>
+        </div>
+    </div>
+  </div>
+  <div class="kt-portlet__body" >
+               <div class="form-group">
+                
+
+                       
+                          
+                          <div class="form-group">
+                            <label for="comment"></label>
+                            <textarea data-toggle="modal" data-target="#myModal7"    name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
+                          </div>
+                          
+                        </div>
+<!-- <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
  
 
 <div class="">
@@ -169,8 +194,8 @@ include "../siteHeader.php";
                         <span class="kt-portlet__head-icon">
                             <i class=" " ></i>
                         </span>
-                        <h3 class="kt-portlet__head-title" style="color: white;">
-                            <span class="caption-subject bold" style="color:white; text-transform: uppercase;"> Timeline</span>
+                        <h3 class="kt-portlet__head-title">
+                            <span class="caption-subject bold"> Timeline</span>
                              
                         </h3>
                     </div>        
@@ -187,92 +212,39 @@ include "../siteHeader.php";
                           <textarea data-toggle="modal" data-target="#myModal7"    name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" class="form-control" rows="4"></textarea>
                         </div>
                         
-                        <!-- <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
+                         <textarea name="chatMessage" id="chatMessage" placeholder="Type Something Here...!" style="height: 80px;width: 350px; border: 1px solid #44BBC8;"></textarea> -->
  
                   </div>
               </div>
-         <!--  </div>
-
-
-          <div class="col-lg-6 col-xl-8 order-lg-1 order-xl-1"> -->
-           
-           
-                    <div class="form-group ">
-                    <div class="portlet-body" style="background-color: #ffffff;">
-                      <div class="timeline" style="overflow:scroll; height:375px;">                               
-                        <div class="timeline-item">                                                        
-                          <div class="timeline-item">
-                            <div class="kt-widget4">
-                                <div class="kt-widget4__item" style="background-color: #2a5aa8; height: 60px;">
-                                    <div class="kt-widget4__pic kt-widget4__pic--pic">
-                                        <img  style="margin-left:10%;" class="rounded-circle" src="assets/img/shan.jpg">   
-                                    </div>
-                                    <div class="kt-widget4__info">
-                                        <!-- <a href="#" class="kt-widget4__username" style="color: #ffffff;"> -->
-                                            <h4 style="color: white; ">Shanmugavel Sankaran</h4>
-                                        <!-- </a> -->
-                                        <p class="kt-widget4__text"style="color: white; ">
-                                            Added office location at 2:50 PM 
-                                        </p>                                     
-                                    </div>                       
-                                </div>
-                          
-                       <?php foreach($chats as $chat){ ?>  
-                       <?php $from = $timeManager->userDetails($chat['from_id']); ?>                            
-                          <div class="timeline-item" style="margin-left:-90%;">
-                            <div class="timeline-badge">
-                              <div class="timeline-icon"><br>
-                                <i class="flaticon-businesswoman" style=" font-size: 35px; color: #38A2AE;"></i>
-                                 <?php $to = $timeManager->userDetails($chat['to_id']); ?>
-                                 <span style="color: red; font-size: 15px;"><?php echo $from[0]['last_name']; ?></span><br>
-                                   <?php echo $chat['message']; ?> </div>
-                                   <div style="font-size: 13px;margin-top: -50px; margin-left: 45%;"><?php echo $to[0]['last_name']; ?>
-                             
-                                  <span style="font-size: 13px; float: right;"><?php echo $chat['create_time']; ?></span><br><br><br><br>
-                                 
-                                   </div>   
-
-                            </div>
-                          </div> 
-                      <?php }?>
-                        </div>
-                      </div>
-                    </div>
-                </div> 
-            </div>
-        </div>
-
-
-
-<!--end::Form-->    
+       
 </div>
 </div>
 </div> 
- </div>
+ </div> 
  </div>  
 </div>
 </div>
 </div>
   
+  <!-- <=========================chart :: begin=========================> -->
+
 <div  class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-     <div style="width:1000px;height:700px; margin-left:-40.5%;" >
-    <div class="modal-content">
+     <div style="width:1000px;height:700px; margin-left:-40.5%; " >
+    <div class="modal-content" style="border-color: #2A5AA8; border-radius: 15px;background:#DAEEFD">
      
     
         <button type="button" title="close" class="close" style="width:5%;height:10%; color: white;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
          
        
-     <div style="background: #2A5AA8;">
+     <div style="background: #2A5AA8;border-radius: 5px;">
       <h3 style="color: white; text-align: center;">Time Line</h3>
     </div>
     
        
        <form  method="POST" onsubmit="return validate1();" action="view/common/chatProcess.php"  >
         
-                
-
-                 
+                           
                       
                      
                         
@@ -302,17 +274,249 @@ include "../siteHeader.php";
                         <button class="btn btn-primary" type="submit" style="width:15%;" name="submit">Post</button>
                       </center>
                       
-                        
+                       
                
     
       </form>
-
-       
-    
   </div>
 </div>
 </div>
 </div>
+<!-- <=========================Chat :: End ===========================> -->
+          <!-- begin:: Content -->
+  <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <!--Begin::Portlet-->
+<div class="kt-portlet" style="margin-left: 120px;">
+    <div class="kt-portlet__head" style="border-color: red; background: #2A5AA8;">
+        <div class="kt-portlet__head-label">
+          <div class="kt-widget4__pic kt-widget4__pic--pic">
+              <img  style="width:60px;" class="rounded-circle" src="assets/img/shan.jpg">   
+          </div>
+            <div class="kt-widget4__info">
+                                                    
+              <h4 style="color: white; margin-top:8px; ">Admin</h4>
+               <!-- <p class="kt-widget4__text"style="color: white; ">
+                          Added office location at 2:50 PM 
+                    </p>  -->                                    
+               </div> 
+        </div>
+    </div>
+    <div class="kt-portlet__body">
+        <div class="row">
+            <div class="col-xl-1">
+            </div>
+            <div class="col-xl-10">
+                <div class="kt-timeline-v1">
+                    <div class="kt-timeline-v1__items">
+                        <div class="kt-timeline-v1__marker"></div>
+                        <div class="kt-timeline-v1__item kt-timeline-v1__item--left kt-timeline-v1__item--first">
+                            <div class="kt-timeline-v1__item-circle">
+                                <div class="kt-bg-danger"></div>
+                            </div>
+                                <span class="kt-timeline-v1__item-time kt-font-brand">
+                                Users Posted
+                            </span>
+                            <span class="kt-timeline-v1__item-time kt-font-brand">
+                              <!--   11:35<span>AM</span> -->
+                            </span>
+<?php foreach ($chats as $chat) {
+  if ($chat['from_Id']!=1)
+  {
+  ?>
+ 
+                            <div class="kt-timeline-v1__item-content">
+                               <!--  <div class="kt-timeline-v1__item-title">
+                                    Users Posted
+                                </div> -->
+                                <div class="kt-timeline-v1__item-body">
+                               <!--      <div class="kt-list-pics kt-margin-b-10">
+                                        <a href="#"><img src="./assets/media/users/100_4.jpg" title=""></a>
+                                        <a href="#"><img src="./assets/media/users/100_13.jpg" title=""></a>
+                                        <a href="#"><img src="./assets/media/users/100_11.jpg" title=""></a>
+                                        <a href="#"><img src="./assets/media/users/100_14.jpg" title=""></a>
+                                        <a href="#"><img src="./assets/media/users/100_7.jpg" title=""></a>
+                                        <a href="#"><img src="./assets/media/users/100_3.jpg" title=""></a>
+                                    </div> -->
+                                   
+                                    <p>
+                                     <?php echo $chat['message']; ?>  
+                                    </p>
+                                
+                                </div>
+                             
+                            </div>
+                            <br><br>
+                          <?php }  } ?>
+                        </div>
+                        
+ <?php foreach ($chats as $chat) {
+ 
+    ?>
+                            
+                        <div class="kt-timeline-v1__item kt-timeline-v1__item--right">
+                            <div class="kt-timeline-v1__item-circle">
+                                <div class="kt-bg-danger"></div>
+                            </div>
+                            <span class="kt-timeline-v1__item-time kt-font-brand"><span></span></span>
+                            <div class="kt-timeline-v1__item-content">
+                                <div class="kt-timeline-v1__item-title">
+                                Admin
+                                </div>
+                                  <?php 
+                                                    if($chat['from_Id']==1)
+                                                    {
+                                                      ?>   
+                                <div class="kt-timeline-v1__item-body">
+                                    <div class="kt-widget4">
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic">
+                                                <img src="./assets/media/users/100_4.jpg" alt="">
+                                            </div>
+                                            <div class="kt-widget4__info">
+                                              <!--   <a href="#" class="kt-widget4__username">
+                                                            Anna Strong
+                                                        </a> -->
+                                                 
+                                                <p class="kt-widget4__text">
+                                                   
+                                                    <?php echo $chat['message'];?> 
+                                                    
+                                                </p>
+                                           
+                                            </div>
+                                            <!-- <a href="#" class="btn btn-sm btn-label-success btn-bold">Check</a> -->
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+                                              <?php
+                                              }
+                                              ?>
+
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                   <?php
+                    }
+                  
+                    ?>
+                   <!--      <div class="kt-timeline-v1__item kt-timeline-v1__item--left">
+                            <div class="kt-timeline-v1__item-circle">
+                                <div class="kt-bg-danger"></div>
+                            </div>
+                            <span class="kt-timeline-v1__item-time kt-font-brand">02:58<span>PM</span></span>
+                            <div class="kt-timeline-v1__item-content">
+                                <div class="kt-timeline-v1__item-title">
+                                    Latest Uploaded Files
+                                </div>
+                                <div class="kt-timeline-v1__item-body kt-padding-t-10 kt-padding-b-10">
+                                    <div class="kt-widget4">
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--icon">
+                                                <img src="./assets/media/files/doc.svg" alt="">
+                                            </div>
+                                            <a href="#" class="kt-widget4__title">
+                                                        Metronic Documentation
+                                                    </a>
+                                            <div class="kt-widget4__tools">
+                                                <a href="#" class="btn btn-clean btn-icon btn-sm">
+                                                    <i class="flaticon2-download-symbol-of-down-arrow-in-a-rectangle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="kt-widget4__item">
+                                            <div class="kt-widget4__pic kt-widget4__pic--icon">
+                                                <img src="./assets/media/files/jpg.svg" alt="">
+                                            </div>
+                                            <a href="#" class="kt-widget4__title">
+                                                        Project Specifications(product2019_v4.pdf)
+                                                    </a>
+                                            <div class="kt-widget4__tools">
+                                                <a href="#" class="btn btn-clean btn-icon btn-sm">
+                                                    <i class="flaticon2-download-symbol-of-down-arrow-in-a-rectangle"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="kt-timeline-v1__item-actions">
+                                    <a href="#" class="btn btn-sm btn-label-danger btn-bold">View more...</a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                   <!--      <div class="kt-timeline-v1__item kt-timeline-v1__item--right">
+                            <div class="kt-timeline-v1__item-circle">
+                                <div class="kt-bg-danger"></div>
+                            </div>
+                            <span class="kt-timeline-v1__item-time kt-font-brand">04:10<span>PM</span></span>
+                            <div class="kt-timeline-v1__item-content">
+                                <div class="kt-timeline-v1__item-title">
+                                    Recent Notifications
+                                </div>
+                                <div class="kt-timeline-v1__item-body">
+                                    <div class="kt-notification kt-notification--fit">
+                                        <a href="#" class="kt-notification__item">
+                                            <div class="kt-notification__item-icon">
+                                                <i class="flaticon2-line-chart kt-font-success"></i>
+                                            </div>
+                                            <div class="kt-notification__item-details">
+                                                <div class="kt-notification__item-title">
+                                                    New order has been received
+                                                </div>
+                                                <div class="kt-notification__item-time">
+                                                    2 hrs ago
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="kt-notification__item">
+                                            <div class="kt-notification__item-icon">
+                                                <i class="flaticon2-box-1 kt-font-brand"></i>
+                                            </div>
+                                            <div class="kt-notification__item-details">
+                                                <div class="kt-notification__item-title">
+                                                    New customer is registered
+                                                </div>
+                                                <div class="kt-notification__item-time">
+                                                    3 hrs ago
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="kt-notification__item">
+                                            <div class="kt-notification__item-icon">
+                                                <i class="flaticon2-chart2 kt-font-danger"></i>
+                                            </div>
+                                            <div class="kt-notification__item-details">
+                                                <div class="kt-notification__item-title">
+                                                    Application has been approved
+                                                </div>
+                                                <div class="kt-notification__item-time">
+                                                    3 hrs ago
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="kt-timeline-v1__item-actions">
+                                    <a href="#" class="btn btn-sm btn-label-success btn-bold">Check all...</a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+             <!--    <div class="row">
+                    <div class="col kt-align-center">
+                        <button type="button" class="btn btn-label-brand btn-bold">Load More...</button>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-xl-1">
+            </div>
+        </div>
+    </div>
+</div>
+<!--End::Portlet--></div>
 <?php
 include '../audit/sidemenu.php';
 
@@ -407,4 +611,3 @@ include '../audit/sidemenu.php';
     <!-- end::Body -->
 </html>
             
-
