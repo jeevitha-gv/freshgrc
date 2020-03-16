@@ -102,16 +102,16 @@ require_once __DIR__.'/../../php/compliance/complianceManager.php';
 						1
 					</div>
 					<div class="kt-wizard-v4__nav-label">
-						<div class="kt-wizard-v4__nav-label-title">
+						<div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
 							Template Download
 						</div>
-						<div class="kt-wizard-v4__nav-label-desc">
+						<div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;" >
 							Download the Custom Template
 						</div>
 					</div>
 				</div>
 			</a>
-			<a class="kt-wizard-v4__nav-item" data-ktwizard-type="step">
+			<!-- <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step">
 				<div class="kt-wizard-v4__nav-body">
 					<div class="kt-wizard-v4__nav-number">
 						2
@@ -125,17 +125,17 @@ require_once __DIR__.'/../../php/compliance/complianceManager.php';
 						</div>
 					</div>
 				</div>
-			</a>
+			</a> -->
 			<a class="kt-wizard-v4__nav-item col-md-4" data-ktwizard-type="step">
 				<div class="kt-wizard-v4__nav-body">
 					<div class="kt-wizard-v4__nav-number">
-						3
+						2
 					</div>
 					<div class="kt-wizard-v4__nav-label">
-						<div class="kt-wizard-v4__nav-label-title">
+						<div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;" >
 							Upload Template
 						</div>
-						<div class="kt-wizard-v4__nav-label-desc">
+						<div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;" >
 							Upload your new Template
 						</div>
 					</div>
@@ -177,7 +177,7 @@ require_once __DIR__.'/../../php/compliance/complianceManager.php';
 						<!--end: Form Wizard Step 1-->
 
 						<!--begin: Form Wizard Step 2-->
-						<div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+						<!-- <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
 								<div class="container">
 								    <center>
 									    <strong>
@@ -223,7 +223,7 @@ require_once __DIR__.'/../../php/compliance/complianceManager.php';
                   </div>                     
                 </div>
 																
-						</div>
+						</div> -->
 						<!--end: Form Wizard Step 2-->
 
 						<!--begin: Form Wizard Step 3-->
@@ -319,9 +319,9 @@ require_once __DIR__.'/../../php/compliance/complianceManager.php';
 							<button class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
 								Previous
 							</button>
-							<!-- <button class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+							<button class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
 								Submit
-							</button> -->
+							</button>
 							<button class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
 								Next Step
 							</button>

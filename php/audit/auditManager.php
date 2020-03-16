@@ -542,6 +542,13 @@ public function getAllAuditsForPublish($userId, $userRole){
         return $dbOps->fetchData($sql,'i',$paramArray);
     }
 
+    public function getAllAvailCompliance() {
+        $sql = 'SELECT name FROM  comp';
+        $dbOps = new DBOperations();
+        $paramArray = array($companyId);
+        return $dbOps->fetchData($sql, 'i', $paramArray);
+    }
+
     public function getAllCompliance($companyId){
         $sql = 'SELECT * from compliance where (status = "published" or status= "in_draft") and company_id=?';
         $dbOps = new DBOperations();
@@ -550,7 +557,7 @@ public function getAllAuditsForPublish($userId, $userRole){
     }
 
     public function getAllRegulatory($companyId){
-        $sql = 'Select r.id as Id, r.comp_id as Comp_Id, c.name as Compliance_Name, r.status as Status from compliance c, regulatory r where c.id=r.comp_id and (r.status = "in_draft" or c.status= "in_draft") and r.company_id=?';
+        $sql = 'SELECT r.id as Id, r.comp_id as Comp_Id, c.name as Compliance_Name, r.status as Status from compliance c, regulatory r where c.id=r.comp_id and (r.status = "in_draft" or c.status= "in_draft") and r.company_id=?';
         $dbOps = new DBOperations();
         $paramArray=array($companyId);
         return $dbOps->fetchData($sql,'i',$paramArray);
