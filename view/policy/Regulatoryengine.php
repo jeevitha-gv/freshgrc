@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once __DIR__.'/../header.php';
 // require_once __DIR__.'/../../php/audit/auditClauseManager.php';
 // require_once __DIR__.'/../../php/compliance/complianceManager.php';
@@ -27,42 +27,53 @@ $user_role=$_SESSION['user_role'];
         <!--begin::Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        <!--end::Fonts -->
         <!--begin:: Global Mandatory Vendors -->
-<link href="assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!--begin::Page Custom Styles(used by this page) -->
+                             <link href="./assets/css/demo3/pages/wizard/wizard-4.css" rel="stylesheet" type="text/css" />
+                        <!--end::Page Custom Styles -->
+       
+        <!--begin:: Global Mandatory Vendors -->
+<link href="./assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
 <!--end:: Global Mandatory Vendors -->
 
 <!--begin:: Global Optional Vendors -->
-<link href="assets/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/quill/dist/quill.snow.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/dual-listbox/dist/dual-listbox.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/morris.js/morris.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
-<link href="assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/toggleButton/bootstrap-toggle.min.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="assets/jquery-ui-1.11.4/jquery-ui.css"/>
-<link href="assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/quill/dist/quill.snow.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/dual-listbox/dist/dual-listbox.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/morris.js/morris.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+<link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+<!--end:: Global Optional Vendors -->
+
+<!--begin::Global Theme Styles(used by all pages) -->
+                   
+                    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
+                <!--end::Global Theme Styles -->
+
+        <!--begin::Layout Skins(used by all pages) -->
+                <!--end::Layout Skins -->
+
  <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
 </head>
 <?php
@@ -83,54 +94,92 @@ include "../siteHeader.php";
 
 <!-- begin:: Content -->
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+    <div class="kt-wizard-v4" id="kt_wizard_v4" data-ktwizard-state="step-first">
+  <!--begin: Form Wizard Nav -->
+  <div class="kt-wizard-v4__nav">
+    <div class="kt-wizard-v4__nav-items">
+      <!--doc: Replace A tag with SPAN tag to disable the step link click -->
+      <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
+        <div class="kt-wizard-v4__nav-body">
+          <div class="kt-wizard-v4__nav-number">
+            1
+          </div>
+          <div class="kt-wizard-v4__nav-label">
+            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
+              Activated Standard
+            </div>
+            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
+              Activate
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step">
+        <div class="kt-wizard-v4__nav-body">
+          <div class="kt-wizard-v4__nav-number">
+            2
+          </div>
+          <div class="kt-wizard-v4__nav-label">
+            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
+              Available Standard
+            </div>
+            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
+              Available
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!--end: Form Wizard Nav -->
+
+  <div class="kt-portlet">
+    <div class="kt-portlet__body kt-portlet__body--fit">
+      <div class="kt-grid">
+        <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
+          <!--begin: Form Wizard Form-->
+          <form class="kt-form" id="kt_form">
+            <!--begin: Form Wizard Step 1-->
+            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                         <?php include '../compliance/moduledropdown.php';?>
+                    </div>
+            <!--end: Form Wizard Step 1-->
 
 
-<div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;"> 
-<div class="kt-portlet__head-label">
-<span class="kt-portlet__head-icon">
-<i class="kt-font-brand flaticon2-line-chart"></i>
-</span>
-<h3 class="kt-portlet__head-title" style="color:white;">
-Compliance
-</h3>
-</div>
-
-</div>
-
-<div class="kt-portlet__body">
-<div class="kt-portlet__body" style="overflow-x:scroll;overflow-y:scroll;">
-
-                                  
-                             <!-- <button class="btn btn-danger" style="">+</button> -->
-                          <div class="form-group">
+            <!--begin: Form Wizard Step 4-->
+            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                 <div class="form-group">
                             <input type="hidden" class="form-control" id="action" value="in_draft">
                             <input type="hidden" class="form-control" id="company_id" value="<?php echo $companyId ?>">
                           </div>
-                      <div class="form-group text-center">
-                      
+                     
                         <?php include '../compliance/addstandarddropdown.php';?>
-                        
 
-                      </div>
+            </div>
+            <!--end: Form Wizard Step 4-->
 
-
-                        <!-- <label for="complianceCsv" aria-hidden="true"> -->
-                           <!--  <input type="file" style="display:none" onchange= "importCsv()" id="complianceCsv"/> -->
-                        <!-- </label> -->
-<!--                         <button type="submit" class="btn btn-success" onclick="" style="margin-left: 142px; margin-top: -65px;">UCF</button> -->
-       
-                  
-                  <div class="col-md-12" >
-                      <div class="form-group">
-                        <span class="select2-selection__arrow"></span>
-                        <?php include '../compliance/moduledropdown.php';?>
-                      </div>
-                   </div>
+            <!--begin: Form Actions -->
+            <div class="kt-form__actions">
+              <button class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                Previous
+              </button>
+              <button class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+                Submit
+              </button>
+              <button class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                Next Step
+              </button>
+            </div>
+            <!--end: Form Actions -->
+          </form>
+          <!--end: Form Wizard Form-->
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
+  </div>
 </div>
 </div>
 </div>
@@ -154,7 +203,9 @@ include "../audit/sidemenu.php";
 <script src="./assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+<!--end:: Global Mandatory Vendors -->
 
+<!--begin:: Global Optional Vendors -->
 <script src="./assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
@@ -210,15 +261,16 @@ include "../audit/sidemenu.php";
 <script src="./assets/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
+<!--end:: Global Optional Vendors -->
 
-          <script src="assets/toggleButton/bootstrap-toggle.min.js"></script>
-      <script type="text/javascript" src="assets/jquery-ui-1.11.4/jquery-ui.js"></script> 
-      <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
-   <script src="./assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
-                
-<script src="./assets/js/demo3/pages/crud/datatables/extensions/buttons.js" type="text/javascript"></script>
-         <script src="./assets/js/demo3/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>  
-<script src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>         
+<!--begin::Global Theme Bundle(used by all pages) -->
+               
+             <script src="./assets/js/demo3/scripts.bundle.js" type="text/javascript"></script>
+        <!--end::Global Theme Bundle -->
+
+       
+                    <!--begin::Page Scripts(used by this page) -->
+                            <script src="./assets/js/demo3/pages/wizard/wizard-4.js" type="text/javascript"></script>
     <!-- end::Body -->
 </body>
 </html>
