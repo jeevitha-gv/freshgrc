@@ -143,7 +143,7 @@ a
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
  
 
-           <a class="kt-header__topbar-icon" title="Business Unit" href="view/common/overview.php"><i class="flaticon-calendar-1"></i>
+           <a  href="view/common/overview.php" class="kt-header__topbar-icon" title="Business Unit"><i class="flaticon2-group" ></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
          </div>
 <?php } ?>
@@ -179,7 +179,7 @@ a
 
           <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
            <a href="view/common/paymentoverview.php" class="kt-header__topbar-icon" title="Payment">
-           <i class="flaticon-presentation-1"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+           <i class="flaticon2-shopping-cart-1"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
             </div>
 
 <!-- Auditor Notification -->
