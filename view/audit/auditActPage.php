@@ -235,7 +235,7 @@ function tabledata($clause){
 <base href="/freshgrc/"><!--end::Base Path -->
         <meta charset="utf-8"/>
 
-        <title>Metronic | Buttons Examples</title>
+        <title>freshgrc</title>
         <meta name="description" content="Buttons examples">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -285,7 +285,7 @@ function tabledata($clause){
                     
    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
            
-        <link rel="shortcut icon" href="./assets/media/logos/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
     <?php
     include '../siteHeader.php';
@@ -395,7 +395,7 @@ AUDIT PLAN</h3>
                 </i>Draft </button> </div>
                 <!-- <div class="co1-md-2"></div> -->
 
-                <div class="col-md-7" style="margin-top: 10px;"> <button  class="btn btn-success" data-spinner-color="#333" style="float:right;margin-bottom: 19px;" onclick="saveAndChangeAuditCklStatus(allClauses,<?php echo $auditId ?>, '<?php echo $workingStatus ?>', false, <?php echo $GLOBALS['capa'] ?>)"  <?php if($workingStatus!="capa pending") echo "style='display:none'"  ?>>Respond</button> </div>
+                <div class="col-md-7" style="margin-top: 10px;"> <button  class="btn btn-success" data-spinner-color="#333" style="float:right;margin-bottom: 19px;" onclick="saveAndChangeAuditCklStatus(allClauses,<?php echo $auditId ?>, 'performed', false, <?php echo $GLOBALS['capa'] ?>)"  <?php if($workingStatus!="capa pending") echo "style='display:none'"  ?>>Respond</button> </div>
               </div>
             <?php }?>
 </div>
