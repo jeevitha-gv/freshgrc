@@ -157,10 +157,10 @@ class UserManager {
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
     }
-     public function editcompany($userId){
-        $sql = 'SELECT * FROM user_profile where user_id=?';
+     public function editcompany($userData){
+        $sql = 'SELECT * FROM user_profile where id=?';
         $paramArray=array();
-        $paramArray[]=$userId;
+        $paramArray[]=$userData;
         $dbOps = new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
     }

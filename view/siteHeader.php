@@ -137,16 +137,16 @@ a
 </div>
 <!-- end: Header Menu --> <!-- begin:: Header Topbar -->
 <div class="kt-header__topbar">
- <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
-
-
+<?php  
+ if($_SESSION['user_role']=='risk_owner'|| $_SESSION['user_role']=='risk_mitigator' || $_SESSION['user_role']=='risk_reviewer' || $_SESSION['user_role']=='auditor' || $_SESSION['user_role']=='auditee' || $_SESSION['user_role']=='compliance_author' || $_SESSION['user_role']=='compliance_reviewer' || $_SESSION['user_role']=='companyadmin' ||$_SESSION['user_role']=='policy_owner' || $_SESSION['user_role']=='policy_reviewer' || $_SESSION['user_role']=='policy_approver' || $_SESSION['user_role']=='asset_owner' || $_SESSION['user_role']=='asset_custodian' || $_SESSION['user_role']=='asset_reviewer' || $_SESSION['user_role']=='disaster_owner' || $_SESSION['user_role']=='disaster_tester' || $_SESSION['user_role']=='disaster_trainer' || $_SESSION['user_role']=='bcpm_planner' || $_SESSION['user_role']=='bcpm_maintainer' || $_SESSION['user_role']=='bcpm_tester' || $_SESSION['user_role']=='bcpm_implementer' || $_SESSION['user_role']=='incident_analyst' || $_SESSION['user_role']=='incident_manager' || $_SESSION['user_role']=='incident_resolver' || $_SESSION['user_role']=='incident_reviewer'||$_SESSION['user_role']=='whistle_investigator'||$_SESSION['user_role']=='whistle_reviewer') { ?>
+    
    <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
  
 
            <a  href="view/common/overview.php" class="kt-header__topbar-icon" title="Business Unit"><i class="flaticon2-group" ></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
          </div>
-<?php } ?>
+
 
         <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
          <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="Add User">
@@ -159,9 +159,38 @@ a
            <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
            <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
          </div>
- <?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role']== 'demo') {?>
+   <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
+           <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
+           <i class="flaticon-time"></i>
+           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+         </div>
+
+
+<?php } ?>
+<?php 
+if($_SESSION['user_role']=='super_admin')
+{
+  ?>
+   <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
+ 
+
+           <a  href="view/common/overview.php" class="kt-header__topbar-icon" title="Business Unit"><i class="flaticon2-group" ></i>
+           <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+         </div>
+
+
+        <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
+         <a href="view/common/addadminuser.php" class="kt-header__topbar-icon" title="Add User">
+           <i class="flaticon2-user"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+         </div>
+
 
            <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
+            <a href="view/common/project.php" class="kt-header__topbar-icon" title="Project & Task">
+           <i class="kt-menu__link-icon flaticon2-analytics-2"></i>
+           <span class="kt-hidden kt-hiddenbadge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
+         </div>
+   <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
            <a href="view/common/timeline.php" class="kt-header__topbar-icon" title="Timeline">
            <i class="flaticon-time"></i>
            <span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
@@ -177,11 +206,11 @@ a
  </div>
 <?php } ?>
 
-          <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
+         <!--  <div class="kt-header__topbar-item dropdown kt-header__topbar-item--langs">
            <a href="view/common/paymentoverview.php" class="kt-header__topbar-icon" title="Payment">
            <i class="flaticon2-shopping-cart-1"></i><span class="kt-hidden kt-badge kt-badge--dot kt-badge--notify kt-badge--sm"></span></a>
             </div>
-
+ -->
 <!-- Auditor Notification -->
  <?php if($_SESSION['user_role']=='auditor') { ?>
 <div class="kt-header__topbar-item dropdown">

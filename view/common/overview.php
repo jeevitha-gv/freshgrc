@@ -40,12 +40,28 @@ $manager=new CompanyManager();
 $id=$manager->getCompanyIdForUser($_SESSION['user_id']);
 switch ($_SESSION['user_role']) {
   case 'super_admin':
-    $feedMessage="";
+    $feedMessage="New Compliance Library is created by";
     $isAuditor=0;
     break;
   case 'auditor':
     $feedMessage="New Audit is assigned for";
     $isAuditor=1;
+    break;
+    case 'auditee':
+    $feedMessage="New Audit is assigned for ";
+    $isAuditor=2;
+    break;
+    case 'risk_owner':
+    $feedMessage="New Risk is assigned for ";
+    $isAuditor=3;
+    break;
+     case 'risk_mitigator':
+    $feedMessage="New Risk is assigned for ";
+    $isAuditor=4;
+    break;
+         case 'risk_reviewer':
+    $feedMessage="New Risk is assigned for ";
+    $isAuditor=5;
     break;
   default:
     # code...
@@ -236,7 +252,7 @@ $companyId=$id[0]['id'];
 
                                 
 
-                                      <div style="margin-right:180px; font-size:15px; font-style:normal; color: blue;">
+                                      <div style="margin-right:180px; font-size:15px; font-style:normal; color: black;">
                                       <?php if($userRole == 'compliance_author'){ ?>
                                           <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?>  <?php echo $feed['name']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
                                       <?php } else if($userRole == 'compliance_reviewer') { ?>
@@ -273,14 +289,16 @@ $companyId=$id[0]['id'];
                                               
                                               <a  <?php if($feed['status']=="create") {?> href="view/audit/auditDoPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?>  <?php if($feed['status']=="prepared") {?> href="view/audit/auditeeDoPage?auditId=<?php echo $feed['id'] ?>" <?php }?> <?php if($feed['status']=="performed") {?> href="view/audit/auditCheckPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?> <?php if($feed['status']=="returned") {?> href="view/audit/auditActPage.php?auditId=<?php echo $feed['id'] ?>" <?php }?>> Take action</a>  <?php } ?>
                                             </span>
+
                                         </div>
+
                                       </div>
                                       <div class="" style="margin-top: 01px;">
                                             <?php if($userRole == 'policy_owner' || $userRole == 'policy_reviewer' || $userRole == 'policy_approver' || $user_role == 'compliance_author' || $user_role == 'compliance_reviewer'){?>
                                               <div class="date"><?php echo $feed['date']?></div>
                                             <?php } else {  ?>
                                               <span class="kt-widget4__ext">
-                                                <span class="kt-widget4__number" style="font-size:15px; color:blue; margin-left: -100px; ">Just now</span>
+                                                <span class="kt-widget4__number" style="font-size:10px; color:blue; margin-left: -100px; ">Just now</span>
                                               </span>
                                             <?php } ?>
                                         </div>
@@ -309,7 +327,9 @@ $companyId=$id[0]['id'];
  </div>
 </div>
 </div>
-
+<?php if($_SESSION['user_role']=="super_admin")
+{
+ ?>  
 <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
@@ -380,7 +400,7 @@ Business Unit
 </table>
 <!--end: Datatable -->
 </div>
-
+<?php } ?>
 
 
 

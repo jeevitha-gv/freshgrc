@@ -101,12 +101,9 @@ $companyId=$id[0]['id'];
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
  <script src="js/superAdmin/userManagement.js"></script>
-
-
- <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
-
-        <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
-            <script type="text/javascript">
+<link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
+<script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
@@ -254,7 +251,7 @@ a
                     <form class="kt-form" id="kt_user_add_form">
                         <!--begin: Form Wizard Step 1-->
                         <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                          <a href="view/common/bulkinvite.php"><button style="font-size:20px;margin-left: 80%;" class="btn btn-danger"><i class="fa fa-industry"> BulkInvite</i></button></a>
+                <a href="view/common/bulkinvite.php" class="btn btn-danger" style="margin-left: 80%;">Bulk Invite</a>
                             <div class="kt-heading kt-heading--md">User's Profile Details:</div>
                             <div class="kt-section kt-section--first">
                                 <div class="kt-wizard-v4__form">
@@ -350,7 +347,7 @@ a
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Language</label>
                                                     <div class="col-lg-10 col-xl-9">
-                                                       <div id="google_translate_element" style="margin-top:-50px;margin-left:170px;"></div>
+                                                       <div id="google_translate_element" style="margin-top:-50px;margin-left:10px;"></div>
                                                     </div>
                                                 </div>
 <!-- 
@@ -538,6 +535,9 @@ a
 </div>
 </div>
 </div>
+<?php if($_SESSION['user_role']=="super_admin")
+{
+ ?>  
 	<div class="kt-grid kt-grid--hor kt-grid--root" style="margin-top: -100px;">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
@@ -617,6 +617,7 @@ USER MANAGEMENT
 </div>
 </div>
 </div>
+<?php } ?>
 <?php
 include '../audit/sidemenu.php';
 

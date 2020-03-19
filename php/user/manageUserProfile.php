@@ -6,6 +6,7 @@ function manageUser(){
     if ( $_POST['action'] == 'update'){
         $userData = getUserDataFromRequest();        
         $manager->updateUserProfileData($userData);
+         $manager->editcompany($userData);
         $manager->updateUserProfilePicture($userData);            
     }
     else  if ( $_POST['action'] == 'create'){        

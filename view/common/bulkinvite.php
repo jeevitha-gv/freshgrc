@@ -158,7 +158,7 @@ LIBRARY
                             <div class="form-group">
                               <div class="fileinput fileinput-new" data-provides="fileinput">
                                 <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div>
+                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/user.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;" /> </div>
                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
                                 <div> 
                                 <label for="complianceCsv" aria-hidden="true">
