@@ -206,10 +206,11 @@ $companyId=$id[0]['id'];
             <div class="col-xl-12">
                 <!--begin:: Widgets/Trends-->
 <div class="kt-portlet kt-portlet--head--noborder kt-portlet--height-fluid">
-  <div class="kt-portlet__head kt-portlet__head--noborder">
+  <div class="kt-portlet__head kt-portlet__head--noborder" style="background-color: #2A5AA8;">
     <div class="kt-portlet__head-label">
-       <h3 class="kt-portlet__head-title">
-              Feeds
+       <span class="flaticon2-grids" style="color: white; font-size:20px;"></span>
+       <h3 class="kt-portlet__head-title" style="color: white; font-size: 20px; margin-left:20px;">
+          Feeds
          </h3>
     </div>
     
@@ -227,12 +228,15 @@ $companyId=$id[0]['id'];
                                   <div class="col1">                                
                                     <div class="cont">
                                       <div class="cont-col1">
-                                        <div class="kt-widget4__item">
-                                        <!-- <div class="label label-sm label-success"> -->
-                                          <i class="btn btn-icon btn-circle btn-label-facebook" style=""><a class="la la-bell"></a></i>
-                                        <!-- </div> -->
-                                      </div>
-                                      <div class="cont-col2">
+                                        <div class="kt-widget4__item kt-margin-b-40">
+                                        <div class="label label-sm label-success">
+                                          <i class="btn btn-icon btn-circle btn-label-facebook" style="background-color:#a5e5e3;"><a class="flaticon2-menu-2"></a></i>
+                                        </div>
+                                        
+
+                                
+
+                                      <div style="margin-right:180px; font-size:15px; font-style:normal; color: blue;">
                                       <?php if($userRole == 'compliance_author'){ ?>
                                           <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?>  <?php echo $feed['name']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
                                       <?php } else if($userRole == 'compliance_reviewer') { ?>
@@ -247,17 +251,23 @@ $companyId=$id[0]['id'];
                                       else if($userRole == 'incident_reviewer') { ?>
                                           <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['Title'];?> is <?php echo $feed['status'];?> on <?php echo $feed['date_occured'];?> by                                         
                                       <?php }
-                                       else {?>
-                                        <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> <?php echo $feed['last_name'] ?><?php echo $feed['name'] ?> 
-                                      <?php } ?>
+                                             ?>
 
                                       <?php if($userRole == 'policy_owner'){ ?>
                                           <div class="desc" id="feed<?php echo $auditId ?>">New <?php echo $feed['procedure']?> - <?php echo $feed['title']?> is created by <?php echo $feed['last_name'] ?> <?php echo $feed['name'] ?>
                                       <?php } else if($userRole == 'policy_reviewer' || $userRole == 'policy_approver') { ?>
                                           <div class="desc" id="feed<?php echo $auditId; ?>"> <?php echo $feed['title'];?> is <?php echo $feed['status'];?>                                          
-                                      <?php } else {?>
-                                        <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> <?php echo $feed['last_name'] ?>     <?php echo $feed['title'] ?> 
-                                      <?php } ?>
+                                      <?php } else {?> 
+                                        <div class="desc" id="feed<?php echo $auditId ?>"><?php echo $feedMessage." " ?> 
+                                        
+                                        <?php echo  $feed['last_name'] ?> 
+                                       
+
+
+                                           <?php echo $feed['title'] ?> 
+                                      <?php }
+
+                                            ?>
                                           <?php if($isAuditor==1){ ?>
                                             <span class="label label-sm label-info">
                                               
@@ -265,25 +275,28 @@ $companyId=$id[0]['id'];
                                             </span>
                                         </div>
                                       </div>
+                                      <div class="" style="margin-top: 01px;">
+                                            <?php if($userRole == 'policy_owner' || $userRole == 'policy_reviewer' || $userRole == 'policy_approver' || $user_role == 'compliance_author' || $user_role == 'compliance_reviewer'){?>
+                                              <div class="date"><?php echo $feed['date']?></div>
+                                            <?php } else {  ?>
+                                              <span class="kt-widget4__ext">
+                                                <span class="kt-widget4__number" style="font-size:15px; color:blue; margin-left: -100px; ">Just now</span>
+                                              </span>
+                                            <?php } ?>
+                                        </div>
                                     </div>                                  
                                   </div>
-                                  <div class="col2">
-                                      <?php if($userRole == 'policy_owner' || $userRole == 'policy_reviewer' || $userRole == 'policy_approver' || $user_role == 'compliance_author' || $user_role == 'compliance_reviewer'){?>
-                                        <div class="date"><?php echo $feed['date']?></div>
-                                      <?php } else {  ?>
-                                        <span class="kt-widget4__ext">
-                                          <span class="kt-widget4__number kt-font-danger">Just now</span>
-                                        </span>
-                                      <?php } ?>
-                                  </div>
+                                        </div>
                                 </div>
                                 </li>
                               <?php 
                             } ?>
                           </div>
+
                         </div>                        
                       </div>
                     </div>
+
       </div>      
     </div>         
   </div>
