@@ -489,11 +489,17 @@ function saveAndChangeAuditStatus(allClauses,auditId, statusForSave, isDraft,cap
 
 }
 function saveAndChangeAuditCklStatus(allClauses,auditId, statusForSave, isDraft,capa){
+    debugger
     var cap=capa; 
     saveAllChecklists(allClauses);
     saveAuditStatus(auditId, statusForSave, isDraft,cap);
-    debugger
        
+       Swal.fire({
+        title: 'Checklist Assigned to Auditor!',
+        confirmButtonText: 'ok',
+        confirmButtonColor: '#3085d6'
+       });
+       window.location="view/audit/auditorAdmin.php";
 
   
 }
