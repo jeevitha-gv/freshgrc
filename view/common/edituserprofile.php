@@ -89,11 +89,7 @@ $allUsers = $manager->getAllUsersForTicket();
         <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
     </head>
     <body>
-      <?php 
-           
-      $userRole = $_SESSION['user_role'];
-      $userid = $_SESSION['user_id'];
-    ?>
+    
     <?php if($_SESSION['user_role'] == 'super_admin') {?>      
     <?php }?>
   </body>

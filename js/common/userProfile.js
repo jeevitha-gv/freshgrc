@@ -286,6 +286,7 @@ debugger
         data: userDetails
     }).done(function (data) {
       location.reload();
+
     
   //window.location.href = "/freshgrc/view/common/profiletable.php";
         // details = document.querySelectorAll("#savedDataModal p");
@@ -298,6 +299,7 @@ debugger
         // details[6].innerHTML = userDetails['twitter'];
         // $('#savedDataModal').modal('show');
     });
+  window.location = "/freshgrc/view/common/addadminuser.php";
 
 }
 

@@ -25,7 +25,6 @@ require_once '../../php/common/dashboard.php';
    
 
 ?>
-
 <!DOCTYPE html>
 
 <html lang="en" >
@@ -100,40 +99,14 @@ require_once '../../php/common/dashboard.php';
     <?php }?>
   </body>
   <?php
-    include '../siteHeader.php';
-    ?>
+  include '../siteHeader.php';
+  ?>
   <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading" style="background-color: #e0d9d9;">
-
-       
-    
-<!-- end:: Header Mobile -->
-<div class="kt-grid kt-grid--hor kt-grid--root">
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-<!-- begin:: Aside -->
-<button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
-
-
-<!-- begin:: Header -->
-<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " >
-<!-- begin: Header Menu -->
-
-<div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
-<div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-tab "  >
-
-</div>
-</div>
-<!-- end: Header Menu -->   <!-- begin:: Header Topbar -->
-
-<!-- end:: Header Topbar -->
-</div>
-</div>
-</div>
-  
 
 
   <div class="kt-grid kt-grid--hor kt-grid--root">
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+      <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -10%;">
         
         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
          <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
@@ -146,7 +119,7 @@ require_once '../../php/common/dashboard.php';
         <div class="kt-wizard-v4__nav-items nav">
             <!--doc: Replace A tag with SPAN tag to disable the step link click -->
             <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step" data-ktwizard-state="current">
-                <div class="kt-wizard-v4__nav-body">
+             <!--    <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         1
                     </div>
@@ -158,10 +131,10 @@ require_once '../../php/common/dashboard.php';
                             User's Personal Information
                         </div>
                     </div>
-                </div>
+                </div> -->
             </a>
             <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
-                <div class="kt-wizard-v4__nav-body">
+            <!--     <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         2
                     </div>
@@ -173,10 +146,10 @@ require_once '../../php/common/dashboard.php';
                             User's Account & Settings
                         </div>
                     </div>
-                </div>
+                </div> -->
             </a>
-            <!-- <a class="kt-wizard-v4__nav-item nav-item"  style="display: none;"> -->
-                <!-- <div class="kt-wizard-v4__nav-body">
+            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
+               <!--  <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         3
                     </div>
@@ -189,21 +162,14 @@ require_once '../../php/common/dashboard.php';
                         </div>
                     </div>
                 </div> -->
-            <!-- </a> -->
+            </a>
             <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
-                <div class="kt-wizard-v4__nav-body">
+               <!--  <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
-                        3
+                        4
                     </div>
-                     <div class="kt-wizard-v4__nav-label">
-                        <div class="kt-wizard-v4__nav-label-title">
-                            Submission
-                        </div>
-                        <div class="kt-wizard-v4__nav-label-desc">
-                            Review and Submit
-                        </div>
-                    </div>
-                </div>
+                    
+                </div> -->
             </a>
              
         </div>
@@ -212,7 +178,7 @@ require_once '../../php/common/dashboard.php';
 
     <div class="kt-portlet">
         
-        <div class="kt-portlet__body kt-portlet__body--fit">
+        <div class="kt-portlet__body kt-portlet__body--fit" style="overflow-x: scroll;">
             <div class="kt-grid">
                 <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
                    
@@ -260,46 +226,31 @@ require_once '../../php/common/dashboard.php';
                                                     </div>
                                                   
                                                 </div>
-                                                <?php foreach ($allcompanydata as $data) { ?>
-                                                       <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Location</label>
+                                                <?php foreach ($allcompanydata as $data) {
+                                                 ?>
+                                                     <div class="form-group row">
+                                                    <label class="col-xl-3 col-lg-3 col-form-label">Category:</label>
                                                     <div class="col-lg-9 col-xl-9">
-                                                     <select class="form-control" id="location" style="border: 1px solid #b2abab;">
-                                                          <option>San Francisco</option>
-                                                          <option>Washington, D.C.</option>
-                                                          <option>Seattle</option>
-                                                          <option>Boston</option>
-                                                          <option>New York</option>
-                                                        </select> 
-                    
+                                                       <input class="form-control" type="text" id="location" style="border: 1px solid #b2abab;" value="<?php echo $data['category'];?>">
                                                     </div>
                                                 </div>
-                                                  
                                                     <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Business Unit</label>
+                                                    <label class="col-xl-3 col-lg-3 col-form-label">Address:</label>
                                                      
                                                     <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="category" style="border: 1px solid #b2abab;" value="<?php echo $data['category'];?>">
+                                                        <input class="form-control" type="text" id="address" style="border: 1px solid #b2abab;" value="<?php echo $data['category'];?>">
                                                     </div>
                                                 </div>
                                                      
                                                 
                         
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Address</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="address" style="border: 1px solid #b2abab;" value="<?php echo $data['address'];?>">
-                                                    </div>
-                                                </div>
-                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">City</label>
                                                     <div class="col-lg-9 col-xl-9">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend"></div>
-                                                            <input type="text" class="form-control" id="city" style="border: 1px solid #b2abab;" value="<?php echo $data['city'];?>">
-                                                        </div>
+                                                        <input class="form-control" type="text" id="city" style="border: 1px solid #b2abab;" value="<?php echo $data['city'];?>">
                                                     </div>
                                                 </div>
+                                            
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">ZipCode</label>
                                                     <div class="col-lg-9 col-xl-9">
@@ -310,38 +261,54 @@ require_once '../../php/common/dashboard.php';
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            
-                                                            <input type="text" class="form-control" id="phone" value="9876543287" placeholder="Phone" aria-describedby="basic-addon1" style="border: 1px solid #b2abab;" value="<?php echo $data['phone'];?>">
+                                                            <div class="input-group-prepend" style="border: 1px solid #b2abab;"><span class="input-group-text"><i class="la la-phone"></i></span></div>
+                                                            <input type="text" class="form-control" value="+45678967456" placeholder="Phone" aria-describedby="basic-addon1" style="border: 1px solid #b2abab;">
                                                         </div>
                                                        
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
+
+                                               <?php 
+                                           }
+                                           ?>
+
+                                 <!--                <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Team</label>
                                                     <div class="col-lg-9 col-xl-9">
-                                                         
-                                                       <input type="text" class="form-control" id="team" style="border: 1px solid #b2abab;" value="<?php echo $data['team'];?>">
+                                                         <select id="team" style="border: 1px solid #b2abab;"  class="form-control select2" multiple="">
+                           <option>--Select User--</option>   
+                          <?php foreach($allUsers as $users){ ?>
+
+                          <option value="<?php echo $users['last_name'] ?>"><?php echo htmlspecialchars($users['last_name']) ?></option>
+                          <?php } ?>
+                        </select>
+                                                       
                                                     </div>
-                                                </div>
-<!--                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Department</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                   
-                                             <input type="text" class="form-control" id="department" style="border: 1px solid #b2abab;" value="<?php echo $data['department'];?>">
-                                                    </div>
-                                                </div>
-                                                 -->
+                                                </div> -->
+                                               
+                                                     <div class="kt-form__actions" style="float: right;">
+                            <!-- <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                                Previous
+                            </div> -->
+                            <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action" id="managerUserButton" onclick="saveUserProfileChanges()">
+                                Submit
+                            </div>
+                           <!--  <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                                Next Step
+                            </div> -->
+                        </div>
                                                 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                         <!--end: Form Wizard Step 1-->
 
                         <!--begin: Form Wizard Step 2-->
-                        <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">                           
+                       <!--  <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">                           
                             <div class="kt-section kt-section--first">
                                 <div class="kt-wizard-v4__form">
                                     <div class="row">
@@ -414,54 +381,21 @@ require_once '../../php/common/dashboard.php';
                                                 </div>
 
                                                 <div class="kt-separator kt-separator--border-dashed kt-separator--portlet-fit kt-separator--space-lg"></div>
-                                                <div style="display: none;">
-                                                <div class="form-group row">                                                  
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <h3 class="kt-section__title kt-section__title-md">User's Account Settings</h3>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Login verification</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <button type="button" class="btn btn-label-brand btn-bold btn-sm kt-margin-t-5 kt-margin-b-5">Setup login verification</button>
-                                                        <span class="form-text text-muted">
-                              After you log in, you will be asked for additional information to confirm your identity and protect your account from being compromised. 
-                              <a href="#" class="kt-link">Learn more</a>.
-                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Password reset verification</label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <div class="kt-checkbox-single">
-                                                            <label class="kt-checkbox">
-                                                                <input type="checkbox"> Require personal information to reset your password.
-                                                                <span></span>
-                                                            </label>
-                                                        </div>
-                                                        <span class="form-text text-muted">
-                              For extra security, this requires you to confirm your email or phone number when you reset your password.
-                              <a href="#" class="kt-link">Learn more</a>.
-                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row kt-margin-t-10 kt-margin-b-10">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label"></label>
-                                                    <div class="col-lg-9 col-xl-6">
-                                                        <button type="button" class="btn btn-label-danger btn-bold btn-sm kt-margin-t-5 kt-margin-b-5">Deactivate your account ?</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+                                                
+                                                
+                                              
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--end: Form Wizard Step 2-->
 
                         <!--begin: Form Wizard Step 3-->
-                        <div class="kt-wizard-v4__content" style="display: none;">
+                        <!-- <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
               <div class="kt-heading kt-heading--md">Details</div>
               <div class="kt-form__section kt-form__section--first">
                 <div class="kt-wizard-v2__form">
@@ -514,20 +448,18 @@ require_once '../../php/common/dashboard.php';
                                                     </div>
                                                 </div>
                 <div class="form-group" style="margin-left:680px;">
-                                   <!--  <a href="./demo2/custom/pages/wizard/add.html" class="btn btn-info btn-lg" title="Add">
+                                    <a href="./demo2/custom/pages/wizard/add.html" class="btn btn-info btn-lg" title="Add">
                                         <span class="glyphicon glyphicon-plus"></span>
                                     </a> -->
-                                </div>
+                <!--                 </div>
                 
               </div>
               </div>
-            </div>
-          <?php } ?>
-          
+            </div> --> 
                         <!--end: Form Wizard Step 3-->
 
                         <!--begin: Form Wizard Step 4-->
-                           <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+                       <!--  <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
                             <div class="kt-heading kt-heading--md">Review your Details and Submit</div>
                             <div class="kt-form__section kt-form__section--first">
                                 <div class="kt-wizard-v4__review">
@@ -536,36 +468,38 @@ require_once '../../php/common/dashboard.php';
                                             Your Account Details
                                         </div>
                                         <div class="kt-wizard-v4__review-content">
-                                          <label><b>Location:</b></label><p id="result1"></p>
-                                           <label><b>Businessunit:</b></label><p id="result2"></p>
-                                           <label><b>Address:</b></label><p id="result3"></p>
-                                           <label><b>City:</b></label><p id="result4"></p>
-                                           <label><b>ZipCode:</b></label><p id="result5"></p>
-                                           <label><b>Phone:</b></label><p id="result6"></p>
-                                           <label><b>Team</b></label><p id="result7"></p>
-
-                                        
+                                            John Wick
+                                            <br/> Phone: +61412345678
+                                            <br/> Email: johnwick@reeves.com
                                         </div>
                                     </div>
-                             
-                                 
+                                    <div class="kt-wizard-v4__review-item">
+                                        <div class="kt-wizard-v4__review-title">
+                                            Your Address Details
+                                        </div>
+                                        <div class="kt-wizard-v4__review-content">
+                                            Address Line 1
+                                            <br/> Address Line 2
+                                            <br/> Melbourne 3000, VIC, Australia
+                                        </div>
+                                    </div>
+                                    <div class="kt-wizard-v4__review-item">
+                                        <div class="kt-wizard-v4__review-title">
+                                            Payment Details
+                                        </div>
+                                        <div class="kt-wizard-v4__review-content">
+                                            Card Number: xxxx xxxx xxxx 1111
+                                            <br/> Card Name: John Wick
+                                            <br/> Card Expiry: 01/21
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--end: Form Wizard Step 4-->
 
                         <!--begin: Form Actions -->
-                        <div class="kt-form__actions">
-                            <div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
-                                Previous
-                            </div>
-                            <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold " data-ktwizard-type="action-submit" id="managerUserButton" onclick="saveUserProfileChanges()">
-                                Submit
-                            </div>
-                            <div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next" onclick="showvalue()">
-                                Next Step
-                            </div>
-                        </div>
+                     
                         <!--end: Form Actions -->
                     </form>
                     <!--end: Form Wizard Form-->
@@ -584,7 +518,7 @@ require_once '../../php/common/dashboard.php';
   
 <?php
 include '../audit/sidemenu.php';
-include '../siteHeader.php';
+
  ?>
         <!-- begin::Global Config(global config for global JS sciprts) -->
         <script>
@@ -670,23 +604,3 @@ include '../siteHeader.php';
             </body>
     <!-- end::Body -->
 </html>
-<script type="text/javascript">
-    function showvalue()
-    {
-        var location=document.getElementById('location').value;
-        document.getElementById('result1').innerHTML=location;
-        var category=document.getElementById('category').value;
-        document.getElementById('result2').innerHTML=category;
-           var address=document.getElementById('address').value;
-        document.getElementById('result3').innerHTML=address;
-         var city=document.getElementById('city').value;
-        document.getElementById('result4').innerHTML=city;
-         var code=document.getElementById('code').value;
-        document.getElementById('result5').innerHTML=code;
-         var phone=document.getElementById('phone').value;
-        document.getElementById('result6').innerHTML=phone;
-        var team=document.getElementById('team').value;
-        document.getElementById('result7').innerHTML=team;
-        
-    } 
- </script>

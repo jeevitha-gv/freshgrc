@@ -18,6 +18,26 @@ class FeedManager {
                 $feeds=$this->getPendingAudits($userId);
                 return $feeds;
                 break;
+                case 'auditee':
+                # code...
+                $feeds=$this->getPendingAudits($userId);
+                return $feeds;
+                break;
+                 case 'risk_owner':
+                # code...
+                $feeds=$this->getPendingRisks($userId);
+                return $feeds;
+                break;
+                 case 'risk_mitigator':
+                # code...
+                $feeds=$this->getPendingRisks($userId);
+                return $feeds;
+                break;
+                   case 'risk_reviewer':
+                # code...
+                $feeds=$this->getPendingRisks($userId);
+                return $feeds;
+                break;
             case 'policy_owner':
                 # code...
                 $feeds=$this->getLatestPolicies($userId);
@@ -101,6 +121,15 @@ class FeedManager {
     	$dbOps=new DBOperations();
     	error_log("feed Data:" . print_r($paramArray,true));
     	return $dbOps->fetchData($sql,'i',$paramArray);
+
+
+    }   
+       private function getPendingRisks($userid){
+        $sql="SELECT DISTINCT r.id,u.last_name,r.subject,r.status FROM risks r,user u WHERE u.id=? and (r.owner=u.id or r.mitigator=u.id or r.reviewer=u.id) ORDER BY r.id DESC LIMIT 10";
+        $paramArray=array($userid);
+        $dbOps=new DBOperations();
+        error_log("feed Data:" . print_r($paramArray,true));
+        return $dbOps->fetchData($sql,'i',$paramArray);
 
 
     }   
