@@ -120,7 +120,7 @@ function tabledata($clause){
           
         <input type="hidden" id="<?php echo 'priority'.$clause['clauseId']?>" value="<?php echo $clause['auditClauseForThisClauseId']['priority']?>">
 
-                <h5 style="margin-left: 150px;margin-top: -50px;">Severity</h5>    
+                <h5 style="margin-left: 150px;margin-top: -65px;">Severity</h5>    
                   
 
         <div class="btn-group btn-group-solid" style="margin-left: 150px;margin-top: 3px;">
@@ -428,7 +428,7 @@ AUDIT PLAN</h3>
 
 
 <div >
-          <strong>priority</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>severity</strong> <br>           
+          <strong style="font-size: 15px;">priority</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong style="font-size: 15px;">severity</strong> <br>           
         <select id="user_input" class="btn btn-warning" onclick="showInput()">
           <option>select</option>
       <option>L</option>

@@ -23,7 +23,7 @@
 
 <div class="form-group">
     <div class="col-md-12">
-    <label >Auditee</label>        
+    <h5 >Auditee</h5>  <br>
        
             <select id="auditee<?php echo $clause['clauseId'] ?>" name="auditeeDropDown" class="form-control select2" multiple>
           <option></option>
