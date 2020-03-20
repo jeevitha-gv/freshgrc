@@ -41,12 +41,12 @@ function addstand() {
     var modalDetails = {
        
           'company_id': $('#company_id').val(),
-          'comp_id':$('#comp_id').val(),
+          'complianceId':$('#complianceId').val(),
           'action':'delete'
     }
     $.ajax({
         type: "POST",
-        url: "/freshgrc/php/compliance/modulecompliance.php",
+        url: "/freshgrc/php/compliance/manageCompliance.php",
         data: modalDetails
     }).done(function (data) {
            Swal.fire({
@@ -55,16 +55,17 @@ function addstand() {
               showCancelButton: true,
               confirmButtonClass: "btn-danger",
               confirmButtonText: "Yes",
-              closeOnConfirm: false
+              closeOnConfirm: true
             }, function () {
               Swal.fire("Checklist Deleted!", "Your Checklist Has Got Deleted.", "success");
-              setTimeout(function () {
+              setTimeout(function (data) {
                 window.location="/freshgrc/view/policy/Regulatoryengine.php";
               });
             });
 
  
     });
+
 }
 
 

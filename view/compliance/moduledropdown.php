@@ -63,7 +63,8 @@ $m=explode(',',  $root);
                  <?php echo $compliance['name'];?>
 
               </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" class="btn btn-danger" style="margin-top: -150px;margin-left: -120px;height: 25px;width: 2px;" value="<?php echo $compliance['id'];?>" id="comp_id" onclick="deletestandard(this.value);">X</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-danger" style="margin-top: -180px;margin-left: -120px;height: 10px;width: 2px;background-color: white;color: black;font-size: 16px;border:none;" value="<?php echo $compliance['id'];?>" id="complianceId" onclick="deletestandard(this.value);">X</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <input type="text" value="<?php echo $compliance['id'];?>"> -->
              
                   <?php } ?>
 
@@ -103,9 +104,9 @@ $m=explode(',',  $root);
                 <?php } ?><br/><br/>
                  <?php echo $allreg['Compliance_Name'];?>
              
-                <!-- <button class="btn btn-danger" onclick="deleted(this.id)">x</button>
-                <input type="text" name="" value="<?php echo $compliance['id']; ?>"> -->
-              </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             
+               </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-danger" style="margin-top: -180px;margin-left: -120px;height: 10px;width: 2px;background-color: white;color: black;font-size: 16px;border:none;" value="<?php echo $compliance['id'];?>" id="complianceId" onclick="deletestandard(this.value);">X</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <?php } ?>
 
        

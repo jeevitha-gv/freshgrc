@@ -96,14 +96,19 @@ class ComplianceManager {
         return $dbOps->cudData($sql, 'sssi', $paramArray);         
     }
     
-    public function deleted($complianceData){
+    public function delete($complianceData){
         $sql = 'DELETE FROM compliance WHERE id=?';
         $paramArray = array($complianceData->complianceId);
         $dbOps = new DBOperations();
         return $dbOps->cudData($sql, 'i', $paramArray);       
     } 
 
-    
+      public function deletestandard($complianceData){
+        $sql = 'DELETE FROM compliance WHERE id=?';
+        $paramArray = array($complianceData->complianceId);
+        $dbOps = new DBOperations();
+        return $dbOps->cudData($sql, 'i', $paramArray);       
+    } 
     public function importDataFromCsv($allClausesCsvData, $loggedInUser, $csvFileName){
         session_start();
         $complianceRow = $allClausesCsvData[0];
