@@ -98,7 +98,7 @@ $riskMitigationReport = $manager->getRiskMitigationReport($RiskId);
   <a class="flaticon2-arrow" data-toggle="collapse" data-target="#demo" style="font-size: 16px;">View Risk Summary</a><br><br>
   <div id="demo" class="collapse">
     <div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
+<!-- <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
 <i class="kt-font-brand flaticon2-line-chart"></i>
@@ -107,12 +107,12 @@ $riskMitigationReport = $manager->getRiskMitigationReport($RiskId);
 RISK PLAN</h3>
 </div>
 
-</div> 
+</div>  -->
     <div class="panel-body" style="overflow-x:scroll; ">
         <!--   <div class="table-responsive"> -->
             <table class="table table-striped list-table table-bordered">
             <tr>
-                <th  colspan="6">Plan</th>
+                <th  colspan="6" style="font-size: 15px;">Plan</th>
             </tr>
             <tr>
               <td><label  class="col-sm-4">Plan Created Date:</label>
@@ -123,28 +123,28 @@ RISK PLAN</h3>
                 <span><?php echo $riskPlanReport[0]['Subject'];?></span>
               </td>
                 <td><label  class="col-sm-4">Risk Priority:</label>
-                <span>Medium<?php 
-                if ($riskPlanReport[0]['Risk_Status']==null){
-                     // $riskPlanReport[0]['Risk_Status']="None";
-                    echo $riskPlanReport[0]['Risk_Status'];
+                <span><?php 
+                if ($riskScoringDetails[0]['calculated_risk_status']==null){
+                     // $riskScoringDetails[0]['calculated_risk_status']="None";
+                    echo $riskScoringDetails[0]['calculated_risk_status'];
                   }
-                  elseif ($riskPlanReport[0]['Risk_Status']==1) {
-                    $riskPlanReport[0]['Risk_Status']="Medium";
-                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:#7bea4e; color:#fff; text-align:center;'>".$riskPlanReport[0]['Risk_Status']."</p>";
+                  elseif ($riskScoringDetails[0]['calculated_risk_status']==1) {
+                    $riskScoringDetails[0]['calculated_risk_status']="Medium";
+                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:#7bea4e; color:#fff; text-align:center;'>".$riskScoringDetails[0]['calculated_risk_status']."</p>";
 
                   }
-                  elseif ($riskPlanReport[0]['Risk_Status']==2) {
-                    $riskPlanReport[0]['Risk_Status']="High";
-                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:#ee5151; color:#fff; text-align:center;'>".$riskPlanReport[0]['Risk_Status']."</p>";
+                  elseif ($riskScoringDetails[0]['calculated_risk_status']==2) {
+                    $riskScoringDetails[0]['calculated_risk_status']="High";
+                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:#ee5151; color:#fff; text-align:center;'>".$riskScoringDetails[0]['calculated_risk_status']."</p>";
                   }
-                  elseif ($riskPlanReport[0]['Risk_Status']==3) {
+                  elseif ($riskScoringDetails[0]['calculated_risk_status']==3) {
                     # code...
-                    $riskPlanReport[0]['Risk_Status']="Extreme";
-                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:red; color:#fff; text-align:center;'>".$riskPlanReport[0]['Risk_Status']."</p>";
+                    $riskScoringDetails[0]['calculated_risk_status']="Extreme";
+                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:red; color:#fff; text-align:center;'>".$riskScoringDetails[0]['calculated_risk_status']."</p>";
                   }
-                  elseif($riskPlanReport[0]['Risk_Status']==0){
-                    $riskPlanReport[0]['Risk_Status']="Low";
-                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:#5cb85c; color:#fff; text-align:center;'>".$riskPlanReport[0]['Risk_Status']."</p>";
+                  elseif($riskScoringDetails[0]['calculated_risk_status']==0){
+                    $riskScoringDetails[0]['calculated_risk_status']="Low";
+                    echo "<p class='btn'  style='width:114px; height:50% ; background-color:#5cb85c; color:#fff; text-align:center;'>".$riskScoringDetails[0]['calculated_risk_status']."</p>";
                   }?></span>
               </td>
               
@@ -321,12 +321,12 @@ REVIEW
                   <div class="form-group">
                   <div id="myRadioGroup">
                     <div class="col-md-6">
-                      <input type="radio" name="date" value="nextreview" />
-                      <label for="Yes">Yes</label>
-                      <input type="radio" name="date" checked="checked" />
+                      <input type="radio" name="date" id="yes" value="nextreview" class="click" />
+                      <label for="Yes">Yes</label>&nbsp; &nbsp;
+                      <input type="radio" name="date" id="no" checked="checked" value="no" class="click" />
                       <label for="no">No</label>
                       <div class="span7">
-                        <div id="nextreview" class="desc">
+                        <div id="nextreview" class="desc" style="display: none;">
                           <label for="reviewdate">Next Review Date</label>
                           <input type="date" name="next_review" class="form-control" id="next_review">
                         </div>
@@ -336,6 +336,16 @@ REVIEW
                   </div>
                 </div>
               </div>
+              <script type="text/javascript">
+                $(function(){
+                  $(".click").click(function(){
+                    if($(this).val() === "nextreview")
+                        $("#nextreview").show("fast");
+                      else
+                        $("#nextreview").hide("fast");
+                  });
+                });
+              </script>
                  <div class="col-md-6">
                   <div class="form-group">
                       <label for="comments">Comments</label>
