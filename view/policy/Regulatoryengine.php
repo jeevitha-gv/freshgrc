@@ -13,6 +13,14 @@ $user_role=$_SESSION['user_role'];
 // echo $user_name;
 // echo $user_role;
 ?>
+<?php 
+require_once __DIR__.'/../../php/compliance/complianceManager.php'; 
+      $manager=new complianceManager();
+      $uploadedFiles=$manager->getAllUploadedFiles($_SESSION['company']);
+      error_log("all uploaded Files".print_r($uploadedFiles,true));
+      $delim="_";
+
+?>
 <!DOCTYPE html>
 <html>
  <head><!--begin::Base Path (base relative path for assets of this page) -->
@@ -99,10 +107,25 @@ include "../siteHeader.php";
   <div class="kt-wizard-v4__nav">
     <div class="kt-wizard-v4__nav-items">
       <!--doc: Replace A tag with SPAN tag to disable the step link click -->
-      <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
+            <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step">
         <div class="kt-wizard-v4__nav-body">
           <div class="kt-wizard-v4__nav-number">
             1
+          </div>
+          <div class="kt-wizard-v4__nav-label">
+            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
+              Available Standard
+            </div>
+            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
+              Available
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
+        <div class="kt-wizard-v4__nav-body">
+          <div class="kt-wizard-v4__nav-number">
+            2
           </div>
           <div class="kt-wizard-v4__nav-label">
             <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
@@ -115,21 +138,7 @@ include "../siteHeader.php";
         </div>
       </a>
 
-      <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step">
-        <div class="kt-wizard-v4__nav-body">
-          <div class="kt-wizard-v4__nav-number">
-            2
-          </div>
-          <div class="kt-wizard-v4__nav-label">
-            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-              Available Standard
-            </div>
-            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
-              Available
-            </div>
-          </div>
-        </div>
-      </a>
+
     </div>
   </div>
   <!--end: Form Wizard Nav -->
@@ -141,14 +150,7 @@ include "../siteHeader.php";
           <!--begin: Form Wizard Form-->
           <form class="kt-form" id="kt_form">
             <!--begin: Form Wizard Step 1-->
-            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                         <?php include '../compliance/moduledropdown.php';?>
-                    </div>
-            <!--end: Form Wizard Step 1-->
-
-
-            <!--begin: Form Wizard Step 4-->
-            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
+              <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
                  <div class="form-group">
                             <input type="hidden" class="form-control" id="action" value="in_draft">
                             <input type="hidden" class="form-control" id="company_id" value="<?php echo $companyId ?>">
@@ -157,6 +159,27 @@ include "../siteHeader.php";
                         <?php include '../compliance/addstandarddropdown.php';?>
 
             </div>
+            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                         <?php include '../compliance/moduledropdown.php';?>
+                           <div class="row" style="float: right;margin-top: -200px;margin-right: 100px;">
+              <div class="col-md-8" > 
+                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
+                                   <br><br>
+                     <label for="complianceCsv" aria-hidden="true">
+
+         <img src="csv.svg" title="ImportCsv File" width="35" height="35" > <span class="csv" style="font-size: 14px;">Upload</span>
+              <input type="file" accept=".csv" style="display:none;" onchange="importCsv()" id="complianceCsv"/>
+                                </label>     
+            </div>
+          
+          </div>
+
+                    </div>
+            <!--end: Form Wizard Step 1-->
+
+
+            <!--begin: Form Wizard Step 4-->
+          
             <!--end: Form Wizard Step 4-->
 
             <!--begin: Form Actions -->
@@ -192,7 +215,8 @@ include "../audit/sidemenu.php";
  <script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
-<script src="js/compliance/complianceCreateManagement.js"></script>
+        <script type="text/javascript" src="js/compliance/importLibrary.js"></script>
+<!-- <script src="js/compliance/complianceCreateManagement.js"></script> -->
  <script src="js/policy/ModuleManagement.js"></script>
 <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>

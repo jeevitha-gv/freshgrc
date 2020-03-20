@@ -33,6 +33,40 @@ function addstand() {
     });
   location.reload();
     }
+  
+
+
+  function deletestandard() {
+    
+    var modalDetails = {
+       
+          'company_id': $('#company_id').val(),
+          'comp_id':$('#comp_id').val(),
+          'action':'delete'
+    }
+    $.ajax({
+        type: "POST",
+        url: "/freshgrc/php/compliance/modulecompliance.php",
+        data: modalDetails
+    }).done(function (data) {
+           Swal.fire({
+              title: "Are you sure want to delete this record?",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: "btn-danger",
+              confirmButtonText: "Yes",
+              closeOnConfirm: false
+            }, function () {
+              Swal.fire("Checklist Deleted!", "Your Checklist Has Got Deleted.", "success");
+              setTimeout(function () {
+                window.location="/freshgrc/view/policy/Regulatoryengine.php";
+              });
+            });
+
+ 
+    });
+}
+
 
 // function getdatafromplan() {
 //     var modalDetails = {

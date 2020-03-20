@@ -10,7 +10,8 @@ $m=explode(',',  $root);
 ?>
   <!-- <label class="control-label" style="font-size: 25px;"><strong>Add Standard</strong></label> -->
     <?php foreach($allCompliances as $compliance) { ?>
-<button class="btn btn-default"  style="text-align:center; height:200px; width:26.6%; margin-top: 10px; background-color:white ; color:black; font-size: 12px;" type="submit" id="comp_id">
+<button class="btn btn-default"  style="text-align:center; height:200px; width:26.6%; margin-top: 10px; background-color:white ; color:black; font-size: 12px;" type="text" value="<?php echo $compliance['id'];?>" id="comp_id" onclick="addstand(this.value);">
+  <input type="hidden" value="<?php echo $compliance['id'];?>">
 
                 <?php if($compliance['name']=='PCI-DSS') { ?><img src="/freshgrc/pic/pcidss.png" width="60%" height="110">
                 <?php } ?>
@@ -45,4 +46,4 @@ $m=explode(',',  $root);
                   <?php } ?>
 
                  
-  <button class="btn btn-outline-secondary" onclick="addstand()" title="Add Checklists" style="cursor: pointer; border-radius: 20px;"><span class="fa fa-plus-circle fa-2x"></span></button>
+  <!-- <button class="btn btn-outline-secondary" onclick="addstand()" title="Add Checklists" style="cursor: pointer; border-radius: 20px;"><span class="fa fa-plus-circle fa-2x"></span></button> -->
