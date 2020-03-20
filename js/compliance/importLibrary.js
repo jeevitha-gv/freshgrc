@@ -21,8 +21,8 @@ function importCsv() {
               title: "Your checklist has been uploaded successfully!",
               type: "success",
               input: 'radio',
-              timer: 3000,
-              closeOnConfirm: false,
+              timer: 1000,
+              closeOnConfirm: true,
               showLoaderOnConfirm: true
             });
                 window.location="/freshgrc/view/policy/Regulatoryengine.php";

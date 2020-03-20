@@ -11,15 +11,28 @@
 $m=explode(',',  $root);
 ?>
 
+
+<!--end:: Global Optional Vendors -->
+
+<!--begin::Global Theme Styles(used by all pages) -->
+                    
+                    <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
+                <!--end::Global Theme Styles -->
+
+        <!--begin::Layout Skins(used by all pages) -->
+                <!--end::Layout Skins -->
+
+ <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
+       
+    </head>
 <label for="example-url-input" class="col-2 col-form-label" style="font-size: 16px;"></label>
          
            <div class="col-md-12">
-
+<!-- <button style="height: 50px;width:50px;"><i class="flaticon2-rubbish-bin" title="delete" style="color: red;"></i></button> -->
 
 <?php foreach($allCompliance as $compliance){ ?>
 
          <button class="btn btn-default"  style="text-align:center; height:200px; width:26.6%; margin-top: 10px; background-color:white ; color:black; font-size: 12px;" type="submit" id="<?php echo $compliance['id'] ?>" onclick="gotoproperpage(this.id);">
-
                 <?php if($compliance['name']=='PCI-DSS') { ?><img src="/freshgrc/pic/pcidss.png" width="60%" height="110">
                 <?php } ?>
                <?php if($compliance['name']=='Risk Management III, Market Operations and ALM') { ?><i class='fa fa-area-chart'></i>  &nbsp;&nbsp;&nbsp; <?php } ?>
@@ -48,8 +61,10 @@ $m=explode(',',  $root);
                 <?php if($compliance['name']=='SOC') { ?><i class=' fa fa-photo'></i>  &nbsp;
                 <?php } ?><br/><br/>
                  <?php echo $compliance['name'];?>
- 
-              </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-danger" style="margin-top: -150px;margin-left: -120px;height: 25px;width: 2px;" value="<?php echo $compliance['id'];?>" id="comp_id" onclick="deletestandard(this.value);">X</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             
                   <?php } ?>
 
 
@@ -92,5 +107,31 @@ $m=explode(',',  $root);
                 <input type="text" name="" value="<?php echo $compliance['id']; ?>"> -->
               </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <?php } ?>
+
+       
+
 </div>
+<br>
+       
+ 
+            </body>
+    <!-- end::Body -->
+</html>
+
+<script type="text/javascript">
+    function logout(){
+                debugger
+                 $.ajax({
+                        dataType: "json",
+                        type: "POST",
+                        url: "/freshgrc/logout.php"
+                         });
+                 window.location="/freshgrc/logout.php";
+            }
 </script>
+<script type="text/javascript">
+     $(function() {
+        $(".datepickerClass").datepicker();
+        $('.ui-datepicker').addClass('notranslate');
+    });
+  </script>

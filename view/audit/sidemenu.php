@@ -229,14 +229,14 @@ if($_SESSION['user_role']=='super_admin') { ?>
 
 <li class="kt-menu__item toggle" aria-haspopup="true"><span class="kt-menu__link text-center"><a href="view/compliance/complianceCreateAdmin.php"><i class="kt-menu__link-icon flaticon2-graph kt-menu__link text-center"></i></a><span class="kt-menu__link-text">Regulatory Engine<i class="la la-angle-down" style="margin-top: 20px; margin-left: -7px;"></i></span></span>
 
-<li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a  href="view/compliance/newcompliance.php" class="kt-menu__link  text-center" ><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text ">New</span></a></li>
+<!-- <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a  href="view/compliance/newcompliance.php" class="kt-menu__link  text-center" ><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text ">New</span></a></li> -->
 
 
 
 <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;" ><a href="view/policy/Regulatoryengine.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Enable Standard</span></a>
 </li>
 
-<li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/uploadStandard.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Upload Standard</span></a>
+<!-- <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/uploadStandard.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Upload Standard</span></a> -->
 
 <!-- <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a href="view/policy/Regulatoryengine.php" class="kt-menu__link text-center"><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text">Mapping</span></a>
 </li> -->

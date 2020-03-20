@@ -543,7 +543,7 @@ public function getAllAuditsForPublish($userId, $userRole){
     }
 
     public function getAllAvailCompliance() {
-        $sql = 'SELECT name FROM  comp';
+        $sql = 'SELECT id,name FROM  comp';
         $dbOps = new DBOperations();
         $paramArray = array($companyId);
         return $dbOps->fetchData($sql, 'i', $paramArray);
