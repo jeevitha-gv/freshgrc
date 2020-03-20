@@ -478,7 +478,7 @@ $sql = "INSERT INTO risks(status, subject,scenario_id,company_id,incident_id,reg
         return $resultArray = $dbOps->fetchData($sql, 'i', $paramArray);          
     }
        public function getRiskPlandata($riskId){        
-        $sql = 'SELECT r.subject as Subject, c.name as Category, bl.name as Location, r.control_number as ControlNumber,r.affected_assets as AffectedAsset, t.name as Technology,rt.name as Team,s.name as Source,u.last_name as Owner,r.created_date as CreatedDate,r.risk_assessment as RiskAssessment,r.additional_notes as AdditionalNotes FROM risks r, category c,bu_location bl,technology t,risk_team rt,source s,user u WHERE r.category=c.id AND r.location=bl.id AND r.technology=t.id AND r.team=rt.id AND r.source=s.id AND r.owner=u.id AND r.id=?';       
+        $sql = 'SELECT r.subject as Subject, c.name as Category, bl.name as Location, r.control_number as ControlNumber,r.affected_assets as AffectedAsset, t.name as Technology,rt.name as Team,s.name as Source,u.last_name as Owner,r.created_date as CreatedDate,r.risk_assessment as RiskAssessment,r.additional_notes as AdditionalNotes, rs.calculated_risk_status as Risk_Status FROM risks r, category c,bu_location bl,technology t,risk_team rt,source s,user u, risk_scoring rs WHERE r.category=c.id AND r.location=bl.id AND r.technology=t.id AND r.team=rt.id AND r.source=s.id AND r.owner=u.id AND r.id=?';       
         $paramArray = array($riskId);
         $dbOps = new DBOperations(); 
         return $resultArray = $dbOps->fetchData($sql, 'i', $paramArray);          
