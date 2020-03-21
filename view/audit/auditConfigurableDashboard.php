@@ -102,9 +102,9 @@ error_log("chartdata".print_r($chartDatas,true));
             <div class="row form-group text-center mx-auto">
               <input type="hidden" id="company" value="<?php echo $_SESSION['company'] ?>">
               <input type="hidden" id="user" value="<?php echo $_SESSION['user_id'] ?>">
-            <label for="chartType form-control-label">Data</label>
+            <label for="chartType form-control-label col-md-1"><strong><h5>Data:</h5></strong></label> &nbsp; &nbsp;
             
-            <select onchange="getData()" class="form-control col-lg-6 col-xl-6" id="chartData"> 
+            <select onchange="getData()" class="form-control col-lg-11 col-md-11 col-xl-11" id="chartData"> 
               <option>Select</option>
               <?php foreach ($chartDataTypes as $chartData) {
                 ?>

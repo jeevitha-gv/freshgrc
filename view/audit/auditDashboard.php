@@ -157,11 +157,11 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
 <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-  <div class="row">
+<!--   <div class="row">
   <div class="col-md-12">   
               <a href="view/audit/auditConfigurableDashboard.php"  style="float: right;"><button type="button" class="btn btn-success">Dashboard Configuration</button></a>        
             </div> 
-          </div><br>
+          </div><br> -->
 <div class="row">
 <div class="col-md-6">
                                     <!--begin:: Widgets/Activity-->
@@ -172,12 +172,12 @@ $noOfAuditsDelayedauditee=$manager->noOfAuditsDelayedauditee($_SESSION['company'
                                                     Activity
                                                 </h3>
                                             </div>
-                                            <div class="kt-portlet__head-toolbar">
+                                          <!--   <div class="kt-portlet__head-toolbar">
                                                 <a href="#" class="btn btn-label-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
                                                    Audit
                                                 </a>
                                                 
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="kt-portlet__body kt-portlet__body--fit">
                                             <div class="kt-widget17">
@@ -493,7 +493,9 @@ function openCity(evt, cityName) {
 
   </div>
   <!--end-->
-  
+  <?php 
+    include "auditConfigurableDashboard.php";
+  ?>
 </div>
 </div>
 </div>
@@ -624,7 +626,7 @@ plotOptions: {
 
 
     "series": [{
-        'name':'name',
+        'name':'Audit Frequency',
         'colorByPoint': true,
         'data':chartData,
         'drilldown':"name"
@@ -950,7 +952,7 @@ plotOptions: {
 
 
     "series": [{
-        'name':'name',
+        'name':'Status',
         'colorByPoint': true,
         'data':chartData,
         'drilldown':"name"

@@ -1082,7 +1082,7 @@ function audittypebar(data){
           </script>
           <script>
             function previous(){
-              window.location.replace("/freshgrc/view/audit/auditConfigurableDashboard.php");
+              window.location.replace("/freshgrc/view/audit/auditDashboard.php");
             }
           </script>
    </body>
