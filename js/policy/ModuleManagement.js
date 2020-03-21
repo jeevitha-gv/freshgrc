@@ -18,12 +18,12 @@ function gotoproperpage(id)
   window.location = "/freshgrc/view/compliance/clauseAdmin.php?complianceId=" +id;
 }
  
-function addstand() {
+function addstand(value) {
 
     var modalDetails1 = {
           
           'company_id': $('#company_id').val(),
-          'comp_id':$('#comp_id').val(),
+          'comp_id':value,
           'action':'in_draft'
     }
     $.ajax({

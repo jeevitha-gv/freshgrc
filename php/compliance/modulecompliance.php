@@ -7,6 +7,9 @@ switch ($_POST['action']) {
         $manager = new ComplianceManager();
             $complianceData = getDataFromRequest(); 
             $d=$manager->addstandard($complianceData);
+            break;
+            default;
+            break;
       
 }
    
