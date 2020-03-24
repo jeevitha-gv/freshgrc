@@ -323,7 +323,7 @@ if(y=="H")
   <a class="flaticon2-arrow" data-toggle="collapse" data-target="#demo" style="font-size: 16px;">View Audit Summary</a><br><br>
   <div id="demo" class="collapse">
     <div class="kt-portlet">
-<div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
+<!-- <div class="kt-portlet__head kt-portlet__head--lg" style="background-color:#2a5aa8;">
 <div class="kt-portlet__head-label">
 <span class="kt-portlet__head-icon">
 <i class="kt-font-brand flaticon2-line-chart"></i>
@@ -332,7 +332,7 @@ if(y=="H")
 AUDIT PLAN</h3>
 </div>
 
-</div> 
+</div> --> 
    <div class="panel-body">
       <!--     <div class="table-responsive"> -->
             <table class="table table-striped list-table table-bordered">
@@ -367,7 +367,7 @@ AUDIT PLAN</h3>
             </tr>
             <tr>
             <td><label  class="col-sm-4">Department:</label>
-                <span><?php echo $auditdetails[0]['department'];?></span>
+                <span><?php echo $auditdetails[0]['deptname'];?></span>
               </td> 
             <td><label class="col-sm-4">Location:</label>
                 <span><?php echo $auditdetails[0]['lname'];?></span>

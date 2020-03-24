@@ -30,7 +30,7 @@ $userDetails=$manager->getUserNameById($_SESSION['user_id']);
     box-sizing: border-box;
   } 
   body {
-
+background-image: url('./back.jpg');
   font-size: 14px;
     line-height: 1.42857143;
     color: #333;
@@ -270,15 +270,18 @@ button {
     color: #fdc94a;
     padding: 0 5px;
   }
+  
 
  </style>
+}
 </head>
 <body>
-  <div class="container-fluid freshgrc-theme-one">
+  <div class="">
   <div class="row">
     <div class="freshgrc-common-header">
       <div class="col-md-3 col-sm-3 freshgrc-common-logo">
-        <a href="https://www.fixnix.co" target="_blank"><img src="assets/images/fixnix-white-logo.png"></a>
+
+        <a href="https://www.fixnix.co" target="_blank"><img style="margin-top: -30px; width:180px; height:180px;" src="./assets/img/fixnix-white-logo.png"></a>
       </div>
       <div class="col-md-9 col-sm-9">
         <ul class="freshgrc-common-header-buttons col-md-push-10">
@@ -299,7 +302,7 @@ button {
   <div class="row">
     <div class="container">
       <div class="row freshgrc-common-main-head">
-        <h2 style="font-family: inherit">Please subscribe to use further </h2>
+        <h2 style="font-family: inherit; color: white;">Please <span style="color: red;">subscribe</span> to use further </h2>
       </div>
       <div class="row">
         <form name="login" action="/freshgrc/view/common/subscriptionCreate.php" method="POST">
@@ -308,10 +311,10 @@ button {
               <input type="hidden" placeholder="Enter your name" name="firstname" id="name" value="<?php echo $_SESSION['user_name'] ?>">    
               <input type="hidden" placeholder="Enter your email" name="email" id="email" value="<?php echo $userDetails[0]['email'] ?>">         
             <br>
-            <li>
+            <li style="font-size: 250px;">
               <select id="plan" name="plan_name" placeholder="Select Plan" class="form form-control" required >
-                 <option value="1">SMB-MF</option>
-                 <option value="2">SMB-CU</option>
+                 <option value="1">Adopter</option>
+                 <option value="2">Team Pro</option>
                  <option value="3">SMB</option>
                  <option value="4">Enterprise Plan</option>
 
@@ -322,7 +325,7 @@ button {
             <br>
             <li>
               <button type="submit" id="manageButton"  data-dismiss="modal" class="btn btn-primary">Suscribe</button>
-              <span>By signing up, you agree to our <a href="https://fixnix.co/grc-features/termsandconditions/" target="_blank">T & C</a> and <a href="https://fixnix.co/grc-features/security-policy-infrastructure/">privacy policy</a></span>
+              <span style="font-size: 18px;">By signing up, you agree to our <a href="https://fixnix.co/grc-features/termsandconditions/" target="_blank">T & C</a> and <a href="https://fixnix.co/grc-features/security-policy-infrastructure/">privacy policy</a></span>
             </li>
           </ul>
         </form>
@@ -333,23 +336,23 @@ button {
   <div>
     <div class="freshgrc-common-footer">
     <div class="col-md-4">
-      <ul>
+      <ul style="margin-left: 25px; font-size: 20px;">
         <li><a href="tel:+91-87 90 878 222" class="">+91-87 90 878 222</a></li>
         <li><a href="https://fixnix.co/technology-stack/">Our Technology Stack</a></li>
       </ul>
     </div>
     <div class="col-md-4">
-      <ul>
+      <ul style="margin-left:100px; font-size: 20px;">
         <li><a href="http://www.freshgrc.com/">FreshGRC.com</a><span>powered by</span><a href="https://fixnix.co/">FixNix</a></li>
       </ul>
     </div>
-    <div class="col-md-4">
-      <ul>
+    <!-- <div class="col-md-4" id="foot">
+      <ul style="margin-left: 250px; font-size: 20px;">
         <li><a href="https://fixnix.co/grc-features/termsandconditions/">Terms and Conditions</a></li>
         <li><a href="https://fixnix.co/grc-features/security-policy-infrastructure/">Privacy Policy</a></li>
         <li><a href="https://fixnix.co/">Company</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
   </div>
 </div>
