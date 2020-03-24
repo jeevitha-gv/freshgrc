@@ -20,7 +20,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <title>freshGRC</title>
         <meta name="description" content="Login page example">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-          <script type="text/javascript" src="js/common/signupManagement.js"></script>
+          <!-- <script type="text/javascript" src="js/common/signupManagement.js"></script> -->
         <!--begin::Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        <!--end::Fonts -->
 
@@ -107,8 +107,8 @@ License: You must have a valid license purchased only from themeforest(the above
               <input style="color: white;" class="form-control" type="password" placeholder="Password"  id="password">
             </div>
           <div class="input-group">
-          <input style="color: white;" class="form-control" type="text" placeholder="Company Name" id="company" onkeypress="return AvoidSpace(event)">
-
+          <input style="color: white;" class="form-control" type="text" placeholder="Company Name" id="company" >
+<!-- 
              <script>
              function AvoidSpace(event) {
              var k = event ? event.which : window.event.keyCode;
@@ -118,7 +118,7 @@ License: You must have a valid license purchased only from themeforest(the above
                return false;
             }
              }
-             </script>  
+             </script>   -->
 
            </div>
            <div class="input-group" style="position: absolute; margin-top:-37px; margin-left:510px; color: white; font-size: 16px;">-FreshGRC.com</div>  
@@ -197,6 +197,8 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- end::Global Config -->
 
                   <!--begin:: Global Mandatory Vendors -->
+
+          <script type="text/javascript" src="js/common/signupManagement.js"></script>
             <script src="./assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
             <script src="./assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
             <script src="./assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
