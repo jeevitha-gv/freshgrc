@@ -30,8 +30,15 @@ function addstand(value) {
         type: "POST",
         url:  "/freshgrc/php/compliance/modulecompliance.php",
         data: modalDetails1
+    }).done(function(data) {
+          Swal.fire({
+            text: "Are You sure want to add this standard",
+            type: "question"
+
+          }).then(function(){
+            location.reload();
+          });
     });
-  location.reload();
     }
   
 

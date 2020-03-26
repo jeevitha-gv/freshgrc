@@ -106,7 +106,7 @@ $m=explode(',',  $root);
              
              
                </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="submit" class="btn btn-danger" style="margin-top: -180px;margin-left: -120px;height: 10px;width: 2px;background-color: white;color: black;font-size: 16px;border:none;" value="<?php echo $compliance['id'];?>" id="complianceId" onclick="deletestandard(this.value);">X</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="btn btn-danger" style="margin-top: -180px;margin-left: -120px;height: 10px;width: 2px;background-color: white;color: black;font-size: 16px;border:none;" value="<?php echo $allreg['Comp_Id'];?>" id="complianceId" onclick="deletestandard(this.value);">X</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <?php } ?>
 
        
