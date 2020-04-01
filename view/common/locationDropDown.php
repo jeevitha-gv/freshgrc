@@ -14,7 +14,7 @@
       </select> 
      </div>
 <?php } ?>
-<?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role'] == 'demo' || $_SESSION['user_role'] == 'auditor') {?>
+<?php if($_SESSION['user_role']=='super_admin' || $_SESSION['user_role'] == 'demo' || $_SESSION['user_role'] == 'auditor' || $_SESSION['user_role']=='policy_owner') {?>
   <div class="form-group" >
     <div class="col-md-13">
 <select  id="location" name="locationDropDown" class="form-control">
