@@ -163,9 +163,9 @@ include '../siteHeader.php';
            </h3>
         </div>
         <div class="kt-portlet__head-toolbar">
-            <a href="#" class="btn btn-label-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
+         <!--    <a href="#" class="btn btn-label-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
                 Policy
-            </a>
+            </a> -->
             
         </div>
     </div>
