@@ -62,13 +62,10 @@ function addstand(value) {
               showCancelButton: true,
               confirmButtonClass: "btn-danger",
               confirmButtonText: "Yes",
-              closeOnConfirm: true
-            }, function () {
-              Swal.fire("Checklist Deleted!", "Your Checklist Has Got Deleted.", "success");
-              setTimeout(function (data) {
-                window.location="/freshgrc/view/policy/Regulatoryengine.php";
-              });
-            });
+              closeOnConfirm: false
+            }).then(function(){
+            location.reload();
+          });
 
  
     });

@@ -1,13 +1,20 @@
 <?php
     require_once __DIR__.'/../../php/common/metaData.php';
     require_once __DIR__.'/../../php/audit/auditManager.php';
-    $riskManager = new AuditManager();
-    
-     $allCompliances = $riskManager->getAllAvailCompliance($_SESSION['company']);
-
+ $riskManager = new AuditManager();
+        if($page == "" || $page == "1")
+        {
+          $page1=0;
+        }
+        else {
+          $page1 = ($page*6)-6;
+        }
+     $allCompliances = $riskManager->getAllAvailCompliance($page1, $_SESSION['company']);
+     $allCompliancesCount = $riskManager->getAllAvailComplianceCount($_SESSION['company']);
         $root=$moduleData[0]['c.name'];
 $m=explode(',',  $root);
 ?>
+
   <!-- <label class="control-label" style="font-size: 25px;"><strong>Add Standard</strong></label> -->
     <?php foreach($allCompliances as $compliance) { ?>
 <button class="btn btn-default"  style="text-align:center; height:200px; width:26.6%; margin-top: 10px; background-color:white ; color:black; font-size: 12px;" type="submit" value="<?php echo $compliance['name'];?>" id="name" onclick="addstand(this.value);">
@@ -47,3 +54,46 @@ $m=explode(',',  $root);
 
                  
   <!-- <button class="btn btn-outline-secondary" onclick="addstand()" title="Add Checklists" style="cursor: pointer; border-radius: 20px;"><span class="fa fa-plus-circle fa-2x"></span></button> -->
+  <div class="center">
+
+                   <?php foreach ($allCompliancesCount as $complianceCount)
+                    $count = $complianceCount['count'];
+                    // echo $count;
+                    $a = $count / 6;
+                    // echo ceil($a);
+                    echo "<br>"; echo "<br>";
+                    ?><a id="pagination">&laquo;</a><?php
+                      for($b=1; $b<=$a; $b++){
+                        ?><a href="/freshgrc/view/policy/Regulatoryengine.php?page=<?php echo $b; ?>" id="pagination"  style="text-decoration: none;"><?php echo $b." "; ?></a><?php
+                      }
+                      ?><a id="pagination">&raquo;</a><?php
+                  ?>
+
+                </div>
+
+                  <br><br>
+
+ 
+
+  <style type="text/css">
+    .center {
+      text-align: right;
+
+    }
+
+    #pagination {
+       display: inline-block;
+      font-size: 15px;
+      color: black;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+    }
+
+
+    #pagination:hover {
+      background-color: #ddd;
+    }
+  </style>
