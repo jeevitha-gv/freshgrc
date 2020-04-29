@@ -136,18 +136,18 @@ $companyId=$id[0]['id'];
     <!--Begin::App-->
 <div class="kt-grid kt-grid--desktop kt-grid--ver kt-grid--ver-desktop kt-app">
     <!--Begin:: App Aside Mobile Toggle-->
-    <button class="kt-app__aside-close" id="kt_user_profile_aside_close">
+<!--     <button class="kt-app__aside-close" id="kt_user_profile_aside_close">
         <i class="la la-close"></i>
-    </button>
+    </button> -->
     <!--End:: App Aside Mobile Toggle-->
 
     <!--Begin:: App Aside-->
-    <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside" >
+    <!-- <div class="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside" > -->
         <!--begin:: Widgets/Applications/User/Profile4-->
-<div class="kt-portlet kt-portlet--height-fluid-" style="height:478px;">
-    <div class="kt-portlet__body" >
+<!-- <div class="kt-portlet kt-portlet--height-fluid-" style="height:478px;">
+    <div class="kt-portlet__body" > -->
         <!--begin::Widget -->
-        <div class="kt-widget kt-widget--user-profile-4">
+   <!--      <div class="kt-widget kt-widget--user-profile-4">
             <div class="kt-widget__head">
                 <div class="kt-widget__media">
                     <a href="view/common/overview.php"><img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="80px" /></a>
@@ -205,10 +205,10 @@ $companyId=$id[0]['id'];
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!--end::Widget -->
-    </div>
-</div>
+ <!--    </div>
+</div> -->
 <!--end:: Widgets/Applications/User/Profile4-->
         <!--Begin:: Portlet-->
      
@@ -327,18 +327,18 @@ $companyId=$id[0]['id'];
  </div>
 </div>
 </div>
-<?php if($_SESSION['user_role']=="super_admin")
+<!-- <?php if($_SESSION['user_role']=="super_admin")
 {
- ?>  
-<div class="kt-grid kt-grid--hor kt-grid--root">
+ ?>   -->
+<!-- <div class="kt-grid kt-grid--hor kt-grid--root">
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
 
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top:-9%;">
 
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content"style="margin-top:-3%;">
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content"style="margin-top:-3%;"> -->
 
 <!-- begin:: Content -->
-<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+<!-- <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
 
 <div class="kt-portlet">
@@ -353,8 +353,8 @@ Business Unit
 </h3>
 
 </div>
-<div>
-  <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Adduser</a></button>
+<div> -->
+<!--   <button class="btn btn-success" style="float: right;"><a href="view/common/addadminuser.php" style="color:white;">Adduser</a></button>
    <button class="btn btn-danger" style=""><a href="view/common/bulkbusinessunit.php" style="color:white;">Add BusinessUnit</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
 </div>
@@ -362,9 +362,9 @@ Business Unit
 
 </div>
 
-<div class="kt-portlet__body" style="overflow-x: scroll;">
+<div class="kt-portlet__body" style="overflow-x: scroll;"> -->
 <!--begin: Datatable --> 
-<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+<!-- <table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
 <thead>
   <tr>
                     <th>User Id</th>
@@ -379,8 +379,8 @@ Business Unit
   </tr>
 </thead>
 
-<tbody>
-<?php foreach ($allcompanydata as $data) { ?>
+<tbody> -->
+<!-- <?php foreach ($allcompanydata as $data) { ?>
                     <tr>
                     <td><?php echo $data['user_id'];?></td>
                     <td><?php echo $data['category'];?></td>
@@ -397,10 +397,10 @@ Business Unit
 </tbody>
 
 
-</table>
+</table> -->
 <!--end: Datatable -->
-</div>
-<?php } ?>
+<!-- </div>
+<?php } ?> -->
 
 
 
