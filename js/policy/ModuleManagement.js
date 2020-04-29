@@ -23,7 +23,7 @@ function addstand(value) {
     var modalDetails1 = {
           
           'company_id': $('#company_id').val(),
-          'comp_id':value,
+          'name':value,
           'action':'in_draft'
     }
     $.ajax({
