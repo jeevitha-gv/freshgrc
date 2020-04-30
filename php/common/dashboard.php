@@ -75,7 +75,7 @@ class dashboard{
     }   
 
     public function compliance($companyId){
-        $sql = 'SELECT c.name, count(*) AS count FROM compliance c,company co,audit a WHERE a.compliance_id=c.id and c.company_id=co.id and co.id=? and c.name is not null GROUP BY c.name';
+        $sql = 'SELECT c.name, count(*) AS count FROM compliance c,company co,audit a WHERE a.compliance_id=c.id and c.company_id=co.id and co.id=?';
        $paramArray=array($companyId);
           $dbOps=new DBOperations();
         return $dbOps->fetchData($sql,'i',$paramArray);
@@ -1170,7 +1170,7 @@ public function getganttchartdatarisk(){
 
 
     public function efficacy(){
-        $sql='SELECT id FROM compliance WHERE status="analyzed"';
+        $sql='SELECT name FROM compliance WHERE status="analyzed"';
         $dbOps=new DBOperations();
         $res=$dbOps->fetchData($sql);
         $returnElement=array();
