@@ -19,11 +19,13 @@ function gotoproperpage(id)
 }
  
 function addstand(value) {
-
+debugger
     var modalDetails1 = {
           
           'company_id': $('#company_id').val(),
+          'description': $('#description').val(),
           'name':value,
+
           'action':'in_draft'
     }
     $.ajax({
