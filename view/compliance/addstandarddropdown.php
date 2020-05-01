@@ -18,7 +18,7 @@ $m=explode(',',  $root);
   <!-- <label class="control-label" style="font-size: 25px;"><strong>Add Standard</strong></label> -->
     <?php foreach($allCompliances as $compliance) { ?>
 <button class="btn btn-default"  style="text-align:center; height:200px; width:26.6%; margin-top: 10px; background-color:white ; color:black; font-size: 12px;" type="submit" value="<?php echo $compliance['name'];?>" id="name" onclick="addstand(this.value);">
-  <input type="hidden" value="<?php echo $compliance['name'];?>">
+  <input type="hidden" id="description" value="<?php echo $compliance['description'];?>">
 
                 <?php if($compliance['name']=='PCI-DSS') { ?><img src="/freshgrc/pic/pcidss.png" width="60%" height="110">
                 <?php } ?>

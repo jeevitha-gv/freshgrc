@@ -17,6 +17,7 @@ function getDataFromRequest(){
     $complianceData = new stdClass();
     $complianceData->company_id =$_POST['company_id'];
     $complianceData->name =$_POST['name'];
+    $complianceData->description =htmlspecialchars($_POST['description']);
     $complianceData->status ='in_draft';
     // $complianceData->action ='delete()';
 

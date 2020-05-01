@@ -543,7 +543,7 @@ public function getAllAuditsForPublish($userId, $userRole){
     }
 
     public function getAllAvailCompliance($page1) {
-        $sql = 'SELECT id,name FROM comp LIMIT ?, 6';
+        $sql = 'SELECT id,name,description FROM comp LIMIT ?, 6';
         $dbOps = new DBOperations();
         $paramArray = array();
         $paramArray[] = $page1;

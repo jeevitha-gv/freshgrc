@@ -98,7 +98,9 @@ include "../siteHeader.php";
       
                 <div class="row">
             
-                <div class="col-md-4"> <button class="btn btn-danger" title="Delete" onclick="deletecompliancename()"><i class="fa fa-trash fa-2x" style="color:white;"></i></button>&nbsp</div>
+                <div class="col-md-4">
+                <!--  <button class="btn btn-danger" title="Delete" onclick="deletecompliancename()"><i class="fa fa-trash fa-2x" style="color:white;"></i></button>&nbsp -->
+             </div>
                 <!-- <div class="co1-md-2"></div> -->
 
                  <?php if($isActive || $_SESSION['user_role']=='compliance_author' || $_SESSION['user_role']=='super_admin') {?>

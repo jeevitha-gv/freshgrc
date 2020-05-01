@@ -73,10 +73,10 @@ class ComplianceManager {
     }
 
   public function addstandard($complianceData){
-        $sql = 'INSERT INTO compliance(name,company_id,status) VALUES (?,?,?)';
-        $paramArray = array($complianceData->name,$complianceData->company_id, $complianceData->status);
+        $sql = 'INSERT INTO compliance(name,company_id,description,status) VALUES (?,?,?,?)';
+        $paramArray = array($complianceData->name,$complianceData->company_id, $complianceData->description,$complianceData->status);
         $dbOps = new DBOperations();        
-        return $dbOps->cudData($sql, 'sis', $paramArray); 
+        return $dbOps->cudData($sql, 'siss', $paramArray); 
     }
     // public function addstand($complianceData){
     //     $sql ="INSERT INTO `compliance` (`name`) VALUES (?)";
