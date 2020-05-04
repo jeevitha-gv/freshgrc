@@ -161,7 +161,7 @@ include "../siteHeader.php";
             </div>
             <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
                          <?php include '../compliance/moduledropdown.php';?>
-                           <div class="row" style="float: right;margin-top: -200px;margin-right: 100px;">
+                           <div class="row">
               <div class="col-md-8" > 
                                 <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
                                    <br><br>
