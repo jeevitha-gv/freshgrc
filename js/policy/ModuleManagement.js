@@ -23,8 +23,8 @@ debugger
     var modalDetails1 = {
           
           'company_id': $('#company_id').val(),
-          'description': $('#description').val(),
-          'name':value,
+          // '': $('#description').val(),
+          'comp_id':value,
 
           'action':'in_draft'
     }
@@ -57,6 +57,35 @@ debugger
         type: "POST",
         url: "/freshgrc/php/compliance/manageCompliance.php",
         data: modalDetails
+    }).done(function (data) {
+           Swal.fire({
+              title: "Are you sure want to delete this record?",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: "btn-danger",
+              confirmButtonText: "Yes",
+              closeOnConfirm: false
+            }).then(function(){
+            location.reload();
+          });
+
+ 
+    });
+
+}
+
+  function deleteregstandard() {
+    
+    var modalDetails2 = {
+       
+          'company_id': $('#company_id').val(),
+          'regId':$('#regId').val(),
+          'action':'deleted'
+    }
+    $.ajax({
+        type: "POST",
+        url: "/freshgrc/php/compliance/manageCompliance.php",
+        data: modalDetails2
     }).done(function (data) {
            Swal.fire({
               title: "Are you sure want to delete this record?",

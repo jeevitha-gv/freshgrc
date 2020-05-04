@@ -16,8 +16,8 @@ switch ($_POST['action']) {
 function getDataFromRequest(){
     $complianceData = new stdClass();
     $complianceData->company_id =$_POST['company_id'];
-    $complianceData->name =$_POST['name'];
-    $complianceData->description =htmlspecialchars($_POST['description']);
+    $complianceData->comp_id =$_POST['comp_id'];
+    // $complianceData->description =htmlspecialchars($_POST['description']);
     $complianceData->status ='in_draft';
     // $complianceData->action ='delete()';
 
