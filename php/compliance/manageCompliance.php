@@ -31,6 +31,7 @@ function manage(){
 function getDataFromRequest(){
     $complianceData = new stdClass();
     $complianceData->complianceId = $_POST['complianceId'];
+    $complianceData->regId = $_POST['regId'];
     $complianceData->action = $_POST['action'];
     if ($complianceData->action !== 'delete'){
         $complianceData->loggedInUser = $_POST['loggedInUser'];
