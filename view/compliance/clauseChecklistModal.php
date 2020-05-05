@@ -41,7 +41,7 @@
                     </li>
                 </ul>
             </div><br>
-                             <button type="button" class="btn  btn-info collapsed fa fa-arrow-down" data-toggle="collapse" data-target="#demo"></button>
+                       <!--       <button type="button" class="btn  btn-info collapsed fa fa-arrow-down" data-toggle="collapse" data-target="#demo"></button> -->
                   <div id="demo" class="collapse">
                    <div class="container-default" >
                    <div class="row">
