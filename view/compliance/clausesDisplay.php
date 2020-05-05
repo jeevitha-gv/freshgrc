@@ -47,7 +47,7 @@ function formPanel($clause){
                             // leaf node both of them can be added
                         ?>
                             <button class="btn btn-default" onclick="showModal(false, <?php echo $clauseId ?>, true)"><i class="fa fa-file"></i>    Sub Domain</button>
-                            <button class="btn btn-default" onclick="showModal(false, <?php echo $clauseId ?>, false)"><i class="fa fa-file"></i>    Controls</button>
+                           <!--  <button class="btn btn-default" onclick="showModal(false, <?php echo $clauseId ?>, false)"><i class="fa fa-file"></i>    Controls</button> -->
                         <?php
                             }
                         }
