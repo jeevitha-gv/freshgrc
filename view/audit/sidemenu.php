@@ -305,13 +305,12 @@ if($_SESSION['user_role']=='super_admin') { ?>
 
 </ul>
 <?php } ?>
-
+<?php if($_SESSION['user_role']=="compliance_reviewer"||$_SESSION['user_role']=="compliance_author"){?>
 <ul class="kt-menu__nav ">
 
 <!-- <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Compliance</span></a>
 </li>
-
- 
+ -->
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReviewAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Review</span></a></li>
 
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceAnalyzeAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Analyze</span></a></li>
