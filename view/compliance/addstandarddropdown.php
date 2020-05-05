@@ -1,17 +1,18 @@
 <?php
     require_once __DIR__.'/../../php/common/metaData.php';
     require_once __DIR__.'/../../php/audit/auditManager.php';
-    $riskManager = new AuditManager();
-    
-     $allCompliances = $riskManager->getAllAvailCompliance($_SESSION['company']);
-
+ $riskManager = new AuditManager();
+      
+     $allCompliances = $riskManager->getAllAvailCompliance(7);
+     // $allCompliancesCount = $riskManager->getAllAvailComplianceCount($_SESSION['company']);
         $root=$moduleData[0]['c.name'];
 $m=explode(',',  $root);
 ?>
+
   <!-- <label class="control-label" style="font-size: 25px;"><strong>Add Standard</strong></label> -->
     <?php foreach($allCompliances as $compliance) { ?>
 <button class="btn btn-default"  style="text-align:center; height:200px; width:26.6%; margin-top: 10px; background-color:white ; color:black; font-size: 12px;" type="submit" value="<?php echo $compliance['id'];?>" id="comp_id" onclick="addstand(this.value);">
-  <input type="hidden" value="<?php echo $compliance['id'];?>">
+  <!-- <input type="text" id="description" value="<?php echo $compliance['description'];?>"> -->
 
                 <?php if($compliance['name']=='PCI-DSS') { ?><img src="/freshgrc/pic/pcidss.png" width="60%" height="110">
                 <?php } ?>
@@ -47,3 +48,12 @@ $m=explode(',',  $root);
 
                  
   <!-- <button class="btn btn-outline-secondary" onclick="addstand()" title="Add Checklists" style="cursor: pointer; border-radius: 20px;"><span class="fa fa-plus-circle fa-2x"></span></button> -->
+  <div class="center">
+
+                   
+
+                </div>
+
+                  <br><br>
+
+ 

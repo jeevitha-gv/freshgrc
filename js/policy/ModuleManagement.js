@@ -19,19 +19,28 @@ function gotoproperpage(id)
 }
  
 function addstand(value) {
-
+debugger
     var modalDetails1 = {
           
           'company_id': $('#company_id').val(),
+          // '': $('#description').val(),
           'comp_id':value,
+
           'action':'in_draft'
     }
     $.ajax({
         type: "POST",
         url:  "/freshgrc/php/compliance/modulecompliance.php",
         data: modalDetails1
+    }).done(function(data) {
+          Swal.fire({
+            text: "Are You sure want to add this standard",
+            type: "question"
+
+          }).then(function(){
+            location.reload();
+          });
     });
-  location.reload();
     }
   
 
@@ -55,13 +64,39 @@ function addstand(value) {
               showCancelButton: true,
               confirmButtonClass: "btn-danger",
               confirmButtonText: "Yes",
-              closeOnConfirm: true
-            }, function () {
-              Swal.fire("Checklist Deleted!", "Your Checklist Has Got Deleted.", "success");
-              setTimeout(function (data) {
-                window.location="/freshgrc/view/policy/Regulatoryengine.php";
-              });
-            });
+              closeOnConfirm: false
+            }).then(function(){
+            location.reload();
+          });
+
+ 
+    });
+
+}
+
+  function deleteregstandard() {
+    
+    var modalDetails2 = {
+       
+          'company_id': $('#company_id').val(),
+          'regId':$('#regId').val(),
+          'action':'deleted'
+    }
+    $.ajax({
+        type: "POST",
+        url: "/freshgrc/php/compliance/manageCompliance.php",
+        data: modalDetails2
+    }).done(function (data) {
+           Swal.fire({
+              title: "Are you sure want to delete this record?",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: "btn-danger",
+              confirmButtonText: "Yes",
+              closeOnConfirm: false
+            }).then(function(){
+            location.reload();
+          });
 
  
     });

@@ -74,7 +74,7 @@ class ComplianceManager {
 
   public function addstandard($complianceData){
         $sql = 'INSERT INTO regulatory(comp_id,company_id,status) VALUES (?,?,?)';
-        $paramArray = array($complianceData->comp_id,$complianceData->company_id, $complianceData->status);
+        $paramArray = array($complianceData->comp_id,$complianceData->company_id,$complianceData->status);
         $dbOps = new DBOperations();        
         return $dbOps->cudData($sql, 'iis', $paramArray); 
     }
@@ -101,7 +101,14 @@ class ComplianceManager {
         $paramArray = array($complianceData->complianceId);
         $dbOps = new DBOperations();
         return $dbOps->cudData($sql, 'i', $paramArray);       
-    } 
+    }
+
+    public function deleted($complianceData){
+        $sql = 'DELETE FROM regulatory WHERE id=?';
+        $paramArray = array($complianceData->regId);
+        $dbOps = new DBOperations();
+        return $dbOps->cudData($sql, 'i', $paramArray);       
+    }  
 
       public function deletestandard($complianceData){
         $sql = 'DELETE FROM compliance WHERE id=?';

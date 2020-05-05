@@ -1,7 +1,8 @@
 <div class="modal-content" id="complianceClauseModal">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Manage Compliance Clause Details</h4>
+    <div class="modal-header" style="background-color: #2A5AA8;">
+        
+        <h4 class="modal-title" id="myModalLabel" style="color: white;">Manage Compliance Clause Details</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Close"><span aria-hidden="true">&times;</span></button>
     </div>
     <div class="modal-body">
         <form id="form1">
@@ -27,7 +28,8 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <!-- <button type="button" id="manageChcekListButton" onclick="manageCheckList()" data-dismiss="modal" class="btn btn-primary">Create</button> -->
         <button type="button" id="manageButton" onclick="manageModal()" data-dismiss="modal" class="btn btn-primary">Create</button>
     </div>
 </div>

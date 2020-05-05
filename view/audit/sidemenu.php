@@ -48,7 +48,7 @@
 			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
 		</a>
 		<?php } ?>
-		<?php if($_SESSION['user_role']=='compliance_author'||$_SESSION['user_role']=='compliance_reviewer') {?>
+		<?php if($_SESSION['user_role']=='compliance_author'||$_SESSION['user_role']=='compliance_reviewer'||$_SESSION['user_role']=='comp_analyst') {?>
 			<a href="view/compliance/complianceDashboardAdmin.php">
 			<img src=" ./assets/media/logos/fixnix.png" alt="" width="100px" height="100px" />
 		</a>
@@ -292,7 +292,7 @@ if($_SESSION['user_role']=='super_admin') { ?>
 </li>
 </ul>
 <?php } ?>
-<?php if($_SESSION['user_role']=="compliance_author"){?>
+<?php if($_SESSION['user_role']=="compliance_author"||$_SESSION['user_role']=="comp_analyst"){?>
 <ul class="kt-menu__nav ">
 
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">compliance</span></a>
@@ -305,17 +305,13 @@ if($_SESSION['user_role']=='super_admin') { ?>
 
 </ul>
 <?php } ?>
-<<<<<<< refs/remotes/origin/jeevi/comp
-<?php if($_SESSION['user_role']=="compliance_reviewer"){?>
+
 <ul class="kt-menu__nav ">
 
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Compliance</span></a>
+<!-- <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Compliance</span></a>
 </li>
 
-=======
-<?php if($_SESSION['user_role']=="compliance_reviewer"||$_SESSION['user_role']=="compliance_author"){?>
-<ul class="kt-menu__nav ">
->>>>>>> local
+ 
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReviewAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Review</span></a></li>
 
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceAnalyzeAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Analyze</span></a></li>

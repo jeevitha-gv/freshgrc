@@ -119,8 +119,8 @@
                   </div>
         </form>
     </div>  
-    <div class="modal-footer">
+   <!--  <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" id="manageChcekListButton" onclick="manageCheckList()" data-dismiss="modal" class="btn btn-primary">Create</button>
-    </div>
+    </div> -->
 </div>
