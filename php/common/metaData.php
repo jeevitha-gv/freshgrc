@@ -15,7 +15,7 @@ class MetaData{
         return $this->fetchDataFromDB($sql);
     }   
     public function getAllCategory(){
-        $sql = 'SELECT * from category';
+        $sql = 'SELECT * from user_profile';
         return $this->fetchDataFromDB($sql);
     }    
     
