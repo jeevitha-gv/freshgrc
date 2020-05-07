@@ -100,7 +100,6 @@ $companyId=$id[0]['id'];
 <link href="./assets/vendors/general/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
  <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
  <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
- <script src="js/superAdmin/userManagement.js"></script>
 <link href="./assets/css/demo3/style.bundle.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="./assets/media/logos/fixnix.png" />
 <script type="text/javascript">
@@ -177,7 +176,7 @@ a
     <div class="kt-wizard-v4__nav">
         <div class="kt-wizard-v4__nav-items nav">
             <!--doc: Replace A tag with SPAN tag to disable the step link click -->
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step" data-ktwizard-state="current">
+            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step" data-ktwizard-state="current" onclick="showvalue()">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         1
@@ -192,7 +191,7 @@ a
                     </div>
                 </div>
             </a>
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
+            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step" onclick="showvalue()">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         2
@@ -207,7 +206,7 @@ a
                     </div>
                 </div>
             </a>
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
+            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step" onclick="showvalue()">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         3
@@ -222,7 +221,7 @@ a
                     </div>
                 </div>
             </a>
-            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step">
+            <a class="kt-wizard-v4__nav-item nav-item"  data-ktwizard-type="step" onclick="showvalue()">
                 <div class="kt-wizard-v4__nav-body">
                     <div class="kt-wizard-v4__nav-number">
                         4
@@ -277,7 +276,7 @@ a
                                                     <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label">First Name</label>
                                                     <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="firstName">
+                                                        <input class="form-control" type="text" id="firstName" required>
                                                     </div>
                                                 </div>
                                                      
@@ -299,7 +298,7 @@ a
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
                                                             
-                                                            <input type="text" class="form-control" id="email">
+                                                            <input type="text" class="form-control" id="email" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -313,16 +312,10 @@ a
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-
-                                                           
-                                                            <input type="text" class="form-control"id="phone" placeholder="Phone" aria-describedby="basic-addon1">
-
+                                                            <input type="text" class="form-control"id="phone" placeholder="Phone" aria-describedby="basic-addon1" required>
                                                         </div>
-                                                       
                                                     </div>
                                                 </div>
-                                               
-                                                
                                             </div>
                                         </div>
                                     </div>
@@ -408,7 +401,7 @@ a
                                                 </div>
                                     <div class="form-group">
                                         <label>Address Line </label>
-                                        <input type="text" class="form-control" id="address1" placeholder="Address Line 1" value="Address Line 1">
+                                        <input type="text" class="form-control" id="address1" placeholder="Address Line 1">
                                         
                                     </div>
                                     
@@ -416,14 +409,14 @@ a
                                         <div class="col-xl-6">
                                             <div class="form-group">
                                                 <label>Postcode</label>
-                                                <input type="text" class="form-control" id="postcode" placeholder="Postcode" value="2000">
+                                                <input type="text" class="form-control" id="postcode" placeholder="Postcode">
                                                 
                                             </div>
                                         </div>
                                         <div class="col-xl-6">
                                             <div class="form-group">
                                                 <label>City</label>
-                                                <input type="text" class="form-control" id="city" placeholder="City" value="London">
+                                                <input type="text" class="form-control" id="city" placeholder="City">
                                                 
                                             </div>
                                         </div>
@@ -432,7 +425,7 @@ a
                                         <div class="col-xl-6">
                                             <div class="form-group">
                                                 <label>State</label>
-                                                <input type="text" class="form-control" id="state" placeholder="State" value="VIC">
+                                                <input type="text" class="form-control" id="state" placeholder="State" >
                                                 
                                             </div>
                                         </div>

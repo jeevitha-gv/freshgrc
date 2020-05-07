@@ -92,12 +92,7 @@ var KTUserAdd = function () {
 						KTApp.unprogress(btn);
 						//KTApp.unblock(formEl);
 
-						swal.fire({
-							"title": "", 
-							"text": "The application has been successfully submitted!", 
-							"type": "success",
-							"confirmButtonClass": "btn btn-secondary"
-						});
+						
 					}
 				});
 			}

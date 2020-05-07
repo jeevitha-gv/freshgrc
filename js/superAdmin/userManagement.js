@@ -156,7 +156,15 @@ function userProfileCreate(data){
         url: "/freshgrc/php/user/manageUserProfile.php",
         data: userDetails
     }).done(function (data) {
-        location.reload();
+        Swal.fire({
+              
+              text: "User Profile Created",
+              type: "success",
+              confirmButtonText: "Done",
+              success: success
+        }).then(function(success){
+            location.reload();
+        })
     });
 }
 
