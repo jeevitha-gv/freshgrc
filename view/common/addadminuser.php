@@ -258,7 +258,7 @@ a
                                         <div class="col-xl-12">
                                             <div class="kt-section__body">
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
+                                                    <label class="col-xl-3 col-lg-3 col-form-label">Logo</label>
                                                     <div class="col-lg-9 col-xl-6">
                                                         <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
                                                             <div class="kt-avatar__holder" style="background-image: url(lg.png); width: 150px;"></div>
@@ -312,7 +312,7 @@ a
                                                     <label class="col-xl-3 col-lg-3 col-form-label">Phone</label>
                                                     <div class="col-lg-9 col-xl-9">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control"id="phone" placeholder="Phone" aria-describedby="basic-addon1" required>
+                                                            <input type="text" class="form-control" id="phone_no" placeholder="Phone" aria-describedby="basic-addon1" required>
                                                         </div>
                                                     </div>
                                                 </div>

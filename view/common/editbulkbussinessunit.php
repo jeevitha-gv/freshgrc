@@ -192,7 +192,7 @@ require_once '../../php/common/dashboard.php';
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="kt-section__body">
-                                                <div class="form-group row">
+                                      <!--           <div class="form-group row">
                                                     <label class="col-xl-3 col-lg-3 col-form-label"></label>
                                                     <div class="col-lg-9 col-xl-6">
                                                         <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar">
@@ -206,7 +206,7 @@ require_once '../../php/common/dashboard.php';
                               </span>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                      
                                                     <div class="form-group">
                               <input type="hidden" class="form-control" id="loggedInUser" value=<?php echo $userid;?>>                                        

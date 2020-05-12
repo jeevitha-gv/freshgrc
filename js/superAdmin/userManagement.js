@@ -108,6 +108,7 @@ function getUserDetailsFromModal() {
         'firstName': $('#firstName').val(),
         'middleName': $('#middleName').val(),
         'email': $('#email').val(),
+        'phone_no': $('#phone_no').val(),
         'company': $('#company').val(),
         'role': $('#role').val()
     }

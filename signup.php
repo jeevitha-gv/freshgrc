@@ -138,18 +138,18 @@ License: You must have a valid license purchased only from themeforest(the above
                <input class="form-control" type="text" placeholder="Number" id="number" style="color: white;">
            </div>
 
-              <div class="row kt-login__extra">
+          <!--     <div class="row kt-login__extra">
               <div class="col kt-align-left">
                 <label class="kt-checkbox">
                   <input type="checkbox" name="agree">I Agree the <!-- <a href="https://www.fixnix.co/terms-of-service-fixnix" class="kt-link kt-login__link kt-font-bold">terms and conditions</a> -->
-                  <a href="https://www.fixnix.co/terms-of-service-fixnix/" class="kt-link kt-login__link kt-font-bold" target="_blank" >T & C</a>
+               <!--    <a href="https://www.fixnix.co/terms-of-service-fixnix/" class="kt-link kt-login__link kt-font-bold" target="_blank" >T & C</a>
                  <h>and</h>
                   <a href="https://www.fixnix.co/privacy-policy-fixnix/" class="kt-link kt-login__link kt-font-bold">privacy policy</a>
                   <span></span>
                 </label>
                 <span></span>
               </div>
-            </div>
+            </div> -->
             
             <div class="kt-login__actions">
               <button type="submit" id="manageButton" onclick="manageModal();" data-dismiss="modal" class="btn btn-pill kt-login__btn-primary">Sign Up</button>&nbsp;&nbsp;

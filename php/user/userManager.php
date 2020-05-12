@@ -62,10 +62,10 @@ class UserManager {
     }
     
     private function createUser($userData){
-        $sql = 'INSERT INTO user(last_name, first_name, middle_name, password, email, company_id,string) VALUES (?,?,?,?,?,?,?)';
-        $paramArray = array($userData->lastName, $userData->firstName, $userData->middleName, 'freshgrc', $userData->email, $userData->company,$userData->string);
+        $sql = 'INSERT INTO user(last_name, first_name, middle_name, password, email, company_id,string,phone_no) VALUES (?,?,?,?,?,?,?,?)';
+        $paramArray = array($userData->lastName, $userData->firstName, $userData->middleName, 'freshgrc', $userData->email, $userData->company,$userData->string,$userData->phone_no);
         $dbOps = new DBOperations();        
-        return $dbOps->cudData($sql, 'sssssis', $paramArray);        
+        return $dbOps->cudData($sql, 'sssssiss', $paramArray);        
     }
     
     private function getUserByEmail($email){
@@ -145,10 +145,10 @@ class UserManager {
     }
 
    public function updateUserProfileData($userData){
-        $sql = 'UPDATE user u, user_profile up SET u.first_name=?, u.last_name=?,u.phone_no=?,u.email=?,up.mobile_number=?, up.facebook=?, up.industry=?, up.twitter=?,up.site=?  WHERE u.id=up.user_id and u.id=?';
-        $paramArray = array($userData->firstname, $userData->lastname,$userData->phone_no, $userData->email, $userData->mobileno,$userData->facebook,$userData->industry,$userData->twitter,$userData->site,$userData->loggedInUser);
+        $sql = 'UPDATE user u, user_profile up SET u.first_name=?, u.last_name=?,u.phone_no=?,u.email=? WHERE  u.id=?';
+        $paramArray = array($userData->firstname, $userData->lastname,$userData->phone_no, $userData->email,$userData->loggedInUser);
         $dbOps = new DBOperations();
-        return $dbOps->cudData($sql, 'ssssissssi', $paramArray);         
+        return $dbOps->cudData($sql, 'ssssi', $paramArray);         
     }
     public function companyprofiletable($companyId){
         $sql = 'SELECT * FROM user_profile';
