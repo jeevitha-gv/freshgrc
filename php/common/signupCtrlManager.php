@@ -20,7 +20,7 @@ function getDataFromRequest(){
     $signupData->name = $_POST['name'];
     $signupData->email = $_POST['email'];
     $password =$_POST['password'];
-  $link = mysqli_connect("localhost", "root", "password", "freshgrc");
+  $link = mysqli_connect("localhost", "root", "299ee42d5d3a6a5f8233bf5787645f14Fixnix2019!@", "freshgrc");
 
 
    /* $options = [
