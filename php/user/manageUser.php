@@ -35,6 +35,7 @@ function getUserDataFromRequest(){
     $userData->email = $_POST['email'];
     $userData->company = $_POST['company'];
     $userData->role = $_POST['role'];
+    $userData->phone_no = $_POST['phone_no'];
      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';

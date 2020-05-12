@@ -237,7 +237,7 @@ $allUsers = $manager->getAllUsersForTicket();
                                                     <label class="col-xl-3 col-lg-3 col-form-label">LastName:</label>
                                                      
                                                     <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control" type="text" id="lastname" value="<?php echo $data['lastname'];?>">
+                                                        <input class="form-control" type="text" id="lastname" value="<?php echo $data['lastName'];?>">
                                                     </div>
                                                 </div>
                                                      
