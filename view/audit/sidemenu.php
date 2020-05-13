@@ -227,7 +227,7 @@ if($_SESSION['user_role']=='super_admin') { ?>
 <div class="kt-quick-search__wrapper kt-scroll" data-scroll="true" data-height="700" data-mobile-height="200">
 <ul class="kt-menu__nav ">
 
-<li class="kt-menu__item toggle" aria-haspopup="true"><span class="kt-menu__link text-center"><a href="view/compliance/complianceCreateAdmin.php"><i class="kt-menu__link-icon flaticon2-graph kt-menu__link text-center"></i></a><span class="kt-menu__link-text">Regulatory Engine<i class="la la-angle-down" style="margin-top: 20px; margin-left: -7px;"></i></span></span>
+<li class="kt-menu__item toggle" aria-haspopup="true"><span class="kt-menu__link text-center"><a href="view/compliance/complianceCreateAdmin.php"><i class="kt-menu__link-icon flaticon2-graph kt-menu__link text-center"></i></a><span class="kt-menu__link-text">RegulatoryEngine Assessment<i class="la la-angle-down" style="margin-top: 20px; margin-left: -7px;"></i></span></span>
 
 <!-- <li class="kt-menu__item shw" aria-haspopup="true" style="display: none;"><a  href="view/compliance/newcompliance.php" class="kt-menu__link  text-center" ><i class="fas fa-dot-circle"></i><span class="kt-menu__link-text ">New</span></a></li> -->
 
