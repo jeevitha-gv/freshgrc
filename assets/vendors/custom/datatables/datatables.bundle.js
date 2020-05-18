@@ -18925,7 +18925,7 @@ DataTable.ext.buttons.print = {
 		// document so the table can retain its base styling. Note that we have
 		// to use string manipulation as IE won't allow elements to be created
 		// in the host document and then appended to the new window.
-		var head = '<title>'+exportInfo.title+'</title>';
+		var head = '<title>'+"Report"+'</title>';
 		$('style, link').each( function () {
 			head += _styleToAbs( this );
 		} );
@@ -18939,7 +18939,7 @@ DataTable.ext.buttons.print = {
 
 		// Inject the table and other surrounding information
 		win.document.body.innerHTML =
-			'<h1>'+exportInfo.title+'</h1>'+
+			'<h1>'+"Report"+'</h1>'+
 			'<div>'+(exportInfo.messageTop || '')+'</div>'+
 			html+
 			'<div>'+(exportInfo.messageBottom || '')+'</div>';
