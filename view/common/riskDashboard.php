@@ -134,12 +134,12 @@ $manager=new dashboard();
                                                     Activity
                                                 </h3>
                                             </div>
-                                            <div class="kt-portlet__head-toolbar">
+                                            <!-- <div class="kt-portlet__head-toolbar">
                                                 <a href="#" class="btn btn-label-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
                                                    Risk
                                                 </a>
                                                 
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="kt-portlet__body kt-portlet__body--fit">
                                             <div class="kt-widget17">
