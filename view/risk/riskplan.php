@@ -1174,14 +1174,15 @@ My Risk
 
 <input type="hidden" class="form-control" id="auditCapaCheck" value="<?php echo $GLOBALS['capa'] ?>">
 <input type="hidden" class="form-control" id="parentAudit" value="0">
-  
-</div>
-
 <div class="kt-portlet__foot">
 <div class="kt-form__actions">
   <button type="button" id="manageButton" onclick="saveRiskPlan()" data-dismiss="modal" class="btn btn-primary" style="float:right;">Plan</button>
 </div>
 </div>
+  
+</div>
+
+
 </form>
 
 
