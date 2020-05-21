@@ -114,7 +114,7 @@ include "../siteHeader.php";
           </div>
           <div class="kt-wizard-v4__nav-label">
             <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-              Available Standard
+           Library
             </div>
             <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
               Available
@@ -129,15 +129,30 @@ include "../siteHeader.php";
           </div>
           <div class="kt-wizard-v4__nav-label">
             <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-              Activated Standard
+Customise
             </div>
             <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
-              Activate
+              Template
             </div>
           </div>
         </div>
       </a>
 
+   <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
+        <div class="kt-wizard-v4__nav-body">
+          <div class="kt-wizard-v4__nav-number">
+            3
+          </div>
+          <div class="kt-wizard-v4__nav-label">
+            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
+              Activated Standard
+            </div>
+            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
+              Activated
+            </div>
+          </div>
+        </div>
+      </a>
 
     </div>
   </div>
@@ -159,8 +174,8 @@ include "../siteHeader.php";
                         <?php include '../compliance/addstandarddropdown.php';?>
 
             </div>
-            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                         <?php include '../compliance/moduledropdown.php';?>
+              <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                    
                            <div class="row">
               <div class="col-md-8" > 
                                 <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
@@ -173,6 +188,22 @@ include "../siteHeader.php";
             </div>
           
           </div>
+
+                    </div>
+            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                         <?php include '../compliance/moduledropdown.php';?>
+          <!--                  <div class="row">
+              <div class="col-md-8" > 
+                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
+                                   <br><br>
+                     <label for="complianceCsv" aria-hidden="true">
+
+         <img src="csv.svg" title="ImportCsv File" width="35" height="35" > <span class="csv" style="font-size: 14px;">Upload</span>
+              <input type="file" accept=".csv" style="display:none;" onchange="importCsv()" id="complianceCsv"/>
+                                </label>     
+            </div>
+          
+          </div> -->
 
                     </div>
             <!--end: Form Wizard Step 1-->
