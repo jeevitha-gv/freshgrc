@@ -129,7 +129,7 @@ include "../siteHeader.php";
           </div>
           <div class="kt-wizard-v4__nav-label">
             <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-Customise
+Customize
             </div>
             <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
               Template
@@ -178,11 +178,11 @@ Customise
                     
                            <div class="row">
               <div class="col-md-8" > 
-                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
+                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" title="Download the sample Template" id="" style="width: 200px;height: 150px; cursor: pointer;">
                                    <br><br>
                      <label for="complianceCsv" aria-hidden="true">
 
-         <img src="csv.svg" title="ImportCsv File" width="35" height="35" > <span class="csv" style="font-size: 14px;">Upload</span>
+         <img src="csv.svg" title="ImportCsv File" width="35" height="35" style="cursor: pointer;"> <span class="csv" style="font-size: 14px; cursor: pointer;">Upload</span>
               <input type="file" accept=".csv" style="display:none;" onchange="importCsv()" id="complianceCsv"/>
                                 </label>     
             </div>
