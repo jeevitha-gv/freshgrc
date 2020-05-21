@@ -542,15 +542,17 @@ public function getAllAuditsForPublish($userId, $userRole){
         return $dbOps->fetchData($sql,'i',$paramArray);
     }
 
-    public function getAllAvailCompliance() {
-        $sql = 'SELECT id,name,description FROM comp';
+    public function getAllAvailCompliance($start_from, $limit) {
+        $sql = 'SELECT id,name,description FROM comp LIMIT ?,?';
         $dbOps = new DBOperations();
         $paramArray = array();
-        return $dbOps->fetchData($sql);
+        $paramArray[] = $start_from;
+        $paramArray[] = $limit;
+        return $dbOps->fetchData($sql, 'ii', $paramArray);
     }
-
+    
     public function getAllAvailComplianceCount() {
-        $sql = 'SELECT COUNT(*) as count FROM  comp';
+        $sql = 'SELECT * FROM  comp';
         $dbOps = new DBOperations();
         $paramArray = array($companyId);
         return $dbOps->fetchData($sql, 'i', $paramArray);

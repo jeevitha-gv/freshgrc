@@ -1,26 +1,17 @@
 <?php
-require_once __DIR__.'/../header.php';
-// require_once __DIR__.'/../../php/audit/auditClauseManager.php';
-// require_once __DIR__.'/../../php/compliance/complianceManager.php';
-// require_once __DIR__.'/../../php/audit/auditManager.php';
-session_start();
-$companyId=$_SESSION['company'];
-$user_id=$_SESSION['user_id'];
-$user_name=$_SESSION['user_name'];
-$user_role=$_SESSION['user_role'];
-// echo $companyId;
-// echo $user_id;
-// echo $user_name;
-// echo $user_role;
-?>
-<?php 
-require_once __DIR__.'/../../php/compliance/complianceManager.php'; 
-      $manager=new complianceManager();
-      $uploadedFiles=$manager->getAllUploadedFiles($_SESSION['company']);
-      error_log("all uploaded Files".print_r($uploadedFiles,true));
-      $delim="_";
+    require_once __DIR__.'/../../php/common/metaData.php';
+     require_once __DIR__.'/../../php/common/config.php';
+    require_once __DIR__.'/../../php/audit/auditManager.php';
+ $riskManager = new AuditManager();
 
+      $allCompliancesCount = $riskManager->getAllAvailComplianceCount($_SESSION['company']);
+      $total_records = count($allCompliancesCount);
+      // echo $total_records;
+      $limit= 6;
+      $total_pages = ceil($total_records / $limit);
+      // echo $total_pages;
 ?>
+
 <!DOCTYPE html>
 <html>
  <head><!--begin::Base Path (base relative path for assets of this page) -->
@@ -84,166 +75,79 @@ require_once __DIR__.'/../../php/compliance/complianceManager.php';
 
  <link rel="shortcut icon" href="assets/media/logos/fixnix.png" />
 </head>
-<?php
-include "../siteHeader.php";
-?>
- <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"  >
-
-       
-    <!-- begin:: Page -->
 
 
-<div class="kt-grid kt-grid--hor kt-grid--root">
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-
-<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper" style="margin-top: -9%;" >
-
-<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-
-<!-- begin:: Content -->
-<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
-    <div class="kt-wizard-v4" id="kt_wizard_v4" data-ktwizard-state="step-first">
-  <!--begin: Form Wizard Nav -->
-  <div class="kt-wizard-v4__nav">
-    <div class="kt-wizard-v4__nav-items">
-      <!--doc: Replace A tag with SPAN tag to disable the step link click -->
-            <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step">
-        <div class="kt-wizard-v4__nav-body">
-          <div class="kt-wizard-v4__nav-number">
-            1
-          </div>
-          <div class="kt-wizard-v4__nav-label">
-            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-           Library
-            </div>
-            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
-              Available
-            </div>
-          </div>
+ <div class="container">
+        <div class="">
+           
+      <div id="target-content"></div>
+      <br><br>
+            
+        <div class="center" style="float: right;">
+          <ul class="pagination">
+                    <?php 
+          if(!empty($total_pages)){
+            ?><a class="prev pageitem">&laquo;</a><?php
+            for($i=1; $i<=$total_pages; $i++){
+                if($i == 1){
+                  ?>
+                <li class="pageitem active " id="<?php echo $i;?>"><a href="JavaScript:Void(0);" data-id="<?php echo $i;?>" class="page-link" ><?php echo $i;?></a></li>
+                              
+                <?php 
+                }
+                else{
+                  ?>
+                <li class="pageitem" id="<?php echo $i;?>"><a href="JavaScript:Void(0);" class="page-link" data-id="<?php echo $i;?>"><?php echo $i;?></a></li>
+                <?php
+                }
+            }
+             ?><a class="next pageitem">&raquo;</a><?php
+          }
+                ?>
+          </ul>
         </div>
-      </a>
-      <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
-        <div class="kt-wizard-v4__nav-body">
-          <div class="kt-wizard-v4__nav-number">
-            2
-          </div>
-          <div class="kt-wizard-v4__nav-label">
-            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-Customise
-            </div>
-            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
-              Template
-            </div>
-          </div>
+        <br><br>
         </div>
-      </a>
-
-   <a class="kt-wizard-v4__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
-        <div class="kt-wizard-v4__nav-body">
-          <div class="kt-wizard-v4__nav-number">
-            3
-          </div>
-          <div class="kt-wizard-v4__nav-label">
-            <div class="kt-wizard-v4__nav-label-title" style="font-size: 20px;">
-              Activated Standard
-            </div>
-            <div class="kt-wizard-v4__nav-label-desc" style="font-size: 15px;">
-              Activated
-            </div>
-          </div>
-        </div>
-      </a>
-
     </div>
-  </div>
-  <!--end: Form Wizard Nav -->
-
-  <div class="kt-portlet">
-    <div class="kt-portlet__body kt-portlet__body--fit">
-      <div class="kt-grid">
-        <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
-          <!--begin: Form Wizard Form-->
-          <form class="kt-form" id="kt_form">
-            <!--begin: Form Wizard Step 1-->
-              <div class="kt-wizard-v4__content" data-ktwizard-type="step-content">
-                 <div class="form-group">
-                            <input type="hidden" class="form-control" id="action" value="in_draft">
-                            <input type="hidden" class="form-control" id="company_id" value="<?php echo $companyId ?>">
-                          </div>
-                     
-                        <?php include '../compliance/index.php';?>
-
-            </div>
-              <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                    
-                           <div class="row">
-              <div class="col-md-8" > 
-                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
-                                   <br><br>
-                     <label for="complianceCsv" aria-hidden="true">
-
-         <img src="csv.svg" title="ImportCsv File" width="35" height="35" > <span class="csv" style="font-size: 14px;">Upload</span>
-              <input type="file" accept=".csv" style="display:none;" onchange="importCsv()" id="complianceCsv"/>
-                                </label>     
-            </div>
+  <script>
+  $(document).ready(function() {
+    $("#target-content").load("/freshgrc/view/compliance/addstandarddropdown.php?page=1");
+    $(".page-link").click(function(){
+      var id = $(this).attr("data-id");
+      var select_id = $(this).parent().attr("id");
+      $.ajax({
+        url: "/freshgrc/view/compliance/addstandarddropdown.php",
+        type: "GET",
+        data: {
+          page : id
+        },
+        cache: false,
+        success: function(dataResult){
+          $("#target-content").html(dataResult);
+          $(".pageitem").removeClass("active");
+          $("#"+select_id).addClass("active");
           
-          </div>
+        }
+      });
+    });
+    });
+</script>
+<style type="text/css">
 
-                    </div>
-            <div class="kt-wizard-v4__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                         <?php include '../compliance/moduledropdown.php';?>
-          <!--                  <div class="row">
-              <div class="col-md-8" > 
-                                <img src="uploadedFiles/auditeeFiles/template.jpg" onclick="window.location.href='assets/template.xlsx'" alt="avatar" id="" style="width: 200px;height: 150px;">
-                                   <br><br>
-                     <label for="complianceCsv" aria-hidden="true">
-
-         <img src="csv.svg" title="ImportCsv File" width="35" height="35" > <span class="csv" style="font-size: 14px;">Upload</span>
-              <input type="file" accept=".csv" style="display:none;" onchange="importCsv()" id="complianceCsv"/>
-                                </label>     
-            </div>
-          
-          </div> -->
-
-                    </div>
-            <!--end: Form Wizard Step 1-->
+  .prev, .next, .pageitem {
+    /*display: inline-block;*/
+     font-size: 18px;
+      color: black;
+/*      padding: 4px 4px;
+*/      text-decoration: none;
+      transition: background-color .3s;
+/*      border: 1px solid #ddd;
+*/      margin: 0 4px;
+  }
+</style>
 
 
-            <!--begin: Form Wizard Step 4-->
-          
-            <!--end: Form Wizard Step 4-->
-
-            <!--begin: Form Actions -->
-            <div class="kt-form__actions">
-              <button class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
-                Previous
-              </button>
-              <button class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
-                Submit
-              </button>
-              <button class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
-                Next Step
-              </button>
-            </div>
-            <!--end: Form Actions -->
-          </form>
-          <!--end: Form Wizard Form-->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-</div>
-</div>
-</div>
-   </div>
-      <?php
-
-include "../audit/sidemenu.php";
-
- ?>
- <script>
+<script>
             var KTAppOptions = {"colors":{"state":{"brand":"#2c77f4","light":"#ffffff","dark":"#282a3c","primary":"#5867dd","success":"#34bfa3","info":"#36a3f7","warning":"#ffb822","danger":"#fd3995"},"base":{"label":["#c5cbe3","#a1a8c3","#3d4465","#3e4466"],"shape":["#f0f3ff","#d9dffa","#afb4d4","#646c9a"]}}};
         </script>
         <script type="text/javascript" src="js/compliance/importLibrary.js"></script>
