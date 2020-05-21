@@ -300,10 +300,11 @@ if($_SESSION['user_role']=='super_admin') { ?>
 
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">compliance</span></a>
 </li>
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/common/complianceTemplate.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Template</span></a>
+<li class="kt-menu__item " aria-haspopup="true" style="text-align: center;"><a href="view/policy/Regulatoryengine.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Regulatory Engine</span></a>
 </li>
-
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceCreateAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Plan</span></a></li>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceCreateAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Assessment</span></a>
+</li>
+<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReportAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Report</span></a></li>
 
 
 </ul>
@@ -314,11 +315,11 @@ if($_SESSION['user_role']=='super_admin') { ?>
 <!-- <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceDashboardList.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Compliance</span></a>
 </li>
  -->
-<li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReviewAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Review</span></a></li>
-
+<!-- <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReviewAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-drop"></i><span class="kt-menu__link-text">Review</span></a></li> -->
+<!-- 
 <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceAnalyzeAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-analytics-2"></i><span class="kt-menu__link-text"> Analyze</span></a></li>
-
-          <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReportAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Report</span></a></li>
+ -->
+    <!--       <li class="kt-menu__item " aria-haspopup="true"><a href="view/compliance/complianceReportAdmin.php" class="kt-menu__link "><i class="kt-menu__link-icon flaticon2-graph"></i><span class="kt-menu__link-text">Report</span></a></li> -->
 
 </ul>
 <?php } ?>
