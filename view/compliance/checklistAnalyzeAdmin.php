@@ -217,11 +217,11 @@ function tabledata($clause){
 </div>
 </div>
 </div>
-<div class="modal" id="myModal" role="dialog">
-    <div class="modal-dialog">
+<!-- <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog"> -->
     
       <!-- Modal content-->
-      <div class="modal-content">
+<!--       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" ></button>
           <h4 class="modal-title"><i class="fa fa-gift"></i>Compliance Package item info</h4>
@@ -243,8 +243,8 @@ function tabledata($clause){
                   <div class="col-md-12">
                     <input type="hidden" value="<?php echo $companyId?>" id="company">
                   </div>
-                </div>
-                <div class="row">
+                </div> -->
+ <!--                <div class="row">
                   <div class="col-md-12" >
                     <div class="form-group " >
                       <label for="auditTitle" >Treatment Strategy</label>
@@ -259,16 +259,16 @@ function tabledata($clause){
                       
                     </div>          
                   </div>
-                </div>
-                <div class="row">
+                </div> -->
+          <!--       <div class="row">
                   <div class="col-md-12" >
                     <div class="form-group " >
-                      <label for="auditTitle" ><br>Compliance Efficacy:<br><br></label>
+                      <label for="auditTitle" ><br>Compliance Efficacy:<br><br></label> -->
                       <!-- <div class="input-group">
                         <span class="input-group-addon">
                             <i class="fa fa-envelope"></i>
                         </span> -->
-                        <?php $score=50; ?>
+       <!--                  <?php $score=50; ?>
 
                    <div class="slidecontainer">
                       <input type="range" style="display: block;width: 41%;margin-top: -6px;margin-left: 120px;"  min="1" max="100"  value="50" class="slider" id="complianceEfficacy" name="auditorScoreDropDown" class="form-control"  onchange="<?php echo 'updateScore()'?>">
@@ -276,22 +276,22 @@ function tabledata($clause){
                    </div> 
                     </div>             
                   </div>
-              </div>
-              
+              </div> -->
+              <!-- 
               <div class="row">
                   <div class="col-md-12" >
-                    <div class="form-group " >
+                    <div class="form-group " > -->
                       <!-- <label>Compliance</label> -->
                       <!-- <label for="auditTitle" >Standards:</label> -->
-                        <?php include '../compliance/mitigationControlComplianceDropDown.php';?>
+                     <!--    <?php include '../compliance/mitigationControlComplianceDropDown.php';?>
                     </div>          
                   </div>
                
                   <div class="col-md-6">
                     
-                 <div class="form-group" >
+                 <div class="form-group" > -->
                       <!-- <label for="auditDesc">Compliance Exceptions</label> -->
-                      <?php include '../common/projectDropDown.php' ?>
+         <!--              <?php include '../common/projectDropDown.php' ?>
                     </div>
                   </div>
               </div>
@@ -304,11 +304,11 @@ function tabledata($clause){
                       <?php include '../common/controlsDropDown.php' ?>
                    
                 </div>
-               
+                -->
                   <!-- <div class="col-md-6"> -->
                    
                   <!-- </div> -->
-              </div>
+   <!--            </div>
           </div>
                 </form>
                 </div>
@@ -330,7 +330,7 @@ function tabledata($clause){
        
       </div>
       
-    </div>
+    </div> -->
  </div>
 </div>
 </div>
