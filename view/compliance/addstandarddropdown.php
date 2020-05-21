@@ -3,9 +3,11 @@
     require_once __DIR__.'/../../php/audit/auditManager.php';
  $riskManager = new AuditManager();
       
-     $allCompliances = $riskManager->getAllAvailCompliance(7);
-     // $allCompliancesCount = $riskManager->getAllAvailComplianceCount($_SESSION['company']);
-        $root=$moduleData[0]['c.name'];
+    $limit = 6;  
+        if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
+        $start_from = ($page-1) * $limit;  
+             $allCompliances = $riskManager->getAllAvailCompliance($start_from, $limit);
+                $root=$moduleData[0]['c.name'];
 $m=explode(',',  $root);
 ?>
 
