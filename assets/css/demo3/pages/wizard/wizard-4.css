@@ -1,4 +1,3 @@
-
 .kt-wizard-v4 {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -13,9 +12,7 @@
     align-items: flex-end;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: initial;
-    width: 201%;
-    margin-left: 1px;
+ width:135%;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .kt-wizard-v4 .kt-wizard-v4__nav .kt-wizard-v4__nav-items .kt-wizard-v4__nav-item {
@@ -226,20 +223,21 @@
 // Above 1200px
 @include kt-media-above(xl) {
   .kt-wizard-v4 {
-   
+    
   }
 }
 
 // Above 1024px and below 1200px
 @include kt-media-range(lg, xl) {
   .kt-wizard-v4 {
- 
+  
   }
 }
 
 // Below 1024px
 @include kt-media-below(lg) {
   .kt-wizard-v4 {
- 
+  
   }
 } */
+
